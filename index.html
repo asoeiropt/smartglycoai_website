@@ -8,27 +8,30 @@
 </head>
 <body class="bg-gray-50 text-gray-900 font-sans antialiased">
 
-    <!-- Cabeçalho Global com Logótipo -->
+    <!-- Cabeçalho Global -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <img src="img/WhatsApp Image 2026-09-28 at 17.01.38.jpeg Image 2026-09-28 at 17.01.38.jpeg" alt="Logo SmartGlycoAI" class="h-10 w-10 rounded-full shadow-sm object-cover">
+                <!-- LOGO ATUALIZADO AQUI -->
+                <div class="w-10 h-10 rounded-full overflow-hidden border border-gray-200">
+                    <img src="logo.jpeg" alt="Logo" class="w-full h-full object-cover">
+                </div>
                 <div class="text-2xl font-bold text-blue-600 tracking-tight">
                     SmartGlycoAI
                 </div>
             </div>
-            <!-- Link rápido para a arquitetura da app -->
-            <a href="app.html" class="text-sm font-semibold text-gray-600 hover:text-blue-600 transition bg-gray-100 hover:bg-blue-50 px-4 py-2 rounded-lg">
+            
+            <a href="app.html" class="text-sm font-semibold text-gray-600 hover:text-blue-600 transition bg-gray-100 px-4 py-2 rounded-lg">
                 Ver Arquitetura da App
             </a>
         </div>
     </header>
 
-    <main class="max-w-6xl mx-auto py-12 px-4">
+    <main class="max-w-6xl mx-auto py-8 px-4">
         
-        <!-- Banner Principal -->
-        <div class="mb-12 rounded-2xl overflow-hidden shadow-lg border border-gray-200 bg-white">
-            <img src="img/WhatsApp Image 2026-09-28 at 17.01.54.jpeg Image 2026-09-28 at 17.01.54.jpeg" alt="SmartGlycoAI - Gestão Inteligente de Diabetes Tipo 1" class="w-full h-auto object-cover max-h-[400px]">
+        <!-- BANNER ATUALIZADO AQUI -->
+        <div class="w-full h-48 md:h-72 rounded-2xl overflow-hidden mb-12 shadow-md">
+            <img src="banner.jpeg" alt="SmartGlycoAI - Gestão Inteligente de Diabetes Tipo 1" class="w-full h-full object-cover">
         </div>
 
         <div class="text-center mb-16">
@@ -44,7 +47,7 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Stage 1 (Ativo) -->
+                <!-- Stage 1 -->
                 <a href="stage1.html" class="block bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md hover:border-blue-400 transition group flex flex-col h-full">
                     <div class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2">Stage 1</div>
                     <h3 class="text-xl font-bold mb-3 group-hover:text-blue-600 transition">Project Proposal</h3>
@@ -54,7 +57,7 @@
                     </div>
                 </a>
 
-                <!-- Stage 2 (Ativo) -->
+                <!-- Stage 2 -->
                 <a href="stage2.html" class="block bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md hover:border-blue-400 transition group flex flex-col h-full">
                     <div class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2">Stage 2</div>
                     <h3 class="text-xl font-bold mb-3 group-hover:text-blue-600 transition">User and Task Analysis</h3>
@@ -64,7 +67,7 @@
                     </div>
                 </a>
 
-                <!-- Stage 3 (Bloqueado/Em Breve) -->
+                <!-- Stage 3 -->
                 <div class="block bg-gray-50 rounded-xl border-2 border-dashed border-gray-300 p-6 opacity-75 flex flex-col h-full">
                     <div class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Stage 3</div>
                     <h3 class="text-xl font-bold mb-3 text-gray-500">1st Prototype (Mock-up)</h3>
@@ -113,19 +116,19 @@
                         <div class="text-xs font-bold text-red-600 uppercase tracking-wider">Stage 6</div>
                         <span class="bg-red-100 text-red-800 text-[10px] px-2 py-1 rounded font-bold uppercase">Mandatory</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-red-900">Evaluation Results & Presentation</h3>
+                    <h3 class="text-xl font-bold mb-3 text-red-900">Evaluation Results</h3>
                     <p class="text-red-700 text-sm flex-grow mb-6">Apresentação e discussão final dos resultados das avaliações.</p>
                 </div>
             </div>
         </div>
-
     </main>
     
-    <footer class="bg-gray-800 text-gray-400 py-8 text-center text-sm mt-12">
-        <div class="flex justify-center items-center gap-2 mb-2">
-            <img src="WhatsApp Image 2026-09-28 at 17.01.38.jpeg" alt="Logo" class="h-6 w-6 rounded-full grayscale opacity-50">
-            <span>&copy; 2026 SmartGlycoAI. Projeto Académico.</span>
+    <footer class="bg-gray-800 text-gray-400 py-8 text-center text-sm mt-12 flex flex-col items-center">
+        <!-- Logo no footer -->
+        <div class="w-8 h-8 rounded-full overflow-hidden border border-gray-600 mb-3 opacity-50">
+            <img src="logo.jpeg" alt="Logo" class="w-full h-full object-cover">
         </div>
+        <p>&copy; 2026 SmartGlycoAI. Projeto Académico.</p>
     </footer>
 
 </body>
