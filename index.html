@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartGlycoAI | Projeto Mobile Multiplataforma</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Adiciona um scroll suave ao clicar nos links do menu */
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans antialiased">
+
+    <!-- Navegação -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-600 tracking-tight">
+                🧬 SmartGlycoAI
+            </div>
+            <nav class="hidden md:flex space-x-6 text-sm font-medium text-gray-600">
+                <a href="#tecnologias" class="hover:text-blue-600 transition">Stack</a>
+                <a href="#arquitetura" class="hover:text-blue-600 transition">Arquitetura</a>
+                <a href="#setup" class="hover:text-blue-600 transition">Instruções</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Secção Hero (Apresentação Principal) -->
+        <section class="bg-blue-600 text-white py-20 px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <span class="inline-block py-1 px-3 rounded-full bg-blue-500 text-blue-100 text-xs font-semibold uppercase tracking-wider mb-4">
+                    Projeto Académico
+                </span>
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-6">
+                    Desenvolvimento Mobile Robusto e Multiplataforma
+                </h1>
+                <p class="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                    O SmartGlycoAI é construído com Flutter, estabelecendo uma arquitetura de base sólida com regras estritas de análise estática e integrações nativas otimizadas para Android e iOS.
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#setup" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-bold shadow hover:bg-gray-100 transition">
+                        Começar Agora
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secção de Tecnologias -->
+        <section id="tecnologias" class="py-16 px-4 max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Tecnologias Utilizadas</h2>
+                <p class="text-gray-600">A base tecnológica que garante a performance e escalabilidade do projeto.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card Flutter -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center">
+                    <div class="text-4xl mb-4">📱</div>
+                    <h3 class="text-xl font-bold mb-2">Flutter & Dart</h3>
+                    <p class="text-gray-600 text-sm">Frontend unificado e lógica de negócio partilhada com regras estritas (analysis_options.yaml).</p>
+                </div>
+                <!-- Card Android -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center">
+                    <div class="text-4xl mb-4">🤖</div>
+                    <h3 class="text-xl font-bold mb-2">Android (Kotlin)</h3>
+                    <p class="text-gray-600 text-sm">Módulo nativo gerido com Gradle Kotlin DSL (build.gradle.kts) e perfis de manifesto otimizados.</p>
+                </div>
+                <!-- Card iOS -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center">
+                    <div class="text-4xl mb-4">🍏</div>
+                    <h3 class="text-xl font-bold mb-2">iOS (Swift)</h3>
+                    <p class="text-gray-600 text-sm">Estruturado em Xcode com gestão precisa de assets visuais e ciclo de vida gerido no AppDelegate.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secção de Arquitetura -->
+        <section id="arquitetura" class="bg-gray-100 py-16 px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-8 text-center">Arquitetura do Repositório</h2>
+                <div class="space-y-6">
+                    <article class="bg-white p-6 rounded-lg shadow-sm">
+                        <h4 class="text-lg font-bold text-blue-600 mb-2">/android</h4>
+                        <p class="text-gray-700 text-sm">Utilização moderna do Kotlin Script (KTS) para builds. Inclui manifestos separados para debug, main e profile, garantindo permissões exatas apenas quando necessárias. O ponto de entrada nativo é a <code>MainActivity.kt</code>.</p>
+                    </article>
+                    <article class="bg-white p-6 rounded-lg shadow-sm">
+                        <h4 class="text-lg font-bold text-blue-600 mb-2">/ios</h4>
+                        <p class="text-gray-700 text-sm">Totalmente configurado para o Xcode Build System. Transições de <i>splash screen</i> configuradas no LaunchBackground e ícones rigorosamente dimensionados no <code>AppIcon.appiconset</code>.</p>
+                    </article>
+                    <article class="bg-white p-6 rounded-lg shadow-sm">
+                        <h4 class="text-lg font-bold text-blue-600 mb-2">Raiz & Ferramentas</h4>
+                        <p class="text-gray-700 text-sm">O ambiente está preparado para debugging avançado com as definições do <code>devtools_options.yaml</code>, assegurando uma monitorização de performance de alto nível.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secção de Setup -->
+        <section id="setup" class="py-16 px-4 max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-6 text-center">Compilar e Correr</h2>
+            <div class="bg-gray-900 rounded-lg p-6 text-gray-100 font-mono text-sm overflow-x-auto shadow-lg">
+                <p class="text-gray-400 mb-2"># Obter dependências</p>
+                <p class="mb-4 text-green-400">$ flutter pub get</p>
+                
+                <p class="text-gray-400 mb-2"># Executar em ambiente de desenvolvimento</p>
+                <p class="mb-4 text-green-400">$ flutter run</p>
+                
+                <p class="text-gray-400 mb-2"># Compilar versões de produção (Release)</p>
+                <p class="text-green-400">$ flutter build apk --release</p>
+                <p class="text-green-400">$ flutter build ipa --release</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-gray-800 text-gray-400 py-8 text-center text-sm">
+        <p>&copy; 2026 SmartGlycoAI. Desenvolvido em Flutter.</p>
+    </footer>
+
+</body>
+</html>
