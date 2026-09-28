@@ -1,31 +1,22 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stage 2: User and Task Analysis | SmartGlycoAI</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body.lang-pt .lang-en { display: none; }
-        body.lang-en .lang-pt { display: none; }
-    </style>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans antialiased lang-pt">
+<body class="bg-gray-50 text-gray-900 font-sans antialiased">
 
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
             <a href="index.html" class="text-gray-500 hover:text-blue-600 font-semibold flex items-center transition">
                 <span class="mr-2">←</span> 
-                <span class="lang-pt">Voltar ao Menu</span>
-                <span class="lang-en">Back to Menu</span>
+                Back to Menu
             </a>
             
             <div class="flex items-center gap-4">
                 <div class="font-bold text-gray-800 hidden sm:block">Stage 2</div>
-                <button onclick="toggleLanguage()" class="flex items-center justify-center bg-blue-50 hover:bg-blue-100 text-blue-700 px-3 py-1.5 rounded-lg transition font-bold text-sm border border-blue-200 shadow-sm">
-                    <span class="lang-pt">🇬🇧 EN</span>
-                    <span class="lang-en">🇵🇹 PT</span>
-                </button>
             </div>
         </div>
     </header>
@@ -35,27 +26,23 @@
             <div class="bg-blue-600 text-white p-8">
                 <h1 class="text-3xl font-bold mb-2">Stage 2: User and task analysis</h1>
                 <p class="text-blue-100 text-lg">
-                    <strong><span class="lang-pt">Objetivo:</span><span class="lang-en">Objective:</span></strong> 
-                    <span class="lang-pt">Identificação e caracterização dos utilizadores alvo, tarefas e cenários.</span>
-                    <span class="lang-en">Identification and characterization of the target users, tasks and scenarios.</span>
+                    <strong>Objective:</strong> 
+                    Identification and characterization of the target users, tasks and scenarios.
                 </p>
             </div>
 
             <div class="p-8 space-y-10">
                 <section>
                     <h2 class="text-xl font-bold border-b pb-2 mb-4">
-                        <span class="lang-pt">1. Visão Geral</span>
-                        <span class="lang-en">1. Overview</span>
+                        1. Overview
                     </h2>
                     <div class="space-y-4">
                         <div>
                             <h3 class="font-semibold text-gray-700">
-                                <span class="lang-pt">Problema</span>
-                                <span class="lang-en">Problem</span>
+                                Problem
                             </h3>
                             <div class="mt-2 text-gray-700 bg-gray-50 p-4 rounded border border-gray-100" contenteditable="true">
-                                <span class="lang-pt">[Descrição breve do problema...]</span>
-                                <span class="lang-en">[Brief description of the problem...]</span>
+                                [Brief description of the problem...]
                             </div>
                         </div>
                     </div>
@@ -63,14 +50,12 @@
 
                 <section>
                     <h2 class="text-xl font-bold border-b pb-2 mb-4">
-                        <span class="lang-pt">2. Utilizadores e Entrevistas</span>
-                        <span class="lang-en">2. Users & Interviews</span>
+                        2. Users & Interviews
                     </h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <h3 class="font-semibold text-gray-700">
-                                <span class="lang-pt">Classes de Utilizadores</span>
-                                <span class="lang-en">User Classes</span>
+                                User Classes
                             </h3>
                             <div class="mt-2 text-gray-700 bg-gray-50 p-4 rounded border border-gray-100 min-h-[150px]" contenteditable="true">
                                 <strong>Class 1:</strong> [Desc/Desc]<br><br>
@@ -79,33 +64,29 @@
                         </div>
                         <div>
                             <h3 class="font-semibold text-gray-700">
-                                <span class="lang-pt">Resumo das Entrevistas</span>
-                                <span class="lang-en">Interviews Summary</span>
+                                Interviews Summary
                             </h3>
                             <div class="mt-2 text-gray-700 bg-gray-50 p-4 rounded border border-gray-100 min-h-[150px]" contenteditable="true">
-                                <span class="lang-pt">[Resumo dos resultados das 3 entrevistas...]</span>
-                                <span class="lang-en">[Summary of the results from 3 interviews...]</span>
+                                [Summary of the results from 3 interviews...]
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- Exemplos simplificados de tarefas, replica se precisares de mais -->
                 <section>
                     <h2 class="text-xl font-bold border-b pb-2 mb-4">
-                        <span class="lang-pt">3. Análise de Tarefas</span>
-                        <span class="lang-en">3. Tasks Analysis</span>
+                        3. Tasks Analysis
                     </h2>
                     <div class="space-y-6">
                         <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
                             <h3 class="font-bold text-lg text-blue-600 mb-3" contenteditable="true">Task 1: [Task Name]</h3>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                                <div><strong class="text-gray-700"><span class="lang-pt">Objetivo:</span><span class="lang-en">Objective:</span></strong> <span contenteditable="true">...</span></div>
-                                <div><strong class="text-gray-700"><span class="lang-pt">Pré-condições:</span><span class="lang-en">Pre-conditions:</span></strong> <span contenteditable="true">...</span></div>
-                                <div><strong class="text-gray-700"><span class="lang-pt">Frequência:</span><span class="lang-en">Time/Freq:</span></strong> <span contenteditable="true">...</span></div>
-                                <div><strong class="text-gray-700"><span class="lang-pt">Exceções:</span><span class="lang-en">Exceptions:</span></strong> <span contenteditable="true">...</span></div>
+                                <div><strong class="text-gray-700">Objective:</strong> <span contenteditable="true">...</span></div>
+                                <div><strong class="text-gray-700">Pre-conditions:</strong> <span contenteditable="true">...</span></div>
+                                <div><strong class="text-gray-700">Time/Freq:</strong> <span contenteditable="true">...</span></div>
+                                <div><strong class="text-gray-700">Exceptions:</strong> <span contenteditable="true">...</span></div>
                                 <div class="md:col-span-2 mt-2">
-                                    <strong class="text-gray-700 block mb-1"><span class="lang-pt">Sub-tarefas:</span><span class="lang-en">Sub-tasks:</span></strong>
+                                    <strong class="text-gray-700 block mb-1">Sub-tasks:</strong>
                                     <ul class="list-decimal list-inside text-gray-600 space-y-1" contenteditable="true"><li>...</li></ul>
                                 </div>
                             </div>
@@ -115,8 +96,7 @@
 
                 <section>
                     <h2 class="text-xl font-bold border-b pb-2 mb-4">
-                        <span class="lang-pt">4. Cenários</span>
-                        <span class="lang-en">4. Scenarios</span>
+                        4. Scenarios
                     </h2>
                     <div class="space-y-4">
                         <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
@@ -129,24 +109,5 @@
         </div>
     </main>
 
-    <script>
-        function toggleLanguage() {
-            const body = document.body;
-            if (body.classList.contains('lang-pt')) {
-                body.classList.replace('lang-pt', 'lang-en');
-                localStorage.setItem('websiteLanguage', 'lang-en');
-            } else {
-                body.classList.replace('lang-en', 'lang-pt');
-                localStorage.setItem('websiteLanguage', 'lang-pt');
-            }
-        }
-        window.onload = () => {
-            const savedLang = localStorage.getItem('websiteLanguage');
-            if (savedLang) {
-                document.body.classList.remove('lang-pt', 'lang-en');
-                document.body.classList.add(savedLang);
-            }
-        };
-    </script>
 </body>
 </html>
