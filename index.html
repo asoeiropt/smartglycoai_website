@@ -5,14 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartGlycoAI | Portal do Projeto</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* A magia do bilinguismo acontece aqui! */
+        /* Esconde o texto em inglês se o body tiver a classe 'lang-pt' */
+        body.lang-pt .lang-en { display: none; }
+        
+        /* Esconde o texto em português se o body tiver a classe 'lang-en' */
+        body.lang-en .lang-pt { display: none; }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans antialiased">
+<!-- A página arranca por defeito com a classe lang-pt -->
+<body class="bg-gray-50 text-gray-900 font-sans antialiased lang-pt">
 
     <!-- Cabeçalho Global -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <!-- LOGO COM A PASTA IMG/ -->
+                <!-- LOGO -->
                 <div class="w-10 h-10 rounded-full overflow-hidden border border-gray-200">
                     <img src="img/logo.jpeg" alt="Logo" class="w-full h-full object-cover">
                 </div>
@@ -21,22 +30,37 @@
                 </div>
             </div>
             
-            <a href="app.html" class="text-sm font-semibold text-gray-600 hover:text-blue-600 transition bg-gray-100 px-4 py-2 rounded-lg">
-                Ver Arquitetura da App
-            </a>
+            <div class="flex items-center gap-4">
+                <!-- Botão de tradução -->
+                <button onclick="toggleLanguage()" class="flex items-center justify-center bg-blue-50 hover:bg-blue-100 text-blue-700 px-3 py-2 rounded-lg transition font-bold text-sm border border-blue-200 shadow-sm">
+                    <span class="lang-pt">🇬🇧 English</span>
+                    <span class="lang-en">🇵🇹 Português</span>
+                </button>
+
+                <a href="app.html" class="text-sm font-semibold text-gray-600 hover:text-blue-600 transition bg-gray-100 px-4 py-2 rounded-lg hidden md:block">
+                    <span class="lang-pt">Ver Arquitetura da App</span>
+                    <span class="lang-en">View App Architecture</span>
+                </a>
+            </div>
         </div>
     </header>
 
     <main class="max-w-6xl mx-auto py-8 px-4">
         
-        <!-- BANNER ATUALIZADO (sem fundo branco nas laterais) -->
-        <div class="w-full flex justify-center mb-12">
-            <img src="img/banner.jpeg" alt="SmartGlycoAI - Gestão Inteligente de Diabetes Tipo 1" class="rounded-2xl shadow-md w-auto max-w-full h-auto object-contain max-h-[500px]">
+        <!-- BANNER -->
+        <div class="w-full rounded-2xl overflow-hidden mb-12 shadow-md bg-white flex justify-center">
+            <img src="img/banner.jpeg" alt="SmartGlycoAI" class="w-full h-auto object-contain max-h-[500px]">
         </div>
 
         <div class="text-center mb-16">
-            <h1 class="text-4xl md:text-5xl font-extrabold mb-4 text-gray-900">Portal do Projeto</h1>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Acompanhamento das fases de desenvolvimento, design e avaliação de interfaces para o projeto SmartGlycoAI.</p>
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4 text-gray-900">
+                <span class="lang-pt">Portal do Projeto</span>
+                <span class="lang-en">Project Portal</span>
+            </h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                <span class="lang-pt">Acompanhamento das fases de desenvolvimento, design e avaliação de interfaces para o projeto SmartGlycoAI.</span>
+                <span class="lang-en">Tracking of development phases, design, and interface evaluation for the SmartGlycoAI project.</span>
+            </p>
         </div>
 
         <!-- FASE 1 -->
@@ -51,9 +75,14 @@
                 <a href="stage1.html" class="block bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md hover:border-blue-400 transition group flex flex-col h-full">
                     <div class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2">Stage 1</div>
                     <h3 class="text-xl font-bold mb-3 group-hover:text-blue-600 transition">Project Proposal</h3>
-                    <p class="text-gray-600 text-sm flex-grow mb-6">Elaboração da proposta, definição do problema, utilizadores alvo e concorrência.</p>
+                    <p class="text-gray-600 text-sm flex-grow mb-6">
+                        <span class="lang-pt">Elaboração da proposta, definição do problema, utilizadores alvo e concorrência.</span>
+                        <span class="lang-en">Elaboration of the proposal, problem definition, target users, and competition.</span>
+                    </p>
                     <div class="text-blue-600 text-sm font-semibold flex items-center mt-auto">
-                        Ver Proposta <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                        <span class="lang-pt">Ver Proposta</span>
+                        <span class="lang-en">View Proposal</span>
+                        <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
                     </div>
                 </a>
 
@@ -61,9 +90,14 @@
                 <a href="stage2.html" class="block bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md hover:border-blue-400 transition group flex flex-col h-full">
                     <div class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2">Stage 2</div>
                     <h3 class="text-xl font-bold mb-3 group-hover:text-blue-600 transition">User and Task Analysis</h3>
-                    <p class="text-gray-600 text-sm flex-grow mb-6">Identificação e caracterização de utilizadores, tarefas do sistema e desenho de cenários.</p>
+                    <p class="text-gray-600 text-sm flex-grow mb-6">
+                        <span class="lang-pt">Identificação e caracterização de utilizadores, tarefas do sistema e desenho de cenários.</span>
+                        <span class="lang-en">Identification and characterization of target users, system tasks, and scenario design.</span>
+                    </p>
                     <div class="text-blue-600 text-sm font-semibold flex items-center mt-auto">
-                        Ver Análise <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                        <span class="lang-pt">Ver Análise</span>
+                        <span class="lang-en">View Analysis</span>
+                        <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
                     </div>
                 </a>
 
@@ -71,8 +105,14 @@
                 <div class="block bg-gray-50 rounded-xl border-2 border-dashed border-gray-300 p-6 opacity-75 flex flex-col h-full">
                     <div class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Stage 3</div>
                     <h3 class="text-xl font-bold mb-3 text-gray-500">1st Prototype (Mock-up)</h3>
-                    <p class="text-gray-400 text-sm flex-grow mb-6">Desenho do primeiro protótipo de baixa/média fidelidade.</p>
-                    <div class="text-gray-400 text-sm font-semibold mt-auto">Disponível em breve</div>
+                    <p class="text-gray-400 text-sm flex-grow mb-6">
+                        <span class="lang-pt">Desenho do primeiro protótipo de baixa/média fidelidade.</span>
+                        <span class="lang-en">Design of the first low/medium fidelity interface prototype.</span>
+                    </p>
+                    <div class="text-gray-400 text-sm font-semibold mt-auto">
+                        <span class="lang-pt">Disponível em breve</span>
+                        <span class="lang-en">Available soon</span>
+                    </div>
                 </div>
             </div>
 
@@ -82,7 +122,10 @@
                     <span class="text-2xl mr-4">⚠️</span>
                     <div>
                         <h4 class="font-bold text-yellow-800 text-sm">Testing Day (Mandatory Class)</h4>
-                        <p class="text-yellow-700 text-xs mt-1">Avaliação presencial obrigatória no final da Phase 1.</p>
+                        <p class="text-yellow-700 text-xs mt-1">
+                            <span class="lang-pt">Avaliação presencial obrigatória no final da Phase 1.</span>
+                            <span class="lang-en">Mandatory in-person evaluation at the end of Phase 1.</span>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -100,14 +143,20 @@
                 <div class="block bg-gray-50 rounded-xl border-2 border-dashed border-gray-300 p-6 opacity-60 flex flex-col h-full">
                     <div class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Stage 4</div>
                     <h3 class="text-xl font-bold mb-3 text-gray-500">Computational Prototype</h3>
-                    <p class="text-gray-400 text-sm flex-grow mb-6">Implementação computacional e funcional do protótipo.</p>
+                    <p class="text-gray-400 text-sm flex-grow mb-6">
+                        <span class="lang-pt">Implementação computacional e funcional do protótipo.</span>
+                        <span class="lang-en">Computational and functional implementation of the prototype.</span>
+                    </p>
                 </div>
 
                 <!-- Stage 5 -->
                 <div class="block bg-gray-50 rounded-xl border-2 border-dashed border-gray-300 p-6 opacity-60 flex flex-col h-full">
                     <div class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Stage 5</div>
                     <h3 class="text-xl font-bold mb-3 text-gray-500">Evaluation</h3>
-                    <p class="text-gray-400 text-sm flex-grow mb-6">Testes de usabilidade e avaliação do protótipo computacional.</p>
+                    <p class="text-gray-400 text-sm flex-grow mb-6">
+                        <span class="lang-pt">Testes de usabilidade e avaliação do protótipo computacional.</span>
+                        <span class="lang-en">Usability testing and evaluation of the computational prototype.</span>
+                    </p>
                 </div>
 
                 <!-- Stage 6 -->
@@ -117,19 +166,48 @@
                         <span class="bg-red-100 text-red-800 text-[10px] px-2 py-1 rounded font-bold uppercase">Mandatory</span>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-red-900">Evaluation Results</h3>
-                    <p class="text-red-700 text-sm flex-grow mb-6">Apresentação e discussão final dos resultados das avaliações.</p>
+                    <p class="text-red-700 text-sm flex-grow mb-6">
+                        <span class="lang-pt">Apresentação e discussão final dos resultados das avaliações.</span>
+                        <span class="lang-en">Final presentation and discussion of the evaluation results.</span>
+                    </p>
                 </div>
             </div>
         </div>
     </main>
     
     <footer class="bg-gray-800 text-gray-400 py-8 text-center text-sm mt-12 flex flex-col items-center">
-        <!-- LOGO NO FOOTER COM A PASTA IMG/ -->
+        <!-- Logo no footer -->
         <div class="w-8 h-8 rounded-full overflow-hidden border border-gray-600 mb-3 opacity-50">
             <img src="img/logo.jpeg" alt="Logo" class="w-full h-full object-cover">
         </div>
-        <p>&copy; 2026 SmartGlycoAI. Projeto Académico.</p>
+        <p>
+            &copy; 2026 SmartGlycoAI. 
+            <span class="lang-pt">Projeto Académico.</span>
+            <span class="lang-en">Academic Project.</span>
+        </p>
     </footer>
 
+    <!-- SCRIPT DE TRADUÇÃO -->
+    <script>
+        function toggleLanguage() {
+            const body = document.body;
+            if (body.classList.contains('lang-pt')) {
+                body.classList.replace('lang-pt', 'lang-en');
+                localStorage.setItem('websiteLanguage', 'lang-en'); // Guarda o idioma EN
+            } else {
+                body.classList.replace('lang-en', 'lang-pt');
+                localStorage.setItem('websiteLanguage', 'lang-pt'); // Guarda o idioma PT
+            }
+        }
+
+        // Quando a página carrega, vai buscar a linguagem que estava gravada
+        window.onload = () => {
+            const savedLang = localStorage.getItem('websiteLanguage');
+            if (savedLang) {
+                document.body.classList.remove('lang-pt', 'lang-en');
+                document.body.classList.add(savedLang);
+            }
+        };
+    </script>
 </body>
 </html>

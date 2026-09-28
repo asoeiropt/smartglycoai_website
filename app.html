@@ -3,84 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartGlycoAI | A Aplicação</title>
+    <title>A Aplicação | SmartGlycoAI</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style> html { scroll-behavior: smooth; } </style>
+    <style>
+        body.lang-pt .lang-en { display: none; }
+        body.lang-en .lang-pt { display: none; }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans antialiased">
+<body class="bg-gray-50 text-gray-900 font-sans antialiased lang-pt">
 
-    <!-- Navegação Global (Igual à da index.html) -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-blue-600 tracking-tight">
-                🧬 Projeto Web
+        <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="index.html" class="text-gray-500 hover:text-blue-600 font-semibold flex items-center transition">
+                <span class="mr-2">←</span> 
+                <span class="lang-pt">Voltar ao Menu</span>
+                <span class="lang-en">Back to Menu</span>
+            </a>
+            
+            <div class="flex items-center gap-4">
+                <div class="font-bold text-gray-800 hidden sm:block">
+                    <span class="lang-pt">A Aplicação</span>
+                    <span class="lang-en">The App</span>
+                </div>
+                <button onclick="toggleLanguage()" class="flex items-center justify-center bg-blue-50 hover:bg-blue-100 text-blue-700 px-3 py-1.5 rounded-lg transition font-bold text-sm border border-blue-200 shadow-sm">
+                    <span class="lang-pt">🇬🇧 EN</span>
+                    <span class="lang-en">🇵🇹 PT</span>
+                </button>
             </div>
-            <nav class="flex space-x-6 text-sm font-bold">
-                <a href="index.html" class="text-gray-500 hover:text-blue-600 transition pb-1">Proposta (Stage 1)</a>
-                <a href="app.html" class="text-blue-600 border-b-2 border-blue-600 pb-1">A Aplicação</a>
-            </nav>
         </div>
     </header>
 
     <main>
-        <!-- Secção Hero (Apresentação Principal) -->
         <section class="bg-blue-600 text-white py-16 px-4">
             <div class="max-w-4xl mx-auto text-center">
                 <span class="inline-block py-1 px-3 rounded-full bg-blue-500 text-blue-100 text-xs font-semibold uppercase tracking-wider mb-4">
-                    Detalhes Técnicos
+                    <span class="lang-pt">Detalhes Técnicos</span>
+                    <span class="lang-en">Technical Details</span>
                 </span>
                 <h1 class="text-4xl md:text-5xl font-extrabold mb-6">
-                    Desenvolvimento Mobile Robusto e Multiplataforma
+                    <span class="lang-pt">Desenvolvimento Mobile Robusto e Multiplataforma</span>
+                    <span class="lang-en">Robust Cross-Platform Mobile Development</span>
                 </h1>
                 <p class="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
-                    O SmartGlycoAI é construído com Flutter, estabelecendo uma arquitetura de base sólida com regras estritas de análise estática e integrações nativas otimizadas para Android e iOS.
+                    <span class="lang-pt">O SmartGlycoAI é construído com Flutter, estabelecendo uma arquitetura de base sólida com regras estritas de análise estática e integrações nativas otimizadas.</span>
+                    <span class="lang-en">SmartGlycoAI is built with Flutter, establishing a solid foundational architecture with strict static analysis rules and optimized native integrations.</span>
                 </p>
             </div>
         </section>
 
-        <!-- Secção de Tecnologias -->
         <section class="py-16 px-4 max-w-4xl mx-auto">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold mb-4">Tecnologias Utilizadas</h2>
-            </div>
+            <h2 class="text-3xl font-bold mb-10 text-center">
+                <span class="lang-pt">Tecnologias Utilizadas</span>
+                <span class="lang-en">Tech Stack</span>
+            </h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Card Flutter -->
                 <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center">
                     <div class="text-4xl mb-4">📱</div>
                     <h3 class="text-xl font-bold mb-2">Flutter & Dart</h3>
-                    <p class="text-gray-600 text-sm">Frontend unificado e lógica partilhada com regras estritas.</p>
+                    <p class="text-gray-600 text-sm">
+                        <span class="lang-pt">Frontend unificado e lógica partilhada com regras estritas.</span>
+                        <span class="lang-en">Unified frontend and shared logic with strict rules.</span>
+                    </p>
                 </div>
-                <!-- Card Android -->
                 <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center">
                     <div class="text-4xl mb-4">🤖</div>
                     <h3 class="text-xl font-bold mb-2">Android (Kotlin)</h3>
-                    <p class="text-gray-600 text-sm">Módulo nativo gerido com Gradle Kotlin DSL e perfis otimizados.</p>
+                    <p class="text-gray-600 text-sm">
+                        <span class="lang-pt">Módulo nativo gerido com Gradle Kotlin DSL e perfis otimizados.</span>
+                        <span class="lang-en">Native module managed with Gradle Kotlin DSL and optimized profiles.</span>
+                    </p>
                 </div>
-                <!-- Card iOS -->
                 <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center">
                     <div class="text-4xl mb-4">🍏</div>
                     <h3 class="text-xl font-bold mb-2">iOS (Swift)</h3>
-                    <p class="text-gray-600 text-sm">Estruturado em Xcode com gestão de assets e ciclo de vida nativo.</p>
+                    <p class="text-gray-600 text-sm">
+                        <span class="lang-pt">Estruturado em Xcode com gestão de assets e ciclo de vida nativo.</span>
+                        <span class="lang-en">Structured in Xcode with asset management and native lifecycle.</span>
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- Secção de Setup -->
         <section class="pb-16 px-4 max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold mb-6 text-center">Compilar e Correr</h2>
+            <h2 class="text-3xl font-bold mb-6 text-center">
+                <span class="lang-pt">Compilar e Correr</span>
+                <span class="lang-en">Build & Run</span>
+            </h2>
             <div class="bg-gray-900 rounded-lg p-6 text-gray-100 font-mono text-sm shadow-lg">
-                <p class="text-gray-400 mb-2"># Obter dependências</p>
+                <p class="text-gray-400 mb-2">
+                    <span class="lang-pt"># Obter dependências</span>
+                    <span class="lang-en"># Get dependencies</span>
+                </p>
                 <p class="mb-4 text-green-400">$ flutter pub get</p>
                 
-                <p class="text-gray-400 mb-2"># Executar em ambiente de desenvolvimento</p>
+                <p class="text-gray-400 mb-2">
+                    <span class="lang-pt"># Executar em ambiente de desenvolvimento</span>
+                    <span class="lang-en"># Run in development environment</span>
+                </p>
                 <p class="mb-4 text-green-400">$ flutter run</p>
                 
-                <p class="text-gray-400 mb-2"># Compilar versões de produção (Release)</p>
+                <p class="text-gray-400 mb-2">
+                    <span class="lang-pt"># Compilar versões de produção (Release)</span>
+                    <span class="lang-en"># Build production versions (Release)</span>
+                </p>
                 <p class="text-green-400">$ flutter build apk --release</p>
                 <p class="text-green-400">$ flutter build ipa --release</p>
             </div>
         </section>
     </main>
 
+    <script>
+        function toggleLanguage() {
+            const body = document.body;
+            if (body.classList.contains('lang-pt')) {
+                body.classList.replace('lang-pt', 'lang-en');
+                localStorage.setItem('websiteLanguage', 'lang-en');
+            } else {
+                body.classList.replace('lang-en', 'lang-pt');
+                localStorage.setItem('websiteLanguage', 'lang-pt');
+            }
+        }
+        window.onload = () => {
+            const savedLang = localStorage.getItem('websiteLanguage');
+            if (savedLang) {
+                document.body.classList.remove('lang-pt', 'lang-en');
+                document.body.classList.add(savedLang);
+            }
+        };
+    </script>
 </body>
 </html>
