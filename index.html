@@ -3,105 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stage 1: Project Proposal | SmartGlycoAI</title>
+    <title>SmartGlycoAI | Portal do Projeto</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50 text-gray-900 font-sans antialiased">
 
-    <!-- Navegação Global -->
+    <!-- Cabeçalho Global -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
             <div class="text-2xl font-bold text-blue-600 tracking-tight">
-                🧬 Projeto Web
+                🧬 SmartGlycoAI
             </div>
-            <nav class="flex space-x-6 text-sm font-bold">
-                <a href="index.html" class="text-blue-600 border-b-2 border-blue-600 pb-1">Proposta (Stage 1)</a>
-                <a href="app.html" class="text-gray-500 hover:text-blue-600 transition pb-1">A Aplicação</a>
-            </nav>
+            <!-- Link rápido para a arquitetura da app -->
+            <a href="app.html" class="text-sm font-semibold text-gray-600 hover:text-blue-600 transition bg-gray-100 px-4 py-2 rounded-lg">
+                Ver Arquitetura da App
+            </a>
         </div>
     </header>
 
-    <main class="max-w-4xl mx-auto py-12 px-4">
-        
-        <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-            <!-- Cabeçalho da Proposta -->
-            <div class="bg-blue-600 text-white p-8">
-                <h1 class="text-3xl font-bold mb-2">Stage 1: Project proposal</h1>
-                <p class="text-blue-100 text-lg">
-                    <strong>Objective:</strong> Elaborate the project proposal and set up the project web site.
-                </p>
+    <main class="max-w-6xl mx-auto py-16 px-4">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4 text-gray-900">Portal do Projeto</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Acompanhamento das fases de desenvolvimento, design e avaliação de interfaces para o projeto SmartGlycoAI.</p>
+        </div>
+
+        <!-- FASE 1 -->
+        <div class="mb-16">
+            <div class="flex items-center gap-4 mb-8">
+                <h2 class="text-2xl font-bold text-gray-800">Phase 1</h2>
+                <div class="h-px bg-gray-300 flex-grow"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Stage 1 (Ativo) -->
+                <a href="stage1.html" class="block bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md hover:border-blue-400 transition group flex flex-col h-full">
+                    <div class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2">Stage 1</div>
+                    <h3 class="text-xl font-bold mb-3 group-hover:text-blue-600 transition">Project Proposal</h3>
+                    <p class="text-gray-600 text-sm flex-grow mb-6">Elaboração da proposta, definição do problema, utilizadores alvo e concorrência.</p>
+                    <div class="text-blue-600 text-sm font-semibold flex items-center mt-auto">
+                        Ver Proposta <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </a>
+
+                <!-- Stage 2 (Ativo) -->
+                <a href="stage2.html" class="block bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md hover:border-blue-400 transition group flex flex-col h-full">
+                    <div class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2">Stage 2</div>
+                    <h3 class="text-xl font-bold mb-3 group-hover:text-blue-600 transition">User and Task Analysis</h3>
+                    <p class="text-gray-600 text-sm flex-grow mb-6">Identificação e caracterização de utilizadores, tarefas do sistema e desenho de cenários.</p>
+                    <div class="text-blue-600 text-sm font-semibold flex items-center mt-auto">
+                        Ver Análise <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </a>
+
+                <!-- Stage 3 (Bloqueado/Em Breve) -->
+                <div class="block bg-gray-50 rounded-xl border-2 border-dashed border-gray-300 p-6 opacity-75 flex flex-col h-full">
+                    <div class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Stage 3</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-500">1st Prototype (Mock-up)</h3>
+                    <p class="text-gray-400 text-sm flex-grow mb-6">Desenho do primeiro protótipo de baixa/média fidelidade.</p>
+                    <div class="text-gray-400 text-sm font-semibold mt-auto">Disponível em breve</div>
+                </div>
             </div>
 
-            <div class="p-8 space-y-8">
-                
-                <!-- Título e Grupo -->
-                <section>
-                    <h2 class="text-xl font-bold border-b pb-2 mb-4">Project Information</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <h3 class="font-semibold text-gray-700">Project title</h3>
-                            <p class="text-gray-900 mt-1">SmartGlycoAI</p>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-gray-700">Group members</h3>
-                            <ul class="list-disc list-inside text-gray-900 mt-1">
-                                <li>Afonso Lopes Soeiro (Nº [Inserir Número])</li>
-                                <li>Martim [Inserir Apelido] (Nº [Inserir Número])</li>
-                            </ul>
-                            <p class="text-xs text-gray-500 mt-1">* All members belong to the same lab class.</p>
-                        </div>
+            <!-- Testing Day Alert -->
+            <div class="mt-6 bg-yellow-50 border border-yellow-200 rounded-lg p-4 flex items-center justify-between">
+                <div class="flex items-center">
+                    <span class="text-2xl mr-4">⚠️</span>
+                    <div>
+                        <h4 class="font-bold text-yellow-800 text-sm">Testing Day (Mandatory Class)</h4>
+                        <p class="text-yellow-700 text-xs mt-1">Avaliação presencial obrigatória no final da Phase 1.</p>
                     </div>
-                </section>
-
-                <!-- Descrição e Utilizadores -->
-                <section>
-                    <h2 class="text-xl font-bold border-b pb-2 mb-4">Context & Target</h2>
-                    <div class="space-y-6">
-                        <div>
-                            <h3 class="font-semibold text-gray-700">Problem description</h3>
-                            <div class="mt-2 text-gray-700 bg-gray-50 p-4 rounded border border-gray-100 min-h-[100px]">
-                                <i>[Descreve aqui o problema do ponto de vista do utilizador. Quais são as dificuldades e necessidades deles no dia a dia? Foca-te no problema e não na solução.]</i>
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-gray-700">Target users</h3>
-                            <div class="mt-2 text-gray-700 bg-gray-50 p-4 rounded border border-gray-100">
-                                <i>[Caracteriza de forma breve a população alvo. Ex: Pacientes, médicos, etc.]</i>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Solução e Concorrência -->
-                <section>
-                    <h2 class="text-xl font-bold border-b pb-2 mb-4">Goal & Market</h2>
-                    <div class="space-y-6">
-                        <div>
-                            <h3 class="font-semibold text-gray-700">Project goal</h3>
-                            <div class="mt-2 text-gray-700 bg-gray-50 p-4 rounded border border-gray-100 min-h-[100px]">
-                                <i>[Descreve o objetivo principal e a possível solução. Lembra-te que a solução pode mudar durante o desenvolvimento consoante as avaliações.]</i>
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-gray-700">Competing applications</h3>
-                            <div class="mt-2 text-gray-700 bg-gray-50 p-4 rounded border border-gray-100">
-                                <i>[Identifica pelo menos uma app concorrente. Ex: "A aplicação X resolve este problema bem, mas falha no aspeto Y. O nosso design pretende corrigir..."]</i>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Prazos -->
-                <section class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
-                    <h2 class="text-lg font-bold text-yellow-800 mb-2">Deadlines</h2>
-                    <ul class="list-disc list-inside text-yellow-700 space-y-1 text-sm font-medium">
-                        <li>Discussion in the class: September 21-23 (and September 28-30)</li>
-                        <li>Report delivery: Before October 6</li>
-                    </ul>
-                </section>
-
+                </div>
             </div>
         </div>
+
+        <!-- FASE 2 -->
+        <div>
+            <div class="flex items-center gap-4 mb-8">
+                <h2 class="text-2xl font-bold text-gray-800">Phase 2</h2>
+                <div class="h-px bg-gray-300 flex-grow"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Stage 4 -->
+                <div class="block bg-gray-50 rounded-xl border-2 border-dashed border-gray-300 p-6 opacity-60 flex flex-col h-full">
+                    <div class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Stage 4</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-500">Computational Prototype</h3>
+                    <p class="text-gray-400 text-sm flex-grow mb-6">Implementação computacional e funcional do protótipo.</p>
+                </div>
+
+                <!-- Stage 5 -->
+                <div class="block bg-gray-50 rounded-xl border-2 border-dashed border-gray-300 p-6 opacity-60 flex flex-col h-full">
+                    <div class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Stage 5</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-500">Evaluation</h3>
+                    <p class="text-gray-400 text-sm flex-grow mb-6">Testes de usabilidade e avaliação do protótipo computacional.</p>
+                </div>
+
+                <!-- Stage 6 -->
+                <div class="block bg-red-50 rounded-xl border border-red-200 p-6 opacity-80 flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-2">
+                        <div class="text-xs font-bold text-red-600 uppercase tracking-wider">Stage 6</div>
+                        <span class="bg-red-100 text-red-800 text-[10px] px-2 py-1 rounded font-bold uppercase">Mandatory</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-red-900">Evaluation Results & Presentation</h3>
+                    <p class="text-red-700 text-sm flex-grow mb-6">Apresentação e discussão final dos resultados das avaliações.</p>
+                </div>
+            </div>
+        </div>
+
     </main>
+    
+    <footer class="bg-gray-800 text-gray-400 py-8 text-center text-sm mt-12">
+        <p>&copy; 2026 SmartGlycoAI. Projeto Académico.</p>
+    </footer>
+
 </body>
 </html>
