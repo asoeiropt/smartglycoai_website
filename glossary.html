@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glossary & Medical Context | SmartGlycoAI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>tailwind.config = { darkMode: 'class' }</script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans antialiased transition-colors duration-300">
+
+    <header class="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-50 transition-colors duration-300">
+        <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="index.html" class="text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 font-semibold flex items-center transition">
+                <span class="mr-2">←</span> Back to Menu
+            </a>
+            
+            <div class="flex items-center gap-4">
+                <div class="font-bold text-gray-800 dark:text-gray-200 hidden sm:block mr-4">Glossary</div>
+                <button onclick="toggleDarkMode()" class="text-gray-500 hover:text-yellow-500 dark:text-gray-400 dark:hover:text-yellow-400 transition text-xl">
+                    <span id="theme-icon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto py-12 px-4">
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden transition-colors" data-aos="fade-up">
+            
+            <div class="bg-blue-600 text-white p-8">
+                <h1 class="text-3xl font-bold mb-2">Medical & Technical Glossary</h1>
+                <p class="text-blue-100 text-lg">
+                    Key terminology and clinical concepts foundational to the SmartGlycoAI platform architecture.
+                </p>
+            </div>
+
+            <div class="p-8 space-y-6">
+                
+                <!-- Termo 1 -->
+                <div class="p-5 bg-gray-50 dark:bg-gray-700/30 rounded-xl border border-gray-100 dark:border-gray-600">
+                    <h3 class="text-lg font-bold text-blue-600 dark:text-blue-400 mb-2">CGM (Continuous Glucose Monitor)</h3>
+                    <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                        A wearable medical device that tracks blood glucose levels continuously in real-time (every few minutes) using a tiny sensor inserted under the skin. In SmartGlycoAI, this data is synced via Bluetooth to feed biometric inputs into our decision support models.
+                    </p>
+                </div>
+
+                <!-- Termo 2 -->
+                <div class="p-5 bg-gray-50 dark:bg-gray-700/30 rounded-xl border border-gray-100 dark:border-gray-600">
+                    <h3 class="text-lg font-bold text-blue-600 dark:text-blue-400 mb-2">Type 1 Diabetes Mellitus (T1D)</h3>
+                    <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                        A chronic autoimmune condition where the pancreas produces little or no insulin. Patients require lifelong exogenous insulin administration and rigorous, continuous monitoring of carbohydrate intake and physical activity to maintain safe glycemic ranges.
+                    </p>
+                </div>
+
+                <!-- Termo 3 -->
+                <div class="p-5 bg-gray-50 dark:bg-gray-700/30 rounded-xl border border-gray-100 dark:border-gray-600">
+                    <h3 class="text-lg font-bold text-blue-600 dark:text-blue-400 mb-2">Hypoglycemia & Hyperglycemia</h3>
+                    <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                        <strong>Hypoglycemia:</strong> A dangerous state where blood sugar drops below normal levels (typically &lt; 70 mg/dL), causing dizziness or fainting.<br>
+                        <strong>Hyperglycemia:</strong> An elevated blood sugar level resulting from insufficient insulin or excess carbohydrate intake. Both extremes are primary risks mitigated by SmartGlycoAI's proactive alerts.
+                    </p>
+                </div>
+
+                <!-- Termo 4 -->
+                <div class="p-5 bg-gray-50 dark:bg-gray-700/30 rounded-xl border border-gray-100 dark:border-gray-600">
+                    <h3 class="text-lg font-bold text-blue-600 dark:text-blue-400 mb-2">Carbohydrate Counting & Insulin Ratio</h3>
+                    <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                        <strong>Carb Counting:</strong> The practice of calculating the grams of carbohydrates in a meal to determine the required insulin bolus.<br>
+                        <strong>Insulin-to-Carb Ratio (ICR):</strong> A personalized medical metric defining how many grams of carbohydrates are covered by 1 unit of rapid-acting insulin. Our app automates this complex calculation using computer vision and AI.
+                    </p>
+                </div>
+
+                <!-- Termo 5 -->
+                <div class="p-5 bg-gray-50 dark:bg-gray-700/30 rounded-xl border border-gray-100 dark:border-gray-600">
+                    <h3 class="text-lg font-bold text-blue-600 dark:text-blue-400 mb-2">Basal vs. Bolus Insulin</h3>
+                    <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                        <strong>Basal:</strong> Long-acting background insulin that keeps blood sugar stable overnight and between meals.<br>
+                        <strong>Bolus:</strong> Rapid-acting insulin doses taken specifically to cover meals or correct high blood glucose levels.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 py-8 text-center text-sm mt-12 flex flex-col items-center transition-colors duration-300">
+        <div class="w-8 h-8 rounded-full overflow-hidden border border-gray-300 dark:border-gray-600 mb-3 opacity-60">
+            <img src="img/logo.jpeg" alt="Logo" class="w-full h-full object-cover">
+        </div>
+        <p>&copy; 2026 SmartGlycoAI. Academic Project.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
