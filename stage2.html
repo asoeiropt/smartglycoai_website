@@ -1,76 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stage 2: User and Task Analysis | SmartGlycoAI</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { darkMode: 'class' }</script>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans antialiased">
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans antialiased transition-colors duration-300">
 
-    <header class="bg-white shadow-sm sticky top-0 z-50">
+    <header class="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-50 transition-colors duration-300">
         <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
-            <a href="index.html" class="text-gray-500 hover:text-blue-600 font-semibold flex items-center transition">
-                <span class="mr-2">←</span> 
-                Back to Menu
+            <a href="index.html" class="text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 font-semibold flex items-center transition">
+                <span class="mr-2">←</span> Back to Menu
             </a>
             
             <div class="flex items-center gap-4">
-                <div class="font-bold text-gray-800 hidden sm:block">Stage 2</div>
+                <div class="font-bold text-gray-800 dark:text-gray-200 hidden sm:block mr-4">Stage 2</div>
+                <button onclick="toggleDarkMode()" class="text-gray-500 hover:text-yellow-500 dark:text-gray-400 dark:hover:text-yellow-400 transition text-xl">
+                    <span id="theme-icon">🌙</span>
+                </button>
             </div>
         </div>
     </header>
 
     <main class="max-w-5xl mx-auto py-12 px-4">
-        <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden transition-colors">
+            
             <div class="bg-blue-600 text-white p-8">
                 <h1 class="text-3xl font-bold mb-2">Stage 2: User and task analysis</h1>
                 <p class="text-blue-100 text-lg">
-                    <strong>Objective:</strong> 
-                    Identification and characterization of the target users, tasks and scenarios.
+                    <strong>Objective:</strong> Identification and characterization of the target users, tasks and scenarios.
                 </p>
             </div>
 
             <div class="p-8 space-y-10">
-                
-                <!-- 1. Overview -->
                 <section>
-                    <h2 class="text-xl font-bold border-b pb-2 mb-4">
-                        1. Overview
-                    </h2>
+                    <h2 class="text-xl font-bold border-b border-gray-200 dark:border-gray-700 pb-2 mb-4 dark:text-white">1. Overview</h2>
                     <div class="space-y-4">
                         <div>
-                            <h3 class="font-semibold text-gray-700">
-                                Problem
-                            </h3>
-                            <div class="mt-2 text-gray-700 bg-gray-50 p-4 rounded border border-gray-100">
+                            <h3 class="font-semibold text-gray-700 dark:text-gray-300">Problem</h3>
+                            <div class="mt-2 text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-700/30 p-4 rounded border border-gray-100 dark:border-gray-600">
                                 Managing Type 1 Diabetes requires constant manual interpretation of glucose levels, dietary intake, and physical activity. Existing Continuous Glucose Monitoring (CGM) systems fail to provide integrated, automated decision support, leaving the cognitive burden of calculating precise insulin doses entirely on the patient.
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- 2. Users & Interviews -->
                 <section>
-                    <h2 class="text-xl font-bold border-b pb-2 mb-4">
-                        2. Users & Interviews
-                    </h2>
+                    <h2 class="text-xl font-bold border-b border-gray-200 dark:border-gray-700 pb-2 mb-4 dark:text-white">2. Users & Interviews</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <h3 class="font-semibold text-gray-700">
-                                User Classes
-                            </h3>
-                            <div class="mt-2 text-gray-700 bg-gray-50 p-4 rounded border border-gray-100 min-h-[150px]">
+                            <h3 class="font-semibold text-gray-700 dark:text-gray-300">User Classes</h3>
+                            <div class="mt-2 text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-700/30 p-4 rounded border border-gray-100 dark:border-gray-600 min-h-[150px]">
                                 <strong>Class 1: Person with Type 1 Diabetes.</strong> The primary end-user who needs real-time monitoring, meal logging, and AI-driven insulin recommendations.<br><br>
                                 <strong>Class 2: Doctor (Endocrinologist).</strong> A clinical professional who needs to review the patient's historical data, adjust clinical parameters, and monitor long-term trends.<br><br>
                                 <strong>Class 3: Nurse.</strong> A healthcare professional involved in the daily education of the patient, routine tracking, and immediate care support.
                             </div>
                         </div>
                         <div>
-                            <h3 class="font-semibold text-gray-700">
-                                Interviews Summary
-                            </h3>
-                            <div class="mt-2 text-gray-700 bg-gray-50 p-4 rounded border border-gray-100 min-h-[150px]">
+                            <h3 class="font-semibold text-gray-700 dark:text-gray-300">Interviews Summary</h3>
+                            <div class="mt-2 text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-700/30 p-4 rounded border border-gray-100 dark:border-gray-600 min-h-[150px]">
                                 <strong>Interview 1 (Patient with T1D):</strong> [Insert summary of the patient's daily struggles and feedback on the proposed AI features here].<br><br>
                                 <strong>Interview 2 (Doctor):</strong> [Insert summary of the doctor's perspective on clinical safety, data reliability, and required metrics here].<br><br>
                                 <strong>Interview 3 (Nurse):</strong> [Insert summary of the nurse's input on usability, patient education, and routine tracking here].
@@ -79,24 +69,19 @@
                     </div>
                 </section>
 
-                <!-- 3. Tasks Analysis -->
                 <section>
-                    <h2 class="text-xl font-bold border-b pb-2 mb-4">
-                        3. Tasks Analysis
-                    </h2>
+                    <h2 class="text-xl font-bold border-b border-gray-200 dark:border-gray-700 pb-2 mb-4 dark:text-white">3. Tasks Analysis</h2>
                     <div class="space-y-6">
-                        
-                        <!-- Task 1 -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
-                            <h3 class="font-bold text-lg text-blue-600 mb-3">Task 1: Log a meal and get insulin recommendation (Patient)</h3>
+                        <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-5 shadow-sm">
+                            <h3 class="font-bold text-lg text-blue-600 dark:text-blue-400 mb-3">Task 1: Log a meal and get insulin recommendation (Patient)</h3>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                                <div><strong class="text-gray-700">Objective:</strong> Accurately log food intake using computer vision to receive an insulin dose suggestion.</div>
-                                <div><strong class="text-gray-700">Pre-conditions:</strong> App is connected to the CGM sensor and user is logged in.</div>
-                                <div><strong class="text-gray-700">Time/Freq:</strong> 3-5 times a day (before meals), under 1 minute.</div>
-                                <div><strong class="text-gray-700">Exceptions:</strong> Camera fails to recognize food; CGM sensor loses Bluetooth connection.</div>
+                                <div><strong class="text-gray-700 dark:text-gray-300">Objective:</strong> Accurately log food intake using computer vision to receive an insulin dose suggestion.</div>
+                                <div><strong class="text-gray-700 dark:text-gray-300">Pre-conditions:</strong> App is connected to the CGM sensor and user is logged in.</div>
+                                <div><strong class="text-gray-700 dark:text-gray-300">Time/Freq:</strong> 3-5 times a day (before meals), under 1 minute.</div>
+                                <div><strong class="text-gray-700 dark:text-gray-300">Exceptions:</strong> Camera fails to recognize food; CGM sensor loses Bluetooth connection.</div>
                                 <div class="md:col-span-2 mt-2">
-                                    <strong class="text-gray-700 block mb-1">Sub-tasks:</strong>
-                                    <ul class="list-decimal list-inside text-gray-600 space-y-1">
+                                    <strong class="text-gray-700 dark:text-gray-300 block mb-1">Sub-tasks:</strong>
+                                    <ul class="list-decimal list-inside text-gray-600 dark:text-gray-400 space-y-1">
                                         <li>Open the meal logging module.</li>
                                         <li>Take a photo of the meal.</li>
                                         <li>Confirm or adjust the AI's carbohydrate estimation.</li>
@@ -106,17 +91,16 @@
                             </div>
                         </div>
 
-                        <!-- Task 2 -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
-                            <h3 class="font-bold text-lg text-blue-600 mb-3">Task 2: Review patient's glycemic history (Doctor/Nurse)</h3>
+                        <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-5 shadow-sm">
+                            <h3 class="font-bold text-lg text-blue-600 dark:text-blue-400 mb-3">Task 2: Review patient's glycemic history (Doctor/Nurse)</h3>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                                <div><strong class="text-gray-700">Objective:</strong> Analyze weekly/monthly glucose trends to adjust medical treatment.</div>
-                                <div><strong class="text-gray-700">Pre-conditions:</strong> Professional has access to the patient's shared data dashboard.</div>
-                                <div><strong class="text-gray-700">Time/Freq:</strong> Once a month or during clinical appointments.</div>
-                                <div><strong class="text-gray-700">Exceptions:</strong> Patient has not synced their data recently.</div>
+                                <div><strong class="text-gray-700 dark:text-gray-300">Objective:</strong> Analyze weekly/monthly glucose trends to adjust medical treatment.</div>
+                                <div><strong class="text-gray-700 dark:text-gray-300">Pre-conditions:</strong> Professional has access to the patient's shared data dashboard.</div>
+                                <div><strong class="text-gray-700 dark:text-gray-300">Time/Freq:</strong> Once a month or during clinical appointments.</div>
+                                <div><strong class="text-gray-700 dark:text-gray-300">Exceptions:</strong> Patient has not synced their data recently.</div>
                                 <div class="md:col-span-2 mt-2">
-                                    <strong class="text-gray-700 block mb-1">Sub-tasks:</strong>
-                                    <ul class="list-decimal list-inside text-gray-600 space-y-1">
+                                    <strong class="text-gray-700 dark:text-gray-300 block mb-1">Sub-tasks:</strong>
+                                    <ul class="list-decimal list-inside text-gray-600 dark:text-gray-400 space-y-1">
                                         <li>Access the specific patient's profile.</li>
                                         <li>Filter data by the last 30 days.</li>
                                         <li>Identify patterns of hypoglycemia or hyperglycemia.</li>
@@ -124,59 +108,52 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Task 3 -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
-                            <h3 class="font-bold text-lg text-blue-600 mb-3">Task 3: [Insert High-Level Task 3]</h3>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                                <div><strong class="text-gray-700">Objective:</strong> [Insert objective]</div>
-                                <div><strong class="text-gray-700">Pre-conditions:</strong> [Insert pre-conditions]</div>
-                                <div><strong class="text-gray-700">Time/Freq:</strong> [Insert frequency]</div>
-                                <div><strong class="text-gray-700">Exceptions:</strong> [Insert exceptions]</div>
-                                <div class="md:col-span-2 mt-2">
-                                    <strong class="text-gray-700 block mb-1">Sub-tasks:</strong>
-                                    <ul class="list-decimal list-inside text-gray-600 space-y-1">
-                                        <li>[Sub-task 1]</li>
-                                        <li>[Sub-task 2]</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
                 </section>
 
-                <!-- 4. Scenarios -->
                 <section>
-                    <h2 class="text-xl font-bold border-b pb-2 mb-4">
-                        4. Scenarios
-                    </h2>
+                    <h2 class="text-xl font-bold border-b border-gray-200 dark:border-gray-700 pb-2 mb-4 dark:text-white">4. Scenarios</h2>
                     <div class="space-y-4">
-                        <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
-                            <h3 class="font-bold text-blue-800 mb-1">Scenario 1 (Patient): Meal Time at a Restaurant</h3>
-                            <p class="text-blue-900 text-sm">
+                        <div class="bg-blue-50 dark:bg-gray-700/50 p-4 rounded-lg border border-blue-100 dark:border-gray-600">
+                            <h3 class="font-bold text-blue-800 dark:text-blue-400 mb-1">Scenario 1 (Patient): Meal Time at a Restaurant</h3>
+                            <p class="text-blue-900 dark:text-gray-300 text-sm">
                                 [Ex: John is at a restaurant and is unsure about the carbohydrate count of his pasta dish. He opens SmartGlycoAI, takes a photo of his plate, and the app estimates 65g of carbs. Based on his current CGM reading of 110 mg/dL, the app suggests a specific insulin dose before he starts eating.]
                             </p>
                         </div>
                         
-                        <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
-                            <h3 class="font-bold text-blue-800 mb-1">Scenario 2 (Doctor): Routine Clinical Check-up</h3>
-                            <p class="text-blue-900 text-sm">
+                        <div class="bg-blue-50 dark:bg-gray-700/50 p-4 rounded-lg border border-blue-100 dark:border-gray-600">
+                            <h3 class="font-bold text-blue-800 dark:text-blue-400 mb-1">Scenario 2 (Doctor): Routine Clinical Check-up</h3>
+                            <p class="text-blue-900 dark:text-gray-300 text-sm">
                                 [Ex: Dr. Smith is preparing for a consultation with John. She opens the platform's professional dashboard to review John's data from the past month. She notices frequent hypoglycemic events during the night and decides to adjust his baseline insulin ratio within the app's settings.]
-                            </p>
-                        </div>
-
-                        <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
-                            <h3 class="font-bold text-blue-800 mb-1">Scenario 3 (Nurse): [Insert Scenario Title]</h3>
-                            <p class="text-blue-900 text-sm">
-                                [Insert concrete scenario involving the Nurse using the system...]
                             </p>
                         </div>
                     </div>
                 </section>
+
+                <!-- DOWNLOADS SECTION (Unavailable) -->
+                <section class="pt-8 border-t border-gray-200 dark:border-gray-700">
+                    <div class="flex items-center gap-4 mb-6">
+                        <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200">Downloads</h2>
+                        <div class="h-px bg-gray-300 dark:bg-gray-700 flex-grow"></div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="flex items-center gap-4 bg-gray-50 dark:bg-gray-800/50 border-2 border-dashed border-gray-300 dark:border-gray-700 rounded-xl p-4 opacity-75">
+                            <div class="w-12 h-12 bg-gray-200 dark:bg-gray-700/50 text-gray-400 dark:text-gray-500 rounded-lg flex items-center justify-center text-2xl">
+                                📄
+                            </div>
+                            <div>
+                                <div class="font-bold text-gray-500 dark:text-gray-400">Stage 2 Analysis</div>
+                                <div class="text-xs font-semibold text-gray-400 dark:text-gray-500 mt-1 uppercase tracking-wider">Available soon</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
             </div>
         </div>
     </main>
 
+    <script src="main.js"></script>
 </body>
 </html>
