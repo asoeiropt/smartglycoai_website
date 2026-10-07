@@ -194,6 +194,8 @@
                 <section data-aos="fade-up">
                     <h2 class="text-xl font-bold border-b border-gray-200 dark:border-gray-700 pb-2 mb-4 dark:text-white">4. Tasks Analysis</h2>
                     <div class="space-y-6">
+                        
+                        <!-- Task 1 -->
                         <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-5 shadow-sm">
                             <h3 class="font-bold text-lg text-blue-600 dark:text-blue-400 mb-3">Task 1: Log a meal and get insulin recommendation (Patient)</h3>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
@@ -213,11 +215,15 @@
                             </div>
                         </div>
 
+                        <!-- Task 2 (Planned Feature) -->
                         <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-5 shadow-sm">
-                            <h3 class="font-bold text-lg text-blue-600 dark:text-blue-400 mb-3">Task 2: Review patient's glycemic history (Doctor/Nurse)</h3>
+                            <div class="flex items-center gap-3 mb-3">
+                                <h3 class="font-bold text-lg text-blue-600 dark:text-blue-400">Task 2: Review patient's glycemic history (Doctor/Nurse)</h3>
+                                <span class="bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400 text-xs font-semibold px-2.5 py-0.5 rounded uppercase tracking-wide">Planned Feature</span>
+                            </div>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                                 <div><strong class="text-gray-700 dark:text-gray-300">Objective:</strong> Analyze weekly/monthly glucose trends to adjust medical treatment.</div>
-                                <div><strong class="text-gray-700 dark:text-gray-300">Pre-conditions:</strong> Professional has access to the patient's shared data dashboard.</div>
+                                <div><strong class="text-gray-700 dark:text-gray-300">Pre-conditions:</strong> Professional has access to the patient's shared data dashboard (planned module).</div>
                                 <div><strong class="text-gray-700 dark:text-gray-300">Time/Freq:</strong> Once a month or during clinical appointments.</div>
                                 <div><strong class="text-gray-700 dark:text-gray-300">Exceptions:</strong> Patient has not synced their data recently.</div>
                                 <div class="md:col-span-2 mt-2">
@@ -230,6 +236,48 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Task 3 -->
+                        <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-5 shadow-sm">
+                            <h3 class="font-bold text-lg text-blue-600 dark:text-blue-400 mb-3">Task 3: Respond to a predictive low-glucose alert (Patient)</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                                <div><strong class="text-gray-700 dark:text-gray-300">Objective:</strong> Act before a hypoglycemia happens, after the app predicts a fast drop in glucose.</div>
+                                <div><strong class="text-gray-700 dark:text-gray-300">Pre-conditions:</strong> CGM sensor is connected and notifications are allowed.</div>
+                                <div><strong class="text-gray-700 dark:text-gray-300">Time/Freq:</strong> A few times a week, whenever a fast drop is detected. Urgent: the user has about 20 minutes to act.</div>
+                                <div><strong class="text-gray-700 dark:text-gray-300">Exceptions:</strong> User doesn't see the notification (phone silent or in pocket); false alarm caused by a wrong sensor reading; user ignores the alert by mistake.</div>
+                                <div class="md:col-span-2 mt-2">
+                                    <strong class="text-gray-700 dark:text-gray-300 block mb-1">Sub-tasks:</strong>
+                                    <ul class="list-decimal list-inside text-gray-600 dark:text-gray-400 space-y-1">
+                                        <li>Receive the alert notification with the predicted value and time.</li>
+                                        <li>Open the alert and read the suggestion (e.g. eat 15 g of fast-acting carbs).</li>
+                                        <li>Eat the suggested carbohydrates.</li>
+                                        <li>Tap "Registar Correção" to save the correction in the diary, or "Ignorar" if not needed.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Task 4 -->
+                        <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-5 shadow-sm">
+                            <h3 class="font-bold text-lg text-blue-600 dark:text-blue-400 mb-3">Task 4: Review and edit the diary history (Patient)</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                                <div><strong class="text-gray-700 dark:text-gray-300">Objective:</strong> Check past meals and corrections, and fix any entry with wrong values.</div>
+                                <div><strong class="text-gray-700 dark:text-gray-300">Pre-conditions:</strong> User is logged in and has at least one entry in the diary.</div>
+                                <div><strong class="text-gray-700 dark:text-gray-300">Time/Freq:</strong> Once a day or a few times a week (e.g. end of the day or before an appointment). About 1–2 minutes.</div>
+                                <div><strong class="text-gray-700 dark:text-gray-300">Exceptions:</strong> User deletes an entry by mistake; user enters an impossible value (e.g. 300 units of insulin); changes aren't saved because the user leaves the screen.</div>
+                                <div class="md:col-span-2 mt-2">
+                                    <strong class="text-gray-700 dark:text-gray-300 block mb-1">Sub-tasks:</strong>
+                                    <ul class="list-decimal list-inside text-gray-600 dark:text-gray-400 space-y-1">
+                                        <li>Open the Diary tab.</li>
+                                        <li>Scroll through the list of meals and corrections.</li>
+                                        <li>Open an entry to see its details (photo, time, carbs, insulin dose).</li>
+                                        <li>Change the time, description, carbs or insulin dose.</li>
+                                        <li>Save the changes, or delete the entry.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
                     </div>
                 </section>
 
@@ -240,12 +288,15 @@
                         <div class="bg-blue-50 dark:bg-gray-700/50 p-4 rounded-lg border border-blue-100 dark:border-gray-600">
                             <h3 class="font-bold text-blue-800 dark:text-blue-400 mb-1">Scenario 1 (Patient): Meal Time at a Restaurant</h3>
                             <p class="text-blue-900 dark:text-gray-300 text-sm">
-                                João is at a restaurant and is unsure about the carbohydrate count of his pasta dish. He opens SmartGlycoAI, takes a photo of his plate, and the app estimates 65g of carbs. Based on his current CGM reading of 110 mg/dL, the app suggests a precise insulin dose before he starts eating.
+                                João is at a restaurant and is unsure about the carbohydrate count of his pasta dish. Glancing at his Home screen, he views his stable <strong>6-hour glucose trend graph</strong>. He opens SmartGlycoAI's meal logging module, takes a photo of his plate, and the app estimates 65g of carbs. Based on his current CGM reading of 110 mg/dL, the app suggests a precise insulin dose before he starts eating.
                             </p>
                         </div>
                         
                         <div class="bg-blue-50 dark:bg-gray-700/50 p-4 rounded-lg border border-blue-100 dark:border-gray-600">
-                            <h3 class="font-bold text-blue-800 dark:text-blue-400 mb-1">Scenario 2 (Doctor): Routine Clinical Check-up</h3>
+                            <div class="flex items-center gap-2 mb-1">
+                                <h3 class="font-bold text-blue-800 dark:text-blue-400">Scenario 2 (Doctor): Routine Clinical Check-up</h3>
+                                <span class="bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400 text-[10px] font-bold px-2 py-0.5 rounded uppercase">Planned Module</span>
+                            </div>
                             <p class="text-blue-900 dark:text-gray-300 text-sm">
                                 Dr. Sofia is preparing for a consultation with João. She opens the platform's professional dashboard to review his data from the past month. She notices frequent hypoglycemic events during the night and decides to adjust his baseline insulin ratio directly within the app's professional settings.
                             </p>
