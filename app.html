@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>App Architecture | SmartGlycoAI</title>
+    <link rel="icon" type="image/jpeg" href="img/logo.jpeg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script>tailwind.config = { darkMode: 'class' }</script>
@@ -17,7 +18,6 @@
             </a>
             
             <div class="hidden md:flex items-center gap-6">
-                <!-- ETIQUETA GROUP 6 -->
                 <span class="bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300 text-sm font-bold px-3 py-1 rounded-full border border-blue-200 dark:border-blue-800/50 cursor-default">
                     Group 6
                 </span>
@@ -71,7 +71,7 @@
         <div class="max-w-5xl mx-auto py-16 px-4">
             
             <!-- HOW IT WORKS (User Flow) -->
-            <section class="mb-20">
+            <section class="mb-16">
                 <h2 class="text-3xl font-bold mb-10 text-center text-gray-900 dark:text-white" data-aos="fade-up">
                     User Flow
                 </h2>
@@ -123,13 +123,74 @@
                 </div>
             </section>
 
+            <!-- INTERACTIVE DEMO: AI SIMULATOR -->
+            <section class="mb-20 max-w-4xl mx-auto" data-aos="fade-up">
+                <div class="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-1 shadow-lg">
+                    <div class="bg-white dark:bg-gray-800 rounded-xl p-6 md:p-8">
+                        
+                        <div class="text-center mb-8">
+                            <span class="bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-400 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3 inline-block">Interactive Demo</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">Try our Computer Vision AI</h2>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">Select a meal below to see how SmartGlycoAI analyzes food and suggests insulin doses in real-time.</p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                            
+                            <!-- Lado Esquerdo: Botões de Seleção -->
+                            <div class="space-y-3">
+                                <h3 class="text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">1. Choose a meal</h3>
+                                
+                                <button onclick="runSimulation('pasta')" class="w-full flex items-center gap-4 p-4 bg-gray-50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600 rounded-xl hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-md transition-all text-left group">
+                                    <div class="text-4xl group-hover:scale-110 transition-transform">🍝</div>
+                                    <div>
+                                        <div class="font-bold text-gray-900 dark:text-white">Italian Pasta</div>
+                                        <div class="text-xs text-gray-500 dark:text-gray-400">Restaurant meal</div>
+                                    </div>
+                                </button>
+
+                                <button onclick="runSimulation('apple')" class="w-full flex items-center gap-4 p-4 bg-gray-50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600 rounded-xl hover:border-green-500 dark:hover:border-green-500 hover:shadow-md transition-all text-left group">
+                                    <div class="text-4xl group-hover:scale-110 transition-transform">🍎</div>
+                                    <div>
+                                        <div class="font-bold text-gray-900 dark:text-white">Fresh Apple</div>
+                                        <div class="text-xs text-gray-500 dark:text-gray-400">Quick snack</div>
+                                    </div>
+                                </button>
+
+                                <button onclick="runSimulation('steak')" class="w-full flex items-center gap-4 p-4 bg-gray-50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600 rounded-xl hover:border-red-500 dark:hover:border-red-500 hover:shadow-md transition-all text-left group">
+                                    <div class="text-4xl group-hover:scale-110 transition-transform">🥩</div>
+                                    <div>
+                                        <div class="font-bold text-gray-900 dark:text-white">Steak & Rice</div>
+                                        <div class="text-xs text-gray-500 dark:text-gray-400">Lunch order</div>
+                                    </div>
+                                </button>
+                            </div>
+
+                            <!-- Lado Direito: Ecrã da App Simulado -->
+                            <div class="relative bg-gray-900 rounded-3xl border-8 border-gray-800 shadow-2xl h-80 overflow-hidden flex flex-col">
+                                <!-- Top bar simulada -->
+                                <div class="bg-gray-800 h-6 w-full flex justify-center items-center">
+                                    <div class="w-16 h-1.5 bg-gray-700 rounded-full"></div>
+                                </div>
+                                
+                                <!-- Área de Resultados -->
+                                <div id="sim-screen" class="flex-1 p-6 flex flex-col justify-center items-center text-center bg-gray-900 transition-all duration-300">
+                                    <div class="text-5xl mb-4 opacity-50">📱</div>
+                                    <h3 class="text-white font-bold text-lg mb-1">Ready to scan</h3>
+                                    <p class="text-gray-400 text-sm">Waiting for camera input...</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- APPLICATION VERSIONS -->
             <section class="mb-20 max-w-4xl mx-auto" data-aos="fade-up">
                 <h2 class="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-white">
                     Application Versions
                 </h2>
                 <div class="flex justify-center">
-                    
                     <button onclick="openVersionModal()" class="flex items-center justify-between bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl px-6 py-5 hover:shadow-lg hover:-translate-y-1 hover:border-blue-400 transition w-full sm:w-[340px] cursor-pointer group">
                         <div class="flex items-center gap-4">
                             <span class="text-3xl group-hover:scale-110 transition-transform">📱</span>
@@ -145,7 +206,6 @@
                         </div>
                         <span class="text-blue-600 dark:text-blue-400 font-bold text-2xl group-hover:translate-x-1 transition-transform">→</span>
                     </button>
-
                 </div>
             </section>
 
@@ -155,7 +215,6 @@
                     Build & Run
                 </h2>
                 
-                <!-- Terminal Window -->
                 <div class="bg-gray-900 rounded-xl overflow-hidden shadow-2xl border border-gray-700">
                     <div class="bg-gray-800 px-4 py-2 flex items-center border-b border-gray-700">
                         <div class="flex gap-2">
@@ -187,7 +246,6 @@
     <div id="version-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
         <div class="bg-white dark:bg-gray-800 rounded-2xl max-w-4xl w-full p-6 shadow-2xl border border-gray-200 dark:border-gray-700 relative animate-in fade-in zoom-in duration-200 flex flex-col max-h-[85vh]">
             
-            <!-- Cabeçalho do Modal COM ETIQUETA ANDROID -->
             <div class="flex justify-between items-start mb-6 border-b border-gray-100 dark:border-gray-700 pb-4">
                 <div>
                     <div class="flex items-center gap-3 mb-1">
@@ -198,7 +256,6 @@
                     </div>
                     <p class="text-sm text-gray-500 dark:text-gray-400">v0.1-alpha • Click on any screenshot to zoom in</p>
                 </div>
-                <!-- Botão Cruz -->
                 <button onclick="closeVersionModal()" class="text-gray-400 hover:text-gray-700 dark:hover:text-white text-2xl font-bold w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-700 transition">
                     &times;
                 </button>
@@ -206,59 +263,47 @@
 
             <!-- Grelha de Fotos -->
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 overflow-y-auto p-2">
-                
                 <div onclick="openLightbox(event, 'img/v1/1.png')" class="bg-gray-100 dark:bg-gray-900 rounded-xl p-2 border border-gray-200 dark:border-gray-700 flex flex-col items-center cursor-pointer hover:border-blue-500 transition group">
                     <img src="img/v1/1.png" class="w-full h-36 object-cover rounded-lg mb-2 group-hover:scale-105 transition shadow-sm" alt="Screen 1">
                     <span class="text-[11px] font-semibold text-gray-600 dark:text-gray-400">Screen 01</span>
                 </div>
-
                 <div onclick="openLightbox(event, 'img/v1/2.png')" class="bg-gray-100 dark:bg-gray-900 rounded-xl p-2 border border-gray-200 dark:border-gray-700 flex flex-col items-center cursor-pointer hover:border-blue-500 transition group">
                     <img src="img/v1/2.png" class="w-full h-36 object-cover rounded-lg mb-2 group-hover:scale-105 transition shadow-sm" alt="Screen 2">
                     <span class="text-[11px] font-semibold text-gray-600 dark:text-gray-400">Screen 02</span>
                 </div>
-
                 <div onclick="openLightbox(event, 'img/v1/3.png')" class="bg-gray-100 dark:bg-gray-900 rounded-xl p-2 border border-gray-200 dark:border-gray-700 flex flex-col items-center cursor-pointer hover:border-blue-500 transition group">
                     <img src="img/v1/3.png" class="w-full h-36 object-cover rounded-lg mb-2 group-hover:scale-105 transition shadow-sm" alt="Screen 3">
                     <span class="text-[11px] font-semibold text-gray-600 dark:text-gray-400">Screen 03</span>
                 </div>
-
                 <div onclick="openLightbox(event, 'img/v1/4.png')" class="bg-gray-100 dark:bg-gray-900 rounded-xl p-2 border border-gray-200 dark:border-gray-700 flex flex-col items-center cursor-pointer hover:border-blue-500 transition group">
                     <img src="img/v1/4.png" class="w-full h-36 object-cover rounded-lg mb-2 group-hover:scale-105 transition shadow-sm" alt="Screen 4">
                     <span class="text-[11px] font-semibold text-gray-600 dark:text-gray-400">Screen 04</span>
                 </div>
-
                 <div onclick="openLightbox(event, 'img/v1/5.png')" class="bg-gray-100 dark:bg-gray-900 rounded-xl p-2 border border-gray-200 dark:border-gray-700 flex flex-col items-center cursor-pointer hover:border-blue-500 transition group">
                     <img src="img/v1/5.png" class="w-full h-36 object-cover rounded-lg mb-2 group-hover:scale-105 transition shadow-sm" alt="Screen 5">
                     <span class="text-[11px] font-semibold text-gray-600 dark:text-gray-400">Screen 05</span>
                 </div>
-
                 <div onclick="openLightbox(event, 'img/v1/6.png')" class="bg-gray-100 dark:bg-gray-900 rounded-xl p-2 border border-gray-200 dark:border-gray-700 flex flex-col items-center cursor-pointer hover:border-blue-500 transition group">
                     <img src="img/v1/6.png" class="w-full h-36 object-cover rounded-lg mb-2 group-hover:scale-105 transition shadow-sm" alt="Screen 6">
                     <span class="text-[11px] font-semibold text-gray-600 dark:text-gray-400">Screen 06</span>
                 </div>
-
                 <div onclick="openLightbox(event, 'img/v1/7.png')" class="bg-gray-100 dark:bg-gray-900 rounded-xl p-2 border border-gray-200 dark:border-gray-700 flex flex-col items-center cursor-pointer hover:border-blue-500 transition group">
                     <img src="img/v1/7.png" class="w-full h-36 object-cover rounded-lg mb-2 group-hover:scale-105 transition shadow-sm" alt="Screen 7">
                     <span class="text-[11px] font-semibold text-gray-600 dark:text-gray-400">Screen 07</span>
                 </div>
-
                 <div onclick="openLightbox(event, 'img/v1/8.png')" class="bg-gray-100 dark:bg-gray-900 rounded-xl p-2 border border-gray-200 dark:border-gray-700 flex flex-col items-center cursor-pointer hover:border-blue-500 transition group">
                     <img src="img/v1/8.png" class="w-full h-36 object-cover rounded-lg mb-2 group-hover:scale-105 transition shadow-sm" alt="Screen 8">
                     <span class="text-[11px] font-semibold text-gray-600 dark:text-gray-400">Screen 08</span>
                 </div>
-
                 <div onclick="openLightbox(event, 'img/v1/9.png')" class="bg-gray-100 dark:bg-gray-900 rounded-xl p-2 border border-gray-200 dark:border-gray-700 flex flex-col items-center cursor-pointer hover:border-blue-500 transition group">
                     <img src="img/v1/9.png" class="w-full h-36 object-cover rounded-lg mb-2 group-hover:scale-105 transition shadow-sm" alt="Screen 9">
                     <span class="text-[11px] font-semibold text-gray-600 dark:text-gray-400">Screen 09</span>
                 </div>
-
                 <div onclick="openLightbox(event, 'img/v1/10.png')" class="bg-gray-100 dark:bg-gray-900 rounded-xl p-2 border border-gray-200 dark:border-gray-700 flex flex-col items-center cursor-pointer hover:border-blue-500 transition group">
                     <img src="img/v1/10.png" class="w-full h-36 object-cover rounded-lg mb-2 group-hover:scale-105 transition shadow-sm" alt="Screen 10">
                     <span class="text-[11px] font-semibold text-gray-600 dark:text-gray-400">Screen 10</span>
                 </div>
-
             </div>
-
         </div>
     </div>
 

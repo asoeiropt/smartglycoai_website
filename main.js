@@ -106,3 +106,87 @@ if (typeof AOS !== 'undefined') {
         offset: 50
     });
 }
+
+// =========================================================================
+// AI MEAL SIMULATOR LOGIC (Para o index.html)
+// =========================================================================
+
+// Base de dados simulada para os pratos
+const mealDatabase = {
+    pasta: {
+        icon: '🍝',
+        name: 'Italian Pasta',
+        carbs: 65,
+        glucose: 110,
+        dose: 4.0,
+        color: 'text-blue-400',
+        bg: 'bg-blue-900/30'
+    },
+    apple: {
+        icon: '🍎',
+        name: 'Fresh Apple',
+        carbs: 15,
+        glucose: 95,
+        dose: 1.0,
+        color: 'text-green-400',
+        bg: 'bg-green-900/30'
+    },
+    steak: {
+        icon: '🥩',
+        name: 'Steak & Rice',
+        carbs: 45,
+        glucose: 115,
+        dose: 3.0,
+        color: 'text-red-400',
+        bg: 'bg-red-900/30'
+    }
+};
+
+function runSimulation(mealKey) {
+    const screen = document.getElementById('sim-screen');
+    const meal = mealDatabase[mealKey];
+    
+    if (!screen || !meal) return;
+
+    // 1. Estado de Análise (Scanning) com Animação
+    screen.innerHTML = `
+        <div class="relative">
+            <div class="text-6xl mb-4 animate-bounce">${meal.icon}</div>
+            <!-- Laser Effect -->
+            <div class="absolute top-0 left-0 w-full h-1 bg-blue-500 shadow-[0_0_8px_2px_rgba(59,130,246,0.8)] animate-[ping_1.5s_ease-in-out_infinite]"></div>
+        </div>
+        <h3 class="text-blue-400 font-bold text-lg mb-1 animate-pulse">Analyzing Image...</h3>
+        <p class="text-gray-400 text-sm">Computer Vision running</p>
+    `;
+
+    // 2. Esperar 1.8 segundos e mostrar o resultado final
+    setTimeout(() => {
+        screen.innerHTML = `
+            <div class="w-full text-left bg-gray-800 rounded-xl p-4 border border-gray-700 shadow-lg animate-in zoom-in duration-300">
+                <div class="flex items-center gap-3 border-b border-gray-700 pb-3 mb-3">
+                    <div class="text-3xl ${meal.bg} p-2 rounded-lg">${meal.icon}</div>
+                    <div>
+                        <div class="text-gray-400 text-xs uppercase tracking-wider font-bold">Detected Meal</div>
+                        <div class="text-white font-bold text-lg">${meal.name}</div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div class="bg-gray-900 rounded-lg p-2 text-center">
+                        <div class="text-gray-500 text-xs uppercase">Est. Carbs</div>
+                        <div class="${meal.color} font-bold text-xl">${meal.carbs}g</div>
+                    </div>
+                    <div class="bg-gray-900 rounded-lg p-2 text-center">
+                        <div class="text-gray-500 text-xs uppercase">CGM Trend</div>
+                        <div class="text-white font-bold text-xl">${meal.glucose} <span class="text-xs font-normal text-gray-500">mg/dL ➔</span></div>
+                    </div>
+                </div>
+
+                <div class="bg-blue-600 text-white rounded-lg p-3 text-center flex items-center justify-between">
+                    <span class="text-sm font-semibold">Suggested Bolus</span>
+                    <span class="font-extrabold text-xl">${meal.dose} U</span>
+                </div>
+            </div>
+        `;
+    }, 1800); // 1.8 segundos de "análise"
+}

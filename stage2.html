@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stage 2: User and Task Analysis | SmartGlycoAI</title>
+    <link rel="icon" type="image/jpeg" href="img/logo.jpeg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script>tailwind.config = { darkMode: 'class' }</script>
     <style>
-        /* Esconde a seta padrão do <details> para usarmos o nosso próprio ícone SVG */
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
     </style>
@@ -282,14 +282,14 @@
                     </div>
                 </section>
 
-                <!-- 4. SCENARIOS -->
+                <!-- 4. SCENARIOS & USER JOURNEY MAP -->
                 <section data-aos="fade-up">
                     <div class="flex items-center gap-3 border-b border-gray-200 dark:border-gray-700 pb-2 mb-6">
                         <span class="bg-blue-100 text-blue-600 dark:bg-blue-900/50 dark:text-blue-400 w-8 h-8 rounded-full flex items-center justify-center font-bold">4</span>
-                        <h2 class="text-2xl font-bold dark:text-white">Scenarios</h2>
+                        <h2 class="text-2xl font-bold dark:text-white">Scenarios & User Journey</h2>
                     </div>
 
-                    <div class="space-y-6">
+                    <div class="space-y-6 mb-12">
                         <!-- Scenario 1 -->
                         <div class="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm relative overflow-hidden">
                             <div class="absolute top-0 left-0 w-1 h-full bg-blue-500"></div>
@@ -326,6 +326,115 @@
                             </p>
                         </div>
                     </div>
+
+                    <!-- VISUAL USER JOURNEY MAP -->
+                    <div class="bg-gradient-to-br from-gray-50 to-blue-50/40 dark:from-gray-800/80 dark:to-gray-900 rounded-2xl p-6 md:p-8 border border-gray-200 dark:border-gray-700 shadow-sm">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-2">
+                            <div>
+                                <span class="bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">UX Mapping</span>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mt-2">Interactive User Journey Map</h3>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">Connecting patient daily actions with clinical follow-up across our scenarios</p>
+                            </div>
+                            <div class="flex items-center gap-3 text-xs font-semibold text-gray-500 dark:text-gray-400">
+                                <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span> Patient</span>
+                                <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-purple-500"></span> Healthcare Team</span>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Grid -->
+                        <div class="relative">
+                            <!-- Horizontal Connecting Line (Desktop) -->
+                            <div class="hidden lg:block absolute top-12 left-10 right-10 h-1 bg-gradient-to-r from-blue-500 via-amber-500 to-purple-600 rounded-full opacity-30"></div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+                                
+                                <!-- Step 1: 13:00 -->
+                                <div class="bg-white dark:bg-gray-800 rounded-xl p-5 border border-gray-200 dark:border-gray-700 shadow-sm hover:-translate-y-1 hover:shadow-md transition flex flex-col">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <span class="text-xs font-extrabold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 px-2.5 py-1 rounded-md border border-blue-200 dark:border-blue-800">Tue • 1:00 PM</span>
+                                        <span class="text-2xl" title="Fast & Discreet">🍽️</span>
+                                    </div>
+                                    <h4 class="font-bold text-gray-900 dark:text-white mb-1">1. Restaurant Lunch</h4>
+                                    <span class="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-3">Task 1 • Patient</span>
+                                    
+                                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-4 flex-grow">
+                                        Glucose at <strong>115 mg/dL</strong>. João snaps a photo of his steak & rice. AI estimates 45g carbs; he adjusts to <strong>60g</strong> and takes <strong>4.0 U</strong> of insulin.
+                                    </p>
+
+                                    <div class="pt-3 border-t border-gray-100 dark:border-gray-700 mt-auto">
+                                        <div class="flex items-center justify-between text-xs">
+                                            <span class="text-gray-500 dark:text-gray-400 font-medium">Emotion:</span>
+                                            <span class="font-semibold text-green-600 dark:text-green-400">😌 Confident & Discreet</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Step 2: 18:00 -->
+                                <div class="bg-white dark:bg-gray-800 rounded-xl p-5 border border-gray-200 dark:border-gray-700 shadow-sm hover:-translate-y-1 hover:shadow-md transition flex flex-col">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <span class="text-xs font-extrabold text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-900/30 px-2.5 py-1 rounded-md border border-amber-200 dark:border-amber-800">Tue • 6:00 PM</span>
+                                        <span class="text-2xl" title="Predictive Alert">🚌</span>
+                                    </div>
+                                    <h4 class="font-bold text-gray-900 dark:text-white mb-1">2. Bus Ride Alert</h4>
+                                    <span class="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-3">Task 3 • Patient</span>
+                                    
+                                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-4 flex-grow">
+                                        After the gym, phone vibrates: predicted drop to <strong>65 mg/dL</strong> in 20 min. João drinks juice (<strong>15g</strong> fast carbs) and logs the correction.
+                                    </p>
+
+                                    <div class="pt-3 border-t border-gray-100 dark:border-gray-700 mt-auto">
+                                        <div class="flex items-center justify-between text-xs">
+                                            <span class="text-gray-500 dark:text-gray-400 font-medium">Emotion:</span>
+                                            <span class="font-semibold text-amber-600 dark:text-amber-400">🛡️ Protected in time</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Step 3: Evening -->
+                                <div class="bg-white dark:bg-gray-800 rounded-xl p-5 border border-gray-200 dark:border-gray-700 shadow-sm hover:-translate-y-1 hover:shadow-md transition flex flex-col">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <span class="text-xs font-extrabold text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/30 px-2.5 py-1 rounded-md border border-green-200 dark:border-green-800">Tue • Evening</span>
+                                        <span class="text-2xl" title="Diary Review">🏠</span>
+                                    </div>
+                                    <h4 class="font-bold text-gray-900 dark:text-white mb-1">3. Diary Correction</h4>
+                                    <span class="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-3">Task 4 • Patient</span>
+                                    
+                                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-4 flex-grow">
+                                        At home, João realizes he left rice on his plate at lunch. He edits the lunch entry from 60g back to <strong>45g</strong> (keeping 4.0 U) for accurate logs.
+                                    </p>
+
+                                    <div class="pt-3 border-t border-gray-100 dark:border-gray-700 mt-auto">
+                                        <div class="flex items-center justify-between text-xs">
+                                            <span class="text-gray-500 dark:text-gray-400 font-medium">Emotion:</span>
+                                            <span class="font-semibold text-blue-600 dark:text-blue-400">🎯 In control of data</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Step 4: Thursday -->
+                                <div class="bg-white dark:bg-gray-800 rounded-xl p-5 border border-gray-200 dark:border-gray-700 shadow-sm hover:-translate-y-1 hover:shadow-md transition flex flex-col">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <span class="text-xs font-extrabold text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-900/30 px-2.5 py-1 rounded-md border border-purple-200 dark:border-purple-800">Thu • Clinic</span>
+                                        <span class="text-2xl" title="Clinical Consultation">👩‍⚕️</span>
+                                    </div>
+                                    <h4 class="font-bold text-gray-900 dark:text-white mb-1">4. Medical Review</h4>
+                                    <span class="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-3">Task 2 • Doctor & Nurse</span>
+                                    
+                                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-4 flex-grow">
+                                        Dr. Silvia reviews 30-day web charts, spots gym lows & lunch highs, and updates ICR to <strong>1:12g</strong>. Nurse Martim monitors adaptation.
+                                    </p>
+
+                                    <div class="pt-3 border-t border-gray-100 dark:border-gray-700 mt-auto">
+                                        <div class="flex items-center justify-between text-xs">
+                                            <span class="text-gray-500 dark:text-gray-400 font-medium">Outcome:</span>
+                                            <span class="font-semibold text-purple-600 dark:text-purple-400">🤝 Informed Therapy</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
                 </section>
 
                 <!-- 5. INTERVIEWS -->
@@ -335,7 +444,6 @@
                         <h2 class="text-2xl font-bold dark:text-white">Interviews & Results</h2>
                     </div>
                     
-                    <!-- Resumo dos Resultados (Crucial para o projeto) -->
                     <div class="mb-8 bg-blue-50 dark:bg-blue-900/10 rounded-2xl p-6 lg:p-8 border border-blue-100 dark:border-blue-800/30">
                         <h3 class="font-bold text-blue-800 dark:text-blue-300 mb-6 text-xl flex items-center gap-2">
                             <span>💡</span> Summary of Results & Design Impact
@@ -563,12 +671,13 @@
                     </div>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <a href="docs/IPM_stage_2_Group_06.pdf" target="_blank" download class="flex items-center gap-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-4 shadow-sm hover:shadow-md hover:border-green-500 dark:hover:border-green-500 transition group cursor-pointer">                            <div class="w-12 h-12 bg-red-100 dark:bg-red-900/30 text-red-600 rounded-lg flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                        <a href="docs/IPM_stage_2_Group_06.pdf" target="_blank" download class="flex items-center gap-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-4 shadow-sm hover:shadow-md hover:border-green-500 dark:hover:border-green-500 transition group cursor-pointer">
+                            <div class="w-12 h-12 bg-red-100 dark:bg-red-900/30 text-red-600 rounded-lg flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
                                 📄
                             </div>
                             <div>
                                 <div class="font-bold text-gray-900 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">Stage 2 Report</div>
-                                <div class="text-[11px] font-bold text-green-600 dark:text-green-400 mt-1 uppercase tracking-wider bg-green-50 dark:bg-green-900/30 px-2 py-0.5 rounded inline-block">Available • PDF</div>
+                                <div class="text-[11px] font-bold text-green-600 dark:text-green-400 mt-1 uppercase tracking-wider bg-green-50 dark:bg-green-900/30 px-2 py-0.5 rounded inline-block">Download • PDF</div>
                             </div>
                         </a>
                     </div>
@@ -577,6 +686,13 @@
             </div>
         </div>
     </main>
+
+    <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 py-8 text-center text-sm mt-12 flex flex-col items-center transition-colors duration-300">
+        <div class="w-8 h-8 rounded-full overflow-hidden border border-gray-300 dark:border-gray-600 mb-3 opacity-60">
+            <img src="img/logo.jpeg" alt="Logo" class="w-full h-full object-cover">
+        </div>
+        <p>&copy; 2026 SmartGlycoAI. Academic Project.</p>
+    </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="main.js"></script>
