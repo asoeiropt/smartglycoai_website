@@ -78,40 +78,40 @@
             <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Tracking of development phases, design, and interface evaluation for the SmartGlycoAI project.</p>
         </div>
 
-        <!-- MILESTONE PROGRESS BAR (SEPARADO E CORRIGIDO) -->
+        <!-- MILESTONE PROGRESS BAR -->
         <section class="mb-16 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-6 shadow-sm" data-aos="fade-up" data-aos-delay="150">
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-2">
                 <div>
                     <h3 class="font-bold text-gray-900 dark:text-white text-lg">Project Milestone Progress</h3>
-                    <p class="text-xs text-gray-500 dark:text-gray-400">Stage 1 finished • Stage 2 currently in development</p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">Stage 2 finished • Stage 3 currently in development</p>
                 </div>
                 <div class="bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 font-extrabold text-sm px-3 py-1 rounded-full border border-blue-200 dark:border-blue-800">
-                    20% Completed
+                    35% Completed
                 </div>
             </div>
             
-            <!-- Barra de Progresso Visual (20%) -->
+            <!-- Barra de Progresso Visual (35%) -->
             <div class="w-full bg-gray-200 dark:bg-gray-700 h-3 rounded-full overflow-hidden mb-6">
-                <div class="bg-blue-600 h-full rounded-full transition-all duration-1000" style="width: 20%;"></div>
+                <div class="bg-blue-600 h-full rounded-full transition-all duration-1000" style="width: 35%;"></div>
             </div>
 
-            <!-- Marcos da Timeline Separados -->
+            <!-- Marcos da Timeline -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs">
                 <div class="border-l-2 border-blue-600 pl-3">
                     <span class="font-bold text-blue-600 dark:text-blue-400 block">Stage 1</span>
                     <span class="text-gray-500 dark:text-gray-400">Project Proposal (Done)</span>
                 </div>
+                <div class="border-l-2 border-blue-600 pl-3">
+                    <span class="font-bold text-blue-600 dark:text-blue-400 block">Stage 2</span>
+                    <span class="text-gray-500 dark:text-gray-400">User & Task Analysis (Done)</span>
+                </div>
                 <div class="border-l-2 border-amber-500 pl-3">
-                    <span class="font-bold text-amber-600 dark:text-amber-400 block">Stage 2</span>
-                    <span class="text-gray-500 dark:text-gray-400">User & Task Analysis (In Progress)</span>
+                    <span class="font-bold text-amber-600 dark:text-amber-400 block">Stage 3</span>
+                    <span class="text-gray-500 dark:text-gray-400">1st Prototype (In Progress)</span>
                 </div>
                 <div class="border-l-2 border-gray-300 dark:border-gray-600 pl-3 opacity-75">
-                    <span class="font-bold text-gray-700 dark:text-gray-300 block">Stage 3 & 5</span>
-                    <span class="text-gray-400 dark:text-gray-500">Prototypes & Evaluation</span>
-                </div>
-                <div class="border-l-2 border-gray-300 dark:border-gray-600 pl-3 opacity-75">
-                    <span class="font-bold text-gray-700 dark:text-gray-300 block">Stage 6</span>
-                    <span class="text-gray-400 dark:text-gray-500">Final Results Presentation</span>
+                    <span class="font-bold text-gray-700 dark:text-gray-300 block">Stages 4-6</span>
+                    <span class="text-gray-400 dark:text-gray-500">Evaluation & Final Results</span>
                 </div>
             </div>
         </section>
@@ -142,12 +142,18 @@
                     </div>
                 </a>
 
-                <div data-aos="fade-up" data-aos-delay="300" class="block bg-gray-50 dark:bg-gray-800/50 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-700 p-6 opacity-75 flex flex-col h-full">
-                    <div class="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">Stage 3</div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-500 dark:text-gray-400">1st Prototype (Mock-up)</h3>
-                    <p class="text-gray-400 dark:text-gray-500 text-sm flex-grow mb-6">Design of the first low/medium fidelity interface prototype.</p>
-                    <div class="text-gray-400 dark:text-gray-500 text-sm font-semibold mt-auto">Available soon</div>
-                </div>
+                <!-- STAGE 3 CARTÃO ATUALIZADO (AGORA COM LINK) -->
+                <a href="stage3.html" data-aos="fade-up" data-aos-delay="300" class="block bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-amber-300 dark:border-amber-600/50 p-6 hover:-translate-y-1 hover:shadow-lg hover:border-amber-400 dark:hover:border-amber-500 transition duration-300 group flex flex-col h-full">
+                    <div class="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-wider mb-2">Stage 3</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition">1st Prototype (Mock-up)</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm flex-grow mb-6">Design of the first low/medium fidelity interface prototype.</p>
+                    <div class="text-amber-600 dark:text-amber-400 text-sm font-semibold flex items-center justify-between mt-auto">
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 rounded-full bg-amber-500 mr-2 animate-pulse"></span> In Development
+                        </div>
+                        <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </a>
             </div>
         </div>
 
