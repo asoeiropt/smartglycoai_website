@@ -11,680 +11,691 @@
     <style>
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
+        /* Brilhos radiais suaves estilo Bento UI com a cor verde do Stage 2 */
+        .glow-green {
+            background: radial-gradient(circle at 85% 15%, rgba(16, 185, 129, 0.22), transparent 60%),
+                        radial-gradient(circle at 15% 85%, rgba(5, 150, 105, 0.10), transparent 55%);
+        }
     </style>
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans antialiased transition-colors duration-300">
 
-    <header class="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-50 transition-colors duration-300">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-            <a href="index.html" class="text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 font-semibold flex items-center transition">
-                <span class="mr-2">←</span> Back to Menu
-            </a>
-            
-            <div class="flex items-center gap-4">
-                <span class="hidden md:inline-block bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300 text-sm font-bold px-3 py-1 rounded-full border border-blue-200 dark:border-blue-800/50 cursor-default mr-2">
-                    Group 6
-                </span>
-                <div class="font-bold text-gray-800 dark:text-gray-200 hidden sm:block mr-4">Stage 2</div>
-                <a href="glossary.html" class="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition hidden sm:inline">Glossary</a>
-                <button onclick="toggleDarkMode()" class="text-gray-500 hover:text-yellow-500 dark:text-gray-400 dark:hover:text-yellow-400 transition text-xl">
-                    <span id="theme-icon">🌙</span>
-                </button>
+    <!-- HEADER FLUTUANTE (Bento UI) -->
+    <header class="sticky top-4 z-50 px-4">
+        <div class="max-w-6xl mx-auto bg-white/85 dark:bg-gray-800/85 backdrop-blur-xl shadow-lg border border-gray-200/80 dark:border-gray-700/80 rounded-[2rem] px-6 py-4 transition-colors duration-300">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-gray-500 hover:text-green-600 dark:text-gray-400 dark:hover:text-green-400 font-semibold flex items-center transition">
+                    <span class="mr-2">←</span> Back to Menu
+                </a>
+                
+                <div class="flex items-center gap-4">
+                    <span class="hidden md:inline-block bg-green-100 text-green-800 dark:bg-green-900/40 dark:text-green-300 text-sm font-bold px-3.5 py-1 rounded-full border border-green-200 dark:border-green-800/50 cursor-default">
+                        Group 6
+                    </span>
+                    <div class="font-bold text-gray-800 dark:text-gray-200 hidden sm:block">Stage 2</div>
+                    <a href="glossary.html" class="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition hidden sm:inline">Glossary</a>
+                    <button onclick="toggleDarkMode()" class="text-gray-500 hover:text-yellow-500 dark:text-gray-400 dark:hover:text-yellow-400 transition text-xl">
+                        <span id="theme-icon-desktop">🌙</span>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
 
-    <main class="max-w-6xl mx-auto py-12 px-4">
-        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden transition-colors">
+    <main class="max-w-6xl mx-auto py-10 px-4 space-y-10">
+        
+        <!-- HERO BANNER STAGE 2 -->
+        <section class="bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-700 dark:from-emerald-700 dark:via-emerald-800 dark:to-gray-900 text-white p-8 md:p-12 rounded-[2.2rem] shadow-xl border border-emerald-400/30 dark:border-emerald-700/50" data-aos="fade-up">
+            <span class="inline-block py-1 px-3.5 rounded-full bg-white/20 text-emerald-50 text-xs font-bold uppercase tracking-wider mb-4 border border-white/20">
+                Phase 1 • Research & Modeling
+            </span>
+            <h1 class="text-3xl md:text-4xl font-extrabold mb-3 tracking-tight">Stage 2: User and Task Analysis</h1>
+            <p class="text-emerald-100 text-base md:text-lg max-w-3xl">
+                <strong>Objective:</strong> Identification and characterization of the target users, tasks and scenarios.
+            </p>
+        </section>
+
+        <!-- 1. OVERVIEW -->
+        <section class="bg-white dark:bg-gray-800/90 glow-green rounded-[2rem] p-8 shadow-sm border border-gray-200/80 dark:border-gray-700/80" data-aos="fade-up">
+            <div class="flex items-center gap-3 border-b border-gray-200/80 dark:border-gray-700/80 pb-4 mb-6">
+                <span class="bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300 w-9 h-9 rounded-full flex items-center justify-center font-bold border border-emerald-200 dark:border-emerald-700/50">1</span>
+                <h2 class="text-2xl font-bold dark:text-white tracking-tight">Overview & Problem Statement</h2>
+            </div>
             
-            <div class="bg-blue-600 text-white p-8">
-                <h1 class="text-3xl font-bold mb-2">Stage 2: User and task analysis</h1>
-                <p class="text-blue-100 text-lg">
-                    <strong>Objective:</strong> Identification and characterization of the target users, tasks and scenarios.
+            <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+                People with type 1 diabetes do not produce insulin, meaning that many of the decisions a healthy body makes automatically have to be made by the patient, several times a day, every day. Our analysis identified four key friction areas:
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-white/80 dark:bg-gray-900/60 p-6 rounded-2xl border border-gray-200/80 dark:border-gray-700/80">
+                    <h3 class="font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2"><span>⚖️</span> Counting Carbs & Doses</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Estimating portion sizes and mixed ingredients by eye is difficult. A small error leads to a wrong dose. Doing this calculation 3-5 times a day, often in public, is tiring and stressful, leading patients to guess or eat "safe" meals.</p>
+                </div>
+                <div class="bg-white/80 dark:bg-gray-900/60 p-6 rounded-2xl border border-gray-200/80 dark:border-gray-700/80">
+                    <h3 class="font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2"><span>📉</span> Risk of Hypoglycemia</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Too much insulin or physical activity can cause dangerous lows. Patients often notice a low only when symptoms appear (e.g., driving or sleeping). They must constantly check sensors and interpret trends themselves.</p>
+                </div>
+                <div class="bg-white/80 dark:bg-gray-900/60 p-6 rounded-2xl border border-gray-200/80 dark:border-gray-700/80">
+                    <h3 class="font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2"><span>🧩</span> Scattered Information</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Data is spread across CGM apps, memory, phone notes, and paper settings. It is hard for patients to understand how food, insulin, and activity correlate over time, and mistakes in past records are rarely corrected.</p>
+                </div>
+                <div class="bg-white/80 dark:bg-gray-900/60 p-6 rounded-2xl border border-gray-200/80 dark:border-gray-700/80">
+                    <h3 class="font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2"><span>👨‍⚕️</span> Healthcare Communication</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Endocrinologists only see patients every few months for 15-20 minutes. Relying on incomplete patient memory to adjust treatments means appointment time is spent collecting data instead of making decisions.</p>
+                </div>
+            </div>
+
+            <div class="bg-emerald-50/70 dark:bg-emerald-900/20 p-6 rounded-2xl border border-emerald-200 dark:border-emerald-800/50 border-l-4 border-l-emerald-500">
+                <h3 class="font-bold text-emerald-800 dark:text-emerald-300 mb-2">Our Proposal</h3>
+                <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                    SmartGlycoAI is a mobile app that brings these tasks together. It shows current CGM trends, estimates carbs from photos, suggests insulin doses, warns of predicted lows, and keeps an editable diary. Healthcare professionals access this shared data via a web platform to follow patients between appointments.
                 </p>
             </div>
+        </section>
 
-            <div class="p-8 space-y-16">
+        <!-- 2. USER PERSONAS -->
+        <section class="bg-white dark:bg-gray-800/90 glow-green rounded-[2rem] p-8 shadow-sm border border-gray-200/80 dark:border-gray-700/80" data-aos="fade-up">
+            <div class="flex items-center gap-3 border-b border-gray-200/80 dark:border-gray-700/80 pb-4 mb-6">
+                <span class="bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300 w-9 h-9 rounded-full flex items-center justify-center font-bold border border-emerald-200 dark:border-emerald-700/50">2</span>
+                <h2 class="text-2xl font-bold dark:text-white tracking-tight">User Personas</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 
-                <!-- 1. OVERVIEW -->
-                <section data-aos="fade-up">
-                    <div class="flex items-center gap-3 border-b border-gray-200 dark:border-gray-700 pb-2 mb-6">
-                        <span class="bg-blue-100 text-blue-600 dark:bg-blue-900/50 dark:text-blue-400 w-8 h-8 rounded-full flex items-center justify-center font-bold">1</span>
-                        <h2 class="text-2xl font-bold dark:text-white">Overview & Problem Statement</h2>
-                    </div>
-                    
-                    <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                        People with type 1 diabetes do not produce insulin, meaning that many of the decisions a healthy body makes automatically have to be made by the patient, several times a day, every day. Our analysis identified four key friction areas:
-                    </p>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                        <div class="bg-gray-50 dark:bg-gray-800/50 p-5 rounded-xl border border-gray-200 dark:border-gray-700">
-                            <h3 class="font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2"><span>⚖️</span> Counting Carbs & Doses</h3>
-                            <p class="text-sm text-gray-600 dark:text-gray-400">Estimating portion sizes and mixed ingredients by eye is difficult. A small error leads to a wrong dose. Doing this calculation 3-5 times a day, often in public, is tiring and stressful, leading patients to guess or eat "safe" meals.</p>
+                <!-- Persona 1: O Paciente -->
+                <div class="bg-white/80 dark:bg-gray-900/60 border border-gray-200/80 dark:border-gray-700/80 rounded-[1.5rem] shadow-sm hover:shadow-md transition flex flex-col h-full overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-blue-500 h-2 w-full"></div>
+                    <div class="p-6 flex flex-col h-full">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-3xl">🧑‍🦱</div>
+                            <div>
+                                <h3 class="font-bold text-gray-900 dark:text-white text-lg">João Antunes (24)</h3>
+                                <span class="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider">Patient (T1D)</span>
+                            </div>
                         </div>
-                        <div class="bg-gray-50 dark:bg-gray-800/50 p-5 rounded-xl border border-gray-200 dark:border-gray-700">
-                            <h3 class="font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2"><span>📉</span> Risk of Hypoglycemia</h3>
-                            <p class="text-sm text-gray-600 dark:text-gray-400">Too much insulin or physical activity can cause dangerous lows. Patients often notice a low only when symptoms appear (e.g., driving or sleeping). They must constantly check sensors and interpret trends themselves.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-[10px] bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 px-2 py-1 rounded-full font-semibold flex items-center gap-1">💻 Expects widgets</span>
+                            <span class="text-[10px] bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 px-2 py-1 rounded-full font-semibold flex items-center gap-1">⏱️ Everywhere, 3-5x/day</span>
                         </div>
-                        <div class="bg-gray-50 dark:bg-gray-800/50 p-5 rounded-xl border border-gray-200 dark:border-gray-700">
-                            <h3 class="font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2"><span>🧩</span> Scattered Information</h3>
-                            <p class="text-sm text-gray-600 dark:text-gray-400">Data is spread across CGM apps, memory, phone notes, and paper settings. It is hard for patients to understand how food, insulin, and activity correlate over time, and mistakes in past records are rarely corrected.</p>
-                        </div>
-                        <div class="bg-gray-50 dark:bg-gray-800/50 p-5 rounded-xl border border-gray-200 dark:border-gray-700">
-                            <h3 class="font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2"><span>👨‍⚕️</span> Healthcare Communication</h3>
-                            <p class="text-sm text-gray-600 dark:text-gray-400">Endocrinologists only see patients every few months for 15-20 minutes. Relying on incomplete patient memory to adjust treatments means appointment time is spent collecting data instead of making decisions.</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-xl border border-blue-200 dark:border-blue-800/50 border-l-4 border-l-blue-500">
-                        <h3 class="font-bold text-blue-800 dark:text-blue-300 mb-2">Our Proposal</h3>
-                        <p class="text-sm text-gray-700 dark:text-gray-300">
-                            SmartGlycoAI is a mobile app that brings these tasks together. It shows current CGM trends, estimates carbs from photos, suggests insulin doses, warns of predicted lows, and keeps an editable diary. Healthcare professionals access this shared data via a web platform to follow patients between appointments.
-                        </p>
-                    </div>
-                </section>
-
-                <!-- 2. USER PERSONAS -->
-                <section>
-                    <div class="flex items-center gap-3 border-b border-gray-200 dark:border-gray-700 pb-2 mb-6" data-aos="fade-up">
-                        <span class="bg-blue-100 text-blue-600 dark:bg-blue-900/50 dark:text-blue-400 w-8 h-8 rounded-full flex items-center justify-center font-bold">2</span>
-                        <h2 class="text-2xl font-bold dark:text-white">User Personas</h2>
-                    </div>
-                    
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <p class="italic text-gray-500 dark:text-gray-400 text-sm mb-4">"It's a continuous process that requires a lot of attention before every meal."</p>
                         
-                        <!-- Persona 1: O Paciente -->
-                        <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm hover:shadow-md transition flex flex-col h-full overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-                            <div class="bg-blue-600 h-2 w-full"></div>
-                            <div class="p-6 flex flex-col h-full">
-                                <div class="flex items-center gap-4 mb-4">
-                                    <div class="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-3xl">🧑‍🦱</div>
-                                    <div>
-                                        <h3 class="font-bold text-gray-900 dark:text-white text-lg">João Antunes (24)</h3>
-                                        <span class="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider">Patient (T1D)</span>
-                                    </div>
-                                </div>
-                                <div class="flex flex-wrap gap-2 mb-4">
-                                    <span class="text-[10px] bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 px-2 py-1 rounded font-semibold flex items-center gap-1">💻 Expects widgets & fast access</span>
-                                    <span class="text-[10px] bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 px-2 py-1 rounded font-semibold flex items-center gap-1">⏱️ Everywhere, 3-5x/day</span>
-                                </div>
-                                <p class="italic text-gray-500 dark:text-gray-400 text-sm mb-4">"It's a continuous process that requires a lot of attention before every meal."</p>
-                                
-                                <div class="mb-3">
-                                    <strong class="text-sm text-gray-700 dark:text-gray-300 block mb-1">🎯 Goals:</strong>
-                                    <ul class="list-disc list-inside text-sm text-gray-600 dark:text-gray-400 space-y-1">
-                                        <li>See glucose trend in first seconds (widget).</li>
-                                        <li>Calculate carbs via camera discreetly.</li>
-                                        <li>Get AI recommendations validated by doctors.</li>
-                                    </ul>
-                                </div>
-                                <div class="mt-auto pt-4">
-                                    <strong class="text-sm text-gray-700 dark:text-gray-300 block mb-1">😩 Frustrations:</strong>
-                                    <p class="text-sm text-gray-600 dark:text-gray-400">Remembering to check glucose, take insulin, and the constant attention needed before every meal.</p>
-                                </div>
-                            </div>
+                        <div class="mb-3">
+                            <strong class="text-sm text-gray-700 dark:text-gray-300 block mb-1">🎯 Goals:</strong>
+                            <ul class="list-disc list-inside text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                                <li>See glucose trend in first seconds (widget).</li>
+                                <li>Calculate carbs via camera discreetly.</li>
+                                <li>Get AI recommendations validated by doctors.</li>
+                            </ul>
                         </div>
-
-                        <!-- Persona 2: A Médica -->
-                        <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm hover:shadow-md transition flex flex-col h-full overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-                            <div class="bg-purple-600 h-2 w-full"></div>
-                            <div class="p-6 flex flex-col h-full">
-                                <div class="flex items-center gap-4 mb-4">
-                                    <div class="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center text-3xl">👩‍⚕️</div>
-                                    <div>
-                                        <h3 class="font-bold text-gray-900 dark:text-white text-lg">Dr. Joana Silvia</h3>
-                                        <span class="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider">Endocrinologist</span>
-                                    </div>
-                                </div>
-                                <div class="flex flex-wrap gap-2 mb-4">
-                                    <span class="text-[10px] bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 px-2 py-1 rounded font-semibold flex items-center gap-1">💻 Prefers clinical web software</span>
-                                    <span class="text-[10px] bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 px-2 py-1 rounded font-semibold flex items-center gap-1">🏥 Office, few months/patient</span>
-                                </div>
-                                <p class="italic text-gray-500 dark:text-gray-400 text-sm mb-4">"AI should support medical decisions rather than replace professional judgment."</p>
-                                
-                                <div class="mb-3">
-                                    <strong class="text-sm text-gray-700 dark:text-gray-300 block mb-1">🎯 Goals:</strong>
-                                    <ul class="list-disc list-inside text-sm text-gray-600 dark:text-gray-400 space-y-1">
-                                        <li>Access glucose and insulin history in one place.</li>
-                                        <li>See clear graphs and concerning patterns.</li>
-                                        <li>Understand meal impacts during the week.</li>
-                                    </ul>
-                                </div>
-                                <div class="mt-auto pt-4">
-                                    <strong class="text-sm text-gray-700 dark:text-gray-300 block mb-1">😩 Frustrations:</strong>
-                                    <p class="text-sm text-gray-600 dark:text-gray-400">Inefficient consultations due to scattered data. Mistrust of "black-box" AI without clear sources.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Persona 3: O Enfermeiro -->
-                        <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm hover:shadow-md transition flex flex-col h-full overflow-hidden" data-aos="fade-up" data-aos-delay="300">
-                            <div class="bg-green-600 h-2 w-full"></div>
-                            <div class="p-6 flex flex-col h-full">
-                                <div class="flex items-center gap-4 mb-4">
-                                    <div class="w-14 h-14 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center text-3xl">👨‍⚕️</div>
-                                    <div>
-                                        <h3 class="font-bold text-gray-900 dark:text-white text-lg">Enf. Martim Garcia</h3>
-                                        <span class="text-xs font-bold text-green-600 dark:text-green-400 uppercase tracking-wider">Diabetes Educator</span>
-                                    </div>
-                                </div>
-                                <div class="flex flex-wrap gap-2 mb-4">
-                                    <span class="text-[10px] bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 px-2 py-1 rounded font-semibold flex items-center gap-1">📱 Comfortable with apps</span>
-                                    <span class="text-[10px] bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 px-2 py-1 rounded font-semibold flex items-center gap-1">🏥 Hospital/between appts</span>
-                                </div>
-                                <p class="italic text-gray-500 dark:text-gray-400 text-sm mb-4">"Some patients might have difficulties navigating complicated interfaces, particularly older users."</p>
-                                
-                                <div class="mb-3">
-                                    <strong class="text-sm text-gray-700 dark:text-gray-300 block mb-1">🎯 Goals:</strong>
-                                    <ul class="list-disc list-inside text-sm text-gray-600 dark:text-gray-400 space-y-1">
-                                        <li>Monitor patients' routines remotely.</li>
-                                        <li>Identify users needing extra support.</li>
-                                        <li>Help patients manage diabetes independently.</li>
-                                    </ul>
-                                </div>
-                                <div class="mt-auto pt-4">
-                                    <strong class="text-sm text-gray-700 dark:text-gray-300 block mb-1">😩 Frustrations:</strong>
-                                    <p class="text-sm text-gray-600 dark:text-gray-400">Complex interfaces confusing users (needs glossary & large buttons). Intrusive app alarms at work.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </section>
-
-                <!-- 3. TASKS ANALYSIS -->
-                <section data-aos="fade-up">
-                    <div class="flex items-center gap-3 border-b border-gray-200 dark:border-gray-700 pb-2 mb-6">
-                        <span class="bg-blue-100 text-blue-600 dark:bg-blue-900/50 dark:text-blue-400 w-8 h-8 rounded-full flex items-center justify-center font-bold">3</span>
-                        <h2 class="text-2xl font-bold dark:text-white">Tasks Analysis</h2>
-                    </div>
-
-                    <div class="space-y-6">
-                        <!-- Task 1 -->
-                        <div class="bg-white dark:bg-gray-800 border-l-4 border-blue-600 dark:border-blue-500 rounded-lg p-6 shadow-sm border-t border-r border-b border-gray-200 dark:border-gray-700">
-                            <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-4">Task 1: Log a meal and get insulin recommendation (Patient)</h3>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                                <div><strong class="text-gray-700 dark:text-gray-300 block mb-1">Objective:</strong> <span class="text-gray-600 dark:text-gray-400">Accurately log food intake using computer vision to receive an insulin dose suggestion.</span></div>
-                                <div><strong class="text-gray-700 dark:text-gray-300 block mb-1">Pre-conditions:</strong> <span class="text-gray-600 dark:text-gray-400">User is logged in, treatment settings (ICR, ISF, target) are filled, CGM is connected.</span></div>
-                                <div><strong class="text-gray-700 dark:text-gray-300 block mb-1">Time/Freq:</strong> <span class="text-gray-600 dark:text-gray-400">3-5 times a day (before meals), under 1 minute.</span></div>
-                                <div><strong class="text-gray-700 dark:text-gray-300 block mb-1">Exceptions:</strong> <span class="text-gray-600 dark:text-gray-400">Camera fails to recognize food; CGM sensor loses Bluetooth connection.</span></div>
-                                <div class="md:col-span-2 mt-2 bg-gray-50 dark:bg-gray-700/30 p-4 rounded-lg">
-                                    <strong class="text-gray-700 dark:text-gray-300 block mb-2">Sub-tasks:</strong>
-                                    <ol class="list-decimal list-inside text-gray-600 dark:text-gray-400 space-y-1">
-                                        <li>Open the meal logging module.</li>
-                                        <li>Take a photo of the meal.</li>
-                                        <li>Confirm or adjust the AI's carbohydrate estimation.</li>
-                                        <li>Review and accept/reject the suggested insulin dose.</li>
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Task 2 -->
-                        <div class="bg-white dark:bg-gray-800 border-l-4 border-purple-600 dark:border-purple-500 rounded-lg p-6 shadow-sm border-t border-r border-b border-gray-200 dark:border-gray-700">
-                            <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-4">Task 2: Review patient's glycemic history (Doctor/Nurse)</h3>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                                <div><strong class="text-gray-700 dark:text-gray-300 block mb-1">Objective:</strong> <span class="text-gray-600 dark:text-gray-400">Analyze weekly/monthly glucose trends to adjust medical treatment.</span></div>
-                                <div><strong class="text-gray-700 dark:text-gray-300 block mb-1">Pre-conditions:</strong> <span class="text-gray-600 dark:text-gray-400">Patient shared data; professional logged into the web version of the platform.</span></div>
-                                <div><strong class="text-gray-700 dark:text-gray-300 block mb-1">Time/Freq:</strong> <span class="text-gray-600 dark:text-gray-400">Before/during appointments (every few months), occasionally between appts.</span></div>
-                                <div><strong class="text-gray-700 dark:text-gray-300 block mb-1">Exceptions:</strong> <span class="text-gray-600 dark:text-gray-400">Patient has not synced their data recently.</span></div>
-                                <div class="md:col-span-2 mt-2 bg-gray-50 dark:bg-gray-700/30 p-4 rounded-lg">
-                                    <strong class="text-gray-700 dark:text-gray-300 block mb-2">Sub-tasks:</strong>
-                                    <ol class="list-decimal list-inside text-gray-600 dark:text-gray-400 space-y-1">
-                                        <li>Access the specific patient's profile.</li>
-                                        <li>Filter data by the last 30 days.</li>
-                                        <li>Identify patterns of hypoglycemia or hyperglycemia.</li>
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Task 3 -->
-                        <div class="bg-white dark:bg-gray-800 border-l-4 border-amber-500 rounded-lg p-6 shadow-sm border-t border-r border-b border-gray-200 dark:border-gray-700">
-                            <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-4">Task 3: Respond to a predictive low-glucose alert (Patient)</h3>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                                <div><strong class="text-gray-700 dark:text-gray-300 block mb-1">Objective:</strong> <span class="text-gray-600 dark:text-gray-400">Act before a hypoglycemia happens, after the app predicts a fast drop in glucose.</span></div>
-                                <div><strong class="text-gray-700 dark:text-gray-300 block mb-1">Pre-conditions:</strong> <span class="text-gray-600 dark:text-gray-400">CGM sensor is connected and notifications are allowed.</span></div>
-                                <div><strong class="text-gray-700 dark:text-gray-300 block mb-1">Time/Freq:</strong> <span class="text-gray-600 dark:text-gray-400">Few times a week. Urgent: user has about 20 minutes to act.</span></div>
-                                <div><strong class="text-gray-700 dark:text-gray-300 block mb-1">Exceptions:</strong> <span class="text-gray-600 dark:text-gray-400">User misses notification; false alarm from sensor; user ignores by mistake.</span></div>
-                                <div class="md:col-span-2 mt-2 bg-gray-50 dark:bg-gray-700/30 p-4 rounded-lg">
-                                    <strong class="text-gray-700 dark:text-gray-300 block mb-2">Sub-tasks:</strong>
-                                    <ol class="list-decimal list-inside text-gray-600 dark:text-gray-400 space-y-1">
-                                        <li>Receive the alert notification with the predicted value and time.</li>
-                                        <li>Open the alert and read the suggestion (e.g. eat 15 g of fast-acting carbs).</li>
-                                        <li>Eat the suggested carbohydrates.</li>
-                                        <li>Register the correction in the diary, or ignore the alert if not needed.</li>
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Task 4 -->
-                        <div class="bg-white dark:bg-gray-800 border-l-4 border-green-600 dark:border-green-500 rounded-lg p-6 shadow-sm border-t border-r border-b border-gray-200 dark:border-gray-700">
-                            <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-4">Task 4: Review and edit the diary history (Patient)</h3>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                                <div><strong class="text-gray-700 dark:text-gray-300 block mb-1">Objective:</strong> <span class="text-gray-600 dark:text-gray-400">Check past meals and corrections, and fix any entry with wrong values.</span></div>
-                                <div><strong class="text-gray-700 dark:text-gray-300 block mb-1">Pre-conditions:</strong> <span class="text-gray-600 dark:text-gray-400">User is logged in and has at least one entry in the diary.</span></div>
-                                <div><strong class="text-gray-700 dark:text-gray-300 block mb-1">Time/Freq:</strong> <span class="text-gray-600 dark:text-gray-400">Once a day or a few times a week. About 1 to 2 minutes.</span></div>
-                                <div><strong class="text-gray-700 dark:text-gray-300 block mb-1">Exceptions:</strong> <span class="text-gray-600 dark:text-gray-400">Deletes entry by mistake; enters impossible value; leaves without saving.</span></div>
-                                <div class="md:col-span-2 mt-2 bg-gray-50 dark:bg-gray-700/30 p-4 rounded-lg">
-                                    <strong class="text-gray-700 dark:text-gray-300 block mb-2">Sub-tasks:</strong>
-                                    <ol class="list-decimal list-inside text-gray-600 dark:text-gray-400 space-y-1">
-                                        <li>Open the Diary tab.</li>
-                                        <li>Scroll through the list of meals and corrections.</li>
-                                        <li>Open an entry to see its details (photo, time, carbs, insulin dose).</li>
-                                        <li>Change the time, description, carbs or insulin dose.</li>
-                                        <li>Save the changes, or delete the entry.</li>
-                                    </ol>
-                                </div>
-                            </div>
+                        <div class="mt-auto pt-4">
+                            <strong class="text-sm text-gray-700 dark:text-gray-300 block mb-1">😩 Frustrations:</strong>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Remembering to check glucose, take insulin, and the constant attention needed before every meal.</p>
                         </div>
                     </div>
-                </section>
+                </div>
 
-                <!-- 4. SCENARIOS & USER JOURNEY MAP -->
-                <section data-aos="fade-up">
-                    <div class="flex items-center gap-3 border-b border-gray-200 dark:border-gray-700 pb-2 mb-6">
-                        <span class="bg-blue-100 text-blue-600 dark:bg-blue-900/50 dark:text-blue-400 w-8 h-8 rounded-full flex items-center justify-center font-bold">4</span>
-                        <h2 class="text-2xl font-bold dark:text-white">Scenarios & User Journey</h2>
-                    </div>
-
-                    <div class="space-y-6 mb-12">
-                        <!-- Scenario 1 -->
-                        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm relative overflow-hidden">
-                            <div class="absolute top-0 left-0 w-1 h-full bg-blue-500"></div>
-                            <div class="flex items-center gap-3 mb-3">
-                                <span class="bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-400 text-xs font-bold px-2 py-1 rounded uppercase tracking-wide">Task 1</span>
-                                <h3 class="font-bold text-gray-900 dark:text-white text-lg">Scenario 1: Lunch at a restaurant</h3>
-                            </div>
-                            <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-                                João Antunes is a young adult with type 1 diabetes who uses a FreeStyle Libre sensor. On Tuesday at 1 p.m. he is having lunch with his friends at a restaurant and orders steak with rice and salad. When the food arrives, he opens SmartGlycoAI and sees that his glucose is 115 mg/dL and stable. He taps "Analyse meal" and takes a photo of his plate. The app identifies "steak with rice and salad", estimates 45 g of carbohydrates and suggests 3.0 units of insulin, based on his ratio of 1 unit per 15 g. João thinks the rice portion is bigger than usual, so he changes the carbohydrates to 60 g and the suggested dose is updated to 4.0 units. He takes his insulin, confirms, and the meal is saved in his diary. It takes less than a minute and his friends barely notice.
-                            </p>
-                        </div>
-
-                        <!-- Scenario 2 -->
-                        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm relative overflow-hidden">
-                            <div class="absolute top-0 left-0 w-1 h-full bg-amber-500"></div>
-                            <div class="flex items-center gap-3 mb-3">
-                                <span class="bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-400 text-xs font-bold px-2 py-1 rounded uppercase tracking-wide">Tasks 3 & 4</span>
-                                <h3 class="font-bold text-gray-900 dark:text-white text-lg">Scenario 2: A low on the way home</h3>
-                            </div>
-                            <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-                                At 6 p.m. João is on the bus home after the gym. His phone vibrates with an alert: the app predicts his glucose will reach 65 mg/dL in 20 minutes and suggests eating 15 g of fast-acting carbohydrates. He opens the alert, drinks a small pack of juice he always carries, and taps "Register correction". Later that evening, at home, he opens the Diary to check his day. He remembers that at lunch he left part of the rice on the plate, so he ate fewer carbohydrates than the 60 g he registered, which may explain the low in the afternoon. He opens the lunch entry, changes the carbohydrates to 45 g so that the diary shows what he really ate, keeps the 4.0 units he actually took, and saves the changes.
-                            </p>
-                        </div>
-
-                        <!-- Scenario 3 -->
-                        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm relative overflow-hidden">
-                            <div class="absolute top-0 left-0 w-1 h-full bg-purple-500"></div>
-                            <div class="flex items-center gap-3 mb-3">
-                                <span class="bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-400 text-xs font-bold px-2 py-1 rounded uppercase tracking-wide">Task 2</span>
-                                <h3 class="font-bold text-gray-900 dark:text-white text-lg">Scenario 3: Preparing an appointment</h3>
-                            </div>
-                            <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-                                Dr. Joana Silvia is an endocrinologist at a hospital in Almada, and João has an appointment with her on Thursday. Before the appointment, she logs in to the web version of SmartGlycoAI on her office computer, opens João's profile and filters the data to the last 30 days. She notices that João had several low-glucose alerts in the late afternoon, always on days he went to the gym, and that his glucose is often high after lunch. During the appointment they look at the data together. They decide to change his insulin-to-carb ratio from 1 unit per 15 g to 1 unit per 12 g, and she advises him to eat a small snack before going to the gym. João updates his ratio in the Profile tab. In the following weeks, Martim Garcia, the nurse who follows João, checks his glucose readings to see how he is adapting to the new settings and whether he needs additional support.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- VISUAL USER JOURNEY MAP -->
-                    <div class="bg-gradient-to-br from-gray-50 to-blue-50/40 dark:from-gray-800/80 dark:to-gray-900 rounded-2xl p-6 md:p-8 border border-gray-200 dark:border-gray-700 shadow-sm">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-2">
+                <!-- Persona 2: A Médica -->
+                <div class="bg-white/80 dark:bg-gray-900/60 border border-gray-200/80 dark:border-gray-700/80 rounded-[1.5rem] shadow-sm hover:shadow-md transition flex flex-col h-full overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-purple-500 h-2 w-full"></div>
+                    <div class="p-6 flex flex-col h-full">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center text-3xl">👩‍⚕️</div>
                             <div>
-                                <span class="bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">UX Mapping</span>
-                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mt-2">Interactive User Journey Map</h3>
-                                <p class="text-xs text-gray-500 dark:text-gray-400">Connecting patient daily actions with clinical follow-up across our scenarios</p>
-                            </div>
-                            <div class="flex items-center gap-3 text-xs font-semibold text-gray-500 dark:text-gray-400">
-                                <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span> Patient</span>
-                                <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-purple-500"></span> Healthcare Team</span>
+                                <h3 class="font-bold text-gray-900 dark:text-white text-lg">Dr. Joana Silvia</h3>
+                                <span class="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider">Endocrinologist</span>
                             </div>
                         </div>
-
-                        <!-- Timeline Grid -->
-                        <div class="relative">
-                            <!-- Horizontal Connecting Line (Desktop) -->
-                            <div class="hidden lg:block absolute top-12 left-10 right-10 h-1 bg-gradient-to-r from-blue-500 via-amber-500 to-purple-600 rounded-full opacity-30"></div>
-
-                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
-                                
-                                <!-- Step 1: 13:00 -->
-                                <div class="bg-white dark:bg-gray-800 rounded-xl p-5 border border-gray-200 dark:border-gray-700 shadow-sm hover:-translate-y-1 hover:shadow-md transition flex flex-col">
-                                    <div class="flex items-center justify-between mb-4">
-                                        <span class="text-xs font-extrabold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 px-2.5 py-1 rounded-md border border-blue-200 dark:border-blue-800">Tue • 1:00 PM</span>
-                                        <span class="text-2xl" title="Fast & Discreet">🍽️</span>
-                                    </div>
-                                    <h4 class="font-bold text-gray-900 dark:text-white mb-1">1. Restaurant Lunch</h4>
-                                    <span class="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-3">Task 1 • Patient</span>
-                                    
-                                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-4 flex-grow">
-                                        Glucose at <strong>115 mg/dL</strong>. João snaps a photo of his steak & rice. AI estimates 45g carbs; he adjusts to <strong>60g</strong> and takes <strong>4.0 U</strong> of insulin.
-                                    </p>
-
-                                    <div class="pt-3 border-t border-gray-100 dark:border-gray-700 mt-auto">
-                                        <div class="flex items-center justify-between text-xs">
-                                            <span class="text-gray-500 dark:text-gray-400 font-medium">Emotion:</span>
-                                            <span class="font-semibold text-green-600 dark:text-green-400">😌 Confident & Discreet</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Step 2: 18:00 -->
-                                <div class="bg-white dark:bg-gray-800 rounded-xl p-5 border border-gray-200 dark:border-gray-700 shadow-sm hover:-translate-y-1 hover:shadow-md transition flex flex-col">
-                                    <div class="flex items-center justify-between mb-4">
-                                        <span class="text-xs font-extrabold text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-900/30 px-2.5 py-1 rounded-md border border-amber-200 dark:border-amber-800">Tue • 6:00 PM</span>
-                                        <span class="text-2xl" title="Predictive Alert">🚌</span>
-                                    </div>
-                                    <h4 class="font-bold text-gray-900 dark:text-white mb-1">2. Bus Ride Alert</h4>
-                                    <span class="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-3">Task 3 • Patient</span>
-                                    
-                                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-4 flex-grow">
-                                        After the gym, phone vibrates: predicted drop to <strong>65 mg/dL</strong> in 20 min. João drinks juice (<strong>15g</strong> fast carbs) and logs the correction.
-                                    </p>
-
-                                    <div class="pt-3 border-t border-gray-100 dark:border-gray-700 mt-auto">
-                                        <div class="flex items-center justify-between text-xs">
-                                            <span class="text-gray-500 dark:text-gray-400 font-medium">Emotion:</span>
-                                            <span class="font-semibold text-amber-600 dark:text-amber-400">🛡️ Protected in time</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Step 3: Evening -->
-                                <div class="bg-white dark:bg-gray-800 rounded-xl p-5 border border-gray-200 dark:border-gray-700 shadow-sm hover:-translate-y-1 hover:shadow-md transition flex flex-col">
-                                    <div class="flex items-center justify-between mb-4">
-                                        <span class="text-xs font-extrabold text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/30 px-2.5 py-1 rounded-md border border-green-200 dark:border-green-800">Tue • Evening</span>
-                                        <span class="text-2xl" title="Diary Review">🏠</span>
-                                    </div>
-                                    <h4 class="font-bold text-gray-900 dark:text-white mb-1">3. Diary Correction</h4>
-                                    <span class="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-3">Task 4 • Patient</span>
-                                    
-                                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-4 flex-grow">
-                                        At home, João realizes he left rice on his plate at lunch. He edits the lunch entry from 60g back to <strong>45g</strong> (keeping 4.0 U) for accurate logs.
-                                    </p>
-
-                                    <div class="pt-3 border-t border-gray-100 dark:border-gray-700 mt-auto">
-                                        <div class="flex items-center justify-between text-xs">
-                                            <span class="text-gray-500 dark:text-gray-400 font-medium">Emotion:</span>
-                                            <span class="font-semibold text-blue-600 dark:text-blue-400">🎯 In control of data</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Step 4: Thursday -->
-                                <div class="bg-white dark:bg-gray-800 rounded-xl p-5 border border-gray-200 dark:border-gray-700 shadow-sm hover:-translate-y-1 hover:shadow-md transition flex flex-col">
-                                    <div class="flex items-center justify-between mb-4">
-                                        <span class="text-xs font-extrabold text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-900/30 px-2.5 py-1 rounded-md border border-purple-200 dark:border-purple-800">Thu • Clinic</span>
-                                        <span class="text-2xl" title="Clinical Consultation">👩‍⚕️</span>
-                                    </div>
-                                    <h4 class="font-bold text-gray-900 dark:text-white mb-1">4. Medical Review</h4>
-                                    <span class="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-3">Task 2 • Doctor & Nurse</span>
-                                    
-                                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-4 flex-grow">
-                                        Dr. Silvia reviews 30-day web charts, spots gym lows & lunch highs, and updates ICR to <strong>1:12g</strong>. Nurse Martim monitors adaptation.
-                                    </p>
-
-                                    <div class="pt-3 border-t border-gray-100 dark:border-gray-700 mt-auto">
-                                        <div class="flex items-center justify-between text-xs">
-                                            <span class="text-gray-500 dark:text-gray-400 font-medium">Outcome:</span>
-                                            <span class="font-semibold text-purple-600 dark:text-purple-400">🤝 Informed Therapy</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-[10px] bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 px-2 py-1 rounded-full font-semibold flex items-center gap-1">💻 Clinical web software</span>
+                            <span class="text-[10px] bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 px-2 py-1 rounded-full font-semibold flex items-center gap-1">🏥 Few months/patient</span>
+                        </div>
+                        <p class="italic text-gray-500 dark:text-gray-400 text-sm mb-4">"AI should support medical decisions rather than replace professional judgment."</p>
+                        
+                        <div class="mb-3">
+                            <strong class="text-sm text-gray-700 dark:text-gray-300 block mb-1">🎯 Goals:</strong>
+                            <ul class="list-disc list-inside text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                                <li>Access glucose and insulin history in one place.</li>
+                                <li>See clear graphs and concerning patterns.</li>
+                                <li>Understand meal impacts during the week.</li>
+                            </ul>
+                        </div>
+                        <div class="mt-auto pt-4">
+                            <strong class="text-sm text-gray-700 dark:text-gray-300 block mb-1">😩 Frustrations:</strong>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Inefficient consultations due to scattered data. Mistrust of "black-box" AI without clear sources.</p>
                         </div>
                     </div>
-                </section>
+                </div>
 
-                <!-- 5. INTERVIEWS -->
-                <section data-aos="fade-up">
-                    <div class="flex items-center gap-3 border-b border-gray-200 dark:border-gray-700 pb-2 mb-6">
-                        <span class="bg-blue-100 text-blue-600 dark:bg-blue-900/50 dark:text-blue-400 w-8 h-8 rounded-full flex items-center justify-center font-bold">5</span>
-                        <h2 class="text-2xl font-bold dark:text-white">Interviews & Results</h2>
-                    </div>
-                    
-                    <div class="mb-8 bg-blue-50 dark:bg-blue-900/10 rounded-2xl p-6 lg:p-8 border border-blue-100 dark:border-blue-800/30">
-                        <h3 class="font-bold text-blue-800 dark:text-blue-300 mb-6 text-xl flex items-center gap-2">
-                            <span>💡</span> Summary of Results & Design Impact
-                        </h3>
-                        <ol class="space-y-5 text-sm text-gray-800 dark:text-gray-300 list-decimal list-outside pl-4">
-                            <li class="pl-2"><strong class="text-blue-900 dark:text-blue-200">Quick access to current glucose:</strong> João wants to see his glucose/graph in the first few seconds (suggested a widget). <em>Design impact: Current value will be the largest element on the home screen. A widget will be considered later.</em></li>
-                            <li class="pl-2"><strong class="text-blue-900 dark:text-blue-200">Photo carb counting accepted if discreet:</strong> Camera use in restaurants is fine if fast. <em>Design impact: Confirms Task 1 as primary; must take under a minute with minimal steps.</em></li>
-                            <li class="pl-2"><strong class="text-blue-900 dark:text-blue-200">AI should support, not replace, decisions:</strong> Both João and Dr. Silvia insisted AI advice must be validated. <em>Design impact: Users can always adjust carbs/doses before saving; the app must explain how algorithms work.</em></li>
-                            <li class="pl-2"><strong class="text-blue-900 dark:text-blue-200">Professionals need data in one place:</strong> Dr. Silvia wants to analyze glucose, insulin, and progress on a PC. <em>Design impact: Creation of a Web Dashboard with graphs and concerning pattern alerts (Task 2).</em></li>
-                            <li class="pl-2"><strong class="text-blue-900 dark:text-blue-200">Reminders are important:</strong> Reminders for checking glucose and taking insulin. <em>Design impact: Will be considered for future project stages.</em></li>
-                            <li class="pl-2"><strong class="text-blue-900 dark:text-blue-200">Interface must be simple (especially for older users):</strong> Nurse Martim highlighted issues with medical terms and complicated UI. <em>Design impact: Use large readable values, simple graphs, explain terms (ICR/ISF) in the Profile, and allow configurable notifications (Task 3).</em></li>
-                        </ol>
-                    </div>
-
-                    <!-- Interview Details -->
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between mt-8 mb-4">
-                            <h3 class="font-bold text-gray-800 dark:text-gray-200 text-lg">Full Interview Transcripts</h3>
-                            <span class="text-xs text-gray-500 dark:text-gray-400 font-medium">Click to expand</span>
-                        </div>
-
-                        <!-- Interview 1 -->
-                        <details class="group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm overflow-hidden">
-                            <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
-                                <div class="flex items-center gap-4">
-                                    <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-2xl">🧑‍🦱</div>
-                                    <div>
-                                        <div class="font-bold text-gray-900 dark:text-white text-lg">Interview 1: The Patient</div>
-                                        <div class="text-sm text-gray-500 dark:text-gray-400">João Antunes (Young Adult with Type 1 Diabetes)</div>
-                                    </div>
-                                </div>
-                                <span class="transition-transform duration-300 group-open:rotate-180 text-gray-400">
-                                    <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-                                </span>
-                            </summary>
-                            
-                            <div class="p-6 border-t border-gray-200 dark:border-gray-700 bg-gray-50/50 dark:bg-gray-800/30">
-                                <div class="space-y-4 text-sm">
-                                    <div>
-                                        <div class="text-gray-500 dark:text-gray-400 font-bold mb-1">Interviewer:</div>
-                                        <div class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-3 rounded-lg rounded-tl-none inline-block max-w-[90%]">What is the biggest challenge you face in the daily management of your diabetes?</div>
-                                    </div>
-                                    <div class="text-right">
-                                        <div class="text-blue-600 dark:text-blue-400 font-bold mb-1">João Antunes:</div>
-                                        <div class="bg-blue-600 text-white p-3 rounded-lg rounded-tr-none inline-block max-w-[90%] text-left">My biggest challenge is remembering to check my glucose levels, take my medication, and maintain healthy eating habits every day. It's a continuous process that requires a lot of attention before every meal.</div>
-                                    </div>
-
-                                    <div>
-                                        <div class="text-gray-500 dark:text-gray-400 font-bold mb-1">Interviewer:</div>
-                                        <div class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-3 rounded-lg rounded-tl-none inline-block max-w-[90%]">How could our SmartGlycoAI mobile app facilitate this management, especially on a busy day?</div>
-                                    </div>
-                                    <div class="text-right">
-                                        <div class="text-blue-600 dark:text-blue-400 font-bold mb-1">João Antunes:</div>
-                                        <div class="bg-blue-600 text-white p-3 rounded-lg rounded-tr-none inline-block max-w-[90%] text-left">It would help immensely to organize my daily routine, save my glucose measurements, and remind me when I need to take my medication. If I open the app in an emergency, I need to see my current glucose level and the graph for the last few days right in the first few seconds. Having a widget on the phone's home screen would be perfect to see the blood glucose without even opening the app.</div>
-                                    </div>
-
-                                    <div>
-                                        <div class="text-gray-500 dark:text-gray-400 font-bold mb-1">Interviewer:</div>
-                                        <div class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-3 rounded-lg rounded-tl-none inline-block max-w-[90%]">What specific features would you like the application to have, particularly regarding food?</div>
-                                    </div>
-                                    <div class="text-right">
-                                        <div class="text-blue-600 dark:text-blue-400 font-bold mb-1">João Antunes:</div>
-                                        <div class="bg-blue-600 text-white p-3 rounded-lg rounded-tr-none inline-block max-w-[90%] text-left">I would like to have a glucose tracker, medication reminders, a meal log, progress graphs, and simple explanations about diabetes. Taking a photo of the plate for the app to calculate the carbohydrates would be very practical. I would feel comfortable using the camera in a restaurant, as long as the process was fast and discreet.</div>
-                                    </div>
-
-                                    <div>
-                                        <div class="text-gray-500 dark:text-gray-400 font-bold mb-1">Interviewer:</div>
-                                        <div class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-3 rounded-lg rounded-tl-none inline-block max-w-[90%]">Would you like the application to provide personalized recommendations using Artificial Intelligence?</div>
-                                    </div>
-                                    <div class="text-right">
-                                        <div class="text-blue-600 dark:text-blue-400 font-bold mb-1">João Antunes:</div>
-                                        <div class="bg-blue-600 text-white p-3 rounded-lg rounded-tr-none inline-block max-w-[90%] text-left">Yes, especially recommendations about food, exercise, and daily habits based on my glucose history. However, I would want the medical advice to be checked and validated by my healthcare team.</div>
-                                    </div>
-
-                                    <div>
-                                        <div class="text-gray-500 dark:text-gray-400 font-bold mb-1">Interviewer:</div>
-                                        <div class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-3 rounded-lg rounded-tl-none inline-block max-w-[90%]">What would make you use the application every day?</div>
-                                    </div>
-                                    <div class="text-right">
-                                        <div class="text-blue-600 dark:text-blue-400 font-bold mb-1">João Antunes:</div>
-                                        <div class="bg-blue-600 text-white p-3 rounded-lg rounded-tr-none inline-block max-w-[90%] text-left">A simple interface, a quick glucose log, useful reminders, and the ability to clearly see if my condition is improving.</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </details>
-
-                        <!-- Interview 2 -->
-                        <details class="group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm overflow-hidden">
-                            <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
-                                <div class="flex items-center gap-4">
-                                    <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center text-2xl">👩‍⚕️</div>
-                                    <div>
-                                        <div class="font-bold text-gray-900 dark:text-white text-lg">Interview 2: The Doctor</div>
-                                        <div class="text-sm text-gray-500 dark:text-gray-400">Dr. Joana Silvia (Endocrinologist)</div>
-                                    </div>
-                                </div>
-                                <span class="transition-transform duration-300 group-open:rotate-180 text-gray-400">
-                                    <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-                                </span>
-                            </summary>
-                            
-                            <div class="p-6 border-t border-gray-200 dark:border-gray-700 bg-gray-50/50 dark:bg-gray-800/30">
-                                <div class="space-y-4 text-sm">
-                                    <div>
-                                        <div class="text-gray-500 dark:text-gray-400 font-bold mb-1">Interviewer:</div>
-                                        <div class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-3 rounded-lg rounded-tl-none inline-block max-w-[90%]">In what way could an application like SmartGlycoAI help you monitor your patients with diabetes?</div>
-                                    </div>
-                                    <div class="text-right">
-                                        <div class="text-purple-600 dark:text-purple-400 font-bold mb-1">Dr. Joana Silvia:</div>
-                                        <div class="bg-purple-600 text-white p-3 rounded-lg rounded-tr-none inline-block max-w-[90%] text-left">It would help me access patients' glucose measurements, medication history, and health progress in a single place, which would make consultations much more efficient.</div>
-                                    </div>
-
-                                    <div>
-                                        <div class="text-gray-500 dark:text-gray-400 font-bold mb-1">Interviewer:</div>
-                                        <div class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-3 rounded-lg rounded-tl-none inline-block max-w-[90%]">What features would be most important for your clinical work?</div>
-                                    </div>
-                                    <div class="text-right">
-                                        <div class="text-purple-600 dark:text-purple-400 font-bold mb-1">Dr. Joana Silvia:</div>
-                                        <div class="bg-purple-600 text-white p-3 rounded-lg rounded-tr-none inline-block max-w-[90%] text-left">I would prioritize glucose history graphs, alerts for concerning patterns, organized patient records, and the ability to review medication adherence. The fact that the platform has a web version allows me to analyze this data comfortably on my office computer screen.</div>
-                                    </div>
-
-                                    <div>
-                                        <div class="text-gray-500 dark:text-gray-400 font-bold mb-1">Interviewer:</div>
-                                        <div class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-3 rounded-lg rounded-tl-none inline-block max-w-[90%]">How could the application improve communication with your patients?</div>
-                                    </div>
-                                    <div class="text-right">
-                                        <div class="text-purple-600 dark:text-purple-400 font-bold mb-1">Dr. Joana Silvia:</div>
-                                        <div class="bg-purple-600 text-white p-3 rounded-lg rounded-tr-none inline-block max-w-[90%] text-left">Patients could share their glucose measurements and symptoms between consultations, allowing me to better understand their condition and the impact of meals throughout the week.</div>
-                                    </div>
-
-                                    <div>
-                                        <div class="text-gray-500 dark:text-gray-400 font-bold mb-1">Interviewer:</div>
-                                        <div class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-3 rounded-lg rounded-tl-none inline-block max-w-[90%]">Do you consider that AI-generated health recommendations, such as suggesting insulin doses, would be useful?</div>
-                                    </div>
-                                    <div class="text-right">
-                                        <div class="text-purple-600 dark:text-purple-400 font-bold mb-1">Dr. Joana Silvia:</div>
-                                        <div class="bg-purple-600 text-white p-3 rounded-lg rounded-tr-none inline-block max-w-[90%] text-left">Yes, particularly for identifying trends and highlighting potential problems. However, AI should support medical decisions rather than replace professional judgment.</div>
-                                    </div>
-
-                                    <div>
-                                        <div class="text-gray-500 dark:text-gray-400 font-bold mb-1">Interviewer:</div>
-                                        <div class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-3 rounded-lg rounded-tl-none inline-block max-w-[90%]">What would make you trust this application for clinical use?</div>
-                                    </div>
-                                    <div class="text-right">
-                                        <div class="text-purple-600 dark:text-purple-400 font-bold mb-1">Dr. Joana Silvia:</div>
-                                        <div class="bg-purple-600 text-white p-3 rounded-lg rounded-tr-none inline-block max-w-[90%] text-left">Accurate information, secure patient records, clear explanations about the insights generated by AI, and reliable clinical data. A transparent section about the development team and how the algorithm was trained also provides greater security.</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </details>
-
-                        <!-- Interview 3 -->
-                        <details class="group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm overflow-hidden">
-                            <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
-                                <div class="flex items-center gap-4">
-                                    <div class="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center text-2xl">👨‍⚕️</div>
-                                    <div>
-                                        <div class="font-bold text-gray-900 dark:text-white text-lg">Interview 3: The Nurse</div>
-                                        <div class="text-sm text-gray-500 dark:text-gray-400">Enf. Martim Garcia (Nurse)</div>
-                                    </div>
-                                </div>
-                                <span class="transition-transform duration-300 group-open:rotate-180 text-gray-400">
-                                    <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-                                </span>
-                            </summary>
-                            
-                            <div class="p-6 border-t border-gray-200 dark:border-gray-700 bg-gray-50/50 dark:bg-gray-800/30">
-                                <div class="space-y-4 text-sm">
-                                    <div>
-                                        <div class="text-gray-500 dark:text-gray-400 font-bold mb-1">Interviewer:</div>
-                                        <div class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-3 rounded-lg rounded-tl-none inline-block max-w-[90%]">How could this application help you in your daily follow-up work?</div>
-                                    </div>
-                                    <div class="text-right">
-                                        <div class="text-green-600 dark:text-green-400 font-bold mb-1">Enf. Martim Garcia:</div>
-                                        <div class="bg-green-600 text-white p-3 rounded-lg rounded-tr-none inline-block max-w-[90%] text-left">It could help me monitor patients' glucose readings, check if they are following their care routines, and easily identify those who need additional support.</div>
-                                    </div>
-
-                                    <div>
-                                        <div class="text-gray-500 dark:text-gray-400 font-bold mb-1">Interviewer:</div>
-                                        <div class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-3 rounded-lg rounded-tl-none inline-block max-w-[90%]">What features would be most useful to ensure the success of the treatment?</div>
-                                    </div>
-                                    <div class="text-right">
-                                        <div class="text-green-600 dark:text-green-400 font-bold mb-1">Enf. Martim Garcia:</div>
-                                        <div class="bg-green-600 text-white p-3 rounded-lg rounded-tr-none inline-block max-w-[90%] text-left">Medication reminders, tracking patient progress, notifications about missed glucose measurements, and educational information.</div>
-                                    </div>
-
-                                    <div>
-                                        <div class="text-gray-500 dark:text-gray-400 font-bold mb-1">Interviewer:</div>
-                                        <div class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-3 rounded-lg rounded-tl-none inline-block max-w-[90%]">How could the application help patients manage diabetes more independently?</div>
-                                    </div>
-                                    <div class="text-right">
-                                        <div class="text-green-600 dark:text-green-400 font-bold mb-1">Enf. Martim Garcia:</div>
-                                        <div class="bg-green-600 text-white p-3 rounded-lg rounded-tr-none inline-block max-w-[90%] text-left">It could remind them to monitor their glucose, follow their prescribed medication schedules, and maintain healthy habits.</div>
-                                    </div>
-
-                                    <div>
-                                        <div class="text-gray-500 dark:text-gray-400 font-bold mb-1">Interviewer:</div>
-                                        <div class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-3 rounded-lg rounded-tl-none inline-block max-w-[90%]">What problems do you think patients might face when using the application, and how would you solve them?</div>
-                                    </div>
-                                    <div class="text-right">
-                                        <div class="text-green-600 dark:text-green-400 font-bold mb-1">Enf. Martim Garcia:</div>
-                                        <div class="bg-green-600 text-white p-3 rounded-lg rounded-tr-none inline-block max-w-[90%] text-left">Some patients might have difficulties understanding medical information or navigating complicated interfaces, particularly older users. The inclusion of a glossary for technical terms would be an excellent help.</div>
-                                    </div>
-
-                                    <div>
-                                        <div class="text-gray-500 dark:text-gray-400 font-bold mb-1">Interviewer:</div>
-                                        <div class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-3 rounded-lg rounded-tl-none inline-block max-w-[90%]">What would you improve in the design of a diabetes management application?</div>
-                                    </div>
-                                    <div class="text-right">
-                                        <div class="text-green-600 dark:text-green-400 font-bold mb-1">Enf. Martim Garcia:</div>
-                                        <div class="bg-green-600 text-white p-3 rounded-lg rounded-tr-none inline-block max-w-[90%] text-left">I would make the application very easy to use, with large buttons, clear instructions, simple graphs, and notifications that patients can customize. Notifications on the phone should be configurable, such as a subtle vibration, so they are not intrusive in the workplace.</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </details>
-
-                    </div>
-                </section>
-
-                <!-- DOWNLOADS SECTION -->
-                <section class="pt-8 border-t border-gray-200 dark:border-gray-700" data-aos="fade-up">
-                    <div class="flex items-center gap-4 mb-6">
-                        <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200">Downloads</h2>
-                        <div class="h-px bg-gray-300 dark:bg-gray-700 flex-grow"></div>
-                    </div>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <a href="docs/IPM_stage_2_Group_06.pdf" target="_blank" download class="flex items-center gap-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-4 shadow-sm hover:shadow-md hover:border-green-500 dark:hover:border-green-500 transition group cursor-pointer">
-                            <div class="w-12 h-12 bg-red-100 dark:bg-red-900/30 text-red-600 rounded-lg flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
-                                📄
-                            </div>
+                <!-- Persona 3: O Enfermeiro -->
+                <div class="bg-white/80 dark:bg-gray-900/60 border border-gray-200/80 dark:border-gray-700/80 rounded-[1.5rem] shadow-sm hover:shadow-md transition flex flex-col h-full overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-emerald-500 h-2 w-full"></div>
+                    <div class="p-6 flex flex-col h-full">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-14 h-14 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center text-3xl">👨‍⚕️</div>
                             <div>
-                                <div class="font-bold text-gray-900 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">Stage 2 Report</div>
-                                <div class="text-[11px] font-bold text-green-600 dark:text-green-400 mt-1 uppercase tracking-wider bg-green-50 dark:bg-green-900/30 px-2 py-0.5 rounded inline-block">Download • PDF</div>
+                                <h3 class="font-bold text-gray-900 dark:text-white text-lg">Enf. Martim Garcia</h3>
+                                <span class="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider">Diabetes Educator</span>
                             </div>
-                        </a>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-[10px] bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 px-2 py-1 rounded-full font-semibold flex items-center gap-1">📱 Comfortable with apps</span>
+                            <span class="text-[10px] bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 px-2 py-1 rounded-full font-semibold flex items-center gap-1">🏥 Between appts</span>
+                        </div>
+                        <p class="italic text-gray-500 dark:text-gray-400 text-sm mb-4">"Some patients might have difficulties navigating complicated interfaces, particularly older users."</p>
+                        
+                        <div class="mb-3">
+                            <strong class="text-sm text-gray-700 dark:text-gray-300 block mb-1">🎯 Goals:</strong>
+                            <ul class="list-disc list-inside text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                                <li>Monitor patients' routines remotely.</li>
+                                <li>Identify users needing extra support.</li>
+                                <li>Help patients manage diabetes independently.</li>
+                            </ul>
+                        </div>
+                        <div class="mt-auto pt-4">
+                            <strong class="text-sm text-gray-700 dark:text-gray-300 block mb-1">😩 Frustrations:</strong>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Complex interfaces confusing users (needs glossary & large buttons). Intrusive app alarms at work.</p>
+                        </div>
                     </div>
-                </section>
+                </div>
 
             </div>
-        </div>
+        </section>
+
+        <!-- 3. TASKS ANALYSIS -->
+        <section class="bg-white dark:bg-gray-800/90 glow-green rounded-[2rem] p-8 shadow-sm border border-gray-200/80 dark:border-gray-700/80" data-aos="fade-up">
+            <div class="flex items-center gap-3 border-b border-gray-200/80 dark:border-gray-700/80 pb-4 mb-6">
+                <span class="bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300 w-9 h-9 rounded-full flex items-center justify-center font-bold border border-emerald-200 dark:border-emerald-700/50">3</span>
+                <h2 class="text-2xl font-bold dark:text-white tracking-tight">Tasks Analysis</h2>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Task 1 -->
+                <div class="bg-white/80 dark:bg-gray-900/60 border-l-4 border-blue-500 rounded-2xl p-6 shadow-sm border-t border-r border-b border-gray-200/80 dark:border-gray-700/80">
+                    <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-4">Task 1: Log a meal and get insulin recommendation (Patient)</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                        <div><strong class="text-gray-700 dark:text-gray-300 block mb-1">Objective:</strong> <span class="text-gray-600 dark:text-gray-400">Accurately log food intake using computer vision to receive an insulin dose suggestion.</span></div>
+                        <div><strong class="text-gray-700 dark:text-gray-300 block mb-1">Pre-conditions:</strong> <span class="text-gray-600 dark:text-gray-400">User is logged in, treatment settings (ICR, ISF, target) are filled, CGM is connected.</span></div>
+                        <div><strong class="text-gray-700 dark:text-gray-300 block mb-1">Time/Freq:</strong> <span class="text-gray-600 dark:text-gray-400">3-5 times a day (before meals), under 1 minute.</span></div>
+                        <div><strong class="text-gray-700 dark:text-gray-300 block mb-1">Exceptions:</strong> <span class="text-gray-600 dark:text-gray-400">Camera fails to recognize food; CGM sensor loses Bluetooth connection.</span></div>
+                        <div class="md:col-span-2 mt-2 bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl border border-gray-200 dark:border-gray-700">
+                            <strong class="text-gray-700 dark:text-gray-300 block mb-2">Sub-tasks:</strong>
+                            <ol class="list-decimal list-inside text-gray-600 dark:text-gray-400 space-y-1">
+                                <li>Open the meal logging module.</li>
+                                <li>Take a photo of the meal.</li>
+                                <li>Confirm or adjust the AI's carbohydrate estimation.</li>
+                                <li>Review and accept/reject the suggested insulin dose.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Task 2 -->
+                <div class="bg-white/80 dark:bg-gray-900/60 border-l-4 border-purple-500 rounded-2xl p-6 shadow-sm border-t border-r border-b border-gray-200/80 dark:border-gray-700/80">
+                    <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-4">Task 2: Review patient's glycemic history (Doctor/Nurse)</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                        <div><strong class="text-gray-700 dark:text-gray-300 block mb-1">Objective:</strong> <span class="text-gray-600 dark:text-gray-400">Analyze weekly/monthly glucose trends to adjust medical treatment.</span></div>
+                        <div><strong class="text-gray-700 dark:text-gray-300 block mb-1">Pre-conditions:</strong> <span class="text-gray-600 dark:text-gray-400">Patient shared data; professional logged into the web version of the platform.</span></div>
+                        <div><strong class="text-gray-700 dark:text-gray-300 block mb-1">Time/Freq:</strong> <span class="text-gray-600 dark:text-gray-400">Before/during appointments (every few months), occasionally between appts.</span></div>
+                        <div><strong class="text-gray-700 dark:text-gray-300 block mb-1">Exceptions:</strong> <span class="text-gray-600 dark:text-gray-400">Patient has not synced their data recently.</span></div>
+                        <div class="md:col-span-2 mt-2 bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl border border-gray-200 dark:border-gray-700">
+                            <strong class="text-gray-700 dark:text-gray-300 block mb-2">Sub-tasks:</strong>
+                            <ol class="list-decimal list-inside text-gray-600 dark:text-gray-400 space-y-1">
+                                <li>Access the specific patient's profile.</li>
+                                <li>Filter data by the last 30 days.</li>
+                                <li>Identify patterns of hypoglycemia or hyperglycemia.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Task 3 -->
+                <div class="bg-white/80 dark:bg-gray-900/60 border-l-4 border-amber-500 rounded-2xl p-6 shadow-sm border-t border-r border-b border-gray-200/80 dark:border-gray-700/80">
+                    <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-4">Task 3: Respond to a predictive low-glucose alert (Patient)</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                        <div><strong class="text-gray-700 dark:text-gray-300 block mb-1">Objective:</strong> <span class="text-gray-600 dark:text-gray-400">Act before a hypoglycemia happens, after the app predicts a fast drop in glucose.</span></div>
+                        <div><strong class="text-gray-700 dark:text-gray-300 block mb-1">Pre-conditions:</strong> <span class="text-gray-600 dark:text-gray-400">CGM sensor is connected and notifications are allowed.</span></div>
+                        <div><strong class="text-gray-700 dark:text-gray-300 block mb-1">Time/Freq:</strong> <span class="text-gray-600 dark:text-gray-400">Few times a week. Urgent: user has about 20 minutes to act.</span></div>
+                        <div><strong class="text-gray-700 dark:text-gray-300 block mb-1">Exceptions:</strong> <span class="text-gray-600 dark:text-gray-400">User misses notification; false alarm from sensor; user ignores by mistake.</span></div>
+                        <div class="md:col-span-2 mt-2 bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl border border-gray-200 dark:border-gray-700">
+                            <strong class="text-gray-700 dark:text-gray-300 block mb-2">Sub-tasks:</strong>
+                            <ol class="list-decimal list-inside text-gray-600 dark:text-gray-400 space-y-1">
+                                <li>Receive the alert notification with the predicted value and time.</li>
+                                <li>Open the alert and read the suggestion (e.g. eat 15 g of fast-acting carbs).</li>
+                                <li>Eat the suggested carbohydrates.</li>
+                                <li>Register the correction in the diary, or ignore the alert if not needed.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Task 4 -->
+                <div class="bg-white/80 dark:bg-gray-900/60 border-l-4 border-emerald-500 rounded-2xl p-6 shadow-sm border-t border-r border-b border-gray-200/80 dark:border-gray-700/80">
+                    <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-4">Task 4: Review and edit the diary history (Patient)</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                        <div><strong class="text-gray-700 dark:text-gray-300 block mb-1">Objective:</strong> <span class="text-gray-600 dark:text-gray-400">Check past meals and corrections, and fix any entry with wrong values.</span></div>
+                        <div><strong class="text-gray-700 dark:text-gray-300 block mb-1">Pre-conditions:</strong> <span class="text-gray-600 dark:text-gray-400">User is logged in and has at least one entry in the diary.</span></div>
+                        <div><strong class="text-gray-700 dark:text-gray-300 block mb-1">Time/Freq:</strong> <span class="text-gray-600 dark:text-gray-400">Once a day or a few times a week. About 1 to 2 minutes.</span></div>
+                        <div><strong class="text-gray-700 dark:text-gray-300 block mb-1">Exceptions:</strong> <span class="text-gray-600 dark:text-gray-400">Deletes entry by mistake; enters impossible value; leaves without saving.</span></div>
+                        <div class="md:col-span-2 mt-2 bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl border border-gray-200 dark:border-gray-700">
+                            <strong class="text-gray-700 dark:text-gray-300 block mb-2">Sub-tasks:</strong>
+                            <ol class="list-decimal list-inside text-gray-600 dark:text-gray-400 space-y-1">
+                                <li>Open the Diary tab.</li>
+                                <li>Scroll through the list of meals and corrections.</li>
+                                <li>Open an entry to see its details (photo, time, carbs, insulin dose).</li>
+                                <li>Change the time, description, carbs or insulin dose.</li>
+                                <li>Save the changes, or delete the entry.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. SCENARIOS & USER JOURNEY MAP -->
+        <section class="bg-white dark:bg-gray-800/90 glow-green rounded-[2rem] p-8 shadow-sm border border-gray-200/80 dark:border-gray-700/80" data-aos="fade-up">
+            <div class="flex items-center gap-3 border-b border-gray-200/80 dark:border-gray-700/80 pb-4 mb-6">
+                <span class="bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300 w-9 h-9 rounded-full flex items-center justify-center font-bold border border-emerald-200 dark:border-emerald-700/50">4</span>
+                <h2 class="text-2xl font-bold dark:text-white tracking-tight">Scenarios & User Journey</h2>
+            </div>
+
+            <!-- CENÁRIOS REESCRITOS DE ACORDO COM A PROFESSORA (Contexto + Objetivo sem UI) -->
+            <div class="space-y-6 mb-12">
+                <!-- Scenario 1 -->
+                <div class="bg-white/80 dark:bg-gray-900/60 p-6 rounded-2xl border border-gray-200/80 dark:border-gray-700/80 shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1.5 h-full bg-blue-500"></div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-400 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-blue-200/60 dark:border-blue-700/50">Task 1</span>
+                        <h3 class="font-bold text-gray-900 dark:text-white text-lg">Scenario 1: Lunch at a restaurant</h3>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                        João Antunes is a young adult with type 1 diabetes who uses a FreeStyle Libre sensor. On Tuesday at 1 p.m., he is having lunch with his friends at a restaurant and orders steak with rice and salad. When the food arrives, his glucose is 115 mg/dL and stable. He needs to figure out the carbohydrates in his meal, which he suspects has more rice than usual (around 60g instead of an initial guess of 45g). Using the system, his goal is to register this meal discreetly, adjust the carbohydrate estimation, and receive the correct insulin dose recommendation before he starts eating, so his friends barely notice.
+                    </p>
+                </div>
+
+                <!-- Scenario 2 -->
+                <div class="bg-white/80 dark:bg-gray-900/60 p-6 rounded-2xl border border-gray-200/80 dark:border-gray-700/80 shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1.5 h-full bg-amber-500"></div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-400 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-amber-200/60 dark:border-amber-700/50">Tasks 3 & 4</span>
+                        <h3 class="font-bold text-gray-900 dark:text-white text-lg">Scenario 2: A low on the way home</h3>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                        At 6 p.m., João is on the bus home after the gym. He receives a predictive alert indicating his glucose will reach 65 mg/dL in 20 minutes and suggesting he consume 15 g of fast-acting carbohydrates. He drinks a small pack of juice. He must use the system to log that he took this corrective action. Later that evening, at home, he reviews his day. He remembers that at lunch he left part of the rice on the plate, meaning he ate 45 g instead of the 60 g he previously recorded. His goal now is to use the system to locate his past lunch entry and correct the carbohydrate amount, ensuring his daily logs are accurate.
+                    </p>
+                </div>
+
+                <!-- Scenario 3 -->
+                <div class="bg-white/80 dark:bg-gray-900/60 p-6 rounded-2xl border border-gray-200/80 dark:border-gray-700/80 shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1.5 h-full bg-purple-500"></div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-400 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-purple-200/60 dark:border-purple-700/50">Task 2</span>
+                        <h3 class="font-bold text-gray-900 dark:text-white text-lg">Scenario 3: Preparing an appointment</h3>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                        Dr. Joana Silvia is an endocrinologist at a hospital in Almada, and João has an appointment with her on Thursday. Before the consultation, she uses the clinical system on her office computer to review João's data from the past 30 days. She needs to identify any problematic patterns, such as the late afternoon lows on gym days and high glucose after lunch. During the appointment, they discuss the data and decide to change his insulin-to-carb ratio from 1 unit per 15 g to 1 unit per 12 g. João must then use the system to update this clinical setting. In the following weeks, Nurse Martim Garcia will use the platform to monitor João's glucose readings remotely to see how he is adapting.
+                    </p>
+                </div>
+            </div>
+
+            <!-- VISUAL USER JOURNEY MAP -->
+            <div class="bg-gradient-to-br from-gray-50 to-blue-50/40 dark:from-gray-800/80 dark:to-gray-900 rounded-[1.75rem] p-6 md:p-8 border border-gray-200 dark:border-gray-700 shadow-sm">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-2">
+                    <div>
+                        <span class="bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-blue-200/60 dark:border-blue-700/50">UX Mapping</span>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mt-2">Interactive User Journey Map</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Connecting patient daily actions with clinical follow-up across our scenarios</p>
+                    </div>
+                    <div class="flex items-center gap-3 text-xs font-semibold text-gray-500 dark:text-gray-400">
+                        <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span> Patient</span>
+                        <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-purple-500"></span> Healthcare Team</span>
+                    </div>
+                </div>
+
+                <!-- Timeline Grid -->
+                <div class="relative">
+                    <!-- Horizontal Connecting Line (Desktop) -->
+                    <div class="hidden lg:block absolute top-12 left-10 right-10 h-1 bg-gradient-to-r from-blue-500 via-amber-500 to-purple-600 rounded-full opacity-30"></div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+                        
+                        <!-- Step 1: 13:00 -->
+                        <div class="bg-white dark:bg-gray-800 rounded-2xl p-5 border border-gray-200 dark:border-gray-700 shadow-sm hover:-translate-y-1 hover:shadow-md transition flex flex-col">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-xs font-extrabold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 px-2.5 py-1 rounded-md border border-blue-200 dark:border-blue-800/50">Tue • 1:00 PM</span>
+                                <span class="text-2xl" title="Fast & Discreet">🍽️</span>
+                            </div>
+                            <h4 class="font-bold text-gray-900 dark:text-white mb-1">1. Restaurant Lunch</h4>
+                            <span class="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-3">Task 1 • Patient</span>
+                            
+                            <p class="text-xs text-gray-600 dark:text-gray-400 mb-4 flex-grow">
+                                Glucose at <strong>115 mg/dL</strong>. João snaps a photo of his steak & rice. AI estimates 45g carbs; he adjusts to <strong>60g</strong> and takes <strong>4.0 U</strong> of insulin.
+                            </p>
+
+                            <div class="pt-3 border-t border-gray-100 dark:border-gray-700 mt-auto">
+                                <div class="flex items-center justify-between text-xs">
+                                    <span class="text-gray-500 dark:text-gray-400 font-medium">Emotion:</span>
+                                    <span class="font-semibold text-green-600 dark:text-green-400">😌 Confident & Discreet</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: 18:00 -->
+                        <div class="bg-white dark:bg-gray-800 rounded-2xl p-5 border border-gray-200 dark:border-gray-700 shadow-sm hover:-translate-y-1 hover:shadow-md transition flex flex-col">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-xs font-extrabold text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-900/30 px-2.5 py-1 rounded-md border border-amber-200 dark:border-amber-800/50">Tue • 6:00 PM</span>
+                                <span class="text-2xl" title="Predictive Alert">🚌</span>
+                            </div>
+                            <h4 class="font-bold text-gray-900 dark:text-white mb-1">2. Bus Ride Alert</h4>
+                            <span class="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-3">Task 3 • Patient</span>
+                            
+                            <p class="text-xs text-gray-600 dark:text-gray-400 mb-4 flex-grow">
+                                After the gym, phone vibrates: predicted drop to <strong>65 mg/dL</strong> in 20 min. João drinks juice (<strong>15g</strong> fast carbs) and logs the correction.
+                            </p>
+
+                            <div class="pt-3 border-t border-gray-100 dark:border-gray-700 mt-auto">
+                                <div class="flex items-center justify-between text-xs">
+                                    <span class="text-gray-500 dark:text-gray-400 font-medium">Emotion:</span>
+                                    <span class="font-semibold text-amber-600 dark:text-amber-400">🛡️ Protected in time</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Evening -->
+                        <div class="bg-white dark:bg-gray-800 rounded-2xl p-5 border border-gray-200 dark:border-gray-700 shadow-sm hover:-translate-y-1 hover:shadow-md transition flex flex-col">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-xs font-extrabold text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/30 px-2.5 py-1 rounded-md border border-green-200 dark:border-green-800/50">Tue • Evening</span>
+                                <span class="text-2xl" title="Diary Review">🏠</span>
+                            </div>
+                            <h4 class="font-bold text-gray-900 dark:text-white mb-1">3. Diary Correction</h4>
+                            <span class="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-3">Task 4 • Patient</span>
+                            
+                            <p class="text-xs text-gray-600 dark:text-gray-400 mb-4 flex-grow">
+                                At home, João realizes he left rice on his plate at lunch. He edits the lunch entry from 60g back to <strong>45g</strong> (keeping 4.0 U) for accurate logs.
+                            </p>
+
+                            <div class="pt-3 border-t border-gray-100 dark:border-gray-700 mt-auto">
+                                <div class="flex items-center justify-between text-xs">
+                                    <span class="text-gray-500 dark:text-gray-400 font-medium">Emotion:</span>
+                                    <span class="font-semibold text-blue-600 dark:text-blue-400">🎯 In control of data</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Thursday -->
+                        <div class="bg-white dark:bg-gray-800 rounded-2xl p-5 border border-gray-200 dark:border-gray-700 shadow-sm hover:-translate-y-1 hover:shadow-md transition flex flex-col">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-xs font-extrabold text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-900/30 px-2.5 py-1 rounded-md border border-purple-200 dark:border-purple-800/50">Thu • Clinic</span>
+                                <span class="text-2xl" title="Clinical Consultation">👩‍⚕️</span>
+                            </div>
+                            <h4 class="font-bold text-gray-900 dark:text-white mb-1">4. Medical Review</h4>
+                            <span class="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-3">Task 2 • Doctor & Nurse</span>
+                            
+                            <p class="text-xs text-gray-600 dark:text-gray-400 mb-4 flex-grow">
+                                Dr. Silvia reviews 30-day web charts, spots gym lows & lunch highs, and updates ICR to <strong>1:12g</strong>. Nurse Martim monitors adaptation.
+                            </p>
+
+                            <div class="pt-3 border-t border-gray-100 dark:border-gray-700 mt-auto">
+                                <div class="flex items-center justify-between text-xs">
+                                    <span class="text-gray-500 dark:text-gray-400 font-medium">Outcome:</span>
+                                    <span class="font-semibold text-purple-600 dark:text-purple-400">🤝 Informed Therapy</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. INTERVIEWS -->
+        <section class="bg-white dark:bg-gray-800/90 glow-green rounded-[2rem] p-8 shadow-sm border border-gray-200/80 dark:border-gray-700/80" data-aos="fade-up">
+            <div class="flex items-center gap-3 border-b border-gray-200/80 dark:border-gray-700/80 pb-4 mb-6">
+                <span class="bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300 w-9 h-9 rounded-full flex items-center justify-center font-bold border border-emerald-200 dark:border-emerald-700/50">5</span>
+                <h2 class="text-2xl font-bold dark:text-white tracking-tight">Interviews & Results</h2>
+            </div>
+            
+            <div class="mb-8 bg-emerald-50 dark:bg-emerald-900/10 rounded-[1.5rem] p-6 lg:p-8 border border-emerald-100 dark:border-emerald-800/30">
+                <h3 class="font-bold text-emerald-800 dark:text-emerald-300 mb-6 text-xl flex items-center gap-2">
+                    <span>💡</span> Summary of Results & Design Impact
+                </h3>
+                <ol class="space-y-5 text-sm text-gray-800 dark:text-gray-300 list-decimal list-outside pl-4">
+                    <li class="pl-2"><strong class="text-emerald-900 dark:text-emerald-200">Quick access to current glucose:</strong> João wants to see his glucose/graph in the first few seconds (suggested a widget). <em>Design impact: Current value will be the largest element on the home screen. A widget will be considered later.</em></li>
+                    <li class="pl-2"><strong class="text-emerald-900 dark:text-emerald-200">Photo carb counting accepted if discreet:</strong> Camera use in restaurants is fine if fast. <em>Design impact: Confirms Task 1 as primary; must take under a minute with minimal steps.</em></li>
+                    <li class="pl-2"><strong class="text-emerald-900 dark:text-emerald-200">AI should support, not replace, decisions:</strong> Both João and Dr. Silvia insisted AI advice must be validated. <em>Design impact: Users can always adjust carbs/doses before saving; the app must explain how algorithms work.</em></li>
+                    <li class="pl-2"><strong class="text-emerald-900 dark:text-emerald-200">Professionals need data in one place:</strong> Dr. Silvia wants to analyze glucose, insulin, and progress on a PC. <em>Design impact: Creation of a Web Dashboard with graphs and concerning pattern alerts (Task 2).</em></li>
+                    <li class="pl-2"><strong class="text-emerald-900 dark:text-emerald-200">Reminders are important:</strong> Reminders for checking glucose and taking insulin. <em>Design impact: Will be considered for future project stages.</em></li>
+                    <li class="pl-2"><strong class="text-emerald-900 dark:text-emerald-200">Interface must be simple (especially for older users):</strong> Nurse Martim highlighted issues with medical terms and complicated UI. <em>Design impact: Use large readable values, simple graphs, explain terms (ICR/ISF) in the Profile, and allow configurable notifications (Task 3).</em></li>
+                </ol>
+            </div>
+
+            <!-- Interview Details -->
+            <div class="space-y-4">
+                <div class="flex items-center justify-between mt-8 mb-4">
+                    <h3 class="font-bold text-gray-800 dark:text-gray-200 text-lg">Full Interview Transcripts</h3>
+                    <span class="text-xs text-gray-500 dark:text-gray-400 font-medium">Click to expand</span>
+                </div>
+
+                <!-- Interview 1 -->
+                <details class="group bg-white dark:bg-gray-900/40 border border-gray-200/80 dark:border-gray-700/80 rounded-2xl shadow-sm overflow-hidden">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-2xl">🧑‍🦱</div>
+                            <div>
+                                <div class="font-bold text-gray-900 dark:text-white text-lg">Interview 1: The Patient</div>
+                                <div class="text-sm text-gray-500 dark:text-gray-400">João Antunes (Young Adult with Type 1 Diabetes)</div>
+                            </div>
+                        </div>
+                        <span class="transition-transform duration-300 group-open:rotate-180 text-gray-400">
+                            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    
+                    <div class="p-6 border-t border-gray-200 dark:border-gray-700 bg-gray-50/50 dark:bg-gray-800/30">
+                        <div class="space-y-4 text-sm">
+                            <div>
+                                <div class="text-gray-500 dark:text-gray-400 font-bold mb-1">Interviewer:</div>
+                                <div class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-3 rounded-lg rounded-tl-none inline-block max-w-[90%]">What is the biggest challenge you face in the daily management of your diabetes?</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-blue-600 dark:text-blue-400 font-bold mb-1">João Antunes:</div>
+                                <div class="bg-blue-600 text-white p-3 rounded-lg rounded-tr-none inline-block max-w-[90%] text-left">My biggest challenge is remembering to check my glucose levels, take my medication, and maintain healthy eating habits every day. It's a continuous process that requires a lot of attention before every meal.</div>
+                            </div>
+
+                            <div>
+                                <div class="text-gray-500 dark:text-gray-400 font-bold mb-1">Interviewer:</div>
+                                <div class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-3 rounded-lg rounded-tl-none inline-block max-w-[90%]">How could our SmartGlycoAI mobile app facilitate this management, especially on a busy day?</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-blue-600 dark:text-blue-400 font-bold mb-1">João Antunes:</div>
+                                <div class="bg-blue-600 text-white p-3 rounded-lg rounded-tr-none inline-block max-w-[90%] text-left">It would help immensely to organize my daily routine, save my glucose measurements, and remind me when I need to take my medication. If I open the app in an emergency, I need to see my current glucose level and the graph for the last few days right in the first few seconds. Having a widget on the phone's home screen would be perfect to see the blood glucose without even opening the app.</div>
+                            </div>
+
+                            <div>
+                                <div class="text-gray-500 dark:text-gray-400 font-bold mb-1">Interviewer:</div>
+                                <div class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-3 rounded-lg rounded-tl-none inline-block max-w-[90%]">What specific features would you like the application to have, particularly regarding food?</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-blue-600 dark:text-blue-400 font-bold mb-1">João Antunes:</div>
+                                <div class="bg-blue-600 text-white p-3 rounded-lg rounded-tr-none inline-block max-w-[90%] text-left">I would like to have a glucose tracker, medication reminders, a meal log, progress graphs, and simple explanations about diabetes. Taking a photo of the plate for the app to calculate the carbohydrates would be very practical. I would feel comfortable using the camera in a restaurant, as long as the process was fast and discreet.</div>
+                            </div>
+
+                            <div>
+                                <div class="text-gray-500 dark:text-gray-400 font-bold mb-1">Interviewer:</div>
+                                <div class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-3 rounded-lg rounded-tl-none inline-block max-w-[90%]">Would you like the application to provide personalized recommendations using Artificial Intelligence?</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-blue-600 dark:text-blue-400 font-bold mb-1">João Antunes:</div>
+                                <div class="bg-blue-600 text-white p-3 rounded-lg rounded-tr-none inline-block max-w-[90%] text-left">Yes, especially recommendations about food, exercise, and daily habits based on my glucose history. However, I would want the medical advice to be checked and validated by my healthcare team.</div>
+                            </div>
+
+                            <div>
+                                <div class="text-gray-500 dark:text-gray-400 font-bold mb-1">Interviewer:</div>
+                                <div class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-3 rounded-lg rounded-tl-none inline-block max-w-[90%]">What would make you use the application every day?</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-blue-600 dark:text-blue-400 font-bold mb-1">João Antunes:</div>
+                                <div class="bg-blue-600 text-white p-3 rounded-lg rounded-tr-none inline-block max-w-[90%] text-left">A simple interface, a quick glucose log, useful reminders, and the ability to clearly see if my condition is improving.</div>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- Interview 2 -->
+                <details class="group bg-white dark:bg-gray-900/40 border border-gray-200/80 dark:border-gray-700/80 rounded-2xl shadow-sm overflow-hidden">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center text-2xl">👩‍⚕️</div>
+                            <div>
+                                <div class="font-bold text-gray-900 dark:text-white text-lg">Interview 2: The Doctor</div>
+                                <div class="text-sm text-gray-500 dark:text-gray-400">Dr. Joana Silvia (Endocrinologist)</div>
+                            </div>
+                        </div>
+                        <span class="transition-transform duration-300 group-open:rotate-180 text-gray-400">
+                            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    
+                    <div class="p-6 border-t border-gray-200 dark:border-gray-700 bg-gray-50/50 dark:bg-gray-800/30">
+                        <div class="space-y-4 text-sm">
+                            <div>
+                                <div class="text-gray-500 dark:text-gray-400 font-bold mb-1">Interviewer:</div>
+                                <div class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-3 rounded-lg rounded-tl-none inline-block max-w-[90%]">In what way could an application like SmartGlycoAI help you monitor your patients with diabetes?</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-purple-600 dark:text-purple-400 font-bold mb-1">Dr. Joana Silvia:</div>
+                                <div class="bg-purple-600 text-white p-3 rounded-lg rounded-tr-none inline-block max-w-[90%] text-left">It would help me access patients' glucose measurements, medication history, and health progress in a single place, which would make consultations much more efficient.</div>
+                            </div>
+
+                            <div>
+                                <div class="text-gray-500 dark:text-gray-400 font-bold mb-1">Interviewer:</div>
+                                <div class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-3 rounded-lg rounded-tl-none inline-block max-w-[90%]">What features would be most important for your clinical work?</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-purple-600 dark:text-purple-400 font-bold mb-1">Dr. Joana Silvia:</div>
+                                <div class="bg-purple-600 text-white p-3 rounded-lg rounded-tr-none inline-block max-w-[90%] text-left">I would prioritize glucose history graphs, alerts for concerning patterns, organized patient records, and the ability to review medication adherence. The fact that the platform has a web version allows me to analyze this data comfortably on my office computer screen.</div>
+                            </div>
+
+                            <div>
+                                <div class="text-gray-500 dark:text-gray-400 font-bold mb-1">Interviewer:</div>
+                                <div class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-3 rounded-lg rounded-tl-none inline-block max-w-[90%]">How could the application improve communication with your patients?</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-purple-600 dark:text-purple-400 font-bold mb-1">Dr. Joana Silvia:</div>
+                                <div class="bg-purple-600 text-white p-3 rounded-lg rounded-tr-none inline-block max-w-[90%] text-left">Patients could share their glucose measurements and symptoms between consultations, allowing me to better understand their condition and the impact of meals throughout the week.</div>
+                            </div>
+
+                            <div>
+                                <div class="text-gray-500 dark:text-gray-400 font-bold mb-1">Interviewer:</div>
+                                <div class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-3 rounded-lg rounded-tl-none inline-block max-w-[90%]">Do you consider that AI-generated health recommendations, such as suggesting insulin doses, would be useful?</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-purple-600 dark:text-purple-400 font-bold mb-1">Dr. Joana Silvia:</div>
+                                <div class="bg-purple-600 text-white p-3 rounded-lg rounded-tr-none inline-block max-w-[90%] text-left">Yes, particularly for identifying trends and highlighting potential problems. However, AI should support medical decisions rather than replace professional judgment.</div>
+                            </div>
+
+                            <div>
+                                <div class="text-gray-500 dark:text-gray-400 font-bold mb-1">Interviewer:</div>
+                                <div class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-3 rounded-lg rounded-tl-none inline-block max-w-[90%]">What would make you trust this application for clinical use?</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-purple-600 dark:text-purple-400 font-bold mb-1">Dr. Joana Silvia:</div>
+                                <div class="bg-purple-600 text-white p-3 rounded-lg rounded-tr-none inline-block max-w-[90%] text-left">Accurate information, secure patient records, clear explanations about the insights generated by AI, and reliable clinical data. A transparent section about the development team and how the algorithm was trained also provides greater security.</div>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- Interview 3 -->
+                <details class="group bg-white dark:bg-gray-900/40 border border-gray-200/80 dark:border-gray-700/80 rounded-2xl shadow-sm overflow-hidden">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center text-2xl">👨‍⚕️</div>
+                            <div>
+                                <div class="font-bold text-gray-900 dark:text-white text-lg">Interview 3: The Nurse</div>
+                                <div class="text-sm text-gray-500 dark:text-gray-400">Enf. Martim Garcia (Nurse)</div>
+                            </div>
+                        </div>
+                        <span class="transition-transform duration-300 group-open:rotate-180 text-gray-400">
+                            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    
+                    <div class="p-6 border-t border-gray-200 dark:border-gray-700 bg-gray-50/50 dark:bg-gray-800/30">
+                        <div class="space-y-4 text-sm">
+                            <div>
+                                <div class="text-gray-500 dark:text-gray-400 font-bold mb-1">Interviewer:</div>
+                                <div class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-3 rounded-lg rounded-tl-none inline-block max-w-[90%]">How could this application help you in your daily follow-up work?</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-green-600 dark:text-green-400 font-bold mb-1">Enf. Martim Garcia:</div>
+                                <div class="bg-green-600 text-white p-3 rounded-lg rounded-tr-none inline-block max-w-[90%] text-left">It could help me monitor patients' glucose readings, check if they are following their care routines, and easily identify those who need additional support.</div>
+                            </div>
+
+                            <div>
+                                <div class="text-gray-500 dark:text-gray-400 font-bold mb-1">Interviewer:</div>
+                                <div class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-3 rounded-lg rounded-tl-none inline-block max-w-[90%]">What features would be most useful to ensure the success of the treatment?</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-green-600 dark:text-green-400 font-bold mb-1">Enf. Martim Garcia:</div>
+                                <div class="bg-green-600 text-white p-3 rounded-lg rounded-tr-none inline-block max-w-[90%] text-left">Medication reminders, tracking patient progress, notifications about missed glucose measurements, and educational information.</div>
+                            </div>
+
+                            <div>
+                                <div class="text-gray-500 dark:text-gray-400 font-bold mb-1">Interviewer:</div>
+                                <div class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-3 rounded-lg rounded-tl-none inline-block max-w-[90%]">How could the application help patients manage diabetes more independently?</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-green-600 dark:text-green-400 font-bold mb-1">Enf. Martim Garcia:</div>
+                                <div class="bg-green-600 text-white p-3 rounded-lg rounded-tr-none inline-block max-w-[90%] text-left">It could remind them to monitor their glucose, follow their prescribed medication schedules, and maintain healthy habits.</div>
+                            </div>
+
+                            <div>
+                                <div class="text-gray-500 dark:text-gray-400 font-bold mb-1">Interviewer:</div>
+                                <div class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-3 rounded-lg rounded-tl-none inline-block max-w-[90%]">What problems do you think patients might face when using the application, and how would you solve them?</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-green-600 dark:text-green-400 font-bold mb-1">Enf. Martim Garcia:</div>
+                                <div class="bg-green-600 text-white p-3 rounded-lg rounded-tr-none inline-block max-w-[90%] text-left">Some patients might have difficulties understanding medical information or navigating complicated interfaces, particularly older users. The inclusion of a glossary for technical terms would be an excellent help.</div>
+                            </div>
+
+                            <div>
+                                <div class="text-gray-500 dark:text-gray-400 font-bold mb-1">Interviewer:</div>
+                                <div class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-3 rounded-lg rounded-tl-none inline-block max-w-[90%]">What would you improve in the design of a diabetes management application?</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-green-600 dark:text-green-400 font-bold mb-1">Enf. Martim Garcia:</div>
+                                <div class="bg-green-600 text-white p-3 rounded-lg rounded-tr-none inline-block max-w-[90%] text-left">I would make the application very easy to use, with large buttons, clear instructions, simple graphs, and notifications that patients can customize. Notifications on the phone should be configurable, such as a subtle vibration, so they are not intrusive in the workplace.</div>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+            </div>
+        </section>
+
+        <!-- 6. DOWNLOADS SECTION -->
+        <section class="bg-white dark:bg-gray-800/90 rounded-[2rem] p-8 shadow-sm border border-gray-200/80 dark:border-gray-700/80" data-aos="fade-up">
+            <div class="flex items-center gap-4 mb-6">
+                <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200">Downloads</h2>
+                <div class="h-px bg-gray-200 dark:bg-gray-700 flex-grow"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <a href="docs/IPM_stage_2_Group_06.pdf" target="_blank" download class="flex items-center justify-between bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 rounded-2xl p-4 hover:border-emerald-500 dark:hover:border-emerald-500 transition group cursor-pointer">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-red-100 dark:bg-red-900/30 text-red-600 rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                            📄
+                        </div>
+                        <div>
+                            <div class="font-bold text-gray-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors text-sm">Stage 2 Report</div>
+                            <div class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">Task analysis & Personas</div>
+                        </div>
+                    </div>
+                    <span class="text-xs font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/30 px-3 py-1.5 rounded-full border border-emerald-200/50 dark:border-emerald-800">PDF Download</span>
+                </a>
+            </div>
+        </section>
+
     </main>
 
     <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 py-8 text-center text-sm mt-12 flex flex-col items-center transition-colors duration-300">
