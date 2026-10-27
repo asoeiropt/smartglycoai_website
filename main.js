@@ -190,3 +190,28 @@ function runSimulation(mealKey) {
         `;
     }, 1800); // 1.8 segundos de "análise"
 }
+
+// Funções do Modal QR Code (Stage 4)
+function openQRModal() {
+    const modal = document.getElementById('qr-modal');
+    const content = document.getElementById('qr-modal-content');
+    
+    modal.classList.remove('hidden');
+    // Pequeno delay para a transição de opacidade/escala funcionar no Tailwind
+    setTimeout(() => {
+        modal.classList.remove('opacity-0');
+        content.classList.remove('scale-95');
+    }, 10);
+}
+
+function closeQRModal() {
+    const modal = document.getElementById('qr-modal');
+    const content = document.getElementById('qr-modal-content');
+    
+    modal.classList.add('opacity-0');
+    content.classList.add('scale-95');
+    
+    setTimeout(() => {
+        modal.classList.add('hidden');
+    }, 300); // Tempo igual à transição do Tailwind (duration-300)
+}
