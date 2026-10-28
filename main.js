@@ -1,3 +1,7 @@
+// =========================================================================
+// NAVEGAÇÃO E TEMA
+// =========================================================================
+
 // Toggle mobile menu visibility
 function toggleMobileMenu() {
     const menu = document.getElementById('mobile-menu');
@@ -29,24 +33,27 @@ function updateThemeIcons(isDark) {
     if (iconSingle) iconSingle.innerText = iconContent;
 }
 
-// --- SCRIPTS DE CONTROLO DOS MODAIS (Página da App) ---
-function openVersionModal() {
-    const modal = document.getElementById('version-modal');
+
+// =========================================================================
+// SCRIPTS DE CONTROLO DOS MODAIS (Versões, Lightbox e QR Code)
+// =========================================================================
+
+function openVersionModal(modalId) {
+    const modal = document.getElementById(modalId);
     if(modal) {
         modal.classList.remove('hidden');
         document.body.style.overflow = 'hidden';
     }
 }
 
-function closeVersionModal() {
-    const modal = document.getElementById('version-modal');
+function closeVersionModal(modalId) {
+    const modal = document.getElementById(modalId);
     if(modal) {
         modal.classList.add('hidden');
         document.body.style.overflow = 'auto';
     }
 }
 
-// Adicionado o parâmetro 'event' para não dar erro no stopPropagation
 function openLightbox(event, imageUrl) {
     if(event) event.stopPropagation(); 
     const imgEl = document.getElementById('lightbox-img');
@@ -64,82 +71,67 @@ function closeLightbox() {
     }
 }
 
+function openQRModal() {
+    const modal = document.getElementById('qr-modal');
+    const content = document.getElementById('qr-modal-content');
+    if(modal && content) {
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+            modal.classList.remove('opacity-0');
+            content.classList.remove('scale-95');
+        }, 10);
+    }
+}
+
+function closeQRModal() {
+    const modal = document.getElementById('qr-modal');
+    const content = document.getElementById('qr-modal-content');
+    if(modal && content) {
+        modal.classList.add('opacity-0');
+        content.classList.add('scale-95');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+        }, 300);
+    }
+}
+
 // Gestão de cliques fora de qualquer modal
 window.addEventListener('click', (e) => {
-    const versionModal = document.getElementById('version-modal');
+    // Procura todos os modais de versão na página
+    const versionModals = document.querySelectorAll('.version-modal');
     const lightboxModal = document.getElementById('lightbox-modal');
+    const qrModal = document.getElementById('qr-modal');
     
-    if (e.target === versionModal) closeVersionModal();
+    // Fecha o modal de versão específico em que se clicou fora
+    versionModals.forEach(modal => {
+        if (e.target === modal) closeVersionModal(modal.id);
+    });
+    
     if (e.target === lightboxModal) closeLightbox();
+    if (e.target === qrModal) closeQRModal();
 });
 
 // Fechar modais com a tecla ESC
 window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-        closeVersionModal();
+        // Fecha todos os modais de versão que não estejam escondidos
+        const openVersionModals = document.querySelectorAll('.version-modal:not(.hidden)');
+        openVersionModals.forEach(modal => closeVersionModal(modal.id));
+        
         closeLightbox();
+        closeQRModal();
     }
 });
 
 
 // =========================================================================
-// INICIALIZAÇÃO AUTOMÁTICA (Sem depender do DOMContentLoaded)
-// =========================================================================
-
-// 1. Iniciar Tema (Dark/Light)
-const savedTheme = localStorage.getItem('theme');
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-    document.documentElement.classList.add('dark');
-    updateThemeIcons(true);
-} else {
-    document.documentElement.classList.remove('dark');
-    updateThemeIcons(false);
-}
-
-// 2. Iniciar Animações (AOS)
-if (typeof AOS !== 'undefined') {
-    AOS.init({
-        once: true,
-        duration: 800,
-        offset: 50
-    });
-}
-
-// =========================================================================
 // AI MEAL SIMULATOR LOGIC (Para o index.html)
 // =========================================================================
 
-// Base de dados simulada para os pratos
 const mealDatabase = {
-    pasta: {
-        icon: '🍝',
-        name: 'Italian Pasta',
-        carbs: 65,
-        glucose: 110,
-        dose: 4.0,
-        color: 'text-blue-400',
-        bg: 'bg-blue-900/30'
-    },
-    apple: {
-        icon: '🍎',
-        name: 'Fresh Apple',
-        carbs: 15,
-        glucose: 95,
-        dose: 1.0,
-        color: 'text-green-400',
-        bg: 'bg-green-900/30'
-    },
-    steak: {
-        icon: '🥩',
-        name: 'Steak & Rice',
-        carbs: 45,
-        glucose: 115,
-        dose: 3.0,
-        color: 'text-red-400',
-        bg: 'bg-red-900/30'
-    }
+    pasta: { icon: '🍝', name: 'Italian Pasta', carbs: 65, glucose: 110, dose: 4.0, color: 'text-blue-400', bg: 'bg-blue-900/30' },
+    apple: { icon: '🍎', name: 'Fresh Apple', carbs: 15, glucose: 95, dose: 1.0, color: 'text-green-400', bg: 'bg-green-900/30' },
+    steak: { icon: '🥩', name: 'Steak & Rice', carbs: 45, glucose: 115, dose: 3.0, color: 'text-red-400', bg: 'bg-red-900/30' }
 };
 
 function runSimulation(mealKey) {
@@ -148,18 +140,15 @@ function runSimulation(mealKey) {
     
     if (!screen || !meal) return;
 
-    // 1. Estado de Análise (Scanning) com Animação
     screen.innerHTML = `
         <div class="relative">
             <div class="text-6xl mb-4 animate-bounce">${meal.icon}</div>
-            <!-- Laser Effect -->
             <div class="absolute top-0 left-0 w-full h-1 bg-blue-500 shadow-[0_0_8px_2px_rgba(59,130,246,0.8)] animate-[ping_1.5s_ease-in-out_infinite]"></div>
         </div>
         <h3 class="text-blue-400 font-bold text-lg mb-1 animate-pulse">Analyzing Image...</h3>
         <p class="text-gray-400 text-sm">Computer Vision running</p>
     `;
 
-    // 2. Esperar 1.8 segundos e mostrar o resultado final
     setTimeout(() => {
         screen.innerHTML = `
             <div class="w-full text-left bg-gray-800 rounded-xl p-4 border border-gray-700 shadow-lg animate-in zoom-in duration-300">
@@ -188,30 +177,59 @@ function runSimulation(mealKey) {
                 </div>
             </div>
         `;
-    }, 1800); // 1.8 segundos de "análise"
+    }, 1800);
 }
 
-// Funções do Modal QR Code (Stage 4)
-function openQRModal() {
-    const modal = document.getElementById('qr-modal');
-    const content = document.getElementById('qr-modal-content');
-    
-    modal.classList.remove('hidden');
-    // Pequeno delay para a transição de opacidade/escala funcionar no Tailwind
-    setTimeout(() => {
-        modal.classList.remove('opacity-0');
-        content.classList.remove('scale-95');
-    }, 10);
+
+// =========================================================================
+// SCROLL TO TOP BUTTON LOGIC
+// =========================================================================
+
+// Criar botão dinamicamente
+const scrollTopBtn = document.createElement('button');
+scrollTopBtn.innerHTML = '↑';
+// Adiciona as classes Tailwind para o botão flutuante
+scrollTopBtn.className = 'fixed bottom-6 right-6 w-12 h-12 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white rounded-full shadow-lg flex items-center justify-center text-xl transition-all transform scale-0 opacity-0 z-50 focus:outline-none';
+document.body.appendChild(scrollTopBtn);
+
+// Mostrar ou ocultar com base no scroll
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+        scrollTopBtn.classList.remove('scale-0', 'opacity-0');
+        scrollTopBtn.classList.add('scale-100', 'opacity-100');
+    } else {
+        scrollTopBtn.classList.add('scale-0', 'opacity-0');
+        scrollTopBtn.classList.remove('scale-100', 'opacity-100');
+    }
+});
+
+// Ação de clique para subir suavemente
+scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+
+// =========================================================================
+// INICIALIZAÇÃO AUTOMÁTICA
+// =========================================================================
+
+// 1. Iniciar Tema (Dark/Light)
+const savedTheme = localStorage.getItem('theme');
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+    document.documentElement.classList.add('dark');
+    updateThemeIcons(true);
+} else {
+    document.documentElement.classList.remove('dark');
+    updateThemeIcons(false);
 }
 
-function closeQRModal() {
-    const modal = document.getElementById('qr-modal');
-    const content = document.getElementById('qr-modal-content');
-    
-    modal.classList.add('opacity-0');
-    content.classList.add('scale-95');
-    
-    setTimeout(() => {
-        modal.classList.add('hidden');
-    }, 300); // Tempo igual à transição do Tailwind (duration-300)
+// 2. Iniciar Animações (AOS)
+if (typeof AOS !== 'undefined') {
+    AOS.init({
+        once: true,
+        duration: 800,
+        offset: 50
+    });
 }

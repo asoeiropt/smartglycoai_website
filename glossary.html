@@ -3,141 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glossary & Medical Context | SmartGlycoAI</title>
+    <title>Glossary | SmartGlycoAI</title>
+    <link rel="icon" type="image/jpeg" href="img/logo.jpeg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script>tailwind.config = { darkMode: 'class' }</script>
+    <style>
+        /* Brilhos radiais suaves estilo Bento UI */
+        .glow-blue {
+            background: radial-gradient(circle at 85% 15%, rgba(59, 130, 246, 0.15), transparent 60%),
+                        radial-gradient(circle at 15% 85%, rgba(37, 99, 235, 0.05), transparent 55%);
+        }
+    </style>
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans antialiased transition-colors duration-300">
 
-    <header class="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-50 transition-colors duration-300">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-            <a href="index.html" class="text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 font-semibold flex items-center transition">
-                <span class="mr-2">←</span> Back to Menu
-            </a>
-            
-            <div class="hidden md:flex items-center gap-6">
-                <!-- ETIQUETA GROUP 6 -->
-                <span class="bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300 text-sm font-bold px-3 py-1 rounded-full border border-blue-200 dark:border-blue-800/50 cursor-default">
-                    Group 6
-                </span>
-                
-                <div class="font-bold text-gray-800 dark:text-gray-200 mr-4">Glossary</div>
-                <a href="https://github.com/asoeiropt/IPM-6-APP" target="_blank" class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition" title="GitHub Repository">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+    <!-- HEADER FLUTUANTE (Glassmorphism) -->
+    <header class="sticky top-4 z-50 px-4">
+        <div class="max-w-6xl mx-auto bg-white/85 dark:bg-gray-800/85 backdrop-blur-xl shadow-lg border border-gray-200/80 dark:border-gray-700/80 rounded-[2rem] px-6 py-4 transition-colors duration-300">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 font-semibold flex items-center transition">
+                    <span class="mr-2">←</span> Back to Menu
                 </a>
-                <button onclick="toggleDarkMode()" class="text-gray-500 hover:text-yellow-500 dark:text-gray-400 dark:hover:text-yellow-400 transition">
-                    <span id="theme-icon-desktop" class="text-xl">🌙</span>
-                </button>
-                <a href="developers.html" class="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">The Team</a>
-                <a href="app.html" class="text-sm font-semibold text-gray-600 hover:text-blue-600 transition bg-gray-100 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600 px-4 py-2 rounded-lg">View App Architecture</a>
+                
+                <div class="flex items-center gap-4">
+                    <span class="hidden md:inline-block bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300 text-sm font-bold px-3.5 py-1 rounded-full border border-blue-200 dark:border-blue-800/50 cursor-default">
+                        Group 6
+                    </span>
+                    <a href="developers.html" class="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition hidden sm:inline">The Team</a>
+                    <button onclick="toggleDarkMode()" class="text-gray-500 hover:text-yellow-500 dark:text-gray-400 dark:hover:text-yellow-400 transition text-xl">
+                        <span id="theme-icon-desktop">🌙</span>
+                    </button>
+                </div>
             </div>
-
-            <!-- MENU HAMBURGUER (MOBILE) -->
-            <div class="md:hidden flex items-center gap-4">
-                <button onclick="toggleDarkMode()" class="text-gray-500 dark:text-gray-400 transition text-xl">
-                    <span id="theme-icon-mobile">🌙</span>
-                </button>
-                <button onclick="toggleMobileMenu()" class="text-gray-600 dark:text-gray-300 focus:outline-none">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-                </button>
-            </div>
-        </div>
-
-        <!-- DROPDOWN DO MENU MOBILE -->
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-50 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
-            <div class="px-4 py-3 border-b border-gray-200 dark:border-gray-700">
-                <span class="bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300 text-xs font-bold px-3 py-1 rounded-full border border-blue-200 dark:border-blue-800/50 inline-block">
-                    Group 6
-                </span>
-            </div>
-            <a href="developers.html" class="block px-4 py-3 text-sm font-semibold text-gray-700 dark:text-gray-200 border-b border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700">The Team</a>
-            <a href="app.html" class="block px-4 py-3 text-sm font-semibold text-gray-700 dark:text-gray-200 border-b border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700">View App Architecture</a>
-            <a href="https://github.com/asoeiropt/IPM-6-APP" target="_blank" class="block px-4 py-3 text-sm font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">GitHub Repository</a>
         </div>
     </header>
 
-    <main class="max-w-4xl mx-auto py-12 px-4">
-        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden transition-colors" data-aos="fade-up">
+    <main class="max-w-6xl mx-auto py-10 px-4 space-y-10">
+        
+        <!-- HERO BANNER GLOSSARY -->
+        <section class="bg-gradient-to-br from-indigo-600 via-blue-700 to-blue-900 dark:from-indigo-800 dark:via-blue-900 dark:to-gray-900 text-white p-8 md:p-12 rounded-[2.2rem] shadow-xl border border-blue-400/30 dark:border-blue-700/50" data-aos="fade-up">
+            <span class="inline-block py-1 px-3.5 rounded-full bg-white/20 text-blue-50 text-xs font-bold uppercase tracking-wider mb-4 border border-white/20">
+                Support & Documentation
+            </span>
+            <h1 class="text-3xl md:text-4xl font-extrabold mb-3 tracking-tight">Medical Glossary</h1>
+            <p class="text-blue-100 text-base md:text-lg max-w-3xl">
+                Essential terms and concepts used in the SmartGlycoAI ecosystem to help users and evaluators understand Type 1 Diabetes management.
+            </p>
+        </section>
+
+        <!-- GLOSSARY GRID -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6" data-aos="fade-up">
             
-            <div class="bg-blue-600 text-white p-8">
-                <h1 class="text-3xl font-bold mb-2">Medical & Technical Glossary</h1>
-                <p class="text-blue-100 text-lg">
-                    Key terminology and clinical concepts foundational to the SmartGlycoAI platform architecture.
+            <!-- T1D -->
+            <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
+                <div class="flex items-center gap-3 mb-3">
+                    <span class="text-2xl">🩸</span>
+                    <h2 class="text-xl font-bold text-gray-900 dark:text-white">T1D (Type 1 Diabetes)</h2>
+                </div>
+                <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                    A chronic condition in which the pancreas produces little or no insulin. Patients must manually manage their blood glucose levels through external insulin administration, diet, and lifestyle adjustments.
                 </p>
             </div>
 
-            <div class="p-8 space-y-6">
-                
-                <!-- Termo 1 -->
-                <div class="p-5 bg-gray-50 dark:bg-gray-700/30 rounded-xl border border-gray-100 dark:border-gray-600">
-                    <h3 class="text-lg font-bold text-blue-600 dark:text-blue-400 mb-2">CGM (Continuous Glucose Monitor)</h3>
-                    <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-                        A wearable medical device that tracks blood glucose levels continuously in real-time (every few minutes) using a tiny sensor inserted under the skin. In SmartGlycoAI, this data is synced via Bluetooth to feed biometric inputs into our decision support models.
-                    </p>
+            <!-- CGM -->
+            <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
+                <div class="flex items-center gap-3 mb-3">
+                    <span class="text-2xl">📱</span>
+                    <h2 class="text-xl font-bold text-gray-900 dark:text-white">CGM (Continuous Glucose Monitor)</h2>
                 </div>
-
-                <!-- Termo 2 -->
-                <div class="p-5 bg-gray-50 dark:bg-gray-700/30 rounded-xl border border-gray-100 dark:border-gray-600">
-                    <h3 class="text-lg font-bold text-blue-600 dark:text-blue-400 mb-2">Type 1 Diabetes Mellitus (T1D)</h3>
-                    <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-                        A chronic autoimmune condition where the pancreas produces little or no insulin. Patients require lifelong exogenous insulin administration and rigorous, continuous monitoring of carbohydrate intake and physical activity to maintain safe glycemic ranges.
-                    </p>
-                </div>
-
-                <!-- Termo 3 -->
-                <div class="p-5 bg-gray-50 dark:bg-gray-700/30 rounded-xl border border-gray-100 dark:border-gray-600">
-                    <h3 class="text-lg font-bold text-blue-600 dark:text-blue-400 mb-2">Hypoglycemia & Hyperglycemia</h3>
-                    <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-                        <strong>Hypoglycemia:</strong> A dangerous state where blood sugar drops below normal levels (typically &lt; 70 mg/dL), causing dizziness or fainting.<br>
-                        <strong>Hyperglycemia:</strong> An elevated blood sugar level resulting from insufficient insulin or excess carbohydrate intake. Both extremes are primary risks mitigated by SmartGlycoAI's proactive alerts.
-                    </p>
-                </div>
-
-                <!-- Termo 4 -->
-                <div class="p-5 bg-gray-50 dark:bg-gray-700/30 rounded-xl border border-gray-100 dark:border-gray-600">
-                    <h3 class="text-lg font-bold text-blue-600 dark:text-blue-400 mb-2">Carbohydrate Counting & Insulin Ratio</h3>
-                    <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-                        <strong>Carb Counting:</strong> The practice of calculating the grams of carbohydrates in a meal to determine the required insulin bolus.<br>
-                        <strong>Insulin-to-Carb Ratio (ICR):</strong> A personalized medical metric defining how many grams of carbohydrates are covered by 1 unit of rapid-acting insulin. Our app automates this complex calculation using computer vision and AI.
-                    </p>
-                </div>
-
-                <!-- Termo 5 -->
-                <div class="p-5 bg-gray-50 dark:bg-gray-700/30 rounded-xl border border-gray-100 dark:border-gray-600">
-                    <h3 class="text-lg font-bold text-blue-600 dark:text-blue-400 mb-2">Correction Factor (ISF)</h3>
-                    <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-                        Also known as the Insulin Sensitivity Factor. It represents how much one unit of rapid-acting insulin will lower blood glucose. SmartGlycoAI automates this calculation to reduce the cognitive overload and mathematical errors often experienced by newly diagnosed patients.
-                    </p>
-                </div>
-
-                <!-- Termo 6 -->
-                <div class="p-5 bg-gray-50 dark:bg-gray-700/30 rounded-xl border border-gray-100 dark:border-gray-600">
-                    <h3 class="text-lg font-bold text-blue-600 dark:text-blue-400 mb-2">Basal vs. Bolus Insulin</h3>
-                    <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-                        <strong>Basal:</strong> Long-acting background insulin that keeps blood sugar stable overnight and between meals.<br>
-                        <strong>Bolus:</strong> Rapid-acting insulin doses taken specifically to cover meals or correct high blood glucose levels.
-                    </p>
-                </div>
-
-                <!-- Termo 7 -->
-                <div class="p-5 bg-gray-50 dark:bg-gray-700/30 rounded-xl border border-gray-100 dark:border-gray-600">
-                    <h3 class="text-lg font-bold text-blue-600 dark:text-blue-400 mb-2">Predictive Alerts</h3>
-                    <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-                        AI-driven notifications that warn users of impending glycemic events (such as a rapid drop in glucose) before they occur. This allows for proactive carbohydrate intake to prevent severe hypoglycemia, alleviating the nighttime anxiety frequently reported by patients.
-                    </p>
-                </div>
-
-                <!-- Termo 8 -->
-                <div class="p-5 bg-gray-50 dark:bg-gray-700/30 rounded-xl border border-gray-100 dark:border-gray-600">
-                    <h3 class="text-lg font-bold text-blue-600 dark:text-blue-400 mb-2">Computer Vision (CV) Estimation</h3>
-                    <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-                        A branch of artificial intelligence that allows the application to interpret visual data. In SmartGlycoAI, CV is used to analyze photos of meals in real-time, automatically identifying food items and estimating carbohydrate content to simplify eating out.
-                    </p>
-                </div>
-
+                <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                    A wearable sensor (e.g., FreeStyle Libre) that automatically tracks glucose levels day and night. SmartGlycoAI connects to these devices via Bluetooth to provide real-time readings and trend graphs.
+                </p>
             </div>
-        </div>
+
+            <!-- ICR -->
+            <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
+                <div class="flex items-center gap-3 mb-3">
+                    <span class="text-2xl">⚖️</span>
+                    <h2 class="text-xl font-bold text-gray-900 dark:text-white">ICR (Insulin-to-Carb Ratio)</h2>
+                </div>
+                <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                    A personalized setting that indicates how many grams of carbohydrates are covered by 1 unit of insulin. For example, an ICR of 1:15 means the patient needs 1 unit of insulin for every 15g of carbs eaten.
+                </p>
+            </div>
+
+            <!-- ISF -->
+            <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
+                <div class="flex items-center gap-3 mb-3">
+                    <span class="text-2xl">📉</span>
+                    <h2 class="text-xl font-bold text-gray-900 dark:text-white">ISF (Insulin Sensitivity Factor)</h2>
+                </div>
+                <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Defines how much 1 unit of fast-acting insulin will lower the patient's blood glucose level. Used by the app to calculate correction doses when glucose is too high.
+                </p>
+            </div>
+
+            <!-- Hypoglycemia -->
+            <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
+                <div class="flex items-center gap-3 mb-3">
+                    <span class="text-2xl">⚠️</span>
+                    <h2 class="text-xl font-bold text-gray-900 dark:text-white">Hypoglycemia (Low)</h2>
+                </div>
+                <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                    A dangerous condition where blood sugar drops below healthy levels (typically < 70 mg/dL). SmartGlycoAI issues predictive alerts to warn users before this happens, suggesting fast-acting carbs (like juice) to correct it.
+                </p>
+            </div>
+
+            <!-- Hyperglycemia -->
+            <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
+                <div class="flex items-center gap-3 mb-3">
+                    <span class="text-2xl">📈</span>
+                    <h2 class="text-xl font-bold text-gray-900 dark:text-white">Hyperglycemia (High)</h2>
+                </div>
+                <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                    When blood glucose is too high (typically > 180 mg/dL). Often occurs if a meal was miscalculated or not enough insulin was administered. Repeated highs are flagged in the doctor's dashboard.
+                </p>
+            </div>
+
+            <!-- Bolus Insulin -->
+            <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
+                <div class="flex items-center gap-3 mb-3">
+                    <span class="text-2xl">💉</span>
+                    <h2 class="text-xl font-bold text-gray-900 dark:text-white">Bolus Insulin</h2>
+                </div>
+                <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                    A single, fast-acting dose of insulin given specifically to handle the carbohydrates in a meal or to correct a high glucose reading. This is the main calculation performed by SmartGlycoAI.
+                </p>
+            </div>
+
+            <!-- Target Glucose -->
+            <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
+                <div class="flex items-center gap-3 mb-3">
+                    <span class="text-2xl">🎯</span>
+                    <h2 class="text-xl font-bold text-gray-900 dark:text-white">Target Glucose</h2>
+                </div>
+                <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                    The ideal blood sugar level the patient aims to maintain (usually around 100-120 mg/dL). The application's AI algorithms calculate corrections to always push the patient's glucose back to this target.
+                </p>
+            </div>
+
+        </section>
+
     </main>
 
     <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 py-8 text-center text-sm mt-12 flex flex-col items-center transition-colors duration-300">

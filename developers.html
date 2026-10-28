@@ -1,105 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Developers | SmartGlycoAI</title>
+    <title>The Team | SmartGlycoAI</title>
+    <link rel="icon" type="image/jpeg" href="img/logo.jpeg">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>tailwind.config = { darkMode: 'class' }</script>
+    <style>
+        /* Brilhos radiais suaves estilo Bento UI */
+        .glow-blue {
+            background: radial-gradient(circle at 85% 15%, rgba(59, 130, 246, 0.15), transparent 60%),
+                        radial-gradient(circle at 15% 85%, rgba(37, 99, 235, 0.05), transparent 55%);
+        }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans antialiased">
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans antialiased transition-colors duration-300">
 
-    <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-            <a href="index.html" class="text-gray-500 hover:text-blue-600 font-semibold flex items-center transition">
-                <span class="mr-2">←</span> 
-                Back to Menu
-            </a>
-            
-            <div class="font-bold text-gray-800">
-                The Team
+    <!-- HEADER FLUTUANTE (Glassmorphism) -->
+    <header class="sticky top-4 z-50 px-4">
+        <div class="max-w-6xl mx-auto bg-white/85 dark:bg-gray-800/85 backdrop-blur-xl shadow-lg border border-gray-200/80 dark:border-gray-700/80 rounded-[2rem] px-6 py-4 transition-colors duration-300">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 font-semibold flex items-center transition">
+                    <span class="mr-2">←</span> Back to Menu
+                </a>
+                
+                <div class="flex items-center gap-4">
+                    <span class="hidden md:inline-block bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300 text-sm font-bold px-3.5 py-1 rounded-full border border-blue-200 dark:border-blue-800/50 cursor-default">
+                        Group 6
+                    </span>
+                    <a href="glossary.html" class="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition hidden sm:inline">Glossary</a>
+                    <button onclick="toggleDarkMode()" class="text-gray-500 hover:text-yellow-500 dark:text-gray-400 dark:hover:text-yellow-400 transition text-xl">
+                        <span id="theme-icon-desktop">🌙</span>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
 
-    <main class="max-w-6xl mx-auto py-16 px-4">
-        <!-- Page Title -->
-        <div class="text-center mb-16">
-            <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider mb-4">
-                Development Team
+    <main class="max-w-6xl mx-auto py-10 px-4 space-y-10">
+        
+        <!-- HERO BANNER -->
+        <section class="bg-gradient-to-br from-blue-600 via-indigo-700 to-purple-800 dark:from-blue-800 dark:via-indigo-900 dark:to-gray-900 text-white p-8 md:p-12 rounded-[2.2rem] shadow-xl border border-blue-400/30 dark:border-blue-700/50" data-aos="fade-up">
+            <span class="inline-block py-1 px-3.5 rounded-full bg-white/20 text-blue-50 text-xs font-bold uppercase tracking-wider mb-4 border border-white/20">
+                Human-Computer Interaction
             </span>
-            <h1 class="text-4xl md:text-5xl font-extrabold mb-4 text-gray-900">Meet the Developers</h1>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto">The engineering and design team behind the SmartGlycoAI platform.</p>
-        </div>
+            <h1 class="text-3xl md:text-4xl font-extrabold mb-3 tracking-tight">Meet The Team</h1>
+            <p class="text-blue-100 text-base md:text-lg max-w-3xl">
+                We are Group 6, the developers and designers behind the SmartGlycoAI platform.
+            </p>
+        </section>
 
-        <!-- Developers Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- TEAM GRID -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" data-aos="fade-up">
             
             <!-- Developer 1: Afonso -->
-            <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 text-center hover:shadow-lg hover:border-blue-300 transition duration-300 group">
-                <div class="w-28 h-28 mx-auto bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-3xl font-bold mb-5 border-4 border-blue-100 group-hover:bg-blue-600 group-hover:text-white transition">
+            <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-lg hover:-translate-y-1 hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-300 text-center flex flex-col group">
+                <div class="w-24 h-24 mx-auto bg-gradient-to-tr from-blue-100 to-blue-200 dark:from-blue-900 dark:to-indigo-900 rounded-full flex items-center justify-center text-3xl font-bold text-blue-700 dark:text-blue-300 mb-4 shadow-inner border border-white dark:border-gray-700 group-hover:scale-105 transition-transform">
                     AS
-                    <!-- Se quiseres usar uma foto real, substitui a div acima por esta imagem:
-                    <img src="img/afonso.jpg" alt="Afonso" class="w-full h-full object-cover rounded-full">
-                    -->
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-1">Afonso Soeiro</h3>
-                <p class="text-blue-600 text-sm font-bold uppercase tracking-wide mb-3">........</p>
-                <p class="text-gray-500 text-sm mb-6 line-clamp-3">........</p>
-                <div class="bg-gray-50 rounded-lg py-2 text-sm text-gray-600 font-mono border border-gray-100">
+                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Afonso Soeiro</h3>
+                <p class="text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wide mb-3">Core UI & Alerts</p>
+                
+                <ul class="text-gray-500 dark:text-gray-400 text-xs mb-5 space-y-2 text-left list-disc list-outside ml-4 flex-grow">
+                    <li>Developed the Home Screen, SpeedDial nav, and predictive alert logic.</li>
+                    <li>Designed initial interface sketches and the predictive alert storyboard.</li>
+                </ul>
+
+                <div class="bg-gray-100 dark:bg-gray-700/50 rounded-lg py-2 text-xs font-bold text-gray-700 dark:text-gray-300 font-mono border border-gray-200/80 dark:border-gray-600 mt-auto">
                     Student Nº: 77314
                 </div>
             </div>
 
-            <!-- Developer 2: Martim Nunes -->
-            <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 text-center hover:shadow-lg hover:border-blue-300 transition duration-300 group">
-                <div class="w-28 h-28 mx-auto bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-3xl font-bold mb-5 border-4 border-blue-100 group-hover:bg-blue-600 group-hover:text-white transition">
+            <!-- Developer 2: Martim -->
+            <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-lg hover:-translate-y-1 hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-300 text-center flex flex-col group">
+                <div class="w-24 h-24 mx-auto bg-gradient-to-tr from-blue-100 to-blue-200 dark:from-blue-900 dark:to-indigo-900 rounded-full flex items-center justify-center text-3xl font-bold text-blue-700 dark:text-blue-300 mb-4 shadow-inner border border-white dark:border-gray-700 group-hover:scale-105 transition-transform">
                     MN
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-1" contenteditable="true">Martim Nunes</h3>
-                <p class="text-blue-600 text-sm font-bold uppercase tracking-wide mb-3" contenteditable="true">........</p>
-                <p class="text-gray-500 text-sm mb-6 line-clamp-3" contenteditable="true">........</p>
-                <div class="bg-gray-50 rounded-lg py-2 text-sm text-gray-600 font-mono border border-gray-100" contenteditable="true">
+                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Martim Nunes</h3>
+                <p class="text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wide mb-3">Camera & AI</p>
+                
+                <ul class="text-gray-500 dark:text-gray-400 text-xs mb-5 space-y-2 text-left list-disc list-outside ml-4 flex-grow">
+                    <li>Developed the camera scanner and editable carb estimation flow.</li>
+                    <li>Created paper prototypes and the storyboard for the restaurant scenario.</li>
+                </ul>
+
+                <div class="bg-gray-100 dark:bg-gray-700/50 rounded-lg py-2 text-xs font-bold text-gray-700 dark:text-gray-300 font-mono border border-gray-200/80 dark:border-gray-600 mt-auto">
                     Student Nº: 77307
                 </div>
             </div>
 
-            <!-- Developer 3 -->
-            <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 text-center hover:shadow-lg hover:border-blue-300 transition duration-300 group">
-                <div class="w-28 h-28 mx-auto bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-3xl font-bold mb-5 border-4 border-blue-100 group-hover:bg-blue-600 group-hover:text-white transition">
+            <!-- Developer 3: Rodrigo -->
+            <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-lg hover:-translate-y-1 hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-300 text-center flex flex-col group">
+                <div class="w-24 h-24 mx-auto bg-gradient-to-tr from-blue-100 to-blue-200 dark:from-blue-900 dark:to-indigo-900 rounded-full flex items-center justify-center text-3xl font-bold text-blue-700 dark:text-blue-300 mb-4 shadow-inner border border-white dark:border-gray-700 group-hover:scale-105 transition-transform">
                     RS
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-1" contenteditable="true">Rodrigo Simões</h3>
-                <p class="text-blue-600 text-sm font-bold uppercase tracking-wide mb-3" contenteditable="true">........</p>
-                <p class="text-gray-500 text-sm mb-6 line-clamp-3" contenteditable="true">........</p>
-                <div class="bg-gray-50 rounded-lg py-2 text-sm text-gray-600 font-mono border border-gray-100" contenteditable="true">
+                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Rodrigo Simões</h3>
+                <p class="text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wide mb-3">Diary & Data</p>
+                
+                <ul class="text-gray-500 dark:text-gray-400 text-xs mb-5 space-y-2 text-left list-disc list-outside ml-4 flex-grow">
+                    <li>Built Diary screens and data persistence logic for editing past entries.</li>
+                    <li>Prepared the physical test materials, briefing, and diary paper screens.</li>
+                </ul>
+
+                <div class="bg-gray-100 dark:bg-gray-700/50 rounded-lg py-2 text-xs font-bold text-gray-700 dark:text-gray-300 font-mono border border-gray-200/80 dark:border-gray-600 mt-auto">
                     Student Nº: 77481
                 </div>
             </div>
 
-            <!-- Developer 4 -->
-            <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 text-center hover:shadow-lg hover:border-blue-300 transition duration-300 group">
-                <div class="w-28 h-28 mx-auto bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-3xl font-bold mb-5 border-4 border-blue-100 group-hover:bg-blue-600 group-hover:text-white transition">
+            <!-- Developer 4: Matteo -->
+            <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-lg hover:-translate-y-1 hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-300 text-center flex flex-col group">
+                <div class="w-24 h-24 mx-auto bg-gradient-to-tr from-blue-100 to-blue-200 dark:from-blue-900 dark:to-indigo-900 rounded-full flex items-center justify-center text-3xl font-bold text-blue-700 dark:text-blue-300 mb-4 shadow-inner border border-white dark:border-gray-700 group-hover:scale-105 transition-transform">
                     MD
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-1" contenteditable="true">Matteo Demetri</h3>
-                <p class="text-blue-600 text-sm font-bold uppercase tracking-wide mb-3" contenteditable="true">........</p>
-                <p class="text-gray-500 text-sm mb-6 line-clamp-3" contenteditable="true">........</p>
-                <div class="bg-gray-50 rounded-lg py-2 text-sm text-gray-600 font-mono border border-gray-100" contenteditable="true">
+                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Matteo Demetri</h3>
+                <p class="text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wide mb-3">Clinical & Testing</p>
+                
+                <ul class="text-gray-500 dark:text-gray-400 text-xs mb-5 space-y-2 text-left list-disc list-outside ml-4 flex-grow">
+                    <li>Developed the Profile screen and clinical PDF reports with heatmaps.</li>
+                    <li>Conducted pilot tests, compiled observations, and created the clinical storyboard.</li>
+                </ul>
+
+                <div class="bg-gray-100 dark:bg-gray-700/50 rounded-lg py-2 text-xs font-bold text-gray-700 dark:text-gray-300 font-mono border border-gray-200/80 dark:border-gray-600 mt-auto">
                     Student Nº: 76831
                 </div>
             </div>
 
-        </div>
+        </section>
+
     </main>
 
-    <footer class="bg-gray-800 text-gray-400 py-8 text-center text-sm mt-12 flex flex-col items-center">
-        <div class="w-8 h-8 rounded-full overflow-hidden border border-gray-600 mb-3 opacity-50">
+    <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 py-8 text-center text-sm mt-12 flex flex-col items-center transition-colors duration-300">
+        <div class="w-8 h-8 rounded-full overflow-hidden border border-gray-300 dark:border-gray-600 mb-3 opacity-60">
             <img src="img/logo.jpeg" alt="Logo" class="w-full h-full object-cover">
         </div>
         <p>&copy; 2026 SmartGlycoAI. Academic Project.</p>
     </footer>
-    <script src="main.js"></script>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

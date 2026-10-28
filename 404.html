@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found | SmartGlycoAI</title>
+    <link rel="icon" type="image/jpeg" href="img/logo.jpeg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>tailwind.config = { darkMode: 'class' }</script>
+    <style>
+        /* Brilhos radiais suaves estilo Bento UI */
+        .glow-gray {
+            background: radial-gradient(circle at 85% 15%, rgba(100, 116, 139, 0.15), transparent 60%),
+                        radial-gradient(circle at 15% 85%, rgba(71, 85, 105, 0.05), transparent 55%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans antialiased transition-colors duration-300 flex flex-col min-h-screen">
+
+    <!-- HEADER FLUTUANTE (Glassmorphism) -->
+    <header class="sticky top-4 z-50 px-4">
+        <div class="max-w-6xl mx-auto bg-white/85 dark:bg-gray-800/85 backdrop-blur-xl shadow-lg border border-gray-200/80 dark:border-gray-700/80 rounded-[2rem] px-6 py-4 transition-colors duration-300">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white font-semibold flex items-center transition">
+                    <span class="mr-2">←</span> Back to Menu
+                </a>
+                
+                <div class="flex items-center gap-4">
+                    <span class="hidden md:inline-block bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300 text-sm font-bold px-3.5 py-1 rounded-full border border-gray-200 dark:border-gray-600 cursor-default">
+                        Group 6
+                    </span>
+                    <button onclick="toggleDarkMode()" class="text-gray-500 hover:text-yellow-500 dark:text-gray-400 dark:hover:text-yellow-400 transition text-xl">
+                        <span id="theme-icon-desktop">🌙</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 flex-grow flex items-center justify-center py-20 w-full">
+        
+        <!-- 404 BENTO BOX -->
+        <section class="bg-white dark:bg-gray-800/90 glow-gray rounded-[2.5rem] p-10 md:p-16 shadow-2xl border border-gray-200/80 dark:border-gray-700/80 text-center max-w-2xl w-full relative overflow-hidden" data-aos="zoom-in">
+            
+            <!-- Elementos decorativos de fundo -->
+            <div class="absolute -top-10 -right-10 text-9xl opacity-5 dark:opacity-10 pointer-events-none transform rotate-12">
+                ?
+            </div>
+            
+            <div class="relative z-10">
+                <div class="w-24 h-24 bg-gray-100 dark:bg-gray-700/50 text-gray-500 dark:text-gray-400 rounded-3xl flex items-center justify-center text-5xl mx-auto mb-6 shadow-inner border border-gray-200 dark:border-gray-600">
+                    🧭
+                </div>
+                
+                <h1 class="text-6xl md:text-8xl font-extrabold text-gray-900 dark:text-white mb-2 tracking-tighter">404</h1>
+                <h2 class="text-2xl font-bold text-gray-700 dark:text-gray-300 mb-4">Page Not Found</h2>
+                
+                <p class="text-gray-500 dark:text-gray-400 mb-10 max-w-md mx-auto">
+                    Oops! It seems you've wandered into uncharted territory. The page you are looking for doesn't exist or has been moved.
+                </p>
+                
+                <a href="index.html" class="inline-flex items-center gap-2 bg-gray-900 hover:bg-gray-800 dark:bg-gray-100 dark:hover:bg-white text-white dark:text-gray-900 font-bold py-3.5 px-8 rounded-full transition-all shadow-md hover:shadow-lg hover:-translate-y-1">
+                    <span>←</span> Return to Homepage
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 py-8 text-center text-sm mt-auto flex flex-col items-center transition-colors duration-300">
+        <div class="w-8 h-8 rounded-full overflow-hidden border border-gray-300 dark:border-gray-600 mb-3 opacity-60">
+            <img src="img/logo.jpeg" alt="Logo" class="w-full h-full object-cover">
+        </div>
+        <p>&copy; 2026 SmartGlycoAI. Academic Project.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
