@@ -4,120 +4,166 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stage 1: Project Proposal | SmartGlycoAI</title>
+    <link rel="icon" type="image/jpeg" href="img/logo.jpeg">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script>tailwind.config = { darkMode: 'class' }</script>
+    <style>
+        /* Brilhos radiais suaves estilo Bento UI com a cor azul do Stage 1 */
+        .glow-blue {
+            background: radial-gradient(circle at 85% 15%, rgba(59, 130, 246, 0.22), transparent 60%),
+                        radial-gradient(circle at 15% 85%, rgba(37, 99, 235, 0.10), transparent 55%);
+        }
+    </style>
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans antialiased transition-colors duration-300">
 
-    <header class="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-50 transition-colors duration-300">
-        <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
-            <a href="index.html" class="text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 font-semibold flex items-center transition">
-                <span class="mr-2">←</span> Back to Menu
-            </a>
-            
-            <div class="flex items-center gap-4">
-                <div class="font-bold text-gray-800 dark:text-gray-200 hidden sm:block mr-4">Stage 1</div>
-                <button onclick="toggleDarkMode()" class="text-gray-500 hover:text-yellow-500 dark:text-gray-400 dark:hover:text-yellow-400 transition text-xl">
-                    <span id="theme-icon">🌙</span>
-                </button>
+    <!-- HEADER FLUTUANTE (Glassmorphism) -->
+    <header class="sticky top-4 z-50 px-4">
+        <div class="max-w-6xl mx-auto bg-white/85 dark:bg-gray-800/85 backdrop-blur-xl shadow-lg border border-gray-200/80 dark:border-gray-700/80 rounded-[2rem] px-6 py-4 transition-colors duration-300">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 font-semibold flex items-center transition">
+                    <span class="mr-2">←</span> Back to Menu
+                </a>
+                
+                <div class="flex items-center gap-4">
+                    <span class="hidden md:inline-block bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300 text-sm font-bold px-3.5 py-1 rounded-full border border-blue-200 dark:border-blue-800/50 cursor-default">
+                        Group 6
+                    </span>
+                    <div class="font-bold text-gray-800 dark:text-gray-200 hidden sm:block">Stage 1</div>
+                    <button onclick="toggleDarkMode()" class="text-gray-500 hover:text-yellow-500 dark:text-gray-400 dark:hover:text-yellow-400 transition text-xl">
+                        <span id="theme-icon-desktop">🌙</span>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
 
-    <main class="max-w-4xl mx-auto py-12 px-4">
-        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden transition-colors">
+    <main class="max-w-6xl mx-auto py-10 px-4 space-y-10">
+        
+        <!-- HERO BANNER STAGE 1 -->
+        <section class="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 dark:from-blue-700 dark:via-blue-800 dark:to-gray-900 text-white p-8 md:p-12 rounded-[2.2rem] shadow-xl border border-blue-400/30 dark:border-blue-700/50" data-aos="fade-up">
+            <div class="flex justify-between items-start">
+                <div>
+                    <span class="inline-block py-1 px-3.5 rounded-full bg-white/20 text-blue-50 text-xs font-bold uppercase tracking-wider mb-4 border border-white/20">
+                        Phase 1 • Proposal
+                    </span>
+                    <h1 class="text-3xl md:text-4xl font-extrabold mb-3 tracking-tight">Stage 1: Project Proposal</h1>
+                    <p class="text-blue-100 text-base md:text-lg max-w-3xl">
+                        <strong>Objective:</strong> Elaborate the project proposal and set up the project website.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECT INFORMATION -->
+        <section class="bg-white dark:bg-gray-800/90 glow-blue rounded-[2rem] p-8 shadow-sm border border-gray-200/80 dark:border-gray-700/80" data-aos="fade-up">
+            <div class="flex items-center gap-3 border-b border-gray-200/80 dark:border-gray-700/80 pb-4 mb-6">
+                <span class="bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300 w-9 h-9 rounded-full flex items-center justify-center font-bold border border-blue-200 dark:border-blue-700/50">1</span>
+                <h2 class="text-2xl font-bold dark:text-white tracking-tight">Project Information</h2>
+            </div>
             
-            <div class="bg-blue-600 text-white p-8">
-                <h1 class="text-3xl font-bold mb-2">Stage 1: Project proposal</h1>
-                <p class="text-blue-100 text-lg">
-                    <strong>Objective:</strong> Elaborate the project proposal and set up the project web site.
-                </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-2">Project title</h3>
+                    <p class="text-gray-900 dark:text-gray-100 font-medium leading-relaxed">
+                        SmartGlycoAI: Intelligent Decision Support Platform for Personalized Management of Type 1 Diabetes.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-2">Group members</h3>
+                    <ul class="space-y-1.5 text-gray-700 dark:text-gray-300 text-sm">
+                        <li><strong>Afonso Lopes Soeiro</strong> (Nº 33714)</li>
+                        <li><strong>Martim Nunes</strong> (Nº 77307)</li>
+                        <li><strong>Rodrigo Simões</strong> (Nº 77481)</li>
+                        <li><strong>Matteo Demetri</strong> (Nº 76831)</li>
+                    </ul>
+                </div>
             </div>
+        </section>
 
-            <div class="p-8 space-y-8">
-                <section>
-                    <h2 class="text-xl font-bold border-b border-gray-200 dark:border-gray-700 pb-2 mb-4 dark:text-white">Project Information</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <h3 class="font-semibold text-gray-700 dark:text-gray-300">Project title</h3>
-                            <p class="text-gray-900 dark:text-gray-100 mt-1">SmartGlycoAI: Intelligent Decision Support Platform for Personalized Management of Type 1 Diabetes.</p>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-gray-700 dark:text-gray-300">Group members</h3>
-                            <ul class="list-disc list-inside text-gray-900 dark:text-gray-100 mt-1">
-                                <li>Afonso Lopes Soeiro (Nº 33714)</li>
-                                <li>Martim Nunes (Nº 77307)</li>
-                                <li>Rodrigo Simões (Nº 77481)</li>
-                                <li>Matteo Demetri (Nº 76831)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <h2 class="text-xl font-bold border-b border-gray-200 dark:border-gray-700 pb-2 mb-4 dark:text-white">Context & Target</h2>
-                    <div class="space-y-6">
-                        <div>
-                            <h3 class="font-semibold text-gray-700 dark:text-gray-300">Problem description</h3>
-                            <div class="mt-2 text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-700/30 p-4 rounded border border-gray-100 dark:border-gray-600 min-h-[100px]">
-                                Type 1 Diabetes Mellitus is a chronic disease that requires continuous blood glucose monitoring, constant dietary control, and rigorous insulin administration. Inadequate management of this condition can lead to severe episodes of hypoglycemia or hyperglycemia, as well as medium and long-term complications. The major current difficulty lies in the fact that the integrated interpretation of dietary intake, physical activity, and biometric data still relies heavily on the patient's own experience and judgment.
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-gray-700 dark:text-gray-300">Target users</h3>
-                            <div class="mt-2 text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-700/30 p-4 rounded border border-gray-100 dark:border-gray-600">
-                                People suffering from Type 1 Diabetes.
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <h2 class="text-xl font-bold border-b border-gray-200 dark:border-gray-700 pb-2 mb-4 dark:text-white">Goal & Market</h2>
-                    <div class="space-y-6">
-                        <div>
-                            <h3 class="font-semibold text-gray-700 dark:text-gray-300">Project goal</h3>
-                            <div class="mt-2 text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-700/30 p-4 rounded border border-gray-100 dark:border-gray-600 min-h-[100px]">
-                                The main goal is to develop and validate a cross-platform application (Responsive Web and/or Mobile) that acts as an intelligent personal clinical decision support system. The proposed solution aims to integrate real-time biometric data (CGM sensors via Bluetooth) with a computer vision system that recognizes meals and estimates carbohydrates. The application will use adaptive Artificial Intelligence models to provide personalized recommendations regarding insulin doses, physical activity, and preventive glycemic risk alerts, without ever replacing a doctor's medical decision.
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-gray-700 dark:text-gray-300">Competing applications</h3>
-                            <div class="mt-2 text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-700/30 p-4 rounded border border-gray-100 dark:border-gray-600">
-                                Although the documentation does not mention direct competing applications in the independent software market, it points to existing continuous glucose monitoring (CGM) sensor ecosystems, such as those from Dexcom and Abbott (FreeStyle Libre).<br><br>
-                                <strong>Positive aspects:</strong> They allow for continuous, real-time monitoring of blood glucose values.<br>
-                                <strong>Negative aspects:</strong> They fail by leaving the burden of interpreting all the integrated data (glucose, food, exercise) up to the user's intuition and empirical experience.<br>
-                                <strong>Our solution:</strong> SmartGlycoAI fixes this design flaw by automating the nutritional calculation (through computer vision to recognize food) and using Artificial Intelligence to turn raw data into proactive, precise, and personalized recommendations.
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- DOWNLOADS SECTION -->
-                <section class="pt-8 border-t border-gray-200 dark:border-gray-700">
-                    <div class="flex items-center gap-4 mb-6">
-                        <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200">Downloads</h2>
-                        <div class="h-px bg-gray-300 dark:bg-gray-700 flex-grow"></div>
-                    </div>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <a href="docs/IPM_stage_1_Group_06.pdf" download class="flex items-center gap-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-500 rounded-xl p-4 shadow-sm transition group">
-                            <div class="w-12 h-12 bg-red-50 dark:bg-red-900/30 text-red-500 rounded-lg flex items-center justify-center text-2xl group-hover:bg-red-500 group-hover:text-white transition">
-                                📄
-                            </div>
-                            <div>
-                                <div class="font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition">Stage 1 Proposal</div>
-                                <div class="text-xs text-gray-500 dark:text-gray-400">PDF Document</div>
-                            </div>
-                        </a>
-                    </div>
-                </section>
-
+        <!-- CONTEXT & TARGET -->
+        <section class="bg-white dark:bg-gray-800/90 glow-blue rounded-[2rem] p-8 shadow-sm border border-gray-200/80 dark:border-gray-700/80" data-aos="fade-up">
+            <div class="flex items-center gap-3 border-b border-gray-200/80 dark:border-gray-700/80 pb-4 mb-6">
+                <span class="bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300 w-9 h-9 rounded-full flex items-center justify-center font-bold border border-blue-200 dark:border-blue-700/50">2</span>
+                <h2 class="text-2xl font-bold dark:text-white tracking-tight">Context & Target</h2>
             </div>
-        </div>
+            
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-2">Problem description</h3>
+                    <div class="text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-900/50 p-5 rounded-2xl border border-gray-200/80 dark:border-gray-700/80 text-sm leading-relaxed">
+                        Type 1 Diabetes Mellitus is a chronic disease that requires continuous blood glucose monitoring, constant dietary control, and rigorous insulin administration. Inadequate management of this condition can lead to severe episodes of hypoglycemia or hyperglycemia, as well as medium and long-term complications. The major current difficulty lies in the fact that the integrated interpretation of dietary intake, physical activity, and biometric data still relies heavily on the patient's own experience and judgment.
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-2">Target users</h3>
+                    <div class="text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-900/50 p-5 rounded-2xl border border-gray-200/80 dark:border-gray-700/80 text-sm leading-relaxed">
+                        People suffering from Type 1 Diabetes.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GOAL & MARKET -->
+        <section class="bg-white dark:bg-gray-800/90 glow-blue rounded-[2rem] p-8 shadow-sm border border-gray-200/80 dark:border-gray-700/80" data-aos="fade-up">
+            <div class="flex items-center gap-3 border-b border-gray-200/80 dark:border-gray-700/80 pb-4 mb-6">
+                <span class="bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300 w-9 h-9 rounded-full flex items-center justify-center font-bold border border-blue-200 dark:border-blue-700/50">3</span>
+                <h2 class="text-2xl font-bold dark:text-white tracking-tight">Goal & Market</h2>
+            </div>
+            
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-2">Project goal</h3>
+                    <div class="text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-900/50 p-5 rounded-2xl border border-gray-200/80 dark:border-gray-700/80 text-sm leading-relaxed">
+                        The main goal is to develop and validate a cross-platform application (Responsive Web and/or Mobile) that acts as an intelligent personal clinical decision support system. The proposed solution aims to integrate real-time biometric data (CGM sensors via Bluetooth) with a computer vision system that recognizes meals and estimates carbohydrates. The application will use adaptive Artificial Intelligence models to provide personalized recommendations regarding insulin doses, physical activity, and preventive glycemic risk alerts, without ever replacing a doctor's medical decision.
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-2">Competing applications</h3>
+                    <div class="text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-900/50 p-5 rounded-2xl border border-gray-200/80 dark:border-gray-700/80 text-sm leading-relaxed space-y-3">
+                        <p>Although the documentation does not mention direct competing applications in the independent software market, it points to existing continuous glucose monitoring (CGM) sensor ecosystems, such as those from Dexcom and Abbott (FreeStyle Libre).</p>
+                        <p><strong>Positive aspects:</strong> They allow for continuous, real-time monitoring of blood glucose values.</p>
+                        <p><strong>Negative aspects:</strong> They fail by leaving the burden of interpreting all the integrated data (glucose, food, exercise) up to the user's intuition and empirical experience.</p>
+                        <p><strong>Our solution:</strong> SmartGlycoAI fixes this design flaw by automating the nutritional calculation (through computer vision to recognize food) and using Artificial Intelligence to turn raw data into proactive, precise, and personalized recommendations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DOWNLOADS SECTION -->
+        <section class="bg-white dark:bg-gray-800/90 rounded-[2rem] p-8 shadow-sm border border-gray-200/80 dark:border-gray-700/80" data-aos="fade-up">
+            <div class="flex items-center gap-4 mb-6">
+                <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200">Stage 1 Submission</h2>
+                <div class="h-px bg-gray-200 dark:bg-gray-700 flex-grow"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <a href="docs/IPM_stage_1_Group_06.pdf" download class="flex items-center justify-between bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 transition group cursor-pointer rounded-2xl p-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-red-100 dark:bg-red-900/30 text-red-600 rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                            📄
+                        </div>
+                        <div>
+                            <div class="font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors text-sm">Stage 1 Proposal (PDF)</div>
+                            <div class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">Project proposal document</div>
+                        </div>
+                    </div>
+                    <span class="text-xs font-semibold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 px-3 py-1.5 rounded-full border border-blue-200/50 dark:border-blue-800">Download</span>
+                </a>
+            </div>
+        </section>
+
     </main>
 
+    <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 py-8 text-center text-sm mt-12 flex flex-col items-center transition-colors duration-300">
+        <div class="w-8 h-8 rounded-full overflow-hidden border border-gray-300 dark:border-gray-600 mb-3 opacity-60">
+            <img src="img/logo.jpeg" alt="Logo" class="w-full h-full object-cover">
+        </div>
+        <p>&copy; 2026 SmartGlycoAI. Academic Project.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
-fica
