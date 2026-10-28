@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage 3: 1st Prototype | SmartGlycoAI</title>
+    <link rel="icon" type="image/jpeg" href="img/logo.jpeg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>tailwind.config = { darkMode: 'class' }</script>
+    <style>
+        /* Brilhos radiais suaves estilo Bento UI mantendo as cores atuais */
+        .glow-amber {
+            background: radial-gradient(circle at 85% 15%, rgba(245, 158, 11, 0.22), transparent 60%),
+                        radial-gradient(circle at 15% 85%, rgba(217, 119, 6, 0.10), transparent 55%);
+        }
+        .glow-blue {
+            background: radial-gradient(circle at 85% 15%, rgba(59, 130, 246, 0.18), transparent 60%),
+                        radial-gradient(circle at 15% 85%, rgba(37, 99, 235, 0.08), transparent 55%);
+        }
+        .glow-green {
+            background: radial-gradient(circle at 85% 15%, rgba(16, 185, 129, 0.18), transparent 60%),
+                        radial-gradient(circle at 15% 85%, rgba(5, 150, 105, 0.08), transparent 55%);
+        }
+        .glow-purple {
+            background: radial-gradient(circle at 85% 15%, rgba(168, 85, 247, 0.18), transparent 60%),
+                        radial-gradient(circle at 15% 85%, rgba(126, 34, 206, 0.08), transparent 55%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans antialiased transition-colors duration-300">
+
+    <!-- HEADER FLUTUANTE -->
+    <header class="sticky top-4 z-50 px-4">
+        <div class="max-w-6xl mx-auto bg-white/85 dark:bg-gray-800/85 backdrop-blur-xl shadow-lg border border-gray-200/80 dark:border-gray-700/80 rounded-[2rem] px-6 py-4 transition-colors duration-300">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-gray-500 hover:text-amber-600 dark:text-gray-400 dark:hover:text-amber-400 font-semibold flex items-center transition">
+                    <span class="mr-2">←</span> Back to Menu
+                </a>
+                
+                <div class="flex items-center gap-4">
+                    <span class="hidden md:inline-block bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300 text-sm font-bold px-3.5 py-1 rounded-full border border-amber-200 dark:border-amber-800/50 cursor-default">
+                        Group 6
+                    </span>
+                    <div class="font-bold text-gray-800 dark:text-gray-200 hidden sm:block">Stage 3</div>
+                    <a href="glossary.html" class="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 transition hidden sm:inline">Glossary</a>
+                    <button onclick="toggleDarkMode()" class="text-gray-500 hover:text-yellow-500 dark:text-gray-400 dark:hover:text-yellow-400 transition text-xl">
+                        <span id="theme-icon-desktop">🌙</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto py-10 px-4 space-y-10">
+        
+        <!-- HERO BANNER STAGE 3 -->
+        <section class="bg-gradient-to-br from-amber-500 via-amber-600 to-orange-600 dark:from-amber-700 dark:via-amber-800 dark:to-gray-900 text-white p-8 md:p-12 rounded-[2.2rem] shadow-xl border border-amber-400/30 dark:border-amber-700/50" data-aos="fade-up">
+            <span class="inline-block py-1 px-3.5 rounded-full bg-white/20 text-amber-50 text-xs font-bold uppercase tracking-wider mb-4 border border-white/20">
+                Phase 1 • Low-Fidelity Prototyping
+            </span>
+            <h1 class="text-3xl md:text-4xl font-extrabold mb-3 tracking-tight">Stage 3: 1st Prototype (Mock-up)</h1>
+            <p class="text-amber-100 text-base md:text-lg max-w-3xl">
+                <strong>Objective:</strong> Design of the first low/medium fidelity interface prototype, scenario testing preparation, and usability observations.
+            </p>
+        </section>
+
+        <!-- 1. TESTING PREPARATION (Briefing & Evaluation Roles) -->
+        <section class="bg-white dark:bg-gray-800/90 glow-amber rounded-[2rem] p-8 shadow-sm border border-gray-200/80 dark:border-gray-700/80" data-aos="fade-up">
+            <div class="flex items-center gap-3 border-b border-gray-200/80 dark:border-gray-700/80 pb-4 mb-6">
+                <span class="bg-amber-100 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300 w-9 h-9 rounded-full flex items-center justify-center font-bold border border-amber-200 dark:border-amber-700/50">1</span>
+                <h2 class="text-2xl font-bold dark:text-white tracking-tight">Testing Preparation</h2>
+            </div>
+
+            <!-- User Briefing -->
+            <div class="bg-amber-50/70 dark:bg-amber-900/20 border-l-4 border-amber-500 p-6 rounded-2xl mb-8">
+                <h3 class="text-sm font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400 mb-2">📋 User Briefing (Script read to participants)</h3>
+                <p class="text-gray-700 dark:text-gray-300 text-sm italic leading-relaxed">
+                    "Welcome and thank you for participating! Managing Type 1 Diabetes requires constantly balancing food intake, physical activity, and insulin. SmartGlycoAI is an application designed to relieve this burden. It estimates the carbohydrates in your meals, tracks your glucose via a sensor, and suggests the correct insulin dose so you don't have to do the math manually. During this test, we want you to interact with the interface naturally to complete a few tasks. Please 'think aloud' as you go, so we understand your thought process. Remember, we are testing the interface, not you!"
+                </p>
+            </div>
+
+            <!-- Evaluation Roles -->
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Evaluation Roles</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white/80 dark:bg-gray-900/50 p-6 rounded-2xl border border-gray-200/80 dark:border-gray-700/80">
+                    <div class="text-2xl mb-2">🤖</div>
+                    <h4 class="font-bold text-gray-900 dark:text-white mb-1">The Computer</h4>
+                    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                        Responsible for manipulating the paper prototype, changing screens, and reacting to the user's touch inputs without speaking.
+                    </p>
+                </div>
+                <div class="bg-white/80 dark:bg-gray-900/50 p-6 rounded-2xl border border-gray-200/80 dark:border-gray-700/80">
+                    <div class="text-2xl mb-2">🗣️</div>
+                    <h4 class="font-bold text-gray-900 dark:text-white mb-1">The Facilitator</h4>
+                    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                        Reads the briefing, presents the scenarios, and encourages the user to think aloud throughout the evaluation session.
+                    </p>
+                </div>
+                <div class="bg-white/80 dark:bg-gray-900/50 p-6 rounded-2xl border border-gray-200/80 dark:border-gray-700/80">
+                    <div class="text-2xl mb-2">📝</div>
+                    <h4 class="font-bold text-gray-900 dark:text-white mb-1">The Observers</h4>
+                    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                        Take detailed notes on usability problems, user hesitation, and navigation errors during each task.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. THE 3 SCENARIOS (Directly from Stage 2) -->
+        <section class="bg-white dark:bg-gray-800/90 glow-amber rounded-[2rem] p-8 shadow-sm border border-gray-200/80 dark:border-gray-700/80" data-aos="fade-up">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-gray-200/80 dark:border-gray-700/80 pb-4 mb-6 gap-2">
+                <div class="flex items-center gap-3">
+                    <span class="bg-amber-100 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300 w-9 h-9 rounded-full flex items-center justify-center font-bold border border-amber-200 dark:border-amber-700/50">2</span>
+                    <h2 class="text-2xl font-bold dark:text-white tracking-tight">The 3 Scenarios (From Stage 2)</h2>
+                </div>
+                <a href="stage2.html" class="text-xs font-semibold text-amber-600 dark:text-amber-400 hover:underline">
+                    View Stage 2 Task Analysis →
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Scenario 1 (Stage 2) -->
+                <div class="bg-white/90 dark:bg-gray-900/60 glow-blue p-6 rounded-[1.75rem] border border-gray-200/80 dark:border-gray-700/80 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="inline-block text-[11px] font-bold uppercase tracking-wider bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300 px-3 py-1 rounded-full border border-blue-200/60 dark:border-blue-700/50">
+                                Scenario 1 • Patient
+                            </span>
+                            <span class="text-[11px] font-mono text-gray-400">Task 1</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Meal Time at a Restaurant</h3>
+                        <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
+                            João is at a restaurant and is unsure about the carbohydrate count of his pasta dish. Glancing at his Home screen, he views his stable 6-hour glucose trend graph. He opens SmartGlycoAI's meal logging module, takes a photo of his plate, and the app estimates 65g of carbs. Based on his current CGM reading of 110 mg/dL, the app suggests a precise insulin dose before he starts eating.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Scenario 2 (Stage 2) -->
+                <div class="bg-white/90 dark:bg-gray-900/60 glow-green p-6 rounded-[1.75rem] border border-gray-200/80 dark:border-gray-700/80 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="inline-block text-[11px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300 px-3 py-1 rounded-full border border-emerald-200/60 dark:border-emerald-700/50">
+                                Scenario 2 • Patient
+                            </span>
+                            <span class="text-[11px] font-mono text-gray-400">Tasks 3 & 4</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">A low on the way home</h3>
+                        <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
+                            At 6 p.m. João is on the bus home after the gym. His phone vibrates with an alert: the app predicts his glucose will reach 65 mg/dL in 20 minutes and suggests eating 15 g of fast-acting carbohydrates. He opens the alert, drinks a small pack of juice he always carries, and taps "Register correction". Later that evening, at home, he opens the Diary to check his day. He remembers that at lunch he left part of the rice on the plate, so he ate fewer carbohydrates than the 60 g he registered, which may explain the low in the afternoon. He opens the lunch entry, changes the carbohydrates to 45 g so that the diary shows what he really ate, keeps the 4.0 units he actually took, and saves the changes.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Scenario 3 (Stage 2) -->
+                <div class="bg-white/90 dark:bg-gray-900/60 glow-purple p-6 rounded-[1.75rem] border border-gray-200/80 dark:border-gray-700/80 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="inline-block text-[11px] font-bold uppercase tracking-wider bg-purple-100 text-purple-700 dark:bg-purple-900/50 dark:text-purple-300 px-3 py-1 rounded-full border border-purple-200/60 dark:border-purple-700/50">
+                                Scenario 3 • Doctor
+                            </span>
+                            <span class="text-[11px] font-mono text-gray-400">Task 2</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Routine Clinical Check-up</h3>
+                        <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
+                            Dr. Joana is preparing for a consultation with João. She opens the platform's professional dashboard to review his data from the past month. She notices frequent hypoglycemic events during the night and decides to adjust his baseline insulin ratio directly within the app's professional settings.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. PAPER PROTOTYPE & STORYBOARDS (7 IMAGENS PNG + STORYBOARDS) -->
+        <section class="bg-white dark:bg-gray-800/90 glow-amber rounded-[2rem] p-8 shadow-sm border border-gray-200/80 dark:border-gray-700/80" data-aos="fade-up">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-gray-200/80 dark:border-gray-700/80 pb-4 mb-6 gap-2">
+                <div class="flex items-center gap-3">
+                    <span class="bg-amber-100 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300 w-9 h-9 rounded-full flex items-center justify-center font-bold border border-amber-200 dark:border-amber-700/50">3</span>
+                    <h2 class="text-2xl font-bold dark:text-white tracking-tight">Paper Prototype & Storyboards</h2>
+                </div>
+                <span class="text-xs font-semibold text-amber-600 dark:text-amber-400 bg-amber-100/80 dark:bg-amber-900/40 px-3 py-1 rounded-full border border-amber-200/60 dark:border-amber-700/50 w-fit">
+                    7 Screens • Click to zoom
+                </span>
+            </div>
+
+            <!-- Prototype Interface Photos -->
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Prototype Interface Photos</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-6">
+                Hand-drawn low-fidelity screens used during the paper prototype evaluation sessions. Click on any screen to enlarge.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-12">
+                
+                <!-- Screen 01 -->
+                <div onclick="openLightbox(event, 'img/stage3/1.png')" class="group bg-white/80 dark:bg-gray-900/60 rounded-[1.75rem] p-4 border border-gray-200/80 dark:border-gray-700/80 hover:border-amber-400 dark:hover:border-amber-500 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                    <div class="overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800 mb-4 h-60 flex items-center justify-center">
+                        <img src="img/stage3/1.png" alt="Screen 01" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    </div>
+                    <div class="flex items-center justify-between px-1">
+                        <div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 block">Screen 01</span>
+                            <h4 class="font-bold text-sm text-gray-900 dark:text-white">Opening the App</h4>
+                        </div>
+                        <div class="w-8 h-8 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 flex items-center justify-center text-xs font-bold group-hover:bg-amber-500 dark:group-hover:bg-amber-500 dark:group-hover:text-white transition">↗</div>
+                    </div>
+                </div>
+
+                <!-- Screen 02 -->
+                <div onclick="openLightbox(event, 'img/stage3/2.png')" class="group bg-white/80 dark:bg-gray-900/60 rounded-[1.75rem] p-4 border border-gray-200/80 dark:border-gray-700/80 hover:border-amber-400 dark:hover:border-amber-500 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                    <div class="overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800 mb-4 h-60 flex items-center justify-center">
+                        <img src="img/stage3/2.png" alt="Screen 02" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    </div>
+                    <div class="flex items-center justify-between px-1">
+                        <div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 block">Screen 02</span>
+                            <h4 class="font-bold text-sm text-gray-900 dark:text-white">Prototype Sketch 2</h4>
+                        </div>
+                        <div class="w-8 h-8 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 flex items-center justify-center text-xs font-bold group-hover:bg-amber-500 dark:group-hover:bg-amber-500 dark:group-hover:text-white transition">↗</div>
+                    </div>
+                </div>
+
+                <!-- Screen 03 -->
+                <div onclick="openLightbox(event, 'img/stage3/3.png')" class="group bg-white/80 dark:bg-gray-900/60 rounded-[1.75rem] p-4 border border-gray-200/80 dark:border-gray-700/80 hover:border-amber-400 dark:hover:border-amber-500 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                    <div class="overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800 mb-4 h-60 flex items-center justify-center">
+                        <img src="img/stage3/3.png" alt="Screen 03" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    </div>
+                    <div class="flex items-center justify-between px-1">
+                        <div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 block">Screen 03</span>
+                            <h4 class="font-bold text-sm text-gray-900 dark:text-white">Prototype Sketch 3</h4>
+                        </div>
+                        <div class="w-8 h-8 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 flex items-center justify-center text-xs font-bold group-hover:bg-amber-500 dark:group-hover:bg-amber-500 dark:group-hover:text-white transition">↗</div>
+                    </div>
+                </div>
+
+                <!-- Screen 04 -->
+                <div onclick="openLightbox(event, 'img/stage3/4.png')" class="group bg-white/80 dark:bg-gray-900/60 rounded-[1.75rem] p-4 border border-gray-200/80 dark:border-gray-700/80 hover:border-amber-400 dark:hover:border-amber-500 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                    <div class="overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800 mb-4 h-60 flex items-center justify-center">
+                        <img src="img/stage3/4.png" alt="Screen 04" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    </div>
+                    <div class="flex items-center justify-between px-1">
+                        <div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 block">Screen 04</span>
+                            <h4 class="font-bold text-sm text-gray-900 dark:text-white">Prototype Sketch 4</h4>
+                        </div>
+                        <div class="w-8 h-8 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 flex items-center justify-center text-xs font-bold group-hover:bg-amber-500 dark:group-hover:bg-amber-500 dark:group-hover:text-white transition">↗</div>
+                    </div>
+                </div>
+
+                <!-- Screen 05 -->
+                <div onclick="openLightbox(event, 'img/stage3/5.png')" class="group bg-white/80 dark:bg-gray-900/60 rounded-[1.75rem] p-4 border border-gray-200/80 dark:border-gray-700/80 hover:border-amber-400 dark:hover:border-amber-500 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                    <div class="overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800 mb-4 h-60 flex items-center justify-center">
+                        <img src="img/stage3/5.png" alt="Screen 05" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    </div>
+                    <div class="flex items-center justify-between px-1">
+                        <div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 block">Screen 05</span>
+                            <h4 class="font-bold text-sm text-gray-900 dark:text-white">Prototype Sketch 5</h4>
+                        </div>
+                        <div class="w-8 h-8 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 flex items-center justify-center text-xs font-bold group-hover:bg-amber-500 dark:group-hover:bg-amber-500 dark:group-hover:text-white transition">↗</div>
+                    </div>
+                </div>
+
+                <!-- Screen 06 -->
+                <div onclick="openLightbox(event, 'img/stage3/6.png')" class="group bg-white/80 dark:bg-gray-900/60 rounded-[1.75rem] p-4 border border-gray-200/80 dark:border-gray-700/80 hover:border-amber-400 dark:hover:border-amber-500 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                    <div class="overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800 mb-4 h-60 flex items-center justify-center">
+                        <img src="img/stage3/6.png" alt="Screen 06" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    </div>
+                    <div class="flex items-center justify-between px-1">
+                        <div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 block">Screen 06</span>
+                            <h4 class="font-bold text-sm text-gray-900 dark:text-white">Prototype Sketch 6</h4>
+                        </div>
+                        <div class="w-8 h-8 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 flex items-center justify-center text-xs font-bold group-hover:bg-amber-500 dark:group-hover:bg-amber-500 dark:group-hover:text-white transition">↗</div>
+                    </div>
+                </div>
+
+                <!-- Screen 07 -->
+                <div onclick="openLightbox(event, 'img/stage3/7.png')" class="group bg-white/80 dark:bg-gray-900/60 rounded-[1.75rem] p-4 border border-gray-200/80 dark:border-gray-700/80 hover:border-amber-400 dark:hover:border-amber-500 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                    <div class="overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800 mb-4 h-60 flex items-center justify-center">
+                        <img src="img/stage3/7.png" alt="Screen 07" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    </div>
+                    <div class="flex items-center justify-between px-1">
+                        <div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 block">Screen 07</span>
+                            <h4 class="font-bold text-sm text-gray-900 dark:text-white">Prototype Sketch 7</h4>
+                        </div>
+                        <div class="w-8 h-8 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 flex items-center justify-center text-xs font-bold group-hover:bg-amber-500 dark:group-hover:bg-amber-500 dark:group-hover:text-white transition">↗</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Storyboards (Task Flow) -->
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Storyboards (Task Flow)</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-6">
+                Visual step-by-step navigation sequences illustrating how users complete the Stage 2 scenarios.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white/60 dark:bg-gray-900/40 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-[1.75rem] p-6 text-center flex flex-col items-center justify-center h-64">
+                    <span class="text-4xl mb-2">🍝</span>
+                    <span class="font-bold text-gray-700 dark:text-gray-300 text-sm">Storyboard 1: Meal Time at a Restaurant</span>
+                    <span class="text-xs text-gray-400 mt-1">Available soon</span>
+                </div>
+                <div class="bg-white/60 dark:bg-gray-900/40 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-[1.75rem] p-6 text-center flex flex-col items-center justify-center h-64">
+                    <span class="text-4xl mb-2">🚌</span>
+                    <span class="font-bold text-gray-700 dark:text-gray-300 text-sm">Storyboard 2: A low on the way home</span>
+                    <span class="text-xs text-gray-400 mt-1">Available soon</span>
+                </div>
+                <div class="bg-white/60 dark:bg-gray-900/40 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-[1.75rem] p-6 text-center flex flex-col items-center justify-center h-64">
+                    <span class="text-4xl mb-2">🩺</span>
+                    <span class="font-bold text-gray-700 dark:text-gray-300 text-sm">Storyboard 3: Routine Clinical Check-up</span>
+                    <span class="text-xs text-gray-400 mt-1">Available soon</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. EVALUATION OBSERVATIONS -->
+        <section class="bg-white dark:bg-gray-800/90 glow-amber rounded-[2rem] p-8 shadow-sm border border-gray-200/80 dark:border-gray-700/80" data-aos="fade-up">
+            <div class="flex items-center gap-3 border-b border-gray-200/80 dark:border-gray-700/80 pb-4 mb-6">
+                <span class="bg-amber-100 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300 w-9 h-9 rounded-full flex items-center justify-center font-bold border border-amber-200 dark:border-amber-700/50">4</span>
+                <h2 class="text-2xl font-bold dark:text-white tracking-tight">Evaluation Observations</h2>
+            </div>
+
+            <div class="overflow-x-auto rounded-2xl border border-gray-200/80 dark:border-gray-700/80">
+                <table class="w-full text-left text-sm">
+                    <thead class="bg-gray-100/80 dark:bg-gray-900/60 text-gray-700 dark:text-gray-300 uppercase text-xs font-bold">
+                        <tr>
+                            <th class="py-4 px-6">Usability Problem Found</th>
+                            <th class="py-4 px-6">Proposed Solution</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200/80 dark:divide-gray-700/80 bg-white/60 dark:bg-gray-800/60">
+                        <tr>
+                            <td class="py-4 px-6 text-gray-700 dark:text-gray-300">
+                                <strong>Issue 1:</strong> Users hesitated when looking for the diary edit button. It was not clear that tapping the entry would open the edit mode.
+                            </td>
+                            <td class="py-4 px-6 text-gray-600 dark:text-gray-400">
+                                Add a visible pencil icon (✏️) next to each diary entry so the edit action is immediately recognizable.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 text-gray-700 dark:text-gray-300">
+                                <strong>Issue 2:</strong> During the alert scenario, users dismissed the notification but didn't know where to find the suggested carb correction afterwards.
+                            </td>
+                            <td class="py-4 px-6 text-gray-600 dark:text-gray-400">
+                                Keep a persistent "Active Alert" banner at the top of the Home screen until the user logs the correction.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 5. DOWNLOADS SECTION -->
+        <section class="bg-white dark:bg-gray-800/90 rounded-[2rem] p-8 shadow-sm border border-gray-200/80 dark:border-gray-700/80" data-aos="fade-up">
+            <div class="flex items-center gap-4 mb-6">
+                <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200">Downloads</h2>
+                <div class="h-px bg-gray-200 dark:bg-gray-700 flex-grow"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="flex items-center gap-4 bg-gray-50 dark:bg-gray-900/50 border-2 border-dashed border-gray-300 dark:border-gray-700 rounded-2xl p-4 opacity-75">
+                    <div class="w-12 h-12 bg-gray-200 dark:bg-gray-700/50 text-gray-400 dark:text-gray-500 rounded-xl flex items-center justify-center text-2xl">
+                        📄
+                    </div>
+                    <div>
+                        <div class="font-bold text-gray-500 dark:text-gray-400">Stage 3 Report</div>
+                        <div class="text-xs font-semibold text-gray-400 dark:text-gray-500 mt-1 uppercase tracking-wider">Available soon</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- LIGHTBOX PARA AMPLIAR QUALQUER IMAGEM EM ECRÃ INTEIRO -->
+    <div id="lightbox-modal" class="fixed inset-0 z-[60] bg-black/90 hidden flex items-center justify-center p-4" onclick="closeLightbox()">
+        <div class="relative max-w-5xl max-h-[90vh]">
+            <button class="absolute -top-12 right-0 text-white text-3xl font-bold hover:text-gray-300 transition">&times;</button>
+            <img id="lightbox-img" src="" class="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl" alt="Enlarged sketch">
+        </div>
+    </div>
+
+    <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 py-8 text-center text-sm mt-12 flex flex-col items-center transition-colors duration-300">
+        <div class="w-8 h-8 rounded-full overflow-hidden border border-gray-300 dark:border-gray-600 mb-3 opacity-60">
+            <img src="img/logo.jpeg" alt="Logo" class="w-full h-full object-cover">
+        </div>
+        <p>&copy; 2026 SmartGlycoAI. Academic Project.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
