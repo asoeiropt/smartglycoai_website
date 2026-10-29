@@ -188,6 +188,98 @@
                 </div>
             </section>
 
+            <!-- DESIGN SYSTEM & ACCESSIBILITY SECTION -->
+        <section class="mb-20 max-w-6xl mx-auto px-4" data-aos="fade-up">
+            <div class="text-center mb-10">
+                <span class="bg-indigo-100/80 text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300 text-xs font-bold px-3.5 py-1 rounded-full uppercase tracking-wider mb-3 inline-block border border-indigo-200/60 dark:border-indigo-700/50">UI/UX Principles</span>
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white tracking-tight">
+                    Design System & Accessibility
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                
+                <!-- 1. Showcase do Design System -->
+                <div class="spotlight-card bg-white dark:bg-gray-800/90 p-8 rounded-[2rem] shadow-sm border border-gray-200/80 dark:border-gray-700/80 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 border-b border-gray-200/80 dark:border-gray-700/80 pb-4 mb-6">
+                            <span class="bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300 w-9 h-9 rounded-xl flex items-center justify-center text-lg border border-blue-200 dark:border-blue-700/50">🎨</span>
+                            <h3 class="text-xl font-bold dark:text-white">Design System Core</h3>
+                        </div>
+                        
+                        <!-- Tipografia -->
+                        <div class="mb-6 bg-gray-50 dark:bg-gray-900/50 p-4 rounded-2xl border border-gray-100 dark:border-gray-700">
+                            <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Typography</h4>
+                            <div class="flex items-end gap-3">
+                                <span class="text-4xl font-sans font-bold text-gray-900 dark:text-white leading-none">Aa</span>
+                                <div>
+                                    <div class="font-bold text-gray-800 dark:text-gray-200">Inter / Roboto</div>
+                                    <div class="text-xs text-gray-500">Highly legible sans-serif for medical data</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Paleta de Cores Médicas -->
+                        <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Semantic Color Palette</h4>
+                        <div class="grid grid-cols-3 gap-3">
+                            <div class="flex flex-col items-center">
+                                <div class="w-12 h-12 rounded-full bg-[#3B82F6] shadow-sm border border-black/10 mb-2"></div>
+                                <span class="text-xs font-bold text-gray-800 dark:text-gray-200">Primary</span>
+                                <span class="text-[10px] text-gray-500">#3B82F6</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-12 h-12 rounded-full bg-[#10B981] shadow-sm border border-black/10 mb-2"></div>
+                                <span class="text-xs font-bold text-gray-800 dark:text-gray-200">Safe Range</span>
+                                <span class="text-[10px] text-gray-500">#10B981</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-12 h-12 rounded-full bg-[#EF4444] shadow-sm border border-black/10 mb-2"></div>
+                                <span class="text-xs font-bold text-gray-800 dark:text-gray-200">Alert/Critical</span>
+                                <span class="text-[10px] text-gray-500">#EF4444</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Bloco de Acessibilidade (A11y) -->
+                <div class="spotlight-card bg-white dark:bg-gray-800/90 p-8 rounded-[2rem] shadow-sm border border-gray-200/80 dark:border-gray-700/80">
+                    <div class="flex items-center gap-3 border-b border-gray-200/80 dark:border-gray-700/80 pb-4 mb-6">
+                        <span class="bg-indigo-100 text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300 w-9 h-9 rounded-xl flex items-center justify-center text-lg border border-indigo-200 dark:border-indigo-700/50">♿</span>
+                        <h3 class="text-xl font-bold dark:text-white">Accessibility (A11y)</h3>
+                    </div>
+                    
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-6">
+                        Designing for healthcare requires strict adherence to accessibility standards to ensure safety during cognitive overload or physical distress (e.g., hypoglycemia).
+                    </p>
+
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-4">
+                            <div class="mt-1 w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 flex items-center justify-center shrink-0">✓</div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 dark:text-white text-sm">Touch Targets (48x48px Minimum)</h4>
+                                <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">All critical action buttons (like insulin registration) are sized according to iOS/Android guidelines to prevent accidental mis-taps.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="mt-1 w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 flex items-center justify-center shrink-0">✓</div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 dark:text-white text-sm">Color Blindness Independence</h4>
+                                <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">System status is never communicated by color alone. Alerts use distinct iconography (e.g., warning triangles) alongside text labels.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="mt-1 w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 flex items-center justify-center shrink-0">✓</div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 dark:text-white text-sm">High Contrast Ratios (WCAG AA)</h4>
+                                <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">Text regarding blood glucose levels maintains a contrast ratio of at least 4.5:1 against backgrounds for readability under glare.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
             <section class="mb-20 max-w-5xl mx-auto" data-aos="fade-up">
                 <h2 class="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-white tracking-tight">
                     Application Versions
