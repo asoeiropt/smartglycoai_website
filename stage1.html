@@ -105,6 +105,75 @@
             </div>
         </section>
 
+        <!-- COGNITIVE LOAD (ANTES VS DEPOIS) -->
+        <section class="bg-white dark:bg-gray-800/90 glow-blue rounded-[2rem] p-8 shadow-sm border border-gray-200/80 dark:border-gray-700/80" data-aos="fade-up">
+            <div class="flex items-center gap-3 border-b border-gray-200/80 dark:border-gray-700/80 pb-4 mb-6">
+                <span class="bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300 w-9 h-9 rounded-full flex items-center justify-center font-bold border border-blue-200 dark:border-blue-700/50">🧠</span>
+                <h2 class="text-2xl font-bold dark:text-white tracking-tight">Cognitive Load: Traditional vs. SmartGlycoAI</h2>
+            </div>
+            
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-6">
+                O principal objetivo de Interação Pessoa-Máquina neste projeto é reduzir o esforço mental exigido a um diabético antes de cada refeição.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- O Problema (Antes) -->
+                <div class="bg-red-50/50 dark:bg-red-900/10 border border-red-200 dark:border-red-900/50 rounded-2xl p-6 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-red-100 dark:bg-red-900/40 text-red-600 dark:text-red-400 text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">Traditional Method</div>
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4 mt-2">High Cognitive Burden</h3>
+                    
+                    <ol class="space-y-3 relative before:absolute before:inset-y-0 before:left-[11px] before:w-[2px] before:bg-red-200 dark:before:bg-red-800/50">
+                        <li class="relative pl-8 text-sm text-gray-700 dark:text-gray-300">
+                            <span class="absolute left-0 top-1 w-6 h-6 rounded-full bg-red-100 dark:bg-red-900/50 border border-red-300 dark:border-red-700 flex items-center justify-center text-xs font-bold text-red-600 dark:text-red-400">1</span>
+                            Look at plate & guess weight
+                        </li>
+                        <li class="relative pl-8 text-sm text-gray-700 dark:text-gray-300">
+                            <span class="absolute left-0 top-1 w-6 h-6 rounded-full bg-red-100 dark:bg-red-900/50 border border-red-300 dark:border-red-700 flex items-center justify-center text-xs font-bold text-red-600 dark:text-red-400">2</span>
+                            Mental math to estimate carbs
+                        </li>
+                        <li class="relative pl-8 text-sm text-gray-700 dark:text-gray-300">
+                            <span class="absolute left-0 top-1 w-6 h-6 rounded-full bg-red-100 dark:bg-red-900/50 border border-red-300 dark:border-red-700 flex items-center justify-center text-xs font-bold text-red-600 dark:text-red-400">3</span>
+                            Check current glucose level
+                        </li>
+                        <li class="relative pl-8 text-sm text-gray-700 dark:text-gray-300">
+                            <span class="absolute left-0 top-1 w-6 h-6 rounded-full bg-red-100 dark:bg-red-900/50 border border-red-300 dark:border-red-700 flex items-center justify-center text-xs font-bold text-red-600 dark:text-red-400">4</span>
+                            Calculate Insulin-to-Carb ratio + Correction Factor
+                        </li>
+                        <li class="relative pl-8 text-sm text-gray-700 dark:text-gray-300">
+                            <span class="absolute left-0 top-1 w-6 h-6 rounded-full bg-red-100 dark:bg-red-900/50 border border-red-300 dark:border-red-700 flex items-center justify-center text-xs font-bold text-red-600 dark:text-red-400">5</span>
+                            Administer dose manually
+                        </li>
+                    </ol>
+                </div>
+
+                <!-- A Solução (Depois) -->
+                <div class="bg-blue-50/50 dark:bg-blue-900/10 border border-blue-200 dark:border-blue-800/30 rounded-2xl p-6 relative overflow-hidden shadow-inner">
+                    <div class="absolute top-0 right-0 bg-blue-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider shadow-sm">SmartGlycoAI</div>
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4 mt-2">Frictionless Flow</h3>
+                    
+                    <ol class="space-y-4 relative before:absolute before:inset-y-0 before:left-[11px] before:w-[2px] before:bg-blue-200 dark:before:bg-blue-800/50">
+                        <li class="relative pl-8 text-sm text-gray-700 dark:text-gray-300">
+                            <span class="absolute left-0 top-0.5 w-6 h-6 rounded-full bg-blue-500 border border-blue-600 flex items-center justify-center text-xs font-bold text-white shadow-sm">1</span>
+                            <strong>Snap:</strong> Take photo of the meal (AI detects carbs)
+                        </li>
+                        <li class="relative pl-8 text-sm text-gray-700 dark:text-gray-300">
+                            <span class="absolute left-0 top-0.5 w-6 h-6 rounded-full bg-blue-500 border border-blue-600 flex items-center justify-center text-xs font-bold text-white shadow-sm">2</span>
+                            <strong>Sync:</strong> Glucose is automatically read via Bluetooth
+                        </li>
+                        <li class="relative pl-8 text-sm text-gray-700 dark:text-gray-300">
+                            <span class="absolute left-0 top-0.5 w-6 h-6 rounded-full bg-blue-500 border border-blue-600 flex items-center justify-center text-xs font-bold text-white shadow-sm">3</span>
+                            <strong>Dose:</strong> Confirm AI-calculated dose and inject
+                        </li>
+                    </ol>
+                    
+                    <div class="mt-5 bg-blue-100/50 dark:bg-blue-900/40 p-3 rounded-xl border border-blue-200 dark:border-blue-800/50 flex items-center gap-3">
+                        <span class="text-2xl">⚡</span>
+                        <p class="text-xs font-semibold text-blue-800 dark:text-blue-300">60% reduction in interaction steps and mathematical errors.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- GOAL & MARKET -->
         <section class="bg-white dark:bg-gray-800/90 glow-blue rounded-[2rem] p-8 shadow-sm border border-gray-200/80 dark:border-gray-700/80" data-aos="fade-up">
             <div class="flex items-center gap-3 border-b border-gray-200/80 dark:border-gray-700/80 pb-4 mb-6">

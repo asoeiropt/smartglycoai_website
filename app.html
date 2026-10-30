@@ -280,6 +280,55 @@
             </div>
         </section>
 
+        <!-- EDGE CASES & ERROR PREVENTION SECTION -->
+        <section class="mb-20 max-w-6xl mx-auto px-4" data-aos="fade-up">
+            <div class="spotlight-card bg-white dark:bg-gray-800/90 glow-blue rounded-[2rem] p-8 shadow-sm border border-gray-200/80 dark:border-gray-700/80">
+                <div class="flex items-center gap-3 border-b border-gray-200/80 dark:border-gray-700/80 pb-4 mb-6">
+                    <span class="bg-amber-100 text-amber-700 dark:bg-amber-900/50 dark:text-amber-400 w-9 h-9 rounded-xl flex items-center justify-center text-lg border border-amber-200 dark:border-amber-700/50">🛡️</span>
+                    <h3 class="text-2xl font-bold dark:text-white tracking-tight">Error Prevention & Edge Cases</h3>
+                </div>
+                
+                <p class="text-sm text-gray-600 dark:text-gray-400 mb-8">
+                    In a healthcare application, the "happy path" is not enough. The interface must be resilient to hardware failures, network loss, and AI uncertainties to guarantee patient safety at all times.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Edge Case 1: Offline -->
+                    <div class="bg-gray-50 dark:bg-gray-900/50 border border-gray-200/80 dark:border-gray-700/80 p-6 rounded-2xl hover:border-amber-400 dark:hover:border-amber-500 transition-colors">
+                        <div class="text-3xl mb-4">📶</div>
+                        <h4 class="font-bold text-gray-900 dark:text-white mb-2">No Internet Connection</h4>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">The user is in a basement or area with no cellular data during a meal.</p>
+                        <div class="bg-amber-50 dark:bg-amber-900/20 p-3 rounded-xl border border-amber-100 dark:border-amber-900/50">
+                            <span class="block text-[10px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 mb-1">UI Fallback</span>
+                            <span class="text-xs text-gray-700 dark:text-gray-300"><strong>Offline-First:</strong> Logs are saved to a local SQLite/Hive database and core math algorithms run locally. Syncs to cloud once reconnected.</span>
+                        </div>
+                    </div>
+
+                    <!-- Edge Case 2: AI Failure -->
+                    <div class="bg-gray-50 dark:bg-gray-900/50 border border-gray-200/80 dark:border-gray-700/80 p-6 rounded-2xl hover:border-amber-400 dark:hover:border-amber-500 transition-colors">
+                        <div class="text-3xl mb-4">🤖</div>
+                        <h4 class="font-bold text-gray-900 dark:text-white mb-2">Low AI Confidence</h4>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">The camera scans a complex meal (e.g., stew) and the Computer Vision model is unsure.</p>
+                        <div class="bg-amber-50 dark:bg-amber-900/20 p-3 rounded-xl border border-amber-100 dark:border-amber-900/50">
+                            <span class="block text-[10px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 mb-1">UI Fallback</span>
+                            <span class="text-xs text-gray-700 dark:text-gray-300"><strong>Manual Override:</strong> The UI displays a "Low Confidence" badge and automatically expands a numeric keypad for manual carbohydrate entry.</span>
+                        </div>
+                    </div>
+
+                    <!-- Edge Case 3: Sensor Disconnect -->
+                    <div class="bg-gray-50 dark:bg-gray-900/50 border border-gray-200/80 dark:border-gray-700/80 p-6 rounded-2xl hover:border-amber-400 dark:hover:border-amber-500 transition-colors">
+                        <div class="text-3xl mb-4">⌚</div>
+                        <h4 class="font-bold text-gray-900 dark:text-white mb-2">CGM Sensor Lost</h4>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">Bluetooth connection to the FreeStyle Libre drops right before a calculation.</p>
+                        <div class="bg-amber-50 dark:bg-amber-900/20 p-3 rounded-xl border border-amber-100 dark:border-amber-900/50">
+                            <span class="block text-[10px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 mb-1">UI Fallback</span>
+                            <span class="text-xs text-gray-700 dark:text-gray-300"><strong>Graceful Degradation:</strong> A highly visible red banner appears at the top. The dose calculator switches from "Automatic" to requesting a capillary blood drop input.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
             <section class="mb-20 max-w-5xl mx-auto" data-aos="fade-up">
                 <h2 class="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-white tracking-tight">
                     Application Versions
