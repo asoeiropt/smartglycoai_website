@@ -9,7 +9,6 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script>tailwind.config = { darkMode: 'class' }</script>
     <style>
-        /* Brilhos radiais suaves estilo Bento UI mantendo as cores atuais */
         .glow-amber {
             background: radial-gradient(circle at 85% 15%, rgba(245, 158, 11, 0.22), transparent 60%),
                         radial-gradient(circle at 15% 85%, rgba(217, 119, 6, 0.10), transparent 55%);
@@ -63,6 +62,18 @@
             <p class="text-amber-100 text-base md:text-lg max-w-3xl">
                 <strong>Objective:</strong> Design of the first low/medium fidelity interface prototype, scenario testing preparation, and usability observations.
             </p>
+            
+            <div class="mt-8 flex flex-wrap gap-3 text-xs font-medium text-amber-100/90">
+                <span class="bg-black/20 px-4 py-2 rounded-full border border-white/10 flex items-center gap-2">
+                    <span class="opacity-70">Lab Class:</span> P4
+                </span>
+                <span class="bg-black/20 px-4 py-2 rounded-full border border-white/10 flex items-center gap-2">
+                    <span class="opacity-70">Professor:</span> Teresa Romão
+                </span>
+                <span class="bg-black/20 px-4 py-2 rounded-full border border-white/10 flex items-center gap-2">
+                    <span class="opacity-70">Date:</span> November 2nd, 2026
+                </span>
+            </div>
         </section>
 
         <!-- 1. TESTING PREPARATION (Briefing & Evaluation Roles) -->
@@ -82,6 +93,7 @@
 
             <!-- Evaluation Roles -->
             <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Evaluation Roles</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Roles were swapped after every test so that each group member played each role.</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="bg-white/80 dark:bg-gray-900/50 p-6 rounded-2xl border border-gray-200/80 dark:border-gray-700/80">
                     <div class="text-2xl mb-2">🤖</div>
@@ -107,7 +119,7 @@
             </div>
         </section>
 
-        <!-- 2. THE 3 SCENARIOS (Directly from Stage 2) -->
+        <!-- 2. THE 3 SCENARIOS -->
         <section class="bg-white dark:bg-gray-800/90 glow-amber rounded-[2rem] p-8 shadow-sm border border-gray-200/80 dark:border-gray-700/80" data-aos="fade-up">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-gray-200/80 dark:border-gray-700/80 pb-4 mb-6 gap-2">
                 <div class="flex items-center gap-3">
@@ -120,7 +132,7 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Scenario 1 (Stage 2) -->
+                <!-- Scenario 1 -->
                 <div class="bg-white/90 dark:bg-gray-900/60 glow-blue p-6 rounded-[1.75rem] border border-gray-200/80 dark:border-gray-700/80 shadow-sm flex flex-col justify-between">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -130,13 +142,16 @@
                             <span class="text-[11px] font-mono text-gray-400">Task 1</span>
                         </div>
                         <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Meal Time at a Restaurant</h3>
-                        <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
+                        <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
                             João is at a restaurant and is unsure about the carbohydrate count of his pasta dish. Glancing at his Home screen, he views his stable 6-hour glucose trend graph. He opens SmartGlycoAI's meal logging module, takes a photo of his plate, and the app estimates 65g of carbs. Based on his current CGM reading of 110 mg/dL, the app suggests a precise insulin dose before he starts eating.
                         </p>
+                        <div class="bg-white dark:bg-gray-800 p-3 rounded-lg border border-gray-200 dark:border-gray-600 text-xs text-gray-700 dark:text-gray-300">
+                            <strong>User Sheet:</strong> You are having dinner at a restaurant and have just been served a plate of pasta. Before you start eating, use the app to find out how much insulin you should take, and save the meal.
+                        </div>
                     </div>
                 </div>
 
-                <!-- Scenario 2 (Stage 2) -->
+                <!-- Scenario 2 -->
                 <div class="bg-white/90 dark:bg-gray-900/60 glow-green p-6 rounded-[1.75rem] border border-gray-200/80 dark:border-gray-700/80 shadow-sm flex flex-col justify-between">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -146,13 +161,16 @@
                             <span class="text-[11px] font-mono text-gray-400">Tasks 3 & 4</span>
                         </div>
                         <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">A low on the way home</h3>
-                        <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
-                            At 6 p.m. João is on the bus home after the gym. His phone vibrates with an alert: the app predicts his glucose will reach 65 mg/dL in 20 minutes and suggests eating 15 g of fast-acting carbohydrates. He opens the alert, drinks a small pack of juice he always carries, and taps "Register correction". Later that evening, at home, he opens the Diary to check his day. He remembers that at lunch he left part of the rice on the plate, so he ate fewer carbohydrates than the 60 g he registered, which may explain the low in the afternoon. He opens the lunch entry, changes the carbohydrates to 45 g so that the diary shows what he really ate, keeps the 4.0 units he actually took, and saves the changes.
+                        <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                            At 6 p.m. João is on the bus home after the gym. His phone vibrates with an alert: the app predicts his glucose will reach 65 mg/dL in 20 minutes and suggests eating 15 g of fast-acting carbohydrates. He opens the alert, drinks a small pack of juice he always carries, and taps "Register correction". Later that evening, at home, he opens the Diary to check his day. He remembers that at lunch he left part of the rice on the plate, so he ate fewer carbohydrates than the 60 g he registered. He opens the lunch entry, changes the carbohydrates to 45 g, keeps the 4.0 units he actually took, and saves.
                         </p>
+                        <div class="bg-white dark:bg-gray-800 p-3 rounded-lg border border-gray-200 dark:border-gray-600 text-xs text-gray-700 dark:text-gray-300">
+                            <strong>User Sheet:</strong> You are on the bus after the gym and your phone warns you that your glucose is dropping. Deal with the warning. Later, at home, you remember that at lunch you only ate 45 g of carbohydrates instead of the 60 g you registered: correct this in the app.
+                        </div>
                     </div>
                 </div>
 
-                <!-- Scenario 3 (Stage 2) -->
+                <!-- Scenario 3 -->
                 <div class="bg-white/90 dark:bg-gray-900/60 glow-purple p-6 rounded-[1.75rem] border border-gray-200/80 dark:border-gray-700/80 shadow-sm flex flex-col justify-between">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -162,155 +180,199 @@
                             <span class="text-[11px] font-mono text-gray-400">Task 2</span>
                         </div>
                         <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Routine Clinical Check-up</h3>
-                        <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
+                        <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
                             Dr. Joana is preparing for a consultation with João. She opens the platform's professional dashboard to review his data from the past month. She notices frequent hypoglycemic events during the night and decides to adjust his baseline insulin ratio directly within the app's professional settings.
                         </p>
+                        <div class="bg-white dark:bg-gray-800 p-3 rounded-lg border border-gray-200 dark:border-gray-600 text-xs text-gray-700 dark:text-gray-300">
+                            <strong>User Sheet:</strong> You are João's endocrinologist and he has an appointment with you tomorrow. Find out how often his glucose went too low during the last month, and change his insulin-to-carbohydrate ratio to 1 unit per 12 g.
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 3. PAPER PROTOTYPE & STORYBOARDS (7 IMAGENS PNG + STORYBOARDS) -->
+        <!-- 3. SKETCHES & PAPER PROTOTYPE -->
         <section class="bg-white dark:bg-gray-800/90 glow-amber rounded-[2rem] p-8 shadow-sm border border-gray-200/80 dark:border-gray-700/80" data-aos="fade-up">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-gray-200/80 dark:border-gray-700/80 pb-4 mb-6 gap-2">
-                <div class="flex items-center gap-3">
-                    <span class="bg-amber-100 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300 w-9 h-9 rounded-full flex items-center justify-center font-bold border border-amber-200 dark:border-amber-700/50">3</span>
-                    <h2 class="text-2xl font-bold dark:text-white tracking-tight">Paper Prototype & Storyboards</h2>
-                </div>
-                <span class="text-xs font-semibold text-amber-600 dark:text-amber-400 bg-amber-100/80 dark:bg-amber-900/40 px-3 py-1 rounded-full border border-amber-200/60 dark:border-amber-700/50 w-fit">
-                    7 Screens • Click to zoom
-                </span>
+            <div class="flex items-center gap-3 border-b border-gray-200/80 dark:border-gray-700/80 pb-4 mb-8">
+                <span class="bg-amber-100 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300 w-9 h-9 rounded-full flex items-center justify-center font-bold border border-amber-200 dark:border-amber-700/50">3</span>
+                <h2 class="text-2xl font-bold dark:text-white tracking-tight">Sketches & Paper Prototype</h2>
             </div>
 
-            <!-- Prototype Interface Photos -->
-            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Prototype Interface Photos</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400 mb-6">
-                Hand-drawn low-fidelity screens used during the paper prototype evaluation sessions. Click on any screen to enlarge.
-            </p>
+            <!-- PARTE 1: OS SKETCHES ORIGINAIS (7 PNGs) -->
+            <div class="mb-10">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white">3.1 Initial Sketches</h3>
+                    <span class="text-xs font-semibold text-amber-600 dark:text-amber-400 bg-amber-100/80 dark:bg-amber-900/40 px-3 py-1 rounded-full border border-amber-200/60 dark:border-amber-700/50">
+                        7 Screens
+                    </span>
+                </div>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mb-6">
+                    Our first approach to the design: hand-drawn sketches of the main screens, with notes explaining the purpose of each element.
+                </p>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-12">
-                
-                <!-- Screen 01 -->
-                <div onclick="openLightbox(event, 'img/stage3/1.png')" class="group bg-white/80 dark:bg-gray-900/60 rounded-[1.75rem] p-4 border border-gray-200/80 dark:border-gray-700/80 hover:border-amber-400 dark:hover:border-amber-500 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer flex flex-col justify-between">
-                    <div class="overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800 mb-4 h-60 flex items-center justify-center">
-                        <img src="img/stage3/1.png" alt="Screen 01" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                    </div>
-                    <div class="flex items-center justify-between px-1">
-                        <div>
-                            <span class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 block">Screen 01</span>
-                            <h4 class="font-bold text-sm text-gray-900 dark:text-white">Opening the App</h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- Screen 01 -->
+                    <div onclick="openLightbox(event, 'img/stage3/1.png')" class="group bg-white/80 dark:bg-gray-900/60 rounded-[1.75rem] p-4 border border-gray-200/80 dark:border-gray-700/80 hover:border-amber-400 dark:hover:border-amber-500 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                        <div class="overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800 mb-4 h-48 flex items-center justify-center">
+                            <img src="img/stage3/1.png" alt="Screen 01" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                         </div>
-                        <div class="w-8 h-8 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 flex items-center justify-center text-xs font-bold group-hover:bg-amber-500 dark:group-hover:bg-amber-500 dark:group-hover:text-white transition">↗</div>
+                        <div class="flex items-center justify-between px-1">
+                            <div>
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 block">Screen 01</span>
+                                <h4 class="font-bold text-sm text-gray-900 dark:text-white">Opening the App</h4>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 flex items-center justify-center text-xs font-bold group-hover:bg-amber-500 dark:group-hover:bg-amber-500 dark:group-hover:text-white transition">↗</div>
+                        </div>
+                    </div>
+                    <!-- Screen 02 -->
+                    <div onclick="openLightbox(event, 'img/stage3/2.png')" class="group bg-white/80 dark:bg-gray-900/60 rounded-[1.75rem] p-4 border border-gray-200/80 dark:border-gray-700/80 hover:border-amber-400 dark:hover:border-amber-500 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                        <div class="overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800 mb-4 h-48 flex items-center justify-center">
+                            <img src="img/stage3/2.png" alt="Screen 02" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        </div>
+                        <div class="flex items-center justify-between px-1">
+                            <div>
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 block">Screen 02</span>
+                                <h4 class="font-bold text-sm text-gray-900 dark:text-white">Start page (login)</h4>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 flex items-center justify-center text-xs font-bold group-hover:bg-amber-500 dark:group-hover:bg-amber-500 dark:group-hover:text-white transition">↗</div>
+                        </div>
+                    </div>
+                    <!-- Screen 03 -->
+                    <div onclick="openLightbox(event, 'img/stage3/3.png')" class="group bg-white/80 dark:bg-gray-900/60 rounded-[1.75rem] p-4 border border-gray-200/80 dark:border-gray-700/80 hover:border-amber-400 dark:hover:border-amber-500 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                        <div class="overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800 mb-4 h-48 flex items-center justify-center">
+                            <img src="img/stage3/3.png" alt="Screen 03" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        </div>
+                        <div class="flex items-center justify-between px-1">
+                            <div>
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 block">Screen 03</span>
+                                <h4 class="font-bold text-sm text-gray-900 dark:text-white">User guide</h4>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 flex items-center justify-center text-xs font-bold group-hover:bg-amber-500 dark:group-hover:bg-amber-500 dark:group-hover:text-white transition">↗</div>
+                        </div>
+                    </div>
+                    <!-- Screen 04 -->
+                    <div onclick="openLightbox(event, 'img/stage3/4.png')" class="group bg-white/80 dark:bg-gray-900/60 rounded-[1.75rem] p-4 border border-gray-200/80 dark:border-gray-700/80 hover:border-amber-400 dark:hover:border-amber-500 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                        <div class="overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800 mb-4 h-48 flex items-center justify-center">
+                            <img src="img/stage3/4.png" alt="Screen 04" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        </div>
+                        <div class="flex items-center justify-between px-1">
+                            <div>
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 block">Screen 04</span>
+                                <h4 class="font-bold text-sm text-gray-900 dark:text-white">Home page</h4>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 flex items-center justify-center text-xs font-bold group-hover:bg-amber-500 dark:group-hover:bg-amber-500 dark:group-hover:text-white transition">↗</div>
+                        </div>
+                    </div>
+                    <!-- Screen 05 -->
+                    <div onclick="openLightbox(event, 'img/stage3/5.png')" class="group bg-white/80 dark:bg-gray-900/60 rounded-[1.75rem] p-4 border border-gray-200/80 dark:border-gray-700/80 hover:border-amber-400 dark:hover:border-amber-500 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                        <div class="overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800 mb-4 h-48 flex items-center justify-center">
+                            <img src="img/stage3/5.png" alt="Screen 05" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        </div>
+                        <div class="flex items-center justify-between px-1">
+                            <div>
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 block">Screen 05</span>
+                                <h4 class="font-bold text-sm text-gray-900 dark:text-white">Meal analysis</h4>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 flex items-center justify-center text-xs font-bold group-hover:bg-amber-500 dark:group-hover:bg-amber-500 dark:group-hover:text-white transition">↗</div>
+                        </div>
+                    </div>
+                    <!-- Screen 06 -->
+                    <div onclick="openLightbox(event, 'img/stage3/6.png')" class="group bg-white/80 dark:bg-gray-900/60 rounded-[1.75rem] p-4 border border-gray-200/80 dark:border-gray-700/80 hover:border-amber-400 dark:hover:border-amber-500 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                        <div class="overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800 mb-4 h-48 flex items-center justify-center">
+                            <img src="img/stage3/6.png" alt="Screen 06" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        </div>
+                        <div class="flex items-center justify-between px-1">
+                            <div>
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 block">Screen 06</span>
+                                <h4 class="font-bold text-sm text-gray-900 dark:text-white">Diary (history)</h4>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 flex items-center justify-center text-xs font-bold group-hover:bg-amber-500 dark:group-hover:bg-amber-500 dark:group-hover:text-white transition">↗</div>
+                        </div>
+                    </div>
+                    <!-- Screen 07 -->
+                    <div onclick="openLightbox(event, 'img/stage3/7.png')" class="group bg-white/80 dark:bg-gray-900/60 rounded-[1.75rem] p-4 border border-gray-200/80 dark:border-gray-700/80 hover:border-amber-400 dark:hover:border-amber-500 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                        <div class="overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800 mb-4 h-48 flex items-center justify-center">
+                            <img src="img/stage3/7.png" alt="Screen 07" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        </div>
+                        <div class="flex items-center justify-between px-1">
+                            <div>
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 block">Screen 07</span>
+                                <h4 class="font-bold text-sm text-gray-900 dark:text-white">Profile and settings</h4>
+                            </div>
+                            <div class="w-8 h-8 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 flex items-center justify-center text-xs font-bold group-hover:bg-amber-500 dark:group-hover:bg-amber-500 dark:group-hover:text-white transition">↗</div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Screen 02 -->
-                <div onclick="openLightbox(event, 'img/stage3/2.png')" class="group bg-white/80 dark:bg-gray-900/60 rounded-[1.75rem] p-4 border border-gray-200/80 dark:border-gray-700/80 hover:border-amber-400 dark:hover:border-amber-500 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer flex flex-col justify-between">
-                    <div class="overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800 mb-4 h-60 flex items-center justify-center">
-                        <img src="img/stage3/2.png" alt="Screen 02" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                    </div>
-                    <div class="flex items-center justify-between px-1">
-                        <div>
-                            <span class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 block">Screen 02</span>
-                            <h4 class="font-bold text-sm text-gray-900 dark:text-white">Prototype Sketch 2</h4>
-                        </div>
-                        <div class="w-8 h-8 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 flex items-center justify-center text-xs font-bold group-hover:bg-amber-500 dark:group-hover:bg-amber-500 dark:group-hover:text-white transition">↗</div>
-                    </div>
-                </div>
-
-                <!-- Screen 03 -->
-                <div onclick="openLightbox(event, 'img/stage3/3.png')" class="group bg-white/80 dark:bg-gray-900/60 rounded-[1.75rem] p-4 border border-gray-200/80 dark:border-gray-700/80 hover:border-amber-400 dark:hover:border-amber-500 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer flex flex-col justify-between">
-                    <div class="overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800 mb-4 h-60 flex items-center justify-center">
-                        <img src="img/stage3/3.png" alt="Screen 03" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                    </div>
-                    <div class="flex items-center justify-between px-1">
-                        <div>
-                            <span class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 block">Screen 03</span>
-                            <h4 class="font-bold text-sm text-gray-900 dark:text-white">Prototype Sketch 3</h4>
-                        </div>
-                        <div class="w-8 h-8 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 flex items-center justify-center text-xs font-bold group-hover:bg-amber-500 dark:group-hover:bg-amber-500 dark:group-hover:text-white transition">↗</div>
-                    </div>
-                </div>
-
-                <!-- Screen 04 -->
-                <div onclick="openLightbox(event, 'img/stage3/4.png')" class="group bg-white/80 dark:bg-gray-900/60 rounded-[1.75rem] p-4 border border-gray-200/80 dark:border-gray-700/80 hover:border-amber-400 dark:hover:border-amber-500 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer flex flex-col justify-between">
-                    <div class="overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800 mb-4 h-60 flex items-center justify-center">
-                        <img src="img/stage3/4.png" alt="Screen 04" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                    </div>
-                    <div class="flex items-center justify-between px-1">
-                        <div>
-                            <span class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 block">Screen 04</span>
-                            <h4 class="font-bold text-sm text-gray-900 dark:text-white">Prototype Sketch 4</h4>
-                        </div>
-                        <div class="w-8 h-8 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 flex items-center justify-center text-xs font-bold group-hover:bg-amber-500 dark:group-hover:bg-amber-500 dark:group-hover:text-white transition">↗</div>
-                    </div>
-                </div>
-
-                <!-- Screen 05 -->
-                <div onclick="openLightbox(event, 'img/stage3/5.png')" class="group bg-white/80 dark:bg-gray-900/60 rounded-[1.75rem] p-4 border border-gray-200/80 dark:border-gray-700/80 hover:border-amber-400 dark:hover:border-amber-500 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer flex flex-col justify-between">
-                    <div class="overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800 mb-4 h-60 flex items-center justify-center">
-                        <img src="img/stage3/5.png" alt="Screen 05" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                    </div>
-                    <div class="flex items-center justify-between px-1">
-                        <div>
-                            <span class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 block">Screen 05</span>
-                            <h4 class="font-bold text-sm text-gray-900 dark:text-white">Prototype Sketch 5</h4>
-                        </div>
-                        <div class="w-8 h-8 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 flex items-center justify-center text-xs font-bold group-hover:bg-amber-500 dark:group-hover:bg-amber-500 dark:group-hover:text-white transition">↗</div>
-                    </div>
-                </div>
-
-                <!-- Screen 06 -->
-                <div onclick="openLightbox(event, 'img/stage3/6.png')" class="group bg-white/80 dark:bg-gray-900/60 rounded-[1.75rem] p-4 border border-gray-200/80 dark:border-gray-700/80 hover:border-amber-400 dark:hover:border-amber-500 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer flex flex-col justify-between">
-                    <div class="overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800 mb-4 h-60 flex items-center justify-center">
-                        <img src="img/stage3/6.png" alt="Screen 06" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                    </div>
-                    <div class="flex items-center justify-between px-1">
-                        <div>
-                            <span class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 block">Screen 06</span>
-                            <h4 class="font-bold text-sm text-gray-900 dark:text-white">Prototype Sketch 6</h4>
-                        </div>
-                        <div class="w-8 h-8 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 flex items-center justify-center text-xs font-bold group-hover:bg-amber-500 dark:group-hover:bg-amber-500 dark:group-hover:text-white transition">↗</div>
-                    </div>
-                </div>
-
-                <!-- Screen 07 -->
-                <div onclick="openLightbox(event, 'img/stage3/7.png')" class="group bg-white/80 dark:bg-gray-900/60 rounded-[1.75rem] p-4 border border-gray-200/80 dark:border-gray-700/80 hover:border-amber-400 dark:hover:border-amber-500 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer flex flex-col justify-between">
-                    <div class="overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800 mb-4 h-60 flex items-center justify-center">
-                        <img src="img/stage3/7.png" alt="Screen 07" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                    </div>
-                    <div class="flex items-center justify-between px-1">
-                        <div>
-                            <span class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 block">Screen 07</span>
-                            <h4 class="font-bold text-sm text-gray-900 dark:text-white">Prototype Sketch 7</h4>
-                        </div>
-                        <div class="w-8 h-8 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 flex items-center justify-center text-xs font-bold group-hover:bg-amber-500 dark:group-hover:bg-amber-500 dark:group-hover:text-white transition">↗</div>
-                    </div>
-                </div>
-
             </div>
 
-            <!-- Storyboards (Task Flow) -->
-            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Storyboards (Task Flow)</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400 mb-6">
-                Visual step-by-step navigation sequences illustrating how users complete the Stage 2 scenarios.
-            </p>
+            <!-- PARTE 2: AS FOTOS DE AVALIAÇÃO (11 JPEGs) -->
+            <div class="mb-10 pt-8 border-t border-gray-200/80 dark:border-gray-700/80">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white">3.2 Prototype Photos</h3>
+                    <span class="text-xs font-semibold text-amber-600 dark:text-amber-400 bg-amber-100/80 dark:bg-amber-900/40 px-3 py-1 rounded-full border border-amber-200/60 dark:border-amber-700/50">
+                        11 Screens
+                    </span>
+                </div>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mb-6">
+                    Hand-drawn low-fidelity screens used during the paper prototype evaluation sessions.
+                </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-white/60 dark:bg-gray-900/40 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-[1.75rem] p-6 text-center flex flex-col items-center justify-center h-64">
-                    <span class="text-4xl mb-2">🍝</span>
-                    <span class="font-bold text-gray-700 dark:text-gray-300 text-sm">Storyboard 1: Meal Time at a Restaurant</span>
-                    <span class="text-xs text-gray-400 mt-1">Available soon</span>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <script>
+                        for(let i = 1; i <= 11; i++) {
+                            document.write(`
+                            <div onclick="openLightbox(event, 'img/stage3-paper/${i}.jpeg')" class="group bg-white/80 dark:bg-gray-900/60 rounded-[1.75rem] p-4 border border-gray-200/80 dark:border-gray-700/80 hover:border-amber-400 dark:hover:border-amber-500 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                                <div class="overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800 mb-4 h-48 flex items-center justify-center">
+                                    <img src="img/stage3-paper/${i}.jpeg" alt="Paper Photo ${i}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                                </div>
+                                <div class="flex items-center justify-between px-1">
+                                    <div>
+                                        <span class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 block">Photo</span>
+                                        <h4 class="font-bold text-sm text-gray-900 dark:text-white">Paper UI ${i}</h4>
+                                    </div>
+                                    <div class="w-8 h-8 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 flex items-center justify-center text-xs font-bold group-hover:bg-amber-500 dark:group-hover:bg-amber-500 dark:group-hover:text-white transition">↗</div>
+                                </div>
+                            </div>
+                            `);
+                        }
+                    </script>
                 </div>
-                <div class="bg-white/60 dark:bg-gray-900/40 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-[1.75rem] p-6 text-center flex flex-col items-center justify-center h-64">
-                    <span class="text-4xl mb-2">🚌</span>
-                    <span class="font-bold text-gray-700 dark:text-gray-300 text-sm">Storyboard 2: A low on the way home</span>
-                    <span class="text-xs text-gray-400 mt-1">Available soon</span>
-                </div>
-                <div class="bg-white/60 dark:bg-gray-900/40 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-[1.75rem] p-6 text-center flex flex-col items-center justify-center h-64">
-                    <span class="text-4xl mb-2">🩺</span>
-                    <span class="font-bold text-gray-700 dark:text-gray-300 text-sm">Storyboard 3: Routine Clinical Check-up</span>
-                    <span class="text-xs text-gray-400 mt-1">Available soon</span>
+            </div>
+
+            <!-- PARTE 3: STORYBOARDS (TASK FLOW) -->
+            <div class="pt-8 border-t border-gray-200/80 dark:border-gray-700/80">
+                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">3.3 Storyboards (Task Flow)</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mb-6">
+                    Visual step-by-step navigation sequences illustrating how users complete the most relevant tasks with the paper prototype.
+                </p>
+
+                <div class="grid grid-cols-1 gap-6">
+                    <!-- Storyboard A -->
+                    <div class="bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 rounded-[1.75rem] p-6 shadow-sm">
+                        <div class="mb-4 border-b border-gray-200 dark:border-gray-700 pb-3">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 mb-1 block">Storyboard A</span>
+                            <h4 class="font-bold text-gray-900 dark:text-white text-lg">First use of the app</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">The user opens the app, logs in, reads the user guide and arrives at the Home page.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Storyboard B -->
+                    <div class="bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 rounded-[1.75rem] p-6 shadow-sm">
+                        <div class="mb-4 border-b border-gray-200 dark:border-gray-700 pb-3">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 mb-1 block">Storyboard B</span>
+                            <h4 class="font-bold text-gray-900 dark:text-white text-lg">Scenario 1: meal at a restaurant (Task 1)</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">From the Home page, the user taps the camera button and takes a photo. The app shows the identified meal, the carbohydrates and the suggested dose; the user confirms and the meal is saved in the Diary.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Storyboard C -->
+                    <div class="bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 rounded-[1.75rem] p-6 shadow-sm">
+                        <div class="mb-4 border-b border-gray-200 dark:border-gray-700 pb-3">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 mb-1 block">Storyboard C</span>
+                            <h4 class="font-bold text-gray-900 dark:text-white text-lg">Scenario 2: correcting the diary (Task 4)</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">After handling the low-glucose alert, the user opens the Diary from the menu, finds the lunch entry and opens it to change the carbohydrates.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -321,6 +383,10 @@
                 <span class="bg-amber-100 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300 w-9 h-9 rounded-full flex items-center justify-center font-bold border border-amber-200 dark:border-amber-700/50">4</span>
                 <h2 class="text-2xl font-bold dark:text-white tracking-tight">Evaluation Observations</h2>
             </div>
+            
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                Users generally understood the purpose of the app from the briefing and were able to start each scenario on their own. However, in the diary scenario, several users hesitated: they looked for an explicit 'edit' button and did not expect that tapping a diary entry would open it for editing. In the alert scenario, some users closed the notification quickly and afterwards were not sure where to find the suggested carbohydrate correction again.
+            </p>
 
             <div class="overflow-x-auto rounded-2xl border border-gray-200/80 dark:border-gray-700/80">
                 <table class="w-full text-left text-sm">
@@ -355,20 +421,23 @@
         <!-- 5. DOWNLOADS SECTION -->
         <section class="bg-white dark:bg-gray-800/90 rounded-[2rem] p-8 shadow-sm border border-gray-200/80 dark:border-gray-700/80" data-aos="fade-up">
             <div class="flex items-center gap-4 mb-6">
-                <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200">Downloads</h2>
+                <h2 class="text-xl font-bold text-gray-800 dark:text-gray-200">Stage 3 Submission</h2>
                 <div class="h-px bg-gray-200 dark:bg-gray-700 flex-grow"></div>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="flex items-center gap-4 bg-gray-50 dark:bg-gray-900/50 border-2 border-dashed border-gray-300 dark:border-gray-700 rounded-2xl p-4 opacity-75">
-                    <div class="w-12 h-12 bg-gray-200 dark:bg-gray-700/50 text-gray-400 dark:text-gray-500 rounded-xl flex items-center justify-center text-2xl">
-                        📄
+                <a href="docs/IPM_stage_3_Group_06.pdf" download class="flex items-center justify-between bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-700 hover:border-amber-500 dark:hover:border-amber-500 transition group cursor-pointer rounded-2xl p-4 shadow-sm">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-red-100 dark:bg-red-900/30 text-red-600 rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                            📄
+                        </div>
+                        <div>
+                            <div class="font-bold text-gray-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors text-sm">Stage 3 Report (PDF)</div>
+                            <div class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">1st prototype & evaluation</div>
+                        </div>
                     </div>
-                    <div>
-                        <div class="font-bold text-gray-500 dark:text-gray-400">Stage 3 Report</div>
-                        <div class="text-xs font-semibold text-gray-400 dark:text-gray-500 mt-1 uppercase tracking-wider">Available soon</div>
-                    </div>
-                </div>
+                    <span class="text-xs font-semibold text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-900/30 px-3 py-1.5 rounded-full border border-amber-200/50 dark:border-amber-800">Download</span>
+                </a>
             </div>
         </section>
 
@@ -378,7 +447,7 @@
     <div id="lightbox-modal" class="fixed inset-0 z-[60] bg-black/90 hidden flex items-center justify-center p-4" onclick="closeLightbox()">
         <div class="relative max-w-5xl max-h-[90vh]">
             <button class="absolute -top-12 right-0 text-white text-3xl font-bold hover:text-gray-300 transition">&times;</button>
-            <img id="lightbox-img" src="" class="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl" alt="Enlarged sketch">
+            <img id="lightbox-img" src="" class="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl" alt="Enlarged image">
         </div>
     </div>
 
