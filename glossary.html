@@ -14,6 +14,10 @@
             background: radial-gradient(circle at 85% 15%, rgba(59, 130, 246, 0.15), transparent 60%),
                         radial-gradient(circle at 15% 85%, rgba(37, 99, 235, 0.05), transparent 55%);
         }
+        .glow-amber {
+            background: radial-gradient(circle at 85% 15%, rgba(245, 158, 11, 0.15), transparent 60%),
+                        radial-gradient(circle at 15% 85%, rgba(217, 119, 6, 0.05), transparent 55%);
+        }
     </style>
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans antialiased transition-colors duration-300">
@@ -39,110 +43,115 @@
         </div>
     </header>
 
-    <main class="max-w-6xl mx-auto py-10 px-4 space-y-10">
+    <main class="max-w-6xl mx-auto py-10 px-4 space-y-12">
         
         <!-- HERO BANNER GLOSSARY -->
         <section class="bg-gradient-to-br from-indigo-600 via-blue-700 to-blue-900 dark:from-indigo-800 dark:via-blue-900 dark:to-gray-900 text-white p-8 md:p-12 rounded-[2.2rem] shadow-xl border border-blue-400/30 dark:border-blue-700/50" data-aos="fade-up">
             <span class="inline-block py-1 px-3.5 rounded-full bg-white/20 text-blue-50 text-xs font-bold uppercase tracking-wider mb-4 border border-white/20">
                 Support & Documentation
             </span>
-            <h1 class="text-3xl md:text-4xl font-extrabold mb-3 tracking-tight">Medical Glossary</h1>
+            <h1 class="text-3xl md:text-4xl font-extrabold mb-3 tracking-tight">Project Glossary</h1>
             <p class="text-blue-100 text-base md:text-lg max-w-3xl">
-                Essential terms and concepts used in the SmartGlycoAI ecosystem to help users and evaluators understand Type 1 Diabetes management.
+                Essential terms and concepts used in the SmartGlycoAI ecosystem to help users and evaluators understand the medical domain and HCI principles.
             </p>
         </section>
 
-        <!-- GLOSSARY GRID -->
-        <section class="grid grid-cols-1 md:grid-cols-2 gap-6" data-aos="fade-up">
-            
-            <!-- T1D -->
-            <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
-                <div class="flex items-center gap-3 mb-3">
-                    <span class="text-2xl">🩸</span>
-                    <h2 class="text-xl font-bold text-gray-900 dark:text-white">T1D (Type 1 Diabetes)</h2>
+        <!-- MEDICAL TERMINOLOGY GRID -->
+        <section data-aos="fade-up">
+            <h2 class="text-2xl font-bold dark:text-white mb-6 flex items-center gap-3">
+                <span class="text-3xl">⚕️</span> Medical Terminology
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- T1D -->
+                <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">T1D (Type 1 Diabetes)</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                        A chronic condition in which the pancreas produces little or no insulin. Patients must manually manage their blood glucose levels through external insulin administration, diet, and lifestyle adjustments.
+                    </p>
                 </div>
-                <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                    A chronic condition in which the pancreas produces little or no insulin. Patients must manually manage their blood glucose levels through external insulin administration, diet, and lifestyle adjustments.
-                </p>
-            </div>
 
-            <!-- CGM -->
-            <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
-                <div class="flex items-center gap-3 mb-3">
-                    <span class="text-2xl">📱</span>
-                    <h2 class="text-xl font-bold text-gray-900 dark:text-white">CGM (Continuous Glucose Monitor)</h2>
+                <!-- CGM -->
+                <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">CGM (Continuous Glucose Monitor)</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                        A wearable sensor (e.g., FreeStyle Libre) that automatically tracks glucose levels day and night. SmartGlycoAI connects to these devices via Bluetooth to provide real-time readings and trend graphs.
+                    </p>
                 </div>
-                <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                    A wearable sensor (e.g., FreeStyle Libre) that automatically tracks glucose levels day and night. SmartGlycoAI connects to these devices via Bluetooth to provide real-time readings and trend graphs.
-                </p>
-            </div>
 
-            <!-- ICR -->
-            <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
-                <div class="flex items-center gap-3 mb-3">
-                    <span class="text-2xl">⚖️</span>
-                    <h2 class="text-xl font-bold text-gray-900 dark:text-white">ICR (Insulin-to-Carb Ratio)</h2>
+                <!-- ICR -->
+                <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">ICR (Insulin-to-Carb Ratio)</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                        A personalized setting that indicates how many grams of carbohydrates are covered by 1 unit of insulin. For example, an ICR of 1:15 means the patient needs 1 unit of insulin for every 15g of carbs eaten.
+                    </p>
                 </div>
-                <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                    A personalized setting that indicates how many grams of carbohydrates are covered by 1 unit of insulin. For example, an ICR of 1:15 means the patient needs 1 unit of insulin for every 15g of carbs eaten.
-                </p>
-            </div>
 
-            <!-- ISF -->
-            <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
-                <div class="flex items-center gap-3 mb-3">
-                    <span class="text-2xl">📉</span>
-                    <h2 class="text-xl font-bold text-gray-900 dark:text-white">ISF (Insulin Sensitivity Factor)</h2>
+                <!-- ISF -->
+                <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">ISF (Insulin Sensitivity Factor)</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Defines how much 1 unit of fast-acting insulin will lower the patient's blood glucose level. Used by the app to calculate correction doses when glucose is too high.
+                    </p>
                 </div>
-                <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Defines how much 1 unit of fast-acting insulin will lower the patient's blood glucose level. Used by the app to calculate correction doses when glucose is too high.
-                </p>
-            </div>
 
-            <!-- Hypoglycemia -->
-            <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
-                <div class="flex items-center gap-3 mb-3">
-                    <span class="text-2xl">⚠️</span>
-                    <h2 class="text-xl font-bold text-gray-900 dark:text-white">Hypoglycemia (Low)</h2>
+                <!-- Hypoglycemia -->
+                <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Hypoglycemia (Low)</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                        A dangerous condition where blood sugar drops below healthy levels (typically < 70 mg/dL). SmartGlycoAI issues predictive alerts to warn users before this happens, suggesting fast-acting carbs (like juice) to correct it.
+                    </p>
                 </div>
-                <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                    A dangerous condition where blood sugar drops below healthy levels (typically < 70 mg/dL). SmartGlycoAI issues predictive alerts to warn users before this happens, suggesting fast-acting carbs (like juice) to correct it.
-                </p>
-            </div>
 
-            <!-- Hyperglycemia -->
-            <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
-                <div class="flex items-center gap-3 mb-3">
-                    <span class="text-2xl">📈</span>
-                    <h2 class="text-xl font-bold text-gray-900 dark:text-white">Hyperglycemia (High)</h2>
+                <!-- Hyperglycemia -->
+                <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Hyperglycemia (High)</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                        When blood glucose is too high (typically > 180 mg/dL). Often occurs if a meal was miscalculated or not enough insulin was administered. Repeated highs are flagged in the doctor's dashboard.
+                    </p>
                 </div>
-                <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                    When blood glucose is too high (typically > 180 mg/dL). Often occurs if a meal was miscalculated or not enough insulin was administered. Repeated highs are flagged in the doctor's dashboard.
-                </p>
             </div>
+        </section>
 
-            <!-- Bolus Insulin -->
-            <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
-                <div class="flex items-center gap-3 mb-3">
-                    <span class="text-2xl">💉</span>
-                    <h2 class="text-xl font-bold text-gray-900 dark:text-white">Bolus Insulin</h2>
+        <!-- HCI & UI TERMINOLOGY GRID -->
+        <section data-aos="fade-up">
+            <div class="flex items-center gap-3 mb-6 pt-6 border-t border-gray-200/80 dark:border-gray-700/80">
+                <span class="text-3xl">💻</span>
+                <h2 class="text-2xl font-bold dark:text-white">HCI & UI Terminology</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- Paper Prototype -->
+                <div class="bg-white/80 dark:bg-gray-800/90 glow-amber rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-amber-400 dark:hover:border-amber-500 transition-all">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Paper Prototype (Low-Fidelity)</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                        A non-digital, hand-drawn representation of the user interface (used in Stage 3). It allows designers to quickly test navigation flows and screen layouts with users before writing any code.
+                    </p>
                 </div>
-                <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                    A single, fast-acting dose of insulin given specifically to handle the carbohydrates in a meal or to correct a high glucose reading. This is the main calculation performed by SmartGlycoAI.
-                </p>
-            </div>
 
-            <!-- Target Glucose -->
-            <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
-                <div class="flex items-center gap-3 mb-3">
-                    <span class="text-2xl">🎯</span>
-                    <h2 class="text-xl font-bold text-gray-900 dark:text-white">Target Glucose</h2>
+                <!-- Cognitive Load -->
+                <div class="bg-white/80 dark:bg-gray-800/90 glow-amber rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-amber-400 dark:hover:border-amber-500 transition-all">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Cognitive Load</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                        The amount of mental effort required by a user to complete a task. SmartGlycoAI aims to drastically reduce the cognitive load of diabetic patients by automating carbohydrate estimation and insulin math.
+                    </p>
                 </div>
-                <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                    The ideal blood sugar level the patient aims to maintain (usually around 100-120 mg/dL). The application's AI algorithms calculate corrections to always push the patient's glucose back to this target.
-                </p>
-            </div>
 
+                <!-- Usability Testing -->
+                <div class="bg-white/80 dark:bg-gray-800/90 glow-amber rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-amber-400 dark:hover:border-amber-500 transition-all">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Usability Testing</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                        An evaluation method where users are asked to perform specific tasks (scenarios) using the prototype, while observers note errors, hesitations, and feedback to improve the design.
+                    </p>
+                </div>
+
+                <!-- Edge Case -->
+                <div class="bg-white/80 dark:bg-gray-800/90 glow-amber rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-amber-400 dark:hover:border-amber-500 transition-all">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Edge Case / Fallback</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                        A rare or extreme situation (e.g., losing internet connection or the AI failing to recognize food). The UI must provide a "fallback" option (like manual entry) to ensure the system remains safe and usable.
+                    </p>
+                </div>
+            </div>
         </section>
 
     </main>
