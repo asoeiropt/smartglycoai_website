@@ -17,415 +17,130 @@
 <body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans antialiased transition-colors duration-300">
 
     <header class="sticky top-4 z-50 px-4">
-        <div class="max-w-6xl mx-auto bg-white/85 dark:bg-gray-800/85 backdrop-blur-xl shadow-lg border border-gray-200/80 dark:border-gray-700/80 rounded-[2rem] px-6 py-4 transition-colors duration-300">
-            <div class="flex items-center justify-between">
-                <a href="index.html" class="text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 font-semibold flex items-center transition">
-                    <span class="mr-2">←</span> Back to Menu
-                </a>
-                
-                <div class="hidden md:flex items-center gap-6">
-                    <span class="bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300 text-sm font-bold px-3.5 py-1 rounded-full border border-blue-200 dark:border-blue-800/50 cursor-default">
-                        Group 6
-                    </span>
-                    <a href="https://github.com/asoeiropt/IPM-6-APP" target="_blank" class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition" title="GitHub Repository">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
-                    </a>
-                    <button onclick="toggleDarkMode()" class="text-gray-500 hover:text-yellow-500 dark:text-gray-400 dark:hover:text-yellow-400 transition">
-                        <span id="theme-icon-desktop" class="text-xl">🌙</span>
-                    </button>
-                    <a href="developers.html" class="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">The Team</a>
+        <div class="max-w-7xl mx-auto bg-white/85 dark:bg-gray-800/85 backdrop-blur-xl shadow-lg border border-gray-200/80 dark:border-gray-700/80 rounded-[2rem] px-6 py-3 transition-colors duration-300 flex items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm flex-shrink-0">
+                    <img src="img/logo.jpeg" alt="Logo" class="w-full h-full object-cover">
                 </div>
-
-                <div class="md:hidden flex items-center gap-4">
-                    <button onclick="toggleDarkMode()" class="text-gray-500 dark:text-gray-400 transition text-xl">
-                        <span id="theme-icon-mobile">🌙</span>
-                    </button>
-                    <button onclick="toggleMobileMenu()" class="text-gray-600 dark:text-gray-300 focus:outline-none">
-                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-                    </button>
+                <div class="hidden sm:block">
+                    <a href="index.html" class="text-xl font-extrabold text-blue-600 dark:text-blue-400 tracking-tight hover:opacity-80 transition">SmartGlycoAI</a>
+                    <div class="text-[9px] text-gray-500 dark:text-gray-400 uppercase tracking-widest font-bold">Human-Computer Interaction</div>
                 </div>
             </div>
-
-            <div id="mobile-menu" class="hidden md:hidden mt-4 pt-3 border-t border-gray-200 dark:border-gray-700">
-                <div class="py-2 border-b border-gray-200 dark:border-gray-700">
-                    <span class="bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300 text-xs font-bold px-3 py-1 rounded-full border border-blue-200 dark:border-blue-800/50 inline-block">
-                        Group 6
-                    </span>
-                </div>
-                <a href="developers.html" class="block py-3 text-sm font-semibold text-gray-700 dark:text-gray-200 border-b border-gray-200 dark:border-gray-700">The Team</a>
-                <a href="https://github.com/asoeiropt/IPM-6-APP" target="_blank" class="block py-3 text-sm font-semibold text-gray-700 dark:text-gray-200">GitHub Repository</a>
+            
+            <div class="flex items-center gap-3 md:gap-5">
+                <span class="hidden md:inline-block bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 text-xs font-bold px-3 py-1.5 rounded-full border border-blue-200/60 dark:border-blue-800/50 cursor-default">Group 6</span>
+                <a href="https://github.com/asoeiropt/IPM-6-APP" target="_blank" class="text-gray-400 hover:text-gray-900 dark:hover:text-white transition flex items-center" title="GitHub Repository">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+                </a>
+                <div class="hidden sm:block w-px h-5 bg-gray-200 dark:bg-gray-700"></div>
+                <button onclick="toggleDarkMode()" class="text-gray-500 hover:text-yellow-500 dark:text-gray-400 dark:hover:text-yellow-400 transition text-lg flex items-center"><span id="theme-icon-desktop">🌙</span></button>
+                <a href="glossary.html" class="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition hidden lg:inline">Glossary</a>
+                <a href="developers.html" class="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition hidden lg:inline">The Team</a>
+                <a href="ui-ux.html" class="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition hidden lg:inline">UI / UX</a>
+                <a href="app.html" class="flex items-center gap-2 bg-blue-600 text-white hover:bg-blue-700 text-xs sm:text-sm font-bold px-4 py-2 rounded-full border border-blue-700 transition shadow-sm">
+                    <span class="text-base">⚙️</span> <span class="hidden sm:inline">Tech Stack</span><span class="sm:hidden">App</span>
+                </a>
             </div>
         </div>
     </header>
 
     <main class="overflow-hidden">
-        
         <section class="max-w-6xl mx-auto px-4 pt-8">
             <div class="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 dark:from-blue-800 dark:via-blue-900 dark:to-gray-900 text-white py-16 px-6 rounded-[2.2rem] shadow-xl border border-blue-400/30 dark:border-blue-700/50 transition-colors duration-300" data-aos="fade-up">
                 <div class="max-w-4xl mx-auto text-center">
-                    <span class="inline-block py-1 px-3.5 rounded-full bg-blue-500/80 dark:bg-blue-900/60 text-blue-100 text-xs font-semibold uppercase tracking-wider mb-4 border border-blue-400 dark:border-blue-700">
-                        Frontend Architecture
-                    </span>
-                    <h1 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
-                        Robust Cross-Platform Mobile Development
-                    </h1>
-                    <p class="text-lg text-blue-100 dark:text-blue-200 max-w-2xl mx-auto">
-                        SmartGlycoAI is built with Flutter, establishing a solid foundational architecture with strict static analysis rules and optimized native integrations for the best user experience.
-                    </p>
+                    <span class="inline-block py-1 px-3.5 rounded-full bg-blue-500/80 dark:bg-blue-900/60 text-blue-100 text-xs font-semibold uppercase tracking-wider mb-4 border border-blue-400 dark:border-blue-700">Frontend Architecture</span>
+                    <h1 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">Robust Cross-Platform Mobile Development</h1>
+                    <p class="text-lg text-blue-100 dark:text-blue-200 max-w-2xl mx-auto">SmartGlycoAI is built with Flutter, establishing a solid foundational architecture with strict static analysis rules and optimized native integrations for the best user experience.</p>
                 </div>
             </div>
         </section>
 
         <div class="max-w-6xl mx-auto py-16 px-4">
-            
-            <section class="mb-20">
-                <h2 class="text-3xl font-bold mb-10 text-center text-gray-900 dark:text-white tracking-tight" data-aos="fade-up">
-                    User Flow
-                </h2>
-                
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div data-aos="fade-up" data-aos-delay="100" class="bg-white dark:bg-gray-800/90 glow-blue p-8 rounded-[2rem] shadow-sm border border-gray-200/80 dark:border-gray-700/80 text-center hover:-translate-y-1 hover:shadow-xl hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-300 group">
-                        <div class="w-16 h-16 mx-auto bg-blue-100/80 dark:bg-blue-900/50 text-blue-500 rounded-2xl flex items-center justify-center text-3xl mb-6 border border-blue-200/60 dark:border-blue-700/50 group-hover:scale-110 transition">📸</div>
-                        <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">1. Snap</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">Take a photo of your meal. Our Computer Vision AI instantly recognizes the food and estimates the total carbohydrates.</p>
+            <!-- APP ECOSYSTEM & DATA FLOW -->
+            <section class="mb-20" data-aos="fade-up">
+                <div class="spotlight-card bg-white dark:bg-gray-800/90 glow-blue rounded-[2rem] p-8 shadow-sm border border-gray-200/80 dark:border-gray-700/80">
+                    <div class="flex items-center gap-3 border-b border-gray-200/80 dark:border-gray-700/80 pb-4 mb-8">
+                        <span class="bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300 w-9 h-9 rounded-xl flex items-center justify-center text-lg border border-blue-200 dark:border-blue-700/50">🔄</span>
+                        <h3 class="text-2xl font-bold dark:text-white tracking-tight">System Ecosystem & Data Flow</h3>
                     </div>
-
-                    <div data-aos="fade-up" data-aos-delay="200" class="bg-white dark:bg-gray-800/90 glow-green p-8 rounded-[2rem] shadow-sm border border-gray-200/80 dark:border-gray-700/80 text-center hover:-translate-y-1 hover:shadow-xl hover:border-green-400 dark:hover:border-green-500 transition-all duration-300 group">
-                        <div class="w-16 h-16 mx-auto bg-green-100/80 dark:bg-green-900/50 text-green-500 rounded-2xl flex items-center justify-center text-3xl mb-6 border border-green-200/60 dark:border-green-700/50 group-hover:scale-110 transition">⌚</div>
-                        <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">2. Sync</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">Your Continuous Glucose Monitor (CGM) sensor seamlessly syncs your real-time blood sugar levels via Bluetooth.</p>
-                    </div>
-
-                    <div data-aos="fade-up" data-aos-delay="300" class="bg-white dark:bg-gray-800/90 glow-purple p-8 rounded-[2rem] shadow-sm border border-gray-200/80 dark:border-gray-700/80 text-center hover:-translate-y-1 hover:shadow-xl hover:border-purple-400 dark:hover:border-purple-500 transition-all duration-300 group">
-                        <div class="w-16 h-16 mx-auto bg-purple-100/80 dark:bg-purple-900/50 text-purple-500 rounded-2xl flex items-center justify-center text-3xl mb-6 border border-purple-200/60 dark:border-purple-700/50 group-hover:scale-110 transition">💉</div>
-                        <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">3. Dose</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">Receive a precise, AI-calculated insulin dose recommendation tailored to your meal and current biometrics.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="mb-20 max-w-4xl mx-auto" data-aos="fade-up">
-                <div class="bg-white dark:bg-gray-800/90 glow-blue rounded-[2.2rem] p-6 md:p-10 shadow-lg border border-gray-200/80 dark:border-gray-700/80">
-                    <div class="text-center mb-8">
-                        <span class="bg-blue-100/80 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300 text-xs font-bold px-3.5 py-1 rounded-full uppercase tracking-wider mb-3 inline-block border border-blue-200/60 dark:border-blue-700/50">Interactive Demo</span>
-                        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2 tracking-tight">Try our Computer Vision AI</h2>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">Select a meal below to see how SmartGlycoAI analyzes food and suggests insulin doses in real-time.</p>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                        <div class="space-y-3">
-                            <h3 class="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">Choose a meal</h3>
-                            <button onclick="runSimulation('pasta')" class="w-full flex items-center justify-between p-4 bg-white/80 dark:bg-gray-900/50 border border-gray-200/80 dark:border-gray-700 rounded-2xl hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-md transition-all text-left group">
-                                <div class="flex items-center gap-4">
-                                    <div class="text-4xl group-hover:scale-110 transition-transform">🍝</div>
-                                    <div>
-                                        <div class="font-bold text-gray-900 dark:text-white">Italian Pasta</div>
-                                        <div class="text-xs text-gray-500 dark:text-gray-400">Restaurant meal</div>
-                                    </div>
-                                </div>
-                                <span class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 flex items-center justify-center text-xs font-bold group-hover:bg-blue-600 group-hover:text-white transition">↗</span>
-                            </button>
-
-                            <button onclick="runSimulation('apple')" class="w-full flex items-center justify-between p-4 bg-white/80 dark:bg-gray-900/50 border border-gray-200/80 dark:border-gray-700 rounded-2xl hover:border-green-500 dark:hover:border-green-500 hover:shadow-md transition-all text-left group">
-                                <div class="flex items-center gap-4">
-                                    <div class="text-4xl group-hover:scale-110 transition-transform">🍎</div>
-                                    <div>
-                                        <div class="font-bold text-gray-900 dark:text-white">Fresh Apple</div>
-                                        <div class="text-xs text-gray-500 dark:text-gray-400">Quick snack</div>
-                                    </div>
-                                </div>
-                                <span class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 flex items-center justify-center text-xs font-bold group-hover:bg-green-600 group-hover:text-white transition">↗</span>
-                            </button>
-
-                            <button onclick="runSimulation('steak')" class="w-full flex items-center justify-between p-4 bg-white/80 dark:bg-gray-900/50 border border-gray-200/80 dark:border-gray-700 rounded-2xl hover:border-purple-500 dark:hover:border-purple-500 hover:shadow-md transition-all text-left group">
-                                <div class="flex items-center gap-4">
-                                    <div class="text-4xl group-hover:scale-110 transition-transform">🥩</div>
-                                    <div>
-                                        <div class="font-bold text-gray-900 dark:text-white">Steak & Rice</div>
-                                        <div class="text-xs text-gray-500 dark:text-gray-400">Lunch order</div>
-                                    </div>
-                                </div>
-                                <span class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 flex items-center justify-center text-xs font-bold group-hover:bg-purple-600 group-hover:text-white transition">↗</span>
-                            </button>
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
+                        <div class="flex flex-col gap-4 w-full md:w-1/3">
+                            <div class="bg-gray-50 dark:bg-gray-900/50 p-5 rounded-2xl border border-gray-200 dark:border-gray-700 text-center"><span class="text-3xl block mb-2">⌚</span><h4 class="font-bold text-gray-900 dark:text-white text-sm">CGM Sensor</h4><p class="text-[11px] text-gray-500 mt-1">Real-time glucose data</p></div>
+                            <div class="bg-gray-50 dark:bg-gray-900/50 p-5 rounded-2xl border border-gray-200 dark:border-gray-700 text-center"><span class="text-3xl block mb-2">📷</span><h4 class="font-bold text-gray-900 dark:text-white text-sm">Smartphone Camera</h4><p class="text-[11px] text-gray-500 mt-1">Meal photo capture</p></div>
                         </div>
-
-                        <div class="relative bg-gray-900 rounded-[2rem] border-8 border-gray-800 shadow-2xl h-80 overflow-hidden flex flex-col">
-                            <div class="bg-gray-800 h-6 w-full flex justify-center items-center">
-                                <div class="w-16 h-1.5 bg-gray-700 rounded-full"></div>
+                        <div class="hidden md:flex flex-col gap-12 text-blue-500 dark:text-blue-400"><div class="flex flex-col items-center"><span class="text-[10px] font-bold uppercase tracking-widest mb-1">Bluetooth</span><span>➔</span></div><div class="flex flex-col items-center"><span class="text-[10px] font-bold uppercase tracking-widest mb-1">Image Data</span><span>➔</span></div></div>
+                        <div class="md:hidden text-blue-500 dark:text-blue-400 text-2xl rotate-90 my-2">➔</div>
+                        <div class="w-full md:w-1/3">
+                            <div class="bg-blue-600 dark:bg-blue-700 p-6 rounded-3xl border border-blue-500 dark:border-blue-600 text-center shadow-lg relative overflow-hidden">
+                                <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PC9zdmc+')] opacity-30"></div>
+                                <h4 class="font-extrabold text-white text-xl mb-3 relative z-10">SmartGlycoAI</h4>
+                                <div class="bg-white/20 rounded-xl p-3 text-white text-xs font-semibold backdrop-blur-sm border border-white/20 relative z-10">🧠 Core Processing:<ul class="font-normal mt-2 space-y-1"><li>• Computer Vision (Carbs)</li><li>• Predictive Algorithm (Lows)</li><li>• Insulin Dose Math</li></ul></div>
                             </div>
-                            <div id="sim-screen" class="flex-1 p-6 flex flex-col justify-center items-center text-center bg-gray-900 transition-all duration-300">
-                                <div class="text-5xl mb-4 opacity-50">📱</div>
-                                <h3 class="text-white font-bold text-lg mb-1">Ready to scan</h3>
-                                <p class="text-gray-400 text-sm">Waiting for camera input...</p>
-                            </div>
+                        </div>
+                        <div class="hidden md:flex flex-col text-blue-500 dark:text-blue-400"><div class="flex flex-col items-center"><span class="text-[10px] font-bold uppercase tracking-widest mb-1">Sync</span><span>➔</span></div></div>
+                        <div class="md:hidden text-blue-500 dark:text-blue-400 text-2xl rotate-90 my-2">➔</div>
+                        <div class="w-full md:w-1/3">
+                            <div class="bg-gray-50 dark:bg-gray-900/50 p-5 rounded-2xl border border-gray-200 dark:border-gray-700 text-center h-full flex flex-col justify-center"><span class="text-3xl block mb-2">🩺</span><h4 class="font-bold text-gray-900 dark:text-white text-sm">Doctor's Dashboard</h4><p class="text-[11px] text-gray-500 mt-1">Cloud sync for clinical review</p></div>
                         </div>
                     </div>
                 </div>
             </section>
 
+            <!-- TECH STACK -->
             <section class="mb-20">
-                <h2 class="text-3xl font-bold mb-10 text-center text-gray-900 dark:text-white tracking-tight" data-aos="fade-up">
-                    Tech Stack
-                </h2>
+                <h2 class="text-3xl font-bold mb-10 text-center text-gray-900 dark:text-white tracking-tight" data-aos="fade-up">Tech Stack</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div data-aos="fade-up" data-aos-delay="100" class="bg-white dark:bg-gray-800/90 glow-blue p-8 rounded-[2rem] shadow-sm hover:shadow-xl hover:-translate-y-1 border border-gray-200/80 dark:border-gray-700/80 hover:border-blue-400 dark:hover:border-blue-500 text-center transition-all duration-300 group">
-                        <div class="text-5xl mb-4 group-hover:scale-110 transition-transform">📱</div>
-                        <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Flutter & Dart</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">Unified frontend and shared logic with strict UI rules and custom component rendering.</p>
+                        <div class="text-5xl mb-4 group-hover:scale-110 transition-transform">📱</div><h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Flutter & Dart</h3><p class="text-gray-600 dark:text-gray-400 text-sm">Unified frontend and shared logic with strict UI rules and custom component rendering.</p>
                     </div>
-
                     <div data-aos="fade-up" data-aos-delay="200" class="bg-white dark:bg-gray-800/90 glow-green p-8 rounded-[2rem] shadow-sm hover:shadow-xl hover:-translate-y-1 border border-gray-200/80 dark:border-gray-700/80 hover:border-green-400 dark:hover:border-green-500 text-center transition-all duration-300 group">
-                        <div class="text-5xl mb-4 group-hover:scale-110 transition-transform">🤖</div>
-                        <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Android (Kotlin)</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">Native module managed with Gradle Kotlin DSL and optimized compilation profiles.</p>
+                        <div class="text-5xl mb-4 group-hover:scale-110 transition-transform">🤖</div><h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Android (Kotlin)</h3><p class="text-gray-600 dark:text-gray-400 text-sm">Native module managed with Gradle Kotlin DSL and optimized compilation profiles.</p>
                     </div>
-
                     <div data-aos="fade-up" data-aos-delay="300" class="bg-white dark:bg-gray-800/90 glow-purple p-8 rounded-[2rem] shadow-sm hover:shadow-xl hover:-translate-y-1 border border-gray-200/80 dark:border-gray-700/80 hover:border-purple-400 dark:hover:border-purple-500 text-center transition-all duration-300 group">
-                        <div class="text-5xl mb-4 group-hover:scale-110 transition-transform">🍏</div>
-                        <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">iOS (Swift)</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">Structured in Xcode with seamless asset management and native iOS lifecycle bindings.</p>
+                        <div class="text-5xl mb-4 group-hover:scale-110 transition-transform">🍏</div><h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">iOS (Swift)</h3><p class="text-gray-600 dark:text-gray-400 text-sm">Structured in Xcode with seamless asset management and native iOS lifecycle bindings.</p>
                     </div>
                 </div>
             </section>
 
-            <!-- DESIGN SYSTEM & ACCESSIBILITY SECTION -->
-        <section class="mb-20 max-w-6xl mx-auto px-4" data-aos="fade-up">
-            <div class="text-center mb-10">
-                <span class="bg-indigo-100/80 text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300 text-xs font-bold px-3.5 py-1 rounded-full uppercase tracking-wider mb-3 inline-block border border-indigo-200/60 dark:border-indigo-700/50">UI/UX Principles</span>
-                <h2 class="text-3xl font-bold text-gray-900 dark:text-white tracking-tight">
-                    Design System & Accessibility
-                </h2>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                
-                <!-- 1. Showcase do Design System -->
-                <div class="spotlight-card bg-white dark:bg-gray-800/90 p-8 rounded-[2rem] shadow-sm border border-gray-200/80 dark:border-gray-700/80 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center gap-3 border-b border-gray-200/80 dark:border-gray-700/80 pb-4 mb-6">
-                            <span class="bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300 w-9 h-9 rounded-xl flex items-center justify-center text-lg border border-blue-200 dark:border-blue-700/50">🎨</span>
-                            <h3 class="text-xl font-bold dark:text-white">Design System Core</h3>
-                        </div>
-                        
-                        <!-- Tipografia -->
-                        <div class="mb-6 bg-gray-50 dark:bg-gray-900/50 p-4 rounded-2xl border border-gray-100 dark:border-gray-700">
-                            <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Typography</h4>
-                            <div class="flex items-end gap-3">
-                                <span class="text-4xl font-sans font-bold text-gray-900 dark:text-white leading-none">Aa</span>
-                                <div>
-                                    <div class="font-bold text-gray-800 dark:text-gray-200">Inter / Roboto</div>
-                                    <div class="text-xs text-gray-500">Highly legible sans-serif for medical data</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Paleta de Cores Médicas -->
-                        <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Semantic Color Palette</h4>
-                        <div class="grid grid-cols-3 gap-3">
-                            <div class="flex flex-col items-center">
-                                <div class="w-12 h-12 rounded-full bg-[#3B82F6] shadow-sm border border-black/10 mb-2"></div>
-                                <span class="text-xs font-bold text-gray-800 dark:text-gray-200">Primary</span>
-                                <span class="text-[10px] text-gray-500">#3B82F6</span>
-                            </div>
-                            <div class="flex flex-col items-center">
-                                <div class="w-12 h-12 rounded-full bg-[#10B981] shadow-sm border border-black/10 mb-2"></div>
-                                <span class="text-xs font-bold text-gray-800 dark:text-gray-200">Safe Range</span>
-                                <span class="text-[10px] text-gray-500">#10B981</span>
-                            </div>
-                            <div class="flex flex-col items-center">
-                                <div class="w-12 h-12 rounded-full bg-[#EF4444] shadow-sm border border-black/10 mb-2"></div>
-                                <span class="text-xs font-bold text-gray-800 dark:text-gray-200">Alert/Critical</span>
-                                <span class="text-[10px] text-gray-500">#EF4444</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2. Bloco de Acessibilidade (A11y) -->
-                <div class="spotlight-card bg-white dark:bg-gray-800/90 p-8 rounded-[2rem] shadow-sm border border-gray-200/80 dark:border-gray-700/80">
-                    <div class="flex items-center gap-3 border-b border-gray-200/80 dark:border-gray-700/80 pb-4 mb-6">
-                        <span class="bg-indigo-100 text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300 w-9 h-9 rounded-xl flex items-center justify-center text-lg border border-indigo-200 dark:border-indigo-700/50">♿</span>
-                        <h3 class="text-xl font-bold dark:text-white">Accessibility (A11y)</h3>
-                    </div>
-                    
-                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-6">
-                        Designing for healthcare requires strict adherence to accessibility standards to ensure safety during cognitive overload or physical distress (e.g., hypoglycemia).
-                    </p>
-
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-4">
-                            <div class="mt-1 w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 flex items-center justify-center shrink-0">✓</div>
-                            <div>
-                                <h4 class="font-bold text-gray-900 dark:text-white text-sm">Touch Targets (48x48px Minimum)</h4>
-                                <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">All critical action buttons (like insulin registration) are sized according to iOS/Android guidelines to prevent accidental mis-taps.</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-4">
-                            <div class="mt-1 w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 flex items-center justify-center shrink-0">✓</div>
-                            <div>
-                                <h4 class="font-bold text-gray-900 dark:text-white text-sm">Color Blindness Independence</h4>
-                                <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">System status is never communicated by color alone. Alerts use distinct iconography (e.g., warning triangles) alongside text labels.</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-4">
-                            <div class="mt-1 w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 flex items-center justify-center shrink-0">✓</div>
-                            <div>
-                                <h4 class="font-bold text-gray-900 dark:text-white text-sm">High Contrast Ratios (WCAG AA)</h4>
-                                <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">Text regarding blood glucose levels maintains a contrast ratio of at least 4.5:1 against backgrounds for readability under glare.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- EDGE CASES & ERROR PREVENTION SECTION -->
-        <section class="mb-20 max-w-6xl mx-auto px-4" data-aos="fade-up">
-            <div class="spotlight-card bg-white dark:bg-gray-800/90 glow-blue rounded-[2rem] p-8 shadow-sm border border-gray-200/80 dark:border-gray-700/80">
-                <div class="flex items-center gap-3 border-b border-gray-200/80 dark:border-gray-700/80 pb-4 mb-6">
-                    <span class="bg-amber-100 text-amber-700 dark:bg-amber-900/50 dark:text-amber-400 w-9 h-9 rounded-xl flex items-center justify-center text-lg border border-amber-200 dark:border-amber-700/50">🛡️</span>
-                    <h3 class="text-2xl font-bold dark:text-white tracking-tight">Error Prevention & Edge Cases</h3>
-                </div>
-                
-                <p class="text-sm text-gray-600 dark:text-gray-400 mb-8">
-                    In a healthcare application, the "happy path" is not enough. The interface must be resilient to hardware failures, network loss, and AI uncertainties to guarantee patient safety at all times.
-                </p>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Edge Case 1: Offline -->
-                    <div class="bg-gray-50 dark:bg-gray-900/50 border border-gray-200/80 dark:border-gray-700/80 p-6 rounded-2xl hover:border-amber-400 dark:hover:border-amber-500 transition-colors">
-                        <div class="text-3xl mb-4">📶</div>
-                        <h4 class="font-bold text-gray-900 dark:text-white mb-2">No Internet Connection</h4>
-                        <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">The user is in a basement or area with no cellular data during a meal.</p>
-                        <div class="bg-amber-50 dark:bg-amber-900/20 p-3 rounded-xl border border-amber-100 dark:border-amber-900/50">
-                            <span class="block text-[10px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 mb-1">UI Fallback</span>
-                            <span class="text-xs text-gray-700 dark:text-gray-300"><strong>Offline-First:</strong> Logs are saved to a local SQLite/Hive database and core math algorithms run locally. Syncs to cloud once reconnected.</span>
-                        </div>
-                    </div>
-
-                    <!-- Edge Case 2: AI Failure -->
-                    <div class="bg-gray-50 dark:bg-gray-900/50 border border-gray-200/80 dark:border-gray-700/80 p-6 rounded-2xl hover:border-amber-400 dark:hover:border-amber-500 transition-colors">
-                        <div class="text-3xl mb-4">🤖</div>
-                        <h4 class="font-bold text-gray-900 dark:text-white mb-2">Low AI Confidence</h4>
-                        <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">The camera scans a complex meal (e.g., stew) and the Computer Vision model is unsure.</p>
-                        <div class="bg-amber-50 dark:bg-amber-900/20 p-3 rounded-xl border border-amber-100 dark:border-amber-900/50">
-                            <span class="block text-[10px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 mb-1">UI Fallback</span>
-                            <span class="text-xs text-gray-700 dark:text-gray-300"><strong>Manual Override:</strong> The UI displays a "Low Confidence" badge and automatically expands a numeric keypad for manual carbohydrate entry.</span>
-                        </div>
-                    </div>
-
-                    <!-- Edge Case 3: Sensor Disconnect -->
-                    <div class="bg-gray-50 dark:bg-gray-900/50 border border-gray-200/80 dark:border-gray-700/80 p-6 rounded-2xl hover:border-amber-400 dark:hover:border-amber-500 transition-colors">
-                        <div class="text-3xl mb-4">⌚</div>
-                        <h4 class="font-bold text-gray-900 dark:text-white mb-2">CGM Sensor Lost</h4>
-                        <p class="text-xs text-gray-500 dark:text-gray-400 mb-4">Bluetooth connection to the FreeStyle Libre drops right before a calculation.</p>
-                        <div class="bg-amber-50 dark:bg-amber-900/20 p-3 rounded-xl border border-amber-100 dark:border-amber-900/50">
-                            <span class="block text-[10px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 mb-1">UI Fallback</span>
-                            <span class="text-xs text-gray-700 dark:text-gray-300"><strong>Graceful Degradation:</strong> A highly visible red banner appears at the top. The dose calculator switches from "Automatic" to requesting a capillary blood drop input.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-            <section class="mb-20 max-w-5xl mx-auto" data-aos="fade-up">
-                <h2 class="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-white tracking-tight">
-                    Application Versions
-                </h2>
-                
+            <!-- APPLICATION VERSIONS -->
+            <section class="max-w-5xl mx-auto mb-20" data-aos="fade-up">
+                <h2 class="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-white tracking-tight">Application Versions</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-center max-w-3xl mx-auto">
-                    
-                    <!-- Botão Versão 1 -->
                     <button onclick="openVersionModal('version-modal-v1')" class="flex items-center justify-between bg-white dark:bg-gray-800/90 glow-green border border-gray-200/80 dark:border-gray-700/80 rounded-[2rem] px-7 py-6 hover:shadow-xl hover:-translate-y-1 hover:border-green-400 dark:hover:border-green-500 transition-all duration-300 w-full cursor-pointer group">
-                        <div class="flex items-center gap-4">
-                            <span class="text-3xl group-hover:scale-110 transition-transform">📱</span>
-                            <div class="text-left">
-                                <div class="font-bold text-gray-900 dark:text-white text-lg">Initial Version</div>
-                                <div class="flex flex-wrap items-center gap-2 mt-1">
-                                    <span class="text-sm text-gray-500 dark:text-gray-400">v0.1-alpha</span>
-                                    <span class="text-[9px] font-bold uppercase tracking-wider bg-green-100/80 text-green-700 dark:bg-green-900/50 dark:text-green-300 px-2 py-0.5 rounded-full border border-green-200/60 dark:border-green-700/50">
-                                        🤖 Android
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w-10 h-10 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 flex flex-shrink-0 items-center justify-center text-sm font-bold group-hover:scale-110 group-hover:bg-green-600 dark:group-hover:bg-green-500 dark:group-hover:text-white transition">
-                            ↗
-                        </div>
+                        <div class="flex items-center gap-4"><span class="text-3xl group-hover:scale-110 transition-transform">📱</span><div class="text-left"><div class="font-bold text-gray-900 dark:text-white text-lg">Initial Version</div><div class="flex flex-wrap items-center gap-2 mt-1"><span class="text-sm text-gray-500 dark:text-gray-400">v0.1-alpha</span><span class="text-[9px] font-bold uppercase tracking-wider bg-green-100/80 text-green-700 dark:bg-green-900/50 dark:text-green-300 px-2 py-0.5 rounded-full border border-green-200/60 dark:border-green-700/50">🤖 Android</span></div></div></div><div class="w-10 h-10 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 flex flex-shrink-0 items-center justify-center text-sm font-bold group-hover:scale-110 group-hover:bg-green-600 dark:group-hover:bg-green-500 dark:group-hover:text-white transition">↗</div>
                     </button>
-
-                    <!-- Botão Versão 2 (v1.0) -->
                     <button onclick="openVersionModal('version-modal-v2')" class="flex items-center justify-between bg-white dark:bg-gray-800/90 glow-blue border border-gray-200/80 dark:border-gray-700/80 rounded-[2rem] px-7 py-6 hover:shadow-xl hover:-translate-y-1 hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-300 w-full cursor-pointer group">
-                        <div class="flex items-center gap-4">
-                            <span class="text-3xl group-hover:scale-110 transition-transform">🚀</span>
-                            <div class="text-left">
-                                <div class="font-bold text-gray-900 dark:text-white text-lg">Version 1.0</div>
-                                <div class="flex flex-wrap items-center gap-2 mt-1">
-                                    <span class="text-sm text-gray-500 dark:text-gray-400">Release</span>
-                                    <span class="text-[9px] font-bold uppercase tracking-wider bg-blue-100/80 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300 px-2 py-0.5 rounded-full border border-blue-200/60 dark:border-blue-700/50">
-                                        🤖 Android & 🍏 iOS
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w-10 h-10 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 flex flex-shrink-0 items-center justify-center text-sm font-bold group-hover:scale-110 group-hover:bg-blue-600 dark:group-hover:bg-blue-500 dark:group-hover:text-white transition">
-                            ↗
-                        </div>
+                        <div class="flex items-center gap-4"><span class="text-3xl group-hover:scale-110 transition-transform">🚀</span><div class="text-left"><div class="font-bold text-gray-900 dark:text-white text-lg">Version 1.0</div><div class="flex flex-wrap items-center gap-2 mt-1"><span class="text-sm text-gray-500 dark:text-gray-400">Release</span><span class="text-[9px] font-bold uppercase tracking-wider bg-blue-100/80 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300 px-2 py-0.5 rounded-full border border-blue-200/60 dark:border-blue-700/50">🤖 Android & 🍏 iOS</span></div></div></div><div class="w-10 h-10 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 flex flex-shrink-0 items-center justify-center text-sm font-bold group-hover:scale-110 group-hover:bg-blue-600 dark:group-hover:bg-blue-500 dark:group-hover:text-white transition">↗</div>
                     </button>
-                    
                 </div>
             </section>
 
+            <!-- BUILD & RUN -->
             <section class="max-w-3xl mx-auto" data-aos="fade-up">
-                <h2 class="text-2xl font-bold mb-6 text-center text-gray-900 dark:text-white tracking-tight">
-                    Build & Run
-                </h2>
+                <h2 class="text-2xl font-bold mb-6 text-center text-gray-900 dark:text-white tracking-tight">Build & Run</h2>
                 <div class="bg-gray-900 rounded-[2rem] overflow-hidden shadow-2xl border border-gray-700/80">
-                    <div class="bg-gray-800/90 px-6 py-3 flex items-center border-b border-gray-700/80">
-                        <div class="flex gap-2">
-                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                        </div>
-                        <div class="mx-auto text-xs text-gray-400 font-mono">bash — flutter</div>
-                    </div>
+                    <div class="bg-gray-800/90 px-6 py-3 flex items-center border-b border-gray-700/80"><div class="flex gap-2"><div class="w-3 h-3 rounded-full bg-red-500"></div><div class="w-3 h-3 rounded-full bg-yellow-500"></div><div class="w-3 h-3 rounded-full bg-green-500"></div></div><div class="mx-auto text-xs text-gray-400 font-mono">bash — flutter</div></div>
                     <div class="p-7 text-gray-100 font-mono text-sm overflow-x-auto">
-                        <p class="text-gray-500 mb-1"># Get dependencies</p>
-                        <p class="mb-5"><span class="text-blue-400">~/SmartGlycoAI</span> $ <span class="text-green-400">flutter pub get</span></p>
-                        
-                        <p class="text-gray-500 mb-1"># Run in development environment</p>
-                        <p class="mb-5"><span class="text-blue-400">~/SmartGlycoAI</span> $ <span class="text-green-400">flutter run</span></p>
-                        
-                        <p class="text-gray-500 mb-1"># Build production versions (Release)</p>
-                        <p class=""><span class="text-blue-400">~/SmartGlycoAI</span> $ <span class="text-green-400">flutter build apk --release</span></p>
-                        <p class=""><span class="text-blue-400">~/SmartGlycoAI</span> $ <span class="text-green-400">flutter build ipa --release</span></p>
+                        <p class="text-gray-500 mb-1"># Get dependencies</p><p class="mb-5"><span class="text-blue-400">~/SmartGlycoAI</span> $ <span class="text-green-400">flutter pub get</span></p>
+                        <p class="text-gray-500 mb-1"># Run in development environment</p><p class="mb-5"><span class="text-blue-400">~/SmartGlycoAI</span> $ <span class="text-green-400">flutter run</span></p>
+                        <p class="text-gray-500 mb-1"># Build production versions (Release)</p><p class=""><span class="text-blue-400">~/SmartGlycoAI</span> $ <span class="text-green-400">flutter build apk --release</span></p><p class=""><span class="text-blue-400">~/SmartGlycoAI</span> $ <span class="text-green-400">flutter build ipa --release</span></p>
                     </div>
                 </div>
             </section>
-
         </div>
     </main>
     
-    <!-- MODAL: INITIAL VERSION (v0.1) -->
+    <!-- MODALS (v1 e v2) MANTIDOS AQUI NO FUNDO -->
     <div id="version-modal-v1" class="version-modal fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
         <div class="bg-white dark:bg-gray-800 rounded-[2rem] max-w-4xl w-full p-6 md:p-8 shadow-2xl border border-gray-200 dark:border-gray-700 relative animate-in fade-in zoom-in duration-200 flex flex-col max-h-[85vh]">
-            
             <div class="flex justify-between items-start mb-6 border-b border-gray-100 dark:border-gray-700 pb-4">
                 <div>
-                    <div class="flex items-center gap-3 mb-1">
-                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Initial Version</h3>
-                        <span class="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 text-xs font-bold px-2.5 py-1 rounded-full border border-green-200 dark:border-green-800/50 flex items-center gap-1">
-                            <span>🤖</span> Android Only
-                        </span>
-                    </div>
+                    <div class="flex items-center gap-3 mb-1"><h3 class="text-2xl font-bold text-gray-900 dark:text-white">Initial Version</h3><span class="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 text-xs font-bold px-2.5 py-1 rounded-full border border-green-200 dark:border-green-800/50 flex items-center gap-1"><span>🤖</span> Android Only</span></div>
                     <p class="text-sm text-gray-500 dark:text-gray-400">v0.1-alpha • Click on any screenshot to zoom in</p>
                 </div>
-                <button onclick="closeVersionModal('version-modal-v1')" class="text-gray-400 hover:text-gray-700 dark:hover:text-white text-2xl font-bold w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-700 transition">
-                    &times;
-                </button>
+                <button onclick="closeVersionModal('version-modal-v1')" class="text-gray-400 hover:text-gray-700 dark:hover:text-white text-2xl font-bold w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-700 transition">&times;</button>
             </div>
-
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 overflow-y-auto p-2">
                 <div onclick="openLightbox(event, 'img/v1/1.png')" class="bg-gray-100 dark:bg-gray-900 rounded-2xl p-2 border border-gray-200 dark:border-gray-700 flex flex-col items-center cursor-pointer hover:border-green-500 transition group"><img src="img/v1/1.png" class="w-full h-36 object-cover rounded-xl mb-2 group-hover:scale-105 transition shadow-sm" alt="Screen 1"><span class="text-[11px] font-semibold text-gray-600 dark:text-gray-400">Screen 01</span></div>
                 <div onclick="openLightbox(event, 'img/v1/2.png')" class="bg-gray-100 dark:bg-gray-900 rounded-2xl p-2 border border-gray-200 dark:border-gray-700 flex flex-col items-center cursor-pointer hover:border-green-500 transition group"><img src="img/v1/2.png" class="w-full h-36 object-cover rounded-xl mb-2 group-hover:scale-105 transition shadow-sm" alt="Screen 2"><span class="text-[11px] font-semibold text-gray-600 dark:text-gray-400">Screen 02</span></div>
@@ -441,26 +156,15 @@
         </div>
     </div>
 
-    <!-- MODAL: VERSION 1.0 -->
     <div id="version-modal-v2" class="version-modal fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
         <div class="bg-white dark:bg-gray-800 rounded-[2rem] max-w-4xl w-full p-6 md:p-8 shadow-2xl border border-gray-200 dark:border-gray-700 relative animate-in fade-in zoom-in duration-200 flex flex-col max-h-[85vh]">
-            
             <div class="flex justify-between items-start mb-6 border-b border-gray-100 dark:border-gray-700 pb-4">
                 <div>
-                    <div class="flex items-center gap-3 mb-1">
-                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Version 1.0</h3>
-                        <span class="bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400 text-xs font-bold px-2.5 py-1 rounded-full border border-blue-200 dark:border-blue-800/50 flex items-center gap-1">
-                            <span>🤖🍏</span> Android & iOS
-                        </span>
-                    </div>
+                    <div class="flex items-center gap-3 mb-1"><h3 class="text-2xl font-bold text-gray-900 dark:text-white">Version 1.0</h3><span class="bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400 text-xs font-bold px-2.5 py-1 rounded-full border border-blue-200 dark:border-blue-800/50 flex items-center gap-1"><span>🤖🍏</span> Android & iOS</span></div>
                     <p class="text-sm text-gray-500 dark:text-gray-400">Release • Click on any screenshot to zoom in</p>
                 </div>
-                <button onclick="closeVersionModal('version-modal-v2')" class="text-gray-400 hover:text-gray-700 dark:hover:text-white text-2xl font-bold w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-700 transition">
-                    &times;
-                </button>
+                <button onclick="closeVersionModal('version-modal-v2')" class="text-gray-400 hover:text-gray-700 dark:hover:text-white text-2xl font-bold w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-700 transition">&times;</button>
             </div>
-
-            <!-- Grelha com as 13 imagens da pasta v2 -->
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 overflow-y-auto p-2">
                 <div onclick="openLightbox(event, 'img/v2/v2_1.png')" class="bg-gray-100 dark:bg-gray-900 rounded-2xl p-2 border border-gray-200 dark:border-gray-700 flex flex-col items-center cursor-pointer hover:border-blue-500 transition group"><img src="img/v2/v2_1.png" class="w-full h-36 object-cover rounded-xl mb-2 group-hover:scale-105 transition shadow-sm" alt="Screen 1"><span class="text-[11px] font-semibold text-gray-600 dark:text-gray-400">Screen 01</span></div>
                 <div onclick="openLightbox(event, 'img/v2/v2_2.png')" class="bg-gray-100 dark:bg-gray-900 rounded-2xl p-2 border border-gray-200 dark:border-gray-700 flex flex-col items-center cursor-pointer hover:border-blue-500 transition group"><img src="img/v2/v2_2.png" class="w-full h-36 object-cover rounded-xl mb-2 group-hover:scale-105 transition shadow-sm" alt="Screen 2"><span class="text-[11px] font-semibold text-gray-600 dark:text-gray-400">Screen 02</span></div>
