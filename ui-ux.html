@@ -92,6 +92,213 @@
                 </div>
             </section>
 
+            <!-- HIERARCHICAL TASK ANALYSIS (HTA) SECTION -->
+        <section class="mb-20 max-w-6xl mx-auto px-4" data-aos="fade-up">
+            <div class="text-center mb-10">
+                <span class="bg-blue-100/80 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300 text-xs font-bold px-3.5 py-1 rounded-full uppercase tracking-wider mb-3 inline-block border border-blue-200/60 dark:border-blue-700/50">Task Analysis</span>
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white tracking-tight">
+                    Hierarchical Task Analysis (HTA)
+                </h2>
+                <p class="text-gray-600 dark:text-gray-400 mt-3 text-sm max-w-2xl mx-auto">
+                    Hierarchical decomposition of the system's core task, including specification plans describing the order and conditions of subtasks.
+                </p>
+            </div>
+
+            <div class="spotlight-card bg-white dark:bg-gray-800/90 p-6 md:p-10 rounded-[2rem] shadow-sm border border-gray-200/80 dark:border-gray-700/80 overflow-x-auto">
+                
+                <!-- HTA TREE WRAPPER -->
+                <div class="min-w-[800px] flex flex-col items-center font-sans">
+                    
+                    <!-- ROOT GOAL (Nível 0) -->
+                    <div class="flex flex-col items-center relative">
+                        <div class="bg-blue-600 text-white font-bold px-6 py-3 rounded-xl shadow-md border border-blue-700 text-center z-10 w-64">
+                            0. Log Meal & Dose Insulin
+                        </div>
+                        
+                        <!-- PLAN 0 -->
+                        <div class="bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 text-xs px-4 py-2 rounded-lg mt-4 z-10 text-center shadow-sm">
+                            <span class="font-bold text-gray-900 dark:text-white block mb-1">Plan 0:</span>
+                            Do 1, 2 and 3 sequentially.<br>If CGM sync fails, do 2.1.
+                        </div>
+                        
+                        <!-- Linha Vertical Principal -->
+                        <div class="w-0.5 h-8 bg-gray-300 dark:bg-gray-600 relative -mt-1 -z-0"></div>
+                    </div>
+
+                    <!-- SUBTASKS (Nível 1) -->
+                    <div class="flex justify-between w-full relative">
+                        <!-- Linha Horizontal de Ligação -->
+                        <div class="absolute top-0 left-[16.5%] right-[16.5%] h-0.5 bg-gray-300 dark:bg-gray-600"></div>
+
+                        <!-- BRANCH 1 -->
+                        <div class="flex flex-col items-center w-1/3 relative pt-4">
+                            <!-- Linha de Ligação -->
+                            <div class="absolute top-0 left-1/2 w-0.5 h-4 bg-gray-300 dark:bg-gray-600"></div>
+                            
+                            <div class="bg-indigo-500 text-white font-bold px-4 py-2 rounded-xl shadow-sm border border-indigo-600 text-center w-48 z-10 text-sm">
+                                1. Determine Carbs
+                            </div>
+                            
+                            <!-- PLAN 1 -->
+                            <div class="text-[10px] text-gray-500 dark:text-gray-400 mt-2 text-center bg-gray-50 dark:bg-gray-900/50 px-2 py-1 rounded border border-gray-100 dark:border-gray-800">
+                                <span class="font-bold">Plan 1:</span> Do 1.1 then 1.2
+                            </div>
+
+                            <!-- Linha Vertical (Nível 1 -> 2) -->
+                            <div class="w-0.5 h-6 bg-gray-300 dark:bg-gray-600"></div>
+                            
+                            <!-- Nível 2 (Sub-subtasks) -->
+                            <div class="flex flex-col gap-3 w-48">
+                                <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-800 dark:text-gray-200 px-3 py-2 rounded-lg text-xs text-center shadow-sm hover:border-indigo-400 transition">
+                                    <span class="font-bold mr-1">1.1</span> Scan food with camera
+                                </div>
+                                <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-800 dark:text-gray-200 px-3 py-2 rounded-lg text-xs text-center shadow-sm hover:border-indigo-400 transition">
+                                    <span class="font-bold mr-1">1.2</span> Confirm AI estimation
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- BRANCH 2 -->
+                        <div class="flex flex-col items-center w-1/3 relative pt-4">
+                            <!-- Linha de Ligação -->
+                            <div class="absolute top-0 left-1/2 w-0.5 h-4 bg-gray-300 dark:bg-gray-600"></div>
+                            
+                            <div class="bg-emerald-500 text-white font-bold px-4 py-2 rounded-xl shadow-sm border border-emerald-600 text-center w-48 z-10 text-sm">
+                                2. Get Current Glucose
+                            </div>
+
+                            <!-- Linha Vertical (Nível 1 -> 2) -->
+                            <div class="w-0.5 h-6 bg-gray-300 dark:bg-gray-600 mt-2"></div>
+                            
+                            <!-- Nível 2 (Sub-subtasks) -->
+                            <div class="flex flex-col gap-3 w-48">
+                                <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-800 dark:text-gray-200 px-3 py-2 rounded-lg text-xs text-center shadow-sm hover:border-emerald-400 transition">
+                                    <span class="font-bold mr-1">2.1</span> Input glucose manually<br><span class="text-[9px] text-gray-400 font-normal">(Exception: CGM connection lost)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- BRANCH 3 -->
+                        <div class="flex flex-col items-center w-1/3 relative pt-4">
+                            <!-- Linha de Ligação -->
+                            <div class="absolute top-0 left-1/2 w-0.5 h-4 bg-gray-300 dark:bg-gray-600"></div>
+                            
+                            <div class="bg-purple-500 text-white font-bold px-4 py-2 rounded-xl shadow-sm border border-purple-600 text-center w-48 z-10 text-sm">
+                                3. Administer Dose
+                            </div>
+                            
+                            <!-- PLAN 3 -->
+                            <div class="text-[10px] text-gray-500 dark:text-gray-400 mt-2 text-center bg-gray-50 dark:bg-gray-900/50 px-2 py-1 rounded border border-gray-100 dark:border-gray-800">
+                                <span class="font-bold">Plan 3:</span> Do 3.1 then 3.2
+                            </div>
+
+                            <!-- Linha Vertical (Nível 1 -> 2) -->
+                            <div class="w-0.5 h-6 bg-gray-300 dark:bg-gray-600"></div>
+                            
+                            <!-- Nível 2 (Sub-subtasks) -->
+                            <div class="flex flex-col gap-3 w-48">
+                                <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-800 dark:text-gray-200 px-3 py-2 rounded-lg text-xs text-center shadow-sm hover:border-purple-400 transition">
+                                    <span class="font-bold mr-1">3.1</span> Review AI dosage
+                                </div>
+                                <div class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-800 dark:text-gray-200 px-3 py-2 rounded-lg text-xs text-center shadow-sm hover:border-purple-400 transition">
+                                    <span class="font-bold mr-1">3.2</span> Confirm & log to system
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                
+                <!-- Teoria de apoio ao fundo -->
+                <div class="mt-12 bg-blue-50/50 dark:bg-blue-900/20 p-4 rounded-xl border border-blue-100 dark:border-blue-900/50">
+                    <p class="text-xs text-gray-700 dark:text-gray-300 leading-relaxed text-center">
+                        <span class="font-bold text-blue-600 dark:text-blue-400">Methodology:</span> 
+                        The HTA provides a formal specification plan outlining the order and conditions under which subtasks are performed. The starting point is the user's primary goal, cascading downwards until no new relevant elements can be inserted.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- NORMAN'S 5 PRINCIPLES -->
+        <section class="mb-20 max-w-6xl mx-auto px-4" data-aos="fade-up">
+            <div class="text-center mb-10">
+                <span class="bg-amber-100/80 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300 text-xs font-bold px-3.5 py-1 rounded-full uppercase tracking-wider mb-3 inline-block border border-amber-200/60 dark:border-amber-700/50">Conceptual Model Communication</span>
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white tracking-tight">
+                    Norman's Design Principles
+                </h2>
+                <p class="text-gray-600 dark:text-gray-400 mt-3 text-sm max-w-2xl mx-auto">
+                    How we successfully communicated the conceptual model to our users through careful UI design[cite: 109].
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 1. Affordances -->
+                <div class="bg-white dark:bg-gray-800/90 p-6 rounded-3xl shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center text-2xl mb-4 border border-blue-200 dark:border-blue-800/50">🔘</div>
+                    <h3 class="font-bold text-gray-900 dark:text-white text-lg mb-2">Affordances</h3>
+                    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3">
+                        Properties that determine how the object could be used[cite: 110].
+                    </p>
+                    <div class="bg-gray-50 dark:bg-gray-900/50 p-3 rounded-xl border border-gray-100 dark:border-gray-700">
+                        <span class="font-bold text-[10px] uppercase text-gray-500">In our App:</span>
+                        <p class="text-xs text-gray-700 dark:text-gray-300 mt-1">The primary action buttons (like 'Log Meal') have a 3D shadow and elevated appearance, clearly affording "pushing"[cite: 112].</p>
+                    </div>
+                </div>
+
+                <!-- 2. Signifiers -->
+                <div class="bg-white dark:bg-gray-800/90 p-6 rounded-3xl shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-2xl mb-4 border border-indigo-200 dark:border-indigo-800/50">🏷️</div>
+                    <h3 class="font-bold text-gray-900 dark:text-white text-lg mb-2">Signifiers</h3>
+                    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3">
+                        Signs that communicate where the action should take place[cite: 113].
+                    </p>
+                    <div class="bg-gray-50 dark:bg-gray-900/50 p-3 rounded-xl border border-gray-100 dark:border-gray-700">
+                        <span class="font-bold text-[10px] uppercase text-gray-500">In our App:</span>
+                        <p class="text-xs text-gray-700 dark:text-gray-300 mt-1">Unambiguous icons (a camera for scanning, a syringe for dosing) act as signifiers so users perceive the affordances clearly[cite: 113].</p>
+                    </div>
+                </div>
+
+                <!-- 3. Mapping -->
+                <div class="bg-white dark:bg-gray-800/90 p-6 rounded-3xl shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 flex items-center justify-center text-2xl mb-4 border border-purple-200 dark:border-purple-800/50">🔄</div>
+                    <h3 class="font-bold text-gray-900 dark:text-white text-lg mb-2">Mapping</h3>
+                    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3">
+                        The relationship between the controls and their effects on the system[cite: 114].
+                    </p>
+                    <div class="bg-gray-50 dark:bg-gray-900/50 p-3 rounded-xl border border-gray-100 dark:border-gray-700">
+                        <span class="font-bold text-[10px] uppercase text-gray-500">In our App:</span>
+                        <p class="text-xs text-gray-700 dark:text-gray-300 mt-1">Natural mapping[cite: 114, 115]: increasing the carbohydrate slider visually raises the insulin dose bar directly above it.</p>
+                    </div>
+                </div>
+
+                <!-- 4. Feedback -->
+                <div class="bg-white dark:bg-gray-800/90 p-6 rounded-3xl shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:-translate-y-1 transition-transform duration-300 lg:col-start-1 lg:col-span-1 lg:ml-[16.666%]">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-2xl mb-4 border border-emerald-200 dark:border-emerald-800/50">⚡</div>
+                    <h3 class="font-bold text-gray-900 dark:text-white text-lg mb-2">Feedback</h3>
+                    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3">
+                        Communicating the results of an action immediately to avoid false causality[cite: 116].
+                    </p>
+                    <div class="bg-gray-50 dark:bg-gray-900/50 p-3 rounded-xl border border-gray-100 dark:border-gray-700">
+                        <span class="font-bold text-[10px] uppercase text-gray-500">In our App:</span>
+                        <p class="text-xs text-gray-700 dark:text-gray-300 mt-1">Immediate visible feedback[cite: 116]: clicking 'Save' triggers a synchronized success animation and vibration (haptic feedback)[cite: 117].</p>
+                    </div>
+                </div>
+
+                <!-- 5. Constraints -->
+                <div class="bg-white dark:bg-gray-800/90 p-6 rounded-3xl shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:-translate-y-1 transition-transform duration-300 lg:col-span-1 lg:mr-[16.666%]">
+                    <div class="w-12 h-12 rounded-xl bg-rose-100 dark:bg-rose-900/30 text-rose-600 dark:text-rose-400 flex items-center justify-center text-2xl mb-4 border border-rose-200 dark:border-rose-800/50">🔒</div>
+                    <h3 class="font-bold text-gray-900 dark:text-white text-lg mb-2">Constraints</h3>
+                    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3">
+                        Restricting the number of possibilities to reduce alternatives and errors[cite: 118].
+                    </p>
+                    <div class="bg-gray-50 dark:bg-gray-900/50 p-3 rounded-xl border border-gray-100 dark:border-gray-700">
+                        <span class="font-bold text-[10px] uppercase text-gray-500">In our App:</span>
+                        <p class="text-xs text-gray-700 dark:text-gray-300 mt-1">Logical constraints[cite: 118]: the 'Confirm Dose' button is physically grayed out (disabled) until a blood glucose value is received.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
             <!-- INTERACTIVE DEMO -->
             <section class="mb-20 max-w-4xl mx-auto" data-aos="fade-up">
                 <div class="bg-white dark:bg-gray-800/90 glow-blue rounded-[2.2rem] p-6 md:p-10 shadow-lg border border-gray-200/80 dark:border-gray-700/80">
@@ -203,6 +410,175 @@
                     </div>
                 </div>
             </section>
+
+            <!-- NORMAN'S GULFS SECTION -->
+        <section class="mb-20 max-w-6xl mx-auto px-4" data-aos="fade-up">
+            <div class="text-center mb-10">
+                <span class="bg-indigo-100/80 text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300 text-xs font-bold px-3.5 py-1 rounded-full uppercase tracking-wider mb-3 inline-block border border-indigo-200/60 dark:border-indigo-700/50">HCI Theory</span>
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white tracking-tight">
+                    Bridging Norman's Gulfs
+                </h2>
+                <p class="text-gray-600 dark:text-gray-400 mt-3 text-sm max-w-2xl mx-auto">
+                    How SmartGlycoAI minimizes the cognitive gap between the user's intentions and the system's execution and evaluation phases.
+                </p>
+            </div>
+
+            <div class="spotlight-card bg-white dark:bg-gray-800/90 p-8 md:p-10 rounded-[2rem] shadow-sm border border-gray-200/80 dark:border-gray-700/80 relative overflow-hidden">
+                <!-- Diagram Container -->
+                <div class="flex flex-col lg:flex-row items-center justify-between gap-8 relative z-10">
+
+                    <!-- GULF OF EXECUTION (Left) -->
+                    <div class="flex-1 bg-gray-50 dark:bg-gray-900/50 p-6 rounded-3xl border border-gray-200 dark:border-gray-700 relative w-full shadow-inner hover:border-blue-400 dark:hover:border-blue-500 transition-colors">
+                        <div class="absolute -top-4 -left-4 w-12 h-12 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full flex items-center justify-center text-xl font-bold shadow-sm border border-blue-200 dark:border-blue-700">1</div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 text-center mt-2">Gulf of Execution</h3>
+                        <p class="text-[10px] text-gray-500 text-center mb-5 uppercase tracking-widest font-bold">Doing phase</p>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-white dark:bg-gray-800 p-4 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm">
+                                <p class="text-sm font-bold text-gray-800 dark:text-gray-200 italic mb-2">"How do I work this? What can I do?"</p>
+                                <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">The difference between the user's formulation of actions and the actions currently allowed by the system.</p>
+                            </div>
+                            <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-2xl border border-blue-100 dark:border-blue-800/50">
+                                <p class="text-xs font-bold text-blue-700 dark:text-blue-300 mb-1 uppercase tracking-wider">Our Solution</p>
+                                <p class="text-xs text-gray-700 dark:text-gray-300 leading-relaxed">Clear <strong>Signifiers</strong> (e.g., prominent camera button) and strong <strong>Affordances</strong> ensure the user instantly knows how to log a meal without prior training.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GOAL / SYSTEM STATE (Center) -->
+                    <div class="flex flex-row lg:flex-col items-center justify-center gap-4 lg:gap-8 shrink-0 w-full lg:w-auto py-4">
+                        <div class="bg-gray-900 dark:bg-black text-white px-6 py-3 rounded-xl font-bold shadow-lg w-40 text-center border border-gray-700 text-sm">
+                            USER GOAL
+                        </div>
+                        <div class="flex flex-row lg:flex-col gap-8 lg:gap-4 text-gray-300 dark:text-gray-600">
+                            <!-- Arrow down (Execution) -->
+                            <div class="flex flex-col items-center">
+                                <span class="hidden lg:block text-xs font-bold uppercase tracking-widest mb-1 text-blue-500">Action</span>
+                                <svg class="w-8 h-8 text-blue-500 -rotate-90 lg:rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                            </div>
+                            <!-- Arrow up (Evaluation) -->
+                            <div class="flex flex-col items-center">
+                                <svg class="w-8 h-8 text-purple-500 -rotate-90 lg:rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+                                <span class="hidden lg:block text-xs font-bold uppercase tracking-widest mt-1 text-purple-500">Feedback</span>
+                            </div>
+                        </div>
+                        <div class="bg-gray-900 dark:bg-black text-white px-6 py-3 rounded-xl font-bold shadow-lg w-40 text-center border border-gray-700 text-sm">
+                            SYSTEM WORLD
+                        </div>
+                    </div>
+
+                    <!-- GULF OF EVALUATION (Right) -->
+                    <div class="flex-1 bg-gray-50 dark:bg-gray-900/50 p-6 rounded-3xl border border-gray-200 dark:border-gray-700 relative w-full shadow-inner hover:border-purple-400 dark:hover:border-purple-500 transition-colors">
+                        <div class="absolute -top-4 -right-4 w-12 h-12 bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300 rounded-full flex items-center justify-center text-xl font-bold shadow-sm border border-purple-200 dark:border-purple-700">2</div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 text-center mt-2">Gulf of Evaluation</h3>
+                        <p class="text-[10px] text-gray-500 text-center mb-5 uppercase tracking-widest font-bold">Interpreting phase</p>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-white dark:bg-gray-800 p-4 rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm">
+                                <p class="text-sm font-bold text-gray-800 dark:text-gray-200 italic mb-2">"What happened? Is this what I wanted?"</p>
+                                <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">The effort required to interpret the physical state of the system and check if expectations were met.</p>
+                            </div>
+                            <div class="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-2xl border border-purple-100 dark:border-purple-800/50">
+                                <p class="text-xs font-bold text-purple-700 dark:text-purple-300 mb-1 uppercase tracking-wider">Our Solution</p>
+                                <p class="text-xs text-gray-700 dark:text-gray-300 leading-relaxed">Immediate, unambiguous <strong>Feedback</strong> (e.g., calculated insulin dose modal) and high <strong>Visibility of System Status</strong> (real-time CGM graph).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- USABILITY TRADE-OFFS (NOVICES VS EXPERTS) -->
+        <section class="mb-20 max-w-6xl mx-auto px-4" data-aos="fade-up">
+            <div class="text-center mb-10">
+                <span class="bg-amber-100/80 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300 text-xs font-bold px-3.5 py-1 rounded-full uppercase tracking-wider mb-3 inline-block border border-amber-200/60 dark:border-amber-700/50">HCI Theory</span>
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white tracking-tight">
+                    Usability Trade-offs: Novices vs. Experts
+                </h2>
+                <p class="text-gray-600 dark:text-gray-400 mt-3 text-sm max-w-2xl mx-auto">
+                    It is not always possible to achieve optimal scores for all usability attributes simultaneously. Here is how we balanced Learnability and Efficiency.
+                </p>
+            </div>
+
+            <div class="spotlight-card bg-white dark:bg-gray-800/90 p-8 rounded-[2rem] shadow-sm border border-gray-200/80 dark:border-gray-700/80">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    
+                    <!-- Explicação Teórica -->
+                    <div class="space-y-6">
+                        <div class="border-l-4 border-blue-500 pl-5">
+                            <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-2">The Novice Profile <span class="text-sm font-normal text-gray-500">(Needs Learnability)</span></h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                                A recently diagnosed patient (ignorant about the domain) interacting with the system for the first time (minimal experience). To lower the cognitive barrier, SmartGlycoAI prioritizes <strong>Learnability</strong> by offering the AI Food Scanner as the primary path, hiding complex mathematical inputs.
+                            </p>
+                        </div>
+                        
+                        <div class="border-l-4 border-purple-500 pl-5">
+                            <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-2">The Expert Profile <span class="text-sm font-normal text-gray-500">(Needs Efficiency)</span></h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                                A veteran diabetic (knowledgeable about the domain) who uses the app daily (extensive experience). Taking a photo every time becomes a bottleneck. For them, we prioritize <strong>Efficiency</strong> by providing a quick manual-entry numpad, bypassing the AI entirely.
+                            </p>
+                        </div>
+
+                        <div class="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-xl border border-amber-100 dark:border-amber-900/50 mt-4">
+                            <p class="text-xs text-amber-800 dark:text-amber-200 font-semibold italic">
+                                *Based on Jakob Nielsen's Usability Engineering (1993) model of user experience progression.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Gráfico de Eixos de Nielsen em CSS -->
+                    <div class="relative bg-gray-50 dark:bg-gray-900/50 p-8 rounded-3xl border border-gray-200 dark:border-gray-700 h-[350px] flex items-center justify-center font-sans">
+                        
+                        <!-- Eixo Y (Domain Knowledge) -->
+                        <div class="absolute left-6 inset-y-8 flex flex-col justify-between items-center w-8">
+                            <span class="text-[10px] font-bold text-gray-400 -rotate-90 whitespace-nowrap absolute top-10 -left-6">Knowledgeable</span>
+                            <div class="w-0.5 h-full bg-gray-300 dark:bg-gray-600 relative">
+                                <div class="absolute -top-1 -left-1 w-2.5 h-2.5 bg-gray-400 rotate-45 transform origin-bottom-left" style="clip-path: polygon(50% 0%, 0% 100%, 100% 100%);"></div>
+                            </div>
+                            <span class="text-[10px] font-bold text-gray-400 -rotate-90 whitespace-nowrap absolute bottom-6 -left-2">Ignorant</span>
+                            <span class="text-xs font-bold text-gray-600 dark:text-gray-400 -rotate-90 whitespace-nowrap absolute top-1/2 -left-16 tracking-widest uppercase">Domain</span>
+                        </div>
+
+                        <!-- Eixo X (System Experience) -->
+                        <div class="absolute bottom-6 inset-x-12 flex justify-between items-center h-8">
+                            <span class="text-[10px] font-bold text-gray-400 absolute left-4 -bottom-4">Minimal</span>
+                            <div class="w-full h-0.5 bg-gray-300 dark:bg-gray-600 relative">
+                                <div class="absolute -right-1 -top-1 w-2.5 h-2.5 bg-gray-400 rotate-90 transform origin-bottom-left" style="clip-path: polygon(50% 0%, 0% 100%, 100% 100%);"></div>
+                            </div>
+                            <span class="text-[10px] font-bold text-gray-400 absolute right-0 -bottom-4">Extensive</span>
+                            <span class="text-xs font-bold text-gray-600 dark:text-gray-400 absolute left-1/2 -bottom-8 -translate-x-1/2 tracking-widest uppercase">System Experience</span>
+                        </div>
+
+                        <!-- Quadrantes e Elementos do Gráfico -->
+                        <div class="absolute inset-0 m-auto w-[70%] h-[70%] z-10">
+                            
+                            <!-- Linha Diagonal de Evolução -->
+                            <svg class="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+                                <line x1="0" y1="100%" x2="100%" y2="0" stroke="currentColor" stroke-width="2" stroke-dasharray="6,6" class="text-gray-400 dark:text-gray-500" />
+                            </svg>
+
+                            <!-- Ponto Novato (Fundo Esquerdo) -->
+                            <div class="absolute bottom-4 left-4 flex flex-col items-center">
+                                <div class="w-4 h-4 bg-blue-500 rounded-full border-4 border-white dark:border-gray-800 shadow-md mb-2"></div>
+                                <div class="bg-blue-100 dark:bg-blue-900/80 text-blue-700 dark:text-blue-200 text-[10px] font-bold px-2 py-1 rounded shadow-sm text-center">
+                                    Novice User<br><span class="font-normal opacity-80">AI Scanner</span>
+                                </div>
+                            </div>
+
+                            <!-- Ponto Perito (Topo Direito) -->
+                            <div class="absolute top-4 right-4 flex flex-col items-center">
+                                <div class="bg-purple-100 dark:bg-purple-900/80 text-purple-700 dark:text-purple-200 text-[10px] font-bold px-2 py-1 rounded shadow-sm text-center mb-2">
+                                    Expert User<br><span class="font-normal opacity-80">Manual Entry</span>
+                                </div>
+                                <div class="w-4 h-4 bg-purple-500 rounded-full border-4 border-white dark:border-gray-800 shadow-md"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
             <!-- DESIGN SYSTEM & ACCESSIBILITY SECTION -->
             <section class="mb-20 max-w-6xl mx-auto" data-aos="fade-up">
