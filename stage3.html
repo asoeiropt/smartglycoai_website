@@ -385,7 +385,7 @@
             </div>
             
             <p class="text-sm text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                Users generally understood the purpose of the app from the briefing and were able to start each scenario on their own. However, in the diary scenario, several users hesitated: they looked for an explicit 'edit' button and did not expect that tapping a diary entry would open it for editing. In the alert scenario, some users closed the notification quickly and afterwards were not sure where to find the suggested carbohydrate correction again.
+                Users generally understood the purpose of the app from the briefing and were able to start each scenario on their own. However, usability tests and expert feedback revealed some hesitation during navigation and highlighted areas where medical terminology and tracking could be more precise.
             </p>
 
             <div class="overflow-x-auto rounded-2xl border border-gray-200/80 dark:border-gray-700/80">
@@ -397,6 +397,8 @@
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-200/80 dark:divide-gray-700/80 bg-white/60 dark:bg-gray-800/60">
+                        
+                        <!-- Issue Original 1 -->
                         <tr>
                             <td class="py-4 px-6 text-gray-700 dark:text-gray-300">
                                 <strong>Issue 1:</strong> Users hesitated when looking for the diary edit button. It was not clear that tapping the entry would open the edit mode.
@@ -405,6 +407,8 @@
                                 Add a visible pencil icon (✏️) next to each diary entry so the edit action is immediately recognizable.
                             </td>
                         </tr>
+                        
+                        <!-- Issue Original 2 -->
                         <tr>
                             <td class="py-4 px-6 text-gray-700 dark:text-gray-300">
                                 <strong>Issue 2:</strong> During the alert scenario, users dismissed the notification but didn't know where to find the suggested carb correction afterwards.
@@ -413,6 +417,37 @@
                                 Keep a persistent "Active Alert" banner at the top of the Home screen until the user logs the correction.
                             </td>
                         </tr>
+
+                        <!-- NOVO: Problema da Termilogia -->
+                        <tr>
+                            <td class="py-4 px-6 text-gray-700 dark:text-gray-300">
+                                <strong>Issue 3:</strong> The interface used the generic word "Dose", which was considered too ambiguous for a medical context.
+                            </td>
+                            <td class="py-4 px-6 text-gray-600 dark:text-gray-400">
+                                Rename the label specifically to "Insulin" or "Insulin Dose" to prevent any misunderstandings.
+                            </td>
+                        </tr>
+
+                        <!-- NOVO: Problema da Checkbox -->
+                        <tr>
+                            <td class="py-4 px-6 text-gray-700 dark:text-gray-300">
+                                <strong>Issue 4:</strong> The system suggests an insulin dose, but there is no explicit way to confirm if the patient actually administered it.
+                            </td>
+                            <td class="py-4 px-6 text-gray-600 dark:text-gray-400">
+                                Add a confirmation checkbox for the user to explicitly validate that they took the suggested insulin dose.
+                            </td>
+                        </tr>
+
+                        <!-- NOVO: Problema do Calendário -->
+                        <tr>
+                            <td class="py-4 px-6 text-gray-700 dark:text-gray-300">
+                                <strong>Issue 5:</strong> When reviewing historical data, it was difficult to quickly identify anomalous events or days where the patient felt unwell.
+                            </td>
+                            <td class="py-4 px-6 text-gray-600 dark:text-gray-400">
+                                Use the calendar days to highlight when the patient was unwell, providing contextual clinical info or notes when selecting those specific dates.
+                            </td>
+                        </tr>
+
                     </tbody>
                 </table>
             </div>
