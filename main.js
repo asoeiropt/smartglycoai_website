@@ -3,7 +3,7 @@
 // =========================================================================
 const customStyles = document.createElement('style');
 customStyles.innerHTML = `
-    /* Preloader */
+    /* Preloader Pequeno para navegação */
     #sg-preloader {
         position: fixed;
         inset: 0;
@@ -58,30 +58,6 @@ customStyles.innerHTML = `
     }
 `;
 document.head.appendChild(customStyles);
-
-// Criar e injetar o Preloader imediatamente
-(function initPreloader() {
-    const preloader = document.createElement('div');
-    preloader.id = 'sg-preloader';
-    preloader.innerHTML = `
-        <div class="relative flex items-center justify-center mb-3">
-            <div class="absolute w-20 h-20 rounded-full border-4 border-blue-500/30 border-t-blue-600 animate-spin"></div>
-            <img src="img/logo.jpeg" alt="SmartGlycoAI" class="w-14 h-14 rounded-full object-cover shadow-md">
-        </div>
-        <span class="text-xs font-extrabold uppercase tracking-widest text-blue-600 dark:text-blue-400 animate-pulse">
-            SmartGlycoAI
-        </span>
-    `;
-    document.body.prepend(preloader);
-
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            preloader.classList.add('fade-out');
-            setTimeout(() => preloader.remove(), 450);
-        }, 350);
-    });
-})();
-
 
 // =========================================================================
 // 1. NAVEGAÇÃO E TEMA (Dark/Light Mode)
@@ -303,7 +279,7 @@ window.addEventListener('keydown', (e) => {
 // =========================================================================
 
 function initSpotlightAndTilt() {
-    const cards = document.querySelectorAll('.glow-blue, .glow-green, .glow-purple');
+    const cards = document.querySelectorAll('.glow-blue, .glow-green, .glow-purple, .glow-amber');
 
     cards.forEach(card => {
         card.classList.add('spotlight-card');
@@ -500,28 +476,120 @@ scrollTopBtn.addEventListener('click', () => {
 
 
 // =========================================================================
-// 7. INICIALIZAÇÃO AUTOMÁTICA
+// 7. INICIALIZAÇÃO AUTOMÁTICA & GESTÃO DE ECRÃS DE CARREGAMENTO
 // =========================================================================
 
-const savedTheme = localStorage.getItem('theme');
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+document.addEventListener("DOMContentLoaded", () => {
+    // Iniciar Temas e Componentes Base
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        document.documentElement.classList.add('dark');
+        if (typeof updateThemeIcons === 'function') updateThemeIcons(true);
+    } else {
+        document.documentElement.classList.remove('dark');
+        if (typeof updateThemeIcons === 'function') updateThemeIcons(false);
+    }
 
-if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-    document.documentElement.classList.add('dark');
-    updateThemeIcons(true);
-} else {
-    document.documentElement.classList.remove('dark');
-    updateThemeIcons(false);
-}
+    if (typeof initStageNavigation === 'function') initStageNavigation();
+    if (typeof initSpotlightAndTilt === 'function') initSpotlightAndTilt();
 
-if (typeof AOS !== 'undefined') {
-    AOS.init({
-        once: true,
-        duration: 800,
-        offset: 50
-    });
-}
+    // Elementos do Splash Screen ("Magic Move")
+    const splashScreen = document.getElementById('splash-screen');
+    const splashText = document.getElementById('splash-text');
+    const splashLogo = document.getElementById('splash-logo');
+    const headerLogo = document.getElementById('header-logo');
 
-// Iniciar Navegação entre Stages e Efeitos de Rato (Spotlight + 3D Tilt)
-initStageNavigation();
-initSpotlightAndTilt();
+    // Variável de sessão que diz se é a primeira visita ou não
+    const hasSeenSplash = sessionStorage.getItem('smartGlycoSplashSeen');
+
+    // FUNÇÃO: Carregar o Preloader Pequeno com a rodinha azul
+    function runMiniPreloader() {
+        const preloader = document.createElement('div');
+        preloader.id = 'sg-preloader';
+        preloader.innerHTML = `
+            <div class="relative flex items-center justify-center mb-3">
+                <div class="absolute w-20 h-20 rounded-full border-4 border-blue-500/30 border-t-blue-600 animate-spin"></div>
+                <img src="img/logo.jpeg" alt="SmartGlycoAI" class="w-14 h-14 rounded-full object-cover shadow-md">
+            </div>
+            <span class="text-xs font-extrabold uppercase tracking-widest text-blue-600 dark:text-blue-400 animate-pulse">
+                SmartGlycoAI
+            </span>
+        `;
+        document.body.prepend(preloader);
+
+        // Desvanece e arranca o AOS quando a página acaba de carregar
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                preloader.classList.add('fade-out');
+                setTimeout(() => preloader.remove(), 450);
+                
+                if (typeof AOS !== 'undefined') {
+                    AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true, offset: 50 });
+                }
+            }, 350);
+        });
+
+        // Garantia de segurança caso o evento 'load' já tenha passado
+        if (document.readyState === 'complete') {
+            setTimeout(() => {
+                preloader.classList.add('fade-out');
+                setTimeout(() => preloader.remove(), 450);
+                if (typeof AOS !== 'undefined') {
+                    AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true, offset: 50 });
+                }
+            }, 350);
+        }
+    }
+
+
+    // DECISOR: Qual animação correr?
+    if (splashScreen && headerLogo && splashLogo && !hasSeenSplash) {
+        
+        // OPÇÃO A: É A PRIMEIRA VISITA (Animação Épica do Logo)
+        sessionStorage.setItem('smartGlycoSplashSeen', 'true');
+
+        setTimeout(() => {
+            if (splashText) {
+                splashText.classList.remove('opacity-100');
+                splashText.classList.add('opacity-0');
+            }
+        }, 1000);
+
+        setTimeout(() => {
+            const targetRect = headerLogo.getBoundingClientRect();
+            const splashRect = splashLogo.getBoundingClientRect();
+            
+            const deltaX = (targetRect.left + targetRect.width / 2) - (splashRect.left + splashRect.width / 2);
+            const deltaY = (targetRect.top + targetRect.height / 2) - (splashRect.top + splashRect.height / 2);
+            const scale = targetRect.width / splashRect.width;
+
+            splashLogo.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(${scale})`;
+            splashLogo.classList.remove('border-2', 'border-blue-500', 'shadow-[0_0_30px_rgba(59,130,246,0.3)]');
+            splashLogo.classList.add('border-gray-200', 'dark:border-gray-700');
+
+            splashScreen.classList.remove('bg-gray-900');
+            splashScreen.classList.add('bg-transparent', 'pointer-events-none');
+            
+        }, 1500);
+
+        setTimeout(() => {
+            splashScreen.classList.add('hidden');
+            if (typeof AOS !== 'undefined') {
+                AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true, offset: 50 });
+            }
+        }, 2500);
+
+    } else {
+        // OPÇÃO B: JÁ NAVEGOU PELO SITE (Preloader Rápido)
+        
+        // Esconde o Splash grande imediatamente para não piscar
+        if (splashScreen) {
+            splashScreen.style.display = 'none'; 
+        }
+        
+        // Injeta a animação rápida
+        runMiniPreloader();
+    }
+});
