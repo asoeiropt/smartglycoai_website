@@ -119,7 +119,7 @@ When updating the embedded prototype build from the [IPM-6-APP](https://github.c
 
 ## 👥 Team & Academic Context
 
-Developed by **Group 6** for the **Interação Pessoa-Máquina (IPM)** course at **NOVA School of Science and Technology (NOVA FCT)** — Lab Class P4, 2026.
+Developed by **Group 6** for the **Interação Pessoa-Máquina (IPM)** course at **NOVA School of Science and Technology (NOVA FCT)** — Lab Class P1, 2026.
 
 - **Live Portal:** [smartglycoai.vercel.app](https://smartglycoai.vercel.app/)
 - **Mobile App Source Code:** [github.com/asoeiropt/IPM-6-APP](https://github.com/asoeiropt/IPM-6-APP)
