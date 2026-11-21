@@ -9,7 +9,6 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script>tailwind.config = { darkMode: 'class' }</script>
     <style>
-        /* Brilhos radiais suaves estilo Bento UI */
         .glow-blue {
             background: radial-gradient(circle at 85% 15%, rgba(59, 130, 246, 0.15), transparent 60%),
                         radial-gradient(circle at 15% 85%, rgba(37, 99, 235, 0.05), transparent 55%);
@@ -22,7 +21,7 @@
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans antialiased transition-colors duration-300">
 
-    <!-- FLOATING HEADER (Igual ao UI/UX e Index, com Glossary ativo) -->
+    <!-- FLOATING HEADER -->
     <header class="sticky top-3 sm:top-4 z-50 px-3 sm:px-4">
         <div class="max-w-7xl mx-auto bg-white/90 dark:bg-gray-800/90 backdrop-blur-xl shadow-lg border border-gray-200/80 dark:border-gray-700/80 rounded-2xl sm:rounded-[2rem] px-4 sm:px-6 py-2.5 sm:py-3 transition-colors duration-300 flex items-center justify-between gap-2 sm:gap-4">
             <div class="flex items-center gap-2.5 sm:gap-4 min-w-0">
@@ -44,12 +43,9 @@
                 <button onclick="toggleDarkMode()" aria-label="Toggle Dark Mode" class="w-9 h-9 rounded-full bg-gray-100/80 dark:bg-gray-700/60 flex items-center justify-center text-gray-500 hover:text-yellow-500 dark:text-gray-400 dark:hover:text-yellow-400 transition text-base">
                     <span id="theme-icon-desktop">🌙</span>
                 </button>
-                
-                <!-- Glossary com a linha azul por baixo (página ativa) -->
                 <a href="glossary.html" class="text-sm font-semibold text-blue-600 dark:text-blue-400 transition hidden lg:inline border-b-2 border-blue-600 dark:border-blue-400 pb-1">Glossary</a>
                 <a href="developers.html" class="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition hidden lg:inline">The Team</a>
                 <a href="ui-ux.html" class="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition hidden lg:inline">UI / UX</a>
-                
                 <a href="app.html" class="hidden sm:flex items-center gap-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700/80 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 text-xs sm:text-sm font-bold px-4 py-2 rounded-full border border-gray-200/80 dark:border-gray-600 transition shadow-sm">
                     <span class="text-base">⚙️</span> <span>Tech Stack</span>
                 </a>
@@ -84,12 +80,12 @@
         </div>
     </header>
 
-    <main class="max-w-6xl mx-auto py-8 sm:py-10 px-4 space-y-10 sm:space-y-12">
+    <main class="max-w-6xl mx-auto py-8 sm:py-10 px-4 space-y-8 sm:space-y-10">
         
         <!-- HERO BANNER GLOSSARY -->
         <section class="bg-gradient-to-br from-indigo-600 via-blue-700 to-blue-900 dark:from-indigo-800 dark:via-blue-900 dark:to-gray-900 text-white p-6 sm:p-8 md:p-12 rounded-3xl sm:rounded-[2.2rem] shadow-xl border border-blue-400/30 dark:border-blue-700/50" data-aos="fade-up">
             <span class="inline-block py-1 px-3.5 rounded-full bg-white/20 text-blue-50 text-xs font-bold uppercase tracking-wider mb-4 border border-white/20">
-                Support & Documentation
+                Support &amp; Documentation
             </span>
             <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-3 tracking-tight">Project Glossary</h1>
             <p class="text-blue-100 text-sm sm:text-base md:text-lg max-w-3xl">
@@ -97,14 +93,60 @@
             </p>
         </section>
 
+        <!-- BARRA DE PESQUISA E FILTROS RÁPIDOS -->
+        <section class="bg-white/90 dark:bg-gray-800/90 backdrop-blur-md p-4 sm:p-5 rounded-3xl border border-gray-200/80 dark:border-gray-700/80 shadow-sm flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4" data-aos="fade-up">
+            <!-- Input de Pesquisa -->
+            <div class="relative flex-grow">
+                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm">🔍</span>
+                <input
+                    id="glossary-search"
+                    type="text"
+                    placeholder="Search terms (e.g., CGM, Bolus, Wizard of Oz, ICR)..."
+                    oninput="filterGlossary()"
+                    class="w-full pl-10 pr-10 py-2.5 rounded-2xl bg-gray-50 dark:bg-gray-900/70 border border-gray-200 dark:border-gray-700 text-sm text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition"
+                >
+                <button
+                    id="glossary-clear"
+                    onclick="clearGlossarySearch()"
+                    aria-label="Clear search"
+                    class="hidden absolute right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs font-bold flex items-center justify-center hover:bg-gray-300 transition"
+                >
+                    &times;
+                </button>
+            </div>
+
+            <!-- Botões de Categoria -->
+            <div class="flex flex-wrap items-center gap-2">
+                <button onclick="setGlossaryFilter('all')" data-filter="all" class="glossary-filter-btn px-4 py-2 rounded-full text-xs font-bold transition bg-blue-600 text-white shadow-sm">
+                    All (14)
+                </button>
+                <button onclick="setGlossaryFilter('medical')" data-filter="medical" class="glossary-filter-btn px-4 py-2 rounded-full text-xs font-bold transition bg-gray-100 dark:bg-gray-700/80 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600">
+                    ⚕️ Medical (8)
+                </button>
+                <button onclick="setGlossaryFilter('hci')" data-filter="hci" class="glossary-filter-btn px-4 py-2 rounded-full text-xs font-bold transition bg-gray-100 dark:bg-gray-700/80 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600">
+                    💻 HCI &amp; UI (6)
+                </button>
+            </div>
+        </section>
+
+        <!-- ESTADO VAZIO (Sem resultados) -->
+        <div id="glossary-empty" class="hidden bg-white dark:bg-gray-800/90 rounded-3xl p-10 text-center border border-gray-200/80 dark:border-gray-700/80">
+            <div class="text-4xl mb-3">🔎</div>
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-1">No matching terms found</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Try searching for another keyword or reset the category filter.</p>
+            <button onclick="resetGlossaryFilters()" class="px-4 py-2 rounded-full bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition">
+                Reset Filters
+            </button>
+        </div>
+
         <!-- MEDICAL TERMINOLOGY GRID -->
-        <section data-aos="fade-up">
+        <section id="section-medical" data-aos="fade-up">
             <h2 class="text-xl sm:text-2xl font-bold dark:text-white mb-6 flex items-center gap-3">
                 <span class="text-2xl sm:text-3xl">⚕️</span> Medical Terminology
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 <!-- T1D -->
-                <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
+                <div data-category="medical" class="glossary-card bg-white/80 dark:bg-gray-800/90 glow-blue rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
                     <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">T1D (Type 1 Diabetes)</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                         A chronic condition in which the pancreas produces little or no insulin. Patients must manually manage their blood glucose levels through external insulin administration, diet, and lifestyle adjustments.
@@ -112,7 +154,7 @@
                 </div>
 
                 <!-- CGM -->
-                <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
+                <div data-category="medical" class="glossary-card bg-white/80 dark:bg-gray-800/90 glow-blue rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
                     <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">CGM (Continuous Glucose Monitor)</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                         A wearable sensor (e.g., FreeStyle Libre) that automatically tracks glucose levels day and night. SmartGlycoAI connects to these devices via Bluetooth to provide real-time readings and trend graphs.
@@ -120,7 +162,7 @@
                 </div>
 
                 <!-- ICR -->
-                <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
+                <div data-category="medical" class="glossary-card bg-white/80 dark:bg-gray-800/90 glow-blue rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
                     <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">ICR (Insulin-to-Carb Ratio)</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                         A personalized setting that indicates how many grams of carbohydrates are covered by 1 unit of insulin. For example, an ICR of 1:15 means the patient needs 1 unit of insulin for every 15g of carbs eaten.
@@ -128,7 +170,7 @@
                 </div>
 
                 <!-- ISF -->
-                <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
+                <div data-category="medical" class="glossary-card bg-white/80 dark:bg-gray-800/90 glow-blue rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
                     <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">ISF (Insulin Sensitivity Factor)</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                         Defines how much 1 unit of fast-acting insulin will lower the patient's blood glucose level. Used by the app to calculate correction doses when glucose is too high.
@@ -136,7 +178,7 @@
                 </div>
 
                 <!-- Hypoglycemia -->
-                <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
+                <div data-category="medical" class="glossary-card bg-white/80 dark:bg-gray-800/90 glow-blue rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
                     <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">Hypoglycemia (Low)</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                         A dangerous condition where blood sugar drops below healthy levels (typically &lt; 70 mg/dL). SmartGlycoAI issues predictive alerts to warn users before this happens, suggesting fast-acting carbs (like juice) to correct it.
@@ -144,7 +186,7 @@
                 </div>
 
                 <!-- Hyperglycemia -->
-                <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
+                <div data-category="medical" class="glossary-card bg-white/80 dark:bg-gray-800/90 glow-blue rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
                     <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">Hyperglycemia (High)</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                         When blood glucose is too high (typically &gt; 180 mg/dL). Often occurs if a meal was miscalculated or not enough insulin was administered. Repeated highs are flagged in the doctor's dashboard.
@@ -152,7 +194,7 @@
                 </div>
 
                 <!-- Bolus & Basal Insulin -->
-                <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
+                <div data-category="medical" class="glossary-card bg-white/80 dark:bg-gray-800/90 glow-blue rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
                     <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">Bolus &amp; Basal Insulin</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                         <strong>Basal</strong> insulin provides a slow, steady background supply throughout the day and night, while <strong>Bolus</strong> insulin is a fast-acting dose taken before meals or to correct high glucose—which SmartGlycoAI calculates automatically.
@@ -160,7 +202,7 @@
                 </div>
 
                 <!-- Fast-Acting Carbohydrates -->
-                <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
+                <div data-category="medical" class="glossary-card bg-white/80 dark:bg-gray-800/90 glow-blue rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
                     <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">Fast-Acting Carbohydrates</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                         Simple sugars (such as fruit juice or glucose tablets) absorbed rapidly into the bloodstream to treat or prevent an impending hypoglycemic episode within 15 to 20 minutes.
@@ -170,7 +212,7 @@
         </section>
 
         <!-- HCI & UI TERMINOLOGY GRID -->
-        <section data-aos="fade-up">
+        <section id="section-hci" data-aos="fade-up">
             <div class="flex items-center gap-3 mb-6 pt-6 border-t border-gray-200/80 dark:border-gray-700/80">
                 <span class="text-2xl sm:text-3xl">💻</span>
                 <h2 class="text-xl sm:text-2xl font-bold dark:text-white">HCI &amp; UI Terminology</h2>
@@ -178,7 +220,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 
                 <!-- Paper Prototype -->
-                <div class="bg-white/80 dark:bg-gray-800/90 glow-amber rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-amber-400 dark:hover:border-amber-500 transition-all">
+                <div data-category="hci" class="glossary-card bg-white/80 dark:bg-gray-800/90 glow-amber rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-amber-400 dark:hover:border-amber-500 transition-all">
                     <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">Paper Prototype (Low-Fidelity)</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                         A non-digital, hand-drawn representation of the user interface (used in Stage 3). It allows designers to quickly test navigation flows and screen layouts with users before writing any code.
@@ -186,7 +228,7 @@
                 </div>
 
                 <!-- Cognitive Load -->
-                <div class="bg-white/80 dark:bg-gray-800/90 glow-amber rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-amber-400 dark:hover:border-amber-500 transition-all">
+                <div data-category="hci" class="glossary-card bg-white/80 dark:bg-gray-800/90 glow-amber rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-amber-400 dark:hover:border-amber-500 transition-all">
                     <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">Cognitive Load</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                         The amount of mental effort required by a user to complete a task. SmartGlycoAI aims to drastically reduce the cognitive load of diabetic patients by automating carbohydrate estimation and insulin math.
@@ -194,7 +236,7 @@
                 </div>
 
                 <!-- Usability Testing -->
-                <div class="bg-white/80 dark:bg-gray-800/90 glow-amber rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-amber-400 dark:hover:border-amber-500 transition-all">
+                <div data-category="hci" class="glossary-card bg-white/80 dark:bg-gray-800/90 glow-amber rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-amber-400 dark:hover:border-amber-500 transition-all">
                     <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">Usability Testing</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                         An evaluation method where users are asked to perform specific tasks (scenarios) using the prototype, while observers note errors, hesitations, and feedback to improve the design.
@@ -202,7 +244,7 @@
                 </div>
 
                 <!-- Edge Case -->
-                <div class="bg-white/80 dark:bg-gray-800/90 glow-amber rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-amber-400 dark:hover:border-amber-500 transition-all">
+                <div data-category="hci" class="glossary-card bg-white/80 dark:bg-gray-800/90 glow-amber rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-amber-400 dark:hover:border-amber-500 transition-all">
                     <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">Edge Case / Fallback</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                         A rare or extreme situation (e.g., losing internet connection or the AI failing to recognize food). The UI must provide a "fallback" option (like manual entry) to ensure the system remains safe and usable.
@@ -210,7 +252,7 @@
                 </div>
 
                 <!-- Wizard of Oz -->
-                <div class="bg-white/80 dark:bg-gray-800/90 glow-amber rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-amber-400 dark:hover:border-amber-500 transition-all">
+                <div data-category="hci" class="glossary-card bg-white/80 dark:bg-gray-800/90 glow-amber rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-amber-400 dark:hover:border-amber-500 transition-all">
                     <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">Wizard of Oz Prototyping</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                         An evaluation technique (used in Stage 4) where a human team member discreetly simulates complex backend intelligence—such as AI food recognition and live CGM alerts—so users can test a realistic system before full implementation.
@@ -218,7 +260,7 @@
                 </div>
 
                 <!-- Prototype Fidelity -->
-                <div class="bg-white/80 dark:bg-gray-800/90 glow-amber rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-amber-400 dark:hover:border-amber-500 transition-all">
+                <div data-category="hci" class="glossary-card bg-white/80 dark:bg-gray-800/90 glow-amber rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-amber-400 dark:hover:border-amber-500 transition-all">
                     <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">Prototype Fidelity (Look, Breadth &amp; Depth)</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                         Measures how closely a prototype resembles the final product across visual polish (<strong>look &amp; feel</strong>), feature coverage (<strong>breadth</strong>), and functional backend logic (<strong>depth</strong>).

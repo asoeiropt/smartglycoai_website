@@ -314,22 +314,62 @@
             <section class="max-w-3xl mx-auto" data-aos="fade-up">
                 <h2 class="text-xl sm:text-2xl font-bold mb-5 sm:mb-6 text-center text-gray-900 dark:text-white tracking-tight">Build &amp; Run</h2>
                 <div class="bg-gray-900 rounded-3xl sm:rounded-[2rem] overflow-hidden shadow-2xl border border-gray-700/80">
-                    <div class="bg-gray-800/90 px-5 sm:px-6 py-3 flex items-center border-b border-gray-700/80">
+                    <!-- Barra Superior do Terminal -->
+                    <div class="bg-gray-800/90 px-5 sm:px-6 py-3 flex items-center justify-between border-b border-gray-700/80">
                         <div class="flex gap-2">
                             <div class="w-3 h-3 rounded-full bg-red-500"></div>
                             <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
                             <div class="w-3 h-3 rounded-full bg-green-500"></div>
                         </div>
-                        <div class="mx-auto text-xs text-gray-400 font-mono">bash — flutter</div>
+                        <div class="text-xs text-gray-400 font-mono">bash — flutter</div>
+                        <button onclick="copyTerminalCommand(this, 'flutter pub get && flutter run')" class="text-[11px] font-sans font-semibold text-gray-300 hover:text-white bg-gray-700/70 hover:bg-gray-600 px-2.5 py-1 rounded-lg border border-gray-600/80 transition flex items-center gap-1.5">
+                            <span>📋</span>
+                            <span>Copy Quickstart</span>
+                        </button>
                     </div>
-                    <div class="p-5 sm:p-7 text-gray-100 font-mono text-xs sm:text-sm overflow-x-auto">
-                        <p class="text-gray-500 mb-1"># Get dependencies</p>
-                        <p class="mb-4 sm:mb-5"><span class="text-blue-400">~/SmartGlycoAI</span> $ <span class="text-green-400">flutter pub get</span></p>
-                        <p class="text-gray-500 mb-1"># Run in development environment</p>
-                        <p class="mb-4 sm:mb-5"><span class="text-blue-400">~/SmartGlycoAI</span> $ <span class="text-green-400">flutter run</span></p>
-                        <p class="text-gray-500 mb-1"># Build production versions (Release)</p>
-                        <p><span class="text-blue-400">~/SmartGlycoAI</span> $ <span class="text-green-400">flutter build apk --release</span></p>
-                        <p><span class="text-blue-400">~/SmartGlycoAI</span> $ <span class="text-green-400">flutter build ipa --release</span></p>
+
+                    <!-- Comandos com botão Copy individual -->
+                    <div class="p-5 sm:p-7 text-gray-100 font-mono text-xs sm:text-sm space-y-5">
+                        
+                        <!-- Comando 1 -->
+                        <div>
+                            <p class="text-gray-500 mb-1.5"># Get dependencies</p>
+                            <div class="flex items-center justify-between gap-3 bg-gray-800/40 hover:bg-gray-800/80 px-3.5 py-2.5 rounded-xl border border-gray-800 transition group">
+                                <p class="overflow-x-auto whitespace-nowrap"><span class="text-blue-400">~/SmartGlycoAI</span> $ <span class="text-green-400">flutter pub get</span></p>
+                                <button onclick="copyTerminalCommand(this, 'flutter pub get')" aria-label="Copy flutter pub get" class="flex-shrink-0 text-[11px] font-sans font-semibold text-gray-400 hover:text-white bg-gray-800 hover:bg-blue-600 px-2.5 py-1 rounded-lg border border-gray-700 hover:border-blue-500 transition">
+                                    Copy
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Comando 2 -->
+                        <div>
+                            <p class="text-gray-500 mb-1.5"># Run in development environment</p>
+                            <div class="flex items-center justify-between gap-3 bg-gray-800/40 hover:bg-gray-800/80 px-3.5 py-2.5 rounded-xl border border-gray-800 transition group">
+                                <p class="overflow-x-auto whitespace-nowrap"><span class="text-blue-400">~/SmartGlycoAI</span> $ <span class="text-green-400">flutter run</span></p>
+                                <button onclick="copyTerminalCommand(this, 'flutter run')" aria-label="Copy flutter run" class="flex-shrink-0 text-[11px] font-sans font-semibold text-gray-400 hover:text-white bg-gray-800 hover:bg-blue-600 px-2.5 py-1 rounded-lg border border-gray-700 hover:border-blue-500 transition">
+                                    Copy
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Comandos 3 & 4 -->
+                        <div class="space-y-2.5">
+                            <p class="text-gray-500 mb-1.5"># Build production versions (Release)</p>
+                            <div class="flex items-center justify-between gap-3 bg-gray-800/40 hover:bg-gray-800/80 px-3.5 py-2.5 rounded-xl border border-gray-800 transition group">
+                                <p class="overflow-x-auto whitespace-nowrap"><span class="text-blue-400">~/SmartGlycoAI</span> $ <span class="text-green-400">flutter build apk --release</span></p>
+                                <button onclick="copyTerminalCommand(this, 'flutter build apk --release')" aria-label="Copy flutter build apk" class="flex-shrink-0 text-[11px] font-sans font-semibold text-gray-400 hover:text-white bg-gray-800 hover:bg-blue-600 px-2.5 py-1 rounded-lg border border-gray-700 hover:border-blue-500 transition">
+                                    Copy
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between gap-3 bg-gray-800/40 hover:bg-gray-800/80 px-3.5 py-2.5 rounded-xl border border-gray-800 transition group">
+                                <p class="overflow-x-auto whitespace-nowrap"><span class="text-blue-400">~/SmartGlycoAI</span> $ <span class="text-green-400">flutter build ipa --release</span></p>
+                                <button onclick="copyTerminalCommand(this, 'flutter build ipa --release')" aria-label="Copy flutter build ipa" class="flex-shrink-0 text-[11px] font-sans font-semibold text-gray-400 hover:text-white bg-gray-800 hover:bg-blue-600 px-2.5 py-1 rounded-lg border border-gray-700 hover:border-blue-500 transition">
+                                    Copy
+                                </button>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </section>
