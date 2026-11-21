@@ -22,91 +22,148 @@
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans antialiased transition-colors duration-300">
 
-    <!-- HEADER FLUTUANTE (Glassmorphism) -->
-    <header class="sticky top-4 z-50 px-4">
-        <div class="max-w-6xl mx-auto bg-white/85 dark:bg-gray-800/85 backdrop-blur-xl shadow-lg border border-gray-200/80 dark:border-gray-700/80 rounded-[2rem] px-6 py-4 transition-colors duration-300">
-            <div class="flex items-center justify-between">
-                <a href="index.html" class="text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 font-semibold flex items-center transition">
-                    <span class="mr-2">←</span> Back to Menu
+    <!-- FLOATING HEADER (Igual ao UI/UX e Index, com Glossary ativo) -->
+    <header class="sticky top-3 sm:top-4 z-50 px-3 sm:px-4">
+        <div class="max-w-7xl mx-auto bg-white/90 dark:bg-gray-800/90 backdrop-blur-xl shadow-lg border border-gray-200/80 dark:border-gray-700/80 rounded-2xl sm:rounded-[2rem] px-4 sm:px-6 py-2.5 sm:py-3 transition-colors duration-300 flex items-center justify-between gap-2 sm:gap-4">
+            <div class="flex items-center gap-2.5 sm:gap-4 min-w-0">
+                <a href="index.html" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm flex-shrink-0">
+                    <img src="img/logo.jpeg" alt="Logo" class="w-full h-full object-cover">
                 </a>
-                
-                <div class="flex items-center gap-4">
-                    <span class="hidden md:inline-block bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300 text-sm font-bold px-3.5 py-1 rounded-full border border-blue-200 dark:border-blue-800/50 cursor-default">
-                        Group 6
-                    </span>
-                    <a href="developers.html" class="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition hidden sm:inline">The Team</a>
-                    <button onclick="toggleDarkMode()" class="text-gray-500 hover:text-yellow-500 dark:text-gray-400 dark:hover:text-yellow-400 transition text-xl">
-                        <span id="theme-icon-desktop">🌙</span>
-                    </button>
+                <div class="truncate">
+                    <a href="index.html" class="text-base sm:text-xl font-extrabold text-blue-600 dark:text-blue-400 tracking-tight hover:opacity-80 transition block leading-tight">SmartGlycoAI</a>
+                    <div class="text-[8px] sm:text-[9px] text-gray-500 dark:text-gray-400 uppercase tracking-widest font-bold truncate">Human-Computer Interaction</div>
                 </div>
             </div>
+            
+            <div class="flex items-center gap-2 sm:gap-4 lg:gap-5 flex-shrink-0">
+                <span class="hidden md:inline-block bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 text-xs font-bold px-3 py-1.5 rounded-full border border-blue-200/60 dark:border-blue-800/50 cursor-default">Group 6</span>
+                <a href="https://github.com/asoeiropt/IPM-6-APP" target="_blank" class="hidden sm:flex text-gray-400 hover:text-gray-900 dark:hover:text-white transition items-center" title="GitHub Repository">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+                </a>
+                <div class="hidden sm:block w-px h-5 bg-gray-200 dark:bg-gray-700"></div>
+                <button onclick="toggleDarkMode()" aria-label="Toggle Dark Mode" class="w-9 h-9 rounded-full bg-gray-100/80 dark:bg-gray-700/60 flex items-center justify-center text-gray-500 hover:text-yellow-500 dark:text-gray-400 dark:hover:text-yellow-400 transition text-base">
+                    <span id="theme-icon-desktop">🌙</span>
+                </button>
+                
+                <!-- Glossary com a linha azul por baixo (página ativa) -->
+                <a href="glossary.html" class="text-sm font-semibold text-blue-600 dark:text-blue-400 transition hidden lg:inline border-b-2 border-blue-600 dark:border-blue-400 pb-1">Glossary</a>
+                <a href="developers.html" class="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition hidden lg:inline">The Team</a>
+                <a href="ui-ux.html" class="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition hidden lg:inline">UI / UX</a>
+                
+                <a href="app.html" class="hidden sm:flex items-center gap-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700/80 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 text-xs sm:text-sm font-bold px-4 py-2 rounded-full border border-gray-200/80 dark:border-gray-600 transition shadow-sm">
+                    <span class="text-base">⚙️</span> <span>Tech Stack</span>
+                </a>
+                <button onclick="toggleMobileMenu()" aria-label="Open Navigation Menu" class="lg:hidden w-9 h-9 rounded-full bg-gray-100 dark:bg-gray-700/80 text-gray-700 dark:text-gray-200 flex items-center justify-center border border-gray-200/80 dark:border-gray-600 transition">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- DROPDOWN MENU MOBILE -->
+        <div id="mobile-menu" class="hidden lg:hidden max-w-7xl mx-auto mt-2 bg-white/95 dark:bg-gray-800/95 backdrop-blur-xl shadow-xl border border-gray-200/80 dark:border-gray-700/80 rounded-2xl p-4 transition-all">
+            <div class="flex items-center justify-between pb-3 mb-3 border-b border-gray-200/80 dark:border-gray-700/80">
+                <span class="bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 text-xs font-bold px-3 py-1 rounded-full border border-blue-200/60 dark:border-blue-800/50">
+                    Group 6 • NOVA FCT
+                </span>
+                <a href="https://github.com/asoeiropt/IPM-6-APP" target="_blank" class="flex items-center gap-1.5 text-xs font-semibold text-gray-600 dark:text-gray-300 hover:text-blue-600">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+                    GitHub
+                </a>
+            </div>
+            <nav class="grid grid-cols-2 gap-2 text-sm font-semibold">
+                <a href="index.html" class="px-3.5 py-2.5 rounded-xl bg-gray-50 dark:bg-gray-900/50 text-gray-700 dark:text-gray-200 hover:bg-blue-50 transition">🏠 Home</a>
+                <a href="developers.html" class="px-3.5 py-2.5 rounded-xl bg-gray-50 dark:bg-gray-900/50 text-gray-700 dark:text-gray-200 hover:bg-blue-50 transition">👥 The Team</a>
+                <a href="ui-ux.html" class="px-3.5 py-2.5 rounded-xl bg-gray-50 dark:bg-gray-900/50 text-gray-700 dark:text-gray-200 hover:bg-blue-50 transition">🎨 UI / UX</a>
+                <a href="app.html" class="px-3.5 py-2.5 rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition flex items-center justify-between">
+                    <span>⚙️ Tech Stack</span>
+                    <span>↗</span>
+                </a>
+            </nav>
         </div>
     </header>
 
-    <main class="max-w-6xl mx-auto py-10 px-4 space-y-12">
+    <main class="max-w-6xl mx-auto py-8 sm:py-10 px-4 space-y-10 sm:space-y-12">
         
         <!-- HERO BANNER GLOSSARY -->
-        <section class="bg-gradient-to-br from-indigo-600 via-blue-700 to-blue-900 dark:from-indigo-800 dark:via-blue-900 dark:to-gray-900 text-white p-8 md:p-12 rounded-[2.2rem] shadow-xl border border-blue-400/30 dark:border-blue-700/50" data-aos="fade-up">
+        <section class="bg-gradient-to-br from-indigo-600 via-blue-700 to-blue-900 dark:from-indigo-800 dark:via-blue-900 dark:to-gray-900 text-white p-6 sm:p-8 md:p-12 rounded-3xl sm:rounded-[2.2rem] shadow-xl border border-blue-400/30 dark:border-blue-700/50" data-aos="fade-up">
             <span class="inline-block py-1 px-3.5 rounded-full bg-white/20 text-blue-50 text-xs font-bold uppercase tracking-wider mb-4 border border-white/20">
                 Support & Documentation
             </span>
-            <h1 class="text-3xl md:text-4xl font-extrabold mb-3 tracking-tight">Project Glossary</h1>
-            <p class="text-blue-100 text-base md:text-lg max-w-3xl">
+            <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-3 tracking-tight">Project Glossary</h1>
+            <p class="text-blue-100 text-sm sm:text-base md:text-lg max-w-3xl">
                 Essential terms and concepts used in the SmartGlycoAI ecosystem to help users and evaluators understand the medical domain and HCI principles.
             </p>
         </section>
 
         <!-- MEDICAL TERMINOLOGY GRID -->
         <section data-aos="fade-up">
-            <h2 class="text-2xl font-bold dark:text-white mb-6 flex items-center gap-3">
-                <span class="text-3xl">⚕️</span> Medical Terminology
+            <h2 class="text-xl sm:text-2xl font-bold dark:text-white mb-6 flex items-center gap-3">
+                <span class="text-2xl sm:text-3xl">⚕️</span> Medical Terminology
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 <!-- T1D -->
-                <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">T1D (Type 1 Diabetes)</h3>
+                <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">T1D (Type 1 Diabetes)</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                         A chronic condition in which the pancreas produces little or no insulin. Patients must manually manage their blood glucose levels through external insulin administration, diet, and lifestyle adjustments.
                     </p>
                 </div>
 
                 <!-- CGM -->
-                <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">CGM (Continuous Glucose Monitor)</h3>
+                <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">CGM (Continuous Glucose Monitor)</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                         A wearable sensor (e.g., FreeStyle Libre) that automatically tracks glucose levels day and night. SmartGlycoAI connects to these devices via Bluetooth to provide real-time readings and trend graphs.
                     </p>
                 </div>
 
                 <!-- ICR -->
-                <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">ICR (Insulin-to-Carb Ratio)</h3>
+                <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">ICR (Insulin-to-Carb Ratio)</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                         A personalized setting that indicates how many grams of carbohydrates are covered by 1 unit of insulin. For example, an ICR of 1:15 means the patient needs 1 unit of insulin for every 15g of carbs eaten.
                     </p>
                 </div>
 
                 <!-- ISF -->
-                <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">ISF (Insulin Sensitivity Factor)</h3>
+                <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">ISF (Insulin Sensitivity Factor)</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                         Defines how much 1 unit of fast-acting insulin will lower the patient's blood glucose level. Used by the app to calculate correction doses when glucose is too high.
                     </p>
                 </div>
 
                 <!-- Hypoglycemia -->
-                <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Hypoglycemia (Low)</h3>
+                <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">Hypoglycemia (Low)</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                        A dangerous condition where blood sugar drops below healthy levels (typically < 70 mg/dL). SmartGlycoAI issues predictive alerts to warn users before this happens, suggesting fast-acting carbs (like juice) to correct it.
+                        A dangerous condition where blood sugar drops below healthy levels (typically &lt; 70 mg/dL). SmartGlycoAI issues predictive alerts to warn users before this happens, suggesting fast-acting carbs (like juice) to correct it.
                     </p>
                 </div>
 
                 <!-- Hyperglycemia -->
-                <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Hyperglycemia (High)</h3>
+                <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">Hyperglycemia (High)</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                        When blood glucose is too high (typically > 180 mg/dL). Often occurs if a meal was miscalculated or not enough insulin was administered. Repeated highs are flagged in the doctor's dashboard.
+                        When blood glucose is too high (typically &gt; 180 mg/dL). Often occurs if a meal was miscalculated or not enough insulin was administered. Repeated highs are flagged in the doctor's dashboard.
+                    </p>
+                </div>
+
+                <!-- Bolus & Basal Insulin -->
+                <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">Bolus &amp; Basal Insulin</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                        <strong>Basal</strong> insulin provides a slow, steady background supply throughout the day and night, while <strong>Bolus</strong> insulin is a fast-acting dose taken before meals or to correct high glucose—which SmartGlycoAI calculates automatically.
+                    </p>
+                </div>
+
+                <!-- Fast-Acting Carbohydrates -->
+                <div class="bg-white/80 dark:bg-gray-800/90 glow-blue rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-blue-400 dark:hover:border-blue-500 transition-all">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">Fast-Acting Carbohydrates</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Simple sugars (such as fruit juice or glucose tablets) absorbed rapidly into the bloodstream to treat or prevent an impending hypoglycemic episode within 15 to 20 minutes.
                     </p>
                 </div>
             </div>
@@ -115,40 +172,56 @@
         <!-- HCI & UI TERMINOLOGY GRID -->
         <section data-aos="fade-up">
             <div class="flex items-center gap-3 mb-6 pt-6 border-t border-gray-200/80 dark:border-gray-700/80">
-                <span class="text-3xl">💻</span>
-                <h2 class="text-2xl font-bold dark:text-white">HCI & UI Terminology</h2>
+                <span class="text-2xl sm:text-3xl">💻</span>
+                <h2 class="text-xl sm:text-2xl font-bold dark:text-white">HCI &amp; UI Terminology</h2>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 
                 <!-- Paper Prototype -->
-                <div class="bg-white/80 dark:bg-gray-800/90 glow-amber rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-amber-400 dark:hover:border-amber-500 transition-all">
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Paper Prototype (Low-Fidelity)</h3>
+                <div class="bg-white/80 dark:bg-gray-800/90 glow-amber rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-amber-400 dark:hover:border-amber-500 transition-all">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">Paper Prototype (Low-Fidelity)</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                         A non-digital, hand-drawn representation of the user interface (used in Stage 3). It allows designers to quickly test navigation flows and screen layouts with users before writing any code.
                     </p>
                 </div>
 
                 <!-- Cognitive Load -->
-                <div class="bg-white/80 dark:bg-gray-800/90 glow-amber rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-amber-400 dark:hover:border-amber-500 transition-all">
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Cognitive Load</h3>
+                <div class="bg-white/80 dark:bg-gray-800/90 glow-amber rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-amber-400 dark:hover:border-amber-500 transition-all">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">Cognitive Load</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                         The amount of mental effort required by a user to complete a task. SmartGlycoAI aims to drastically reduce the cognitive load of diabetic patients by automating carbohydrate estimation and insulin math.
                     </p>
                 </div>
 
                 <!-- Usability Testing -->
-                <div class="bg-white/80 dark:bg-gray-800/90 glow-amber rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-amber-400 dark:hover:border-amber-500 transition-all">
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Usability Testing</h3>
+                <div class="bg-white/80 dark:bg-gray-800/90 glow-amber rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-amber-400 dark:hover:border-amber-500 transition-all">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">Usability Testing</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                         An evaluation method where users are asked to perform specific tasks (scenarios) using the prototype, while observers note errors, hesitations, and feedback to improve the design.
                     </p>
                 </div>
 
                 <!-- Edge Case -->
-                <div class="bg-white/80 dark:bg-gray-800/90 glow-amber rounded-[1.75rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-amber-400 dark:hover:border-amber-500 transition-all">
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Edge Case / Fallback</h3>
+                <div class="bg-white/80 dark:bg-gray-800/90 glow-amber rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-amber-400 dark:hover:border-amber-500 transition-all">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">Edge Case / Fallback</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                         A rare or extreme situation (e.g., losing internet connection or the AI failing to recognize food). The UI must provide a "fallback" option (like manual entry) to ensure the system remains safe and usable.
+                    </p>
+                </div>
+
+                <!-- Wizard of Oz -->
+                <div class="bg-white/80 dark:bg-gray-800/90 glow-amber rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-amber-400 dark:hover:border-amber-500 transition-all">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">Wizard of Oz Prototyping</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                        An evaluation technique (used in Stage 4) where a human team member discreetly simulates complex backend intelligence—such as AI food recognition and live CGM alerts—so users can test a realistic system before full implementation.
+                    </p>
+                </div>
+
+                <!-- Prototype Fidelity -->
+                <div class="bg-white/80 dark:bg-gray-800/90 glow-amber rounded-3xl sm:rounded-[1.75rem] p-5 sm:p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 hover:shadow-md hover:border-amber-400 dark:hover:border-amber-500 transition-all">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">Prototype Fidelity (Look, Breadth &amp; Depth)</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Measures how closely a prototype resembles the final product across visual polish (<strong>look &amp; feel</strong>), feature coverage (<strong>breadth</strong>), and functional backend logic (<strong>depth</strong>).
                     </p>
                 </div>
             </div>
