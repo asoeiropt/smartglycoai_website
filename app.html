@@ -16,175 +16,320 @@
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans antialiased transition-colors duration-300">
 
-    <header class="sticky top-4 z-50 px-4">
-        <div class="max-w-7xl mx-auto bg-white/85 dark:bg-gray-800/85 backdrop-blur-xl shadow-lg border border-gray-200/80 dark:border-gray-700/80 rounded-[2rem] px-6 py-3 transition-colors duration-300 flex items-center justify-between gap-4">
-            <div class="flex items-center gap-4">
-                <div class="w-10 h-10 rounded-full overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm flex-shrink-0">
+    <!-- FLOATING HEADER (Responsivo Mobile + Desktop, com Tech Stack ativo) -->
+    <header class="sticky top-3 sm:top-4 z-50 px-3 sm:px-4">
+        <div class="max-w-7xl mx-auto bg-white/90 dark:bg-gray-800/90 backdrop-blur-xl shadow-lg border border-gray-200/80 dark:border-gray-700/80 rounded-2xl sm:rounded-[2rem] px-4 sm:px-6 py-2.5 sm:py-3 transition-colors duration-300 flex items-center justify-between gap-2 sm:gap-4">
+            <div class="flex items-center gap-2.5 sm:gap-4 min-w-0">
+                <a href="index.html" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm flex-shrink-0">
                     <img src="img/logo.jpeg" alt="Logo" class="w-full h-full object-cover">
-                </div>
-                <div class="hidden sm:block">
-                    <a href="index.html" class="text-xl font-extrabold text-blue-600 dark:text-blue-400 tracking-tight hover:opacity-80 transition">SmartGlycoAI</a>
-                    <div class="text-[9px] text-gray-500 dark:text-gray-400 uppercase tracking-widest font-bold">Human-Computer Interaction</div>
+                </a>
+                <div class="truncate">
+                    <a href="index.html" class="text-base sm:text-xl font-extrabold text-blue-600 dark:text-blue-400 tracking-tight hover:opacity-80 transition block leading-tight">SmartGlycoAI</a>
+                    <div class="text-[8px] sm:text-[9px] text-gray-500 dark:text-gray-400 uppercase tracking-widest font-bold truncate">Human-Computer Interaction</div>
                 </div>
             </div>
             
-            <div class="flex items-center gap-3 md:gap-5">
+            <div class="flex items-center gap-2 sm:gap-4 lg:gap-5 flex-shrink-0">
                 <span class="hidden md:inline-block bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 text-xs font-bold px-3 py-1.5 rounded-full border border-blue-200/60 dark:border-blue-800/50 cursor-default">Group 6</span>
-                <a href="https://github.com/asoeiropt/IPM-6-APP" target="_blank" class="text-gray-400 hover:text-gray-900 dark:hover:text-white transition flex items-center" title="GitHub Repository">
+                <a href="https://github.com/asoeiropt/IPM-6-APP" target="_blank" class="hidden sm:flex text-gray-400 hover:text-gray-900 dark:hover:text-white transition items-center" title="GitHub Repository">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
                 </a>
                 <div class="hidden sm:block w-px h-5 bg-gray-200 dark:bg-gray-700"></div>
-                <button onclick="toggleDarkMode()" class="text-gray-500 hover:text-yellow-500 dark:text-gray-400 dark:hover:text-yellow-400 transition text-lg flex items-center"><span id="theme-icon-desktop">🌙</span></button>
+                <button onclick="toggleDarkMode()" aria-label="Toggle Dark Mode" class="w-9 h-9 rounded-full bg-gray-100/80 dark:bg-gray-700/60 flex items-center justify-center text-gray-500 hover:text-yellow-500 dark:text-gray-400 dark:hover:text-yellow-400 transition text-base">
+                    <span id="theme-icon-desktop">🌙</span>
+                </button>
                 <a href="glossary.html" class="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition hidden lg:inline">Glossary</a>
                 <a href="developers.html" class="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition hidden lg:inline">The Team</a>
                 <a href="ui-ux.html" class="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition hidden lg:inline">UI / UX</a>
-                <a href="app.html" class="flex items-center gap-2 bg-blue-600 text-white hover:bg-blue-700 text-xs sm:text-sm font-bold px-4 py-2 rounded-full border border-blue-700 transition shadow-sm">
-                    <span class="text-base">⚙️</span> <span class="hidden sm:inline">Tech Stack</span><span class="sm:hidden">App</span>
+                <a href="app.html" class="hidden sm:flex items-center gap-2 bg-blue-600 text-white hover:bg-blue-700 text-xs sm:text-sm font-bold px-4 py-2 rounded-full border border-blue-700 transition shadow-sm">
+                    <span class="text-base">⚙️</span> <span>Tech Stack</span>
+                </a>
+                <button onclick="toggleMobileMenu()" aria-label="Open Navigation Menu" class="lg:hidden w-9 h-9 rounded-full bg-gray-100 dark:bg-gray-700/80 text-gray-700 dark:text-gray-200 flex items-center justify-center border border-gray-200/80 dark:border-gray-600 transition">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- DROPDOWN MENU MOBILE -->
+        <div id="mobile-menu" class="hidden lg:hidden max-w-7xl mx-auto mt-2 bg-white/95 dark:bg-gray-800/95 backdrop-blur-xl shadow-xl border border-gray-200/80 dark:border-gray-700/80 rounded-2xl p-4 transition-all">
+            <div class="flex items-center justify-between pb-3 mb-3 border-b border-gray-200/80 dark:border-gray-700/80">
+                <span class="bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 text-xs font-bold px-3 py-1 rounded-full border border-blue-200/60 dark:border-blue-800/50">
+                    Group 6 • NOVA FCT
+                </span>
+                <a href="https://github.com/asoeiropt/IPM-6-APP" target="_blank" class="flex items-center gap-1.5 text-xs font-semibold text-gray-600 dark:text-gray-300 hover:text-blue-600">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+                    GitHub
                 </a>
             </div>
+            <nav class="grid grid-cols-2 gap-2 text-sm font-semibold">
+                <a href="index.html" class="px-3.5 py-2.5 rounded-xl bg-gray-50 dark:bg-gray-900/50 text-gray-700 dark:text-gray-200 hover:bg-blue-50 transition">🏠 Home</a>
+                <a href="glossary.html" class="px-3.5 py-2.5 rounded-xl bg-gray-50 dark:bg-gray-900/50 text-gray-700 dark:text-gray-200 hover:bg-blue-50 transition">📖 Glossary</a>
+                <a href="developers.html" class="px-3.5 py-2.5 rounded-xl bg-gray-50 dark:bg-gray-900/50 text-gray-700 dark:text-gray-200 hover:bg-blue-50 transition">👥 The Team</a>
+                <a href="ui-ux.html" class="px-3.5 py-2.5 rounded-xl bg-gray-50 dark:bg-gray-900/50 text-gray-700 dark:text-gray-200 hover:bg-blue-50 transition">🎨 UI / UX</a>
+            </nav>
         </div>
     </header>
 
     <main class="overflow-hidden">
-        <section class="max-w-6xl mx-auto px-4 pt-8">
-            <div class="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 dark:from-blue-800 dark:via-blue-900 dark:to-gray-900 text-white py-16 px-6 rounded-[2.2rem] shadow-xl border border-blue-400/30 dark:border-blue-700/50 transition-colors duration-300" data-aos="fade-up">
+        <section class="max-w-6xl mx-auto px-4 pt-6 sm:pt-8">
+            <div class="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 dark:from-blue-800 dark:via-blue-900 dark:to-gray-900 text-white py-10 sm:py-16 px-5 sm:px-6 rounded-3xl sm:rounded-[2.2rem] shadow-xl border border-blue-400/30 dark:border-blue-700/50 transition-colors duration-300" data-aos="fade-up">
                 <div class="max-w-4xl mx-auto text-center">
                     <span class="inline-block py-1 px-3.5 rounded-full bg-blue-500/80 dark:bg-blue-900/60 text-blue-100 text-xs font-semibold uppercase tracking-wider mb-4 border border-blue-400 dark:border-blue-700">Frontend Architecture</span>
-                    <h1 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">Robust Cross-Platform Mobile Development</h1>
-                    <p class="text-lg text-blue-100 dark:text-blue-200 max-w-2xl mx-auto">SmartGlycoAI is built with Flutter, establishing a solid foundational architecture with strict static analysis rules and optimized native integrations for the best user experience.</p>
+                    <h1 class="text-2xl sm:text-4xl md:text-5xl font-extrabold mb-4 sm:mb-6 tracking-tight">Robust Cross-Platform Mobile Development</h1>
+                    <p class="text-sm sm:text-lg text-blue-100 dark:text-blue-200 max-w-2xl mx-auto">SmartGlycoAI is built with Flutter, establishing a solid foundational architecture with strict static analysis rules and optimized native integrations for the best user experience.</p>
                 </div>
             </div>
         </section>
 
-        <div class="max-w-6xl mx-auto py-16 px-4">
-            <!-- APP ECOSYSTEM & DATA FLOW -->
-            <section class="mb-20" data-aos="fade-up">
-                <div class="spotlight-card bg-white dark:bg-gray-800/90 glow-blue rounded-[2rem] p-8 shadow-sm border border-gray-200/80 dark:border-gray-700/80">
-                    <div class="flex items-center gap-3 border-b border-gray-200/80 dark:border-gray-700/80 pb-4 mb-8">
+        <div class="max-w-6xl mx-auto py-10 sm:py-16 px-4">
+            
+            <!-- APP ECOSYSTEM & DATA FLOW (Responsivo Mobile + Desktop) -->
+            <section class="mb-14 sm:mb-20" data-aos="fade-up">
+                <div class="spotlight-card bg-white dark:bg-gray-800/90 glow-blue rounded-3xl sm:rounded-[2rem] p-5 sm:p-8 shadow-sm border border-gray-200/80 dark:border-gray-700/80">
+                    <div class="flex items-center gap-3 border-b border-gray-200/80 dark:border-gray-700/80 pb-4 mb-6 sm:mb-8">
                         <span class="bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300 w-9 h-9 rounded-xl flex items-center justify-center text-lg border border-blue-200 dark:border-blue-700/50">🔄</span>
-                        <h3 class="text-2xl font-bold dark:text-white tracking-tight">System Ecosystem & Data Flow</h3>
+                        <h3 class="text-xl sm:text-2xl font-bold dark:text-white tracking-tight">System Ecosystem &amp; Data Flow</h3>
                     </div>
-                    <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
-                        <div class="flex flex-col gap-4 w-full md:w-1/3">
-                            <div class="bg-gray-50 dark:bg-gray-900/50 p-5 rounded-2xl border border-gray-200 dark:border-gray-700 text-center"><span class="text-3xl block mb-2">⌚</span><h4 class="font-bold text-gray-900 dark:text-white text-sm">CGM Sensor</h4><p class="text-[11px] text-gray-500 mt-1">Real-time glucose data</p></div>
-                            <div class="bg-gray-50 dark:bg-gray-900/50 p-5 rounded-2xl border border-gray-200 dark:border-gray-700 text-center"><span class="text-3xl block mb-2">📷</span><h4 class="font-bold text-gray-900 dark:text-white text-sm">Smartphone Camera</h4><p class="text-[11px] text-gray-500 mt-1">Meal photo capture</p></div>
-                        </div>
-                        <div class="hidden md:flex flex-col gap-12 text-blue-500 dark:text-blue-400"><div class="flex flex-col items-center"><span class="text-[10px] font-bold uppercase tracking-widest mb-1">Bluetooth</span><span>➔</span></div><div class="flex flex-col items-center"><span class="text-[10px] font-bold uppercase tracking-widest mb-1">Image Data</span><span>➔</span></div></div>
-                        <div class="md:hidden text-blue-500 dark:text-blue-400 text-2xl rotate-90 my-2">➔</div>
-                        <div class="w-full md:w-1/3">
-                            <div class="bg-blue-600 dark:bg-blue-700 p-6 rounded-3xl border border-blue-500 dark:border-blue-600 text-center shadow-lg relative overflow-hidden">
-                                <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PC9zdmc+')] opacity-30"></div>
-                                <h4 class="font-extrabold text-white text-xl mb-3 relative z-10">SmartGlycoAI</h4>
-                                <div class="bg-white/20 rounded-xl p-3 text-white text-xs font-semibold backdrop-blur-sm border border-white/20 relative z-10">🧠 Core Processing:<ul class="font-normal mt-2 space-y-1"><li>• Computer Vision (Carbs)</li><li>• Predictive Algorithm (Lows)</li><li>• Insulin Dose Math</li></ul></div>
+                    
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-8">
+                        
+                        <!-- Fontes de Dados (Lado a lado no mobile, empilhadas à esquerda no desktop) -->
+                        <div class="grid grid-cols-2 md:grid-cols-1 gap-3 sm:gap-4 w-full md:w-1/3">
+                            <div class="bg-gray-50 dark:bg-gray-900/50 p-4 sm:p-5 rounded-2xl border border-gray-200 dark:border-gray-700 text-center flex flex-col justify-center">
+                                <span class="text-2xl sm:text-3xl block mb-1.5 sm:mb-2">⌚</span>
+                                <h4 class="font-bold text-gray-900 dark:text-white text-xs sm:text-sm">CGM Sensor</h4>
+                                <p class="text-[10px] sm:text-[11px] text-gray-500 mt-1">Real-time glucose data</p>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-900/50 p-4 sm:p-5 rounded-2xl border border-gray-200 dark:border-gray-700 text-center flex flex-col justify-center">
+                                <span class="text-2xl sm:text-3xl block mb-1.5 sm:mb-2">📷</span>
+                                <h4 class="font-bold text-gray-900 dark:text-white text-xs sm:text-sm">Smartphone Camera</h4>
+                                <p class="text-[10px] sm:text-[11px] text-gray-500 mt-1">Meal photo capture</p>
                             </div>
                         </div>
-                        <div class="hidden md:flex flex-col text-blue-500 dark:text-blue-400"><div class="flex flex-col items-center"><span class="text-[10px] font-bold uppercase tracking-widest mb-1">Sync</span><span>➔</span></div></div>
-                        <div class="md:hidden text-blue-500 dark:text-blue-400 text-2xl rotate-90 my-2">➔</div>
-                        <div class="w-full md:w-1/3">
-                            <div class="bg-gray-50 dark:bg-gray-900/50 p-5 rounded-2xl border border-gray-200 dark:border-gray-700 text-center h-full flex flex-col justify-center"><span class="text-3xl block mb-2">🩺</span><h4 class="font-bold text-gray-900 dark:text-white text-sm">Doctor's Dashboard</h4><p class="text-[11px] text-gray-500 mt-1">Cloud sync for clinical review</p></div>
+
+                        <!-- Setas Desktop (Inputs -> Core) -->
+                        <div class="hidden md:flex flex-col gap-12 text-blue-500 dark:text-blue-400">
+                            <div class="flex flex-col items-center">
+                                <span class="text-[10px] font-bold uppercase tracking-widest mb-1">Bluetooth</span>
+                                <span>➔</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <span class="text-[10px] font-bold uppercase tracking-widest mb-1">Image Data</span>
+                                <span>➔</span>
+                            </div>
                         </div>
+
+                        <!-- Setas Mobile (Inputs -> Core) -->
+                        <div class="grid grid-cols-2 gap-3 w-full md:hidden text-blue-500 dark:text-blue-400 py-1">
+                            <div class="flex flex-col items-center">
+                                <span class="text-[9px] font-bold uppercase tracking-widest">Bluetooth</span>
+                                <span class="text-lg leading-none mt-0.5">↓</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <span class="text-[9px] font-bold uppercase tracking-widest">Image Data</span>
+                                <span class="text-lg leading-none mt-0.5">↓</span>
+                            </div>
+                        </div>
+
+                        <!-- Core SmartGlycoAI -->
+                        <div class="w-full md:w-1/3">
+                            <div class="bg-blue-600 dark:bg-blue-700 p-5 sm:p-6 rounded-3xl border border-blue-500 dark:border-blue-600 text-center shadow-lg relative overflow-hidden">
+                                <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PC9zdmc+')] opacity-30"></div>
+                                <h4 class="font-extrabold text-white text-lg sm:text-xl mb-3 relative z-10">SmartGlycoAI</h4>
+                                <div class="bg-white/20 rounded-xl p-3 text-white text-xs font-semibold backdrop-blur-sm border border-white/20 relative z-10">
+                                    🧠 Core Processing:
+                                    <ul class="font-normal mt-2 space-y-1 text-[11px] sm:text-xs">
+                                        <li>• Computer Vision (Carbs)</li>
+                                        <li>• Predictive Algorithm (Lows)</li>
+                                        <li>• Insulin Dose Math</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Seta Desktop (Core -> Doctor) -->
+                        <div class="hidden md:flex flex-col text-blue-500 dark:text-blue-400">
+                            <div class="flex flex-col items-center">
+                                <span class="text-[10px] font-bold uppercase tracking-widest mb-1">Sync</span>
+                                <span>➔</span>
+                            </div>
+                        </div>
+
+                        <!-- Seta Mobile (Core -> Doctor) -->
+                        <div class="flex flex-col items-center md:hidden text-blue-500 dark:text-blue-400 py-1">
+                            <span class="text-[9px] font-bold uppercase tracking-widest">Cloud Sync</span>
+                            <span class="text-lg leading-none mt-0.5">↓</span>
+                        </div>
+
+                        <!-- Doctor's Dashboard -->
+                        <div class="w-full md:w-1/3">
+                            <div class="bg-gray-50 dark:bg-gray-900/50 p-4 sm:p-5 rounded-2xl border border-gray-200 dark:border-gray-700 text-center h-full flex flex-col justify-center">
+                                <span class="text-2xl sm:text-3xl block mb-1.5 sm:mb-2">🩺</span>
+                                <h4 class="font-bold text-gray-900 dark:text-white text-xs sm:text-sm">Doctor's Dashboard</h4>
+                                <p class="text-[10px] sm:text-[11px] text-gray-500 mt-1">Cloud sync for clinical review</p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </section>
 
             <!-- TECH STACK -->
-            <section class="mb-20">
-                <h2 class="text-3xl font-bold mb-10 text-center text-gray-900 dark:text-white tracking-tight" data-aos="fade-up">Tech Stack</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div data-aos="fade-up" data-aos-delay="100" class="bg-white dark:bg-gray-800/90 glow-blue p-8 rounded-[2rem] shadow-sm hover:shadow-xl hover:-translate-y-1 border border-gray-200/80 dark:border-gray-700/80 hover:border-blue-400 dark:hover:border-blue-500 text-center transition-all duration-300 group">
-                        <div class="text-5xl mb-4 group-hover:scale-110 transition-transform">📱</div><h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Flutter & Dart</h3><p class="text-gray-600 dark:text-gray-400 text-sm">Unified frontend and shared logic with strict UI rules and custom component rendering.</p>
+            <section class="mb-14 sm:mb-20">
+                <h2 class="text-2xl sm:text-3xl font-bold mb-8 sm:mb-10 text-center text-gray-900 dark:text-white tracking-tight" data-aos="fade-up">Tech Stack</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+                    <div data-aos="fade-up" data-aos-delay="100" class="bg-white dark:bg-gray-800/90 glow-blue p-6 sm:p-8 rounded-3xl sm:rounded-[2rem] shadow-sm hover:shadow-xl hover:-translate-y-1 border border-gray-200/80 dark:border-gray-700/80 hover:border-blue-400 dark:hover:border-blue-500 text-center transition-all duration-300 group">
+                        <div class="text-4xl sm:text-5xl mb-3 sm:mb-4 group-hover:scale-110 transition-transform">📱</div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-2 text-gray-900 dark:text-white">Flutter &amp; Dart</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Unified frontend and shared logic with strict UI rules and custom component rendering.</p>
                     </div>
-                    <div data-aos="fade-up" data-aos-delay="200" class="bg-white dark:bg-gray-800/90 glow-green p-8 rounded-[2rem] shadow-sm hover:shadow-xl hover:-translate-y-1 border border-gray-200/80 dark:border-gray-700/80 hover:border-green-400 dark:hover:border-green-500 text-center transition-all duration-300 group">
-                        <div class="text-5xl mb-4 group-hover:scale-110 transition-transform">🤖</div><h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Android (Kotlin)</h3><p class="text-gray-600 dark:text-gray-400 text-sm">Native module managed with Gradle Kotlin DSL and optimized compilation profiles.</p>
+                    <div data-aos="fade-up" data-aos-delay="200" class="bg-white dark:bg-gray-800/90 glow-green p-6 sm:p-8 rounded-3xl sm:rounded-[2rem] shadow-sm hover:shadow-xl hover:-translate-y-1 border border-gray-200/80 dark:border-gray-700/80 hover:border-green-400 dark:hover:border-green-500 text-center transition-all duration-300 group">
+                        <div class="text-4xl sm:text-5xl mb-3 sm:mb-4 group-hover:scale-110 transition-transform">🤖</div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-2 text-gray-900 dark:text-white">Android (Kotlin)</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Native module managed with Gradle Kotlin DSL and optimized compilation profiles.</p>
                     </div>
-                    <div data-aos="fade-up" data-aos-delay="300" class="bg-white dark:bg-gray-800/90 glow-purple p-8 rounded-[2rem] shadow-sm hover:shadow-xl hover:-translate-y-1 border border-gray-200/80 dark:border-gray-700/80 hover:border-purple-400 dark:hover:border-purple-500 text-center transition-all duration-300 group">
-                        <div class="text-5xl mb-4 group-hover:scale-110 transition-transform">🍏</div><h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">iOS (Swift)</h3><p class="text-gray-600 dark:text-gray-400 text-sm">Structured in Xcode with seamless asset management and native iOS lifecycle bindings.</p>
+                    <div data-aos="fade-up" data-aos-delay="300" class="bg-white dark:bg-gray-800/90 glow-purple p-6 sm:p-8 rounded-3xl sm:rounded-[2rem] shadow-sm hover:shadow-xl hover:-translate-y-1 border border-gray-200/80 dark:border-gray-700/80 hover:border-purple-400 dark:hover:border-purple-500 text-center transition-all duration-300 group">
+                        <div class="text-4xl sm:text-5xl mb-3 sm:mb-4 group-hover:scale-110 transition-transform">🍏</div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-2 text-gray-900 dark:text-white">iOS (Swift)</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Structured in Xcode with seamless asset management and native iOS lifecycle bindings.</p>
                     </div>
                 </div>
             </section>
 
-            <!-- ABOWD & BEALE INTERACTION FRAMEWORK -->
-        <section class="mb-20 max-w-6xl mx-auto px-4" data-aos="fade-up">
-            <div class="text-center mb-10">
-                <span class="bg-indigo-100/80 text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300 text-xs font-bold px-3.5 py-1 rounded-full uppercase tracking-wider mb-3 inline-block border border-indigo-200/60 dark:border-indigo-700/50">Interaction Framework</span>
-                <h2 class="text-3xl font-bold text-gray-900 dark:text-white tracking-tight">
-                    The Interaction Cycle (Abowd & Beale)
-                </h2>
-                <p class="text-gray-600 dark:text-gray-400 mt-3 text-sm max-w-2xl mx-auto">
-                    Mapping SmartGlycoAI into the four major components of an interactive system, where interaction is seen as the translation between languages[cite: 137].
-                </p>
-            </div>
-
-            <div class="spotlight-card bg-white dark:bg-gray-800/90 p-8 rounded-[2rem] shadow-sm border border-gray-200/80 dark:border-gray-700/80">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16 max-w-4xl mx-auto relative">
-                    
-                    <!-- Execution Phase Arrow (Visual) -->
-                    <div class="hidden md:block absolute top-1/4 left-1/2 -translate-x-1/2 w-32 h-0.5 bg-blue-400/50 border-t-2 border-dashed border-blue-500"></div>
-                    <!-- Evaluation Phase Arrow (Visual) -->
-                    <div class="hidden md:block absolute bottom-1/4 left-1/2 -translate-x-1/2 w-32 h-0.5 bg-purple-400/50 border-t-2 border-dashed border-purple-500"></div>
-
-                    <!-- USER (TASK) -->
-                    <div class="bg-gray-50 dark:bg-gray-900/50 p-6 rounded-3xl border border-gray-200 dark:border-gray-700 relative text-center">
-                        <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300 px-4 py-1.5 rounded-full font-bold text-sm border border-blue-200 dark:border-blue-700">USER (Task)</div>
-                        <div class="text-4xl mb-3 mt-2">👤</div>
-                        <h4 class="font-bold text-gray-900 dark:text-white mb-2">Goal Formulation</h4>
-                        <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">The diabetic patient needs to know how much insulin to administer for the meal in front of them.</p>
-                        <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700 text-[10px] uppercase font-bold text-gray-500">Articulation Phase</div>
-                    </div>
-
-                    <!-- INPUT -->
-                    <div class="bg-gray-50 dark:bg-gray-900/50 p-6 rounded-3xl border border-gray-200 dark:border-gray-700 relative text-center">
-                        <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-indigo-100 text-indigo-700 dark:bg-indigo-900 dark:text-indigo-300 px-4 py-1.5 rounded-full font-bold text-sm border border-indigo-200 dark:border-indigo-700">INPUT</div>
-                        <div class="text-4xl mb-3 mt-2">📱</div>
-                        <h4 class="font-bold text-gray-900 dark:text-white mb-2">Interface Manipulation</h4>
-                        <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">The user articulates the task within the input language by tapping the camera shutter button on the touchscreen[cite: 138].</p>
-                        <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700 text-[10px] uppercase font-bold text-gray-500">Performance Phase</div>
-                    </div>
-
-                    <!-- OUTPUT -->
-                    <div class="bg-gray-50 dark:bg-gray-900/50 p-6 rounded-3xl border border-gray-200 dark:border-gray-700 relative text-center order-4 md:order-3">
-                        <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300 px-4 py-1.5 rounded-full font-bold text-sm border border-purple-200 dark:border-purple-700">OUTPUT</div>
-                        <div class="text-4xl mb-3 mt-2">👁️</div>
-                        <h4 class="font-bold text-gray-900 dark:text-white mb-2">State Communication</h4>
-                        <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">The new system state is translated to the output language: a visual modal displaying the suggested insulin dose[cite: 138].</p>
-                        <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700 text-[10px] uppercase font-bold text-gray-500">Observation Phase</div>
-                    </div>
-
-                    <!-- SYSTEM (CORE) -->
-                    <div class="bg-gray-50 dark:bg-gray-900/50 p-6 rounded-3xl border border-gray-200 dark:border-gray-700 relative text-center order-3 md:order-4">
-                        <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-emerald-100 text-emerald-700 dark:bg-emerald-900 dark:text-emerald-300 px-4 py-1.5 rounded-full font-bold text-sm border border-emerald-200 dark:border-emerald-700">SYSTEM (Core)</div>
-                        <div class="text-4xl mb-3 mt-2">🧠</div>
-                        <h4 class="font-bold text-gray-900 dark:text-white mb-2">System Processing</h4>
-                        <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">The input is translated into Core operations: Computer Vision algorithms analyze the image, and the dose math is executed[cite: 138].</p>
-                        <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700 text-[10px] uppercase font-bold text-gray-500">Presentation Phase</div>
-                    </div>
-
+            <!-- ABOWD & BEALE INTERACTION FRAMEWORK (Fluxo 1->2->3->4 perfeito no mobile) -->
+            <section class="mb-14 sm:mb-20 max-w-6xl mx-auto" data-aos="fade-up">
+                <div class="text-center mb-8 sm:mb-10">
+                    <span class="bg-indigo-100/80 text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300 text-xs font-bold px-3.5 py-1 rounded-full uppercase tracking-wider mb-3 inline-block border border-indigo-200/60 dark:border-indigo-700/50">Interaction Framework</span>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white tracking-tight">
+                        The Interaction Cycle (Abowd &amp; Beale)
+                    </h2>
+                    <p class="text-gray-600 dark:text-gray-400 mt-3 text-sm max-w-2xl mx-auto">
+                        Mapping SmartGlycoAI into the four major components of an interactive system, where interaction is seen as the translation between languages.
+                    </p>
                 </div>
-            </div>
-        </section>
+
+                <div class="spotlight-card bg-white dark:bg-gray-800/90 p-5 sm:p-8 rounded-3xl sm:rounded-[2rem] shadow-sm border border-gray-200/80 dark:border-gray-700/80">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 md:gap-y-16 max-w-4xl mx-auto relative pt-4">
+                        
+                        <!-- Execution Phase Arrow (Desktop) -->
+                        <div class="hidden md:block absolute top-1/4 left-1/2 -translate-x-1/2 w-32 h-0.5 bg-blue-400/50 border-t-2 border-dashed border-blue-500"></div>
+                        <!-- Evaluation Phase Arrow (Desktop) -->
+                        <div class="hidden md:block absolute bottom-1/4 left-1/2 -translate-x-1/2 w-32 h-0.5 bg-purple-400/50 border-t-2 border-dashed border-purple-500"></div>
+
+                        <!-- 1. USER (TASK) -->
+                        <div class="bg-gray-50 dark:bg-gray-900/50 p-5 sm:p-6 rounded-3xl border border-gray-200 dark:border-gray-700 relative text-center order-1">
+                            <div class="inline-block md:absolute md:-top-5 md:left-1/2 md:-translate-x-1/2 bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300 px-4 py-1 rounded-full font-bold text-xs sm:text-sm border border-blue-200 dark:border-blue-700 mb-2 md:mb-0">1. USER (Task)</div>
+                            <div class="text-3xl sm:text-4xl mb-2 sm:mb-3 mt-1 md:mt-2">👤</div>
+                            <h4 class="font-bold text-gray-900 dark:text-white mb-2">Goal Formulation</h4>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">The diabetic patient needs to know how much insulin to administer for the meal in front of them.</p>
+                            <div class="mt-4 pt-3 border-t border-gray-200 dark:border-gray-700 text-[10px] uppercase font-bold text-gray-500">Articulation Phase</div>
+                        </div>
+
+                        <!-- Seta Mobile 1 -> 2 -->
+                        <div class="flex flex-col items-center md:hidden text-blue-500 order-2">
+                            <span class="text-[9px] font-bold uppercase tracking-widest">Articulation</span>
+                            <span class="text-lg leading-none">↓</span>
+                        </div>
+
+                        <!-- 2. INPUT -->
+                        <div class="bg-gray-50 dark:bg-gray-900/50 p-5 sm:p-6 rounded-3xl border border-gray-200 dark:border-gray-700 relative text-center order-3 md:order-2">
+                            <div class="inline-block md:absolute md:-top-5 md:left-1/2 md:-translate-x-1/2 bg-indigo-100 text-indigo-700 dark:bg-indigo-900 dark:text-indigo-300 px-4 py-1 rounded-full font-bold text-xs sm:text-sm border border-indigo-200 dark:border-indigo-700 mb-2 md:mb-0">2. INPUT</div>
+                            <div class="text-3xl sm:text-4xl mb-2 sm:mb-3 mt-1 md:mt-2">📱</div>
+                            <h4 class="font-bold text-gray-900 dark:text-white mb-2">Interface Manipulation</h4>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">The user articulates the task within the input language by tapping the camera shutter button on the touchscreen.</p>
+                            <div class="mt-4 pt-3 border-t border-gray-200 dark:border-gray-700 text-[10px] uppercase font-bold text-gray-500">Performance Phase</div>
+                        </div>
+
+                        <!-- Seta Mobile 2 -> 3 -->
+                        <div class="flex flex-col items-center md:hidden text-emerald-500 order-4">
+                            <span class="text-[9px] font-bold uppercase tracking-widest">Performance</span>
+                            <span class="text-lg leading-none">↓</span>
+                        </div>
+
+                        <!-- 3. SYSTEM (CORE) -->
+                        <div class="bg-gray-50 dark:bg-gray-900/50 p-5 sm:p-6 rounded-3xl border border-gray-200 dark:border-gray-700 relative text-center order-5 md:order-4">
+                            <div class="inline-block md:absolute md:-top-5 md:left-1/2 md:-translate-x-1/2 bg-emerald-100 text-emerald-700 dark:bg-emerald-900 dark:text-emerald-300 px-4 py-1 rounded-full font-bold text-xs sm:text-sm border border-emerald-200 dark:border-emerald-700 mb-2 md:mb-0">3. SYSTEM (Core)</div>
+                            <div class="text-3xl sm:text-4xl mb-2 sm:mb-3 mt-1 md:mt-2">🧠</div>
+                            <h4 class="font-bold text-gray-900 dark:text-white mb-2">System Processing</h4>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">The input is translated into Core operations: Computer Vision algorithms analyze the image, and the dose math is executed.</p>
+                            <div class="mt-4 pt-3 border-t border-gray-200 dark:border-gray-700 text-[10px] uppercase font-bold text-gray-500">Presentation Phase</div>
+                        </div>
+
+                        <!-- Seta Mobile 3 -> 4 -->
+                        <div class="flex flex-col items-center md:hidden text-purple-500 order-6">
+                            <span class="text-[9px] font-bold uppercase tracking-widest">Presentation</span>
+                            <span class="text-lg leading-none">↓</span>
+                        </div>
+
+                        <!-- 4. OUTPUT -->
+                        <div class="bg-gray-50 dark:bg-gray-900/50 p-5 sm:p-6 rounded-3xl border border-gray-200 dark:border-gray-700 relative text-center order-7 md:order-3">
+                            <div class="inline-block md:absolute md:-top-5 md:left-1/2 md:-translate-x-1/2 bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300 px-4 py-1 rounded-full font-bold text-xs sm:text-sm border border-purple-200 dark:border-purple-700 mb-2 md:mb-0">4. OUTPUT</div>
+                            <div class="text-3xl sm:text-4xl mb-2 sm:mb-3 mt-1 md:mt-2">👁️</div>
+                            <h4 class="font-bold text-gray-900 dark:text-white mb-2">State Communication</h4>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">The new system state is translated to the output language: a visual modal displaying the suggested insulin dose.</p>
+                            <div class="mt-4 pt-3 border-t border-gray-200 dark:border-gray-700 text-[10px] uppercase font-bold text-gray-500">Observation Phase</div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
 
             <!-- APPLICATION VERSIONS -->
-            <section class="max-w-5xl mx-auto mb-20" data-aos="fade-up">
-                <h2 class="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-white tracking-tight">Application Versions</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-center max-w-3xl mx-auto">
-                    <button onclick="openVersionModal('version-modal-v1')" class="flex items-center justify-between bg-white dark:bg-gray-800/90 glow-green border border-gray-200/80 dark:border-gray-700/80 rounded-[2rem] px-7 py-6 hover:shadow-xl hover:-translate-y-1 hover:border-green-400 dark:hover:border-green-500 transition-all duration-300 w-full cursor-pointer group">
-                        <div class="flex items-center gap-4"><span class="text-3xl group-hover:scale-110 transition-transform">📱</span><div class="text-left"><div class="font-bold text-gray-900 dark:text-white text-lg">Initial Version</div><div class="flex flex-wrap items-center gap-2 mt-1"><span class="text-sm text-gray-500 dark:text-gray-400">v0.1-alpha</span><span class="text-[9px] font-bold uppercase tracking-wider bg-green-100/80 text-green-700 dark:bg-green-900/50 dark:text-green-300 px-2 py-0.5 rounded-full border border-green-200/60 dark:border-green-700/50">🤖 Android</span></div></div></div><div class="w-10 h-10 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 flex flex-shrink-0 items-center justify-center text-sm font-bold group-hover:scale-110 group-hover:bg-green-600 dark:group-hover:bg-green-500 dark:group-hover:text-white transition">↗</div>
+            <section class="max-w-5xl mx-auto mb-14 sm:mb-20" data-aos="fade-up">
+                <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center text-gray-900 dark:text-white tracking-tight">Application Versions</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 justify-center max-w-3xl mx-auto">
+                    <button onclick="openVersionModal('version-modal-v1')" class="flex items-center justify-between bg-white dark:bg-gray-800/90 glow-green border border-gray-200/80 dark:border-gray-700/80 rounded-3xl sm:rounded-[2rem] px-5 sm:px-7 py-5 sm:py-6 hover:shadow-xl hover:-translate-y-1 hover:border-green-400 dark:hover:border-green-500 transition-all duration-300 w-full cursor-pointer group">
+                        <div class="flex items-center gap-3 sm:gap-4">
+                            <span class="text-2xl sm:text-3xl group-hover:scale-110 transition-transform">📱</span>
+                            <div class="text-left">
+                                <div class="font-bold text-gray-900 dark:text-white text-base sm:text-lg">Initial Version</div>
+                                <div class="flex flex-wrap items-center gap-2 mt-1">
+                                    <span class="text-xs sm:text-sm text-gray-500 dark:text-gray-400">v0.1-alpha</span>
+                                    <span class="text-[9px] font-bold uppercase tracking-wider bg-green-100/80 text-green-700 dark:bg-green-900/50 dark:text-green-300 px-2 py-0.5 rounded-full border border-green-200/60 dark:border-green-700/50">🤖 Android</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 flex flex-shrink-0 items-center justify-center text-sm font-bold group-hover:scale-110 group-hover:bg-green-600 dark:group-hover:bg-green-500 dark:group-hover:text-white transition">↗</div>
                     </button>
-                    <button onclick="openVersionModal('version-modal-v2')" class="flex items-center justify-between bg-white dark:bg-gray-800/90 glow-blue border border-gray-200/80 dark:border-gray-700/80 rounded-[2rem] px-7 py-6 hover:shadow-xl hover:-translate-y-1 hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-300 w-full cursor-pointer group">
-                        <div class="flex items-center gap-4"><span class="text-3xl group-hover:scale-110 transition-transform">🚀</span><div class="text-left"><div class="font-bold text-gray-900 dark:text-white text-lg">Version 1.0</div><div class="flex flex-wrap items-center gap-2 mt-1"><span class="text-sm text-gray-500 dark:text-gray-400">Release</span><span class="text-[9px] font-bold uppercase tracking-wider bg-blue-100/80 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300 px-2 py-0.5 rounded-full border border-blue-200/60 dark:border-blue-700/50">🤖 Android & 🍏 iOS</span></div></div></div><div class="w-10 h-10 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 flex flex-shrink-0 items-center justify-center text-sm font-bold group-hover:scale-110 group-hover:bg-blue-600 dark:group-hover:bg-blue-500 dark:group-hover:text-white transition">↗</div>
+
+                    <button onclick="openVersionModal('version-modal-v2')" class="flex items-center justify-between bg-white dark:bg-gray-800/90 glow-blue border border-gray-200/80 dark:border-gray-700/80 rounded-3xl sm:rounded-[2rem] px-5 sm:px-7 py-5 sm:py-6 hover:shadow-xl hover:-translate-y-1 hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-300 w-full cursor-pointer group">
+                        <div class="flex items-center gap-3 sm:gap-4">
+                            <span class="text-2xl sm:text-3xl group-hover:scale-110 transition-transform">🚀</span>
+                            <div class="text-left">
+                                <div class="font-bold text-gray-900 dark:text-white text-base sm:text-lg">Version 1.0</div>
+                                <div class="flex flex-wrap items-center gap-2 mt-1">
+                                    <span class="text-xs sm:text-sm text-gray-500 dark:text-gray-400">Release</span>
+                                    <span class="text-[9px] font-bold uppercase tracking-wider bg-blue-100/80 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300 px-2 py-0.5 rounded-full border border-blue-200/60 dark:border-blue-700/50">🤖 Android &amp; 🍏 iOS</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 flex flex-shrink-0 items-center justify-center text-sm font-bold group-hover:scale-110 group-hover:bg-blue-600 dark:group-hover:bg-blue-500 dark:group-hover:text-white transition">↗</div>
                     </button>
                 </div>
             </section>
 
             <!-- BUILD & RUN -->
             <section class="max-w-3xl mx-auto" data-aos="fade-up">
-                <h2 class="text-2xl font-bold mb-6 text-center text-gray-900 dark:text-white tracking-tight">Build & Run</h2>
-                <div class="bg-gray-900 rounded-[2rem] overflow-hidden shadow-2xl border border-gray-700/80">
-                    <div class="bg-gray-800/90 px-6 py-3 flex items-center border-b border-gray-700/80"><div class="flex gap-2"><div class="w-3 h-3 rounded-full bg-red-500"></div><div class="w-3 h-3 rounded-full bg-yellow-500"></div><div class="w-3 h-3 rounded-full bg-green-500"></div></div><div class="mx-auto text-xs text-gray-400 font-mono">bash — flutter</div></div>
-                    <div class="p-7 text-gray-100 font-mono text-sm overflow-x-auto">
-                        <p class="text-gray-500 mb-1"># Get dependencies</p><p class="mb-5"><span class="text-blue-400">~/SmartGlycoAI</span> $ <span class="text-green-400">flutter pub get</span></p>
-                        <p class="text-gray-500 mb-1"># Run in development environment</p><p class="mb-5"><span class="text-blue-400">~/SmartGlycoAI</span> $ <span class="text-green-400">flutter run</span></p>
-                        <p class="text-gray-500 mb-1"># Build production versions (Release)</p><p class=""><span class="text-blue-400">~/SmartGlycoAI</span> $ <span class="text-green-400">flutter build apk --release</span></p><p class=""><span class="text-blue-400">~/SmartGlycoAI</span> $ <span class="text-green-400">flutter build ipa --release</span></p>
+                <h2 class="text-xl sm:text-2xl font-bold mb-5 sm:mb-6 text-center text-gray-900 dark:text-white tracking-tight">Build &amp; Run</h2>
+                <div class="bg-gray-900 rounded-3xl sm:rounded-[2rem] overflow-hidden shadow-2xl border border-gray-700/80">
+                    <div class="bg-gray-800/90 px-5 sm:px-6 py-3 flex items-center border-b border-gray-700/80">
+                        <div class="flex gap-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                        <div class="mx-auto text-xs text-gray-400 font-mono">bash — flutter</div>
+                    </div>
+                    <div class="p-5 sm:p-7 text-gray-100 font-mono text-xs sm:text-sm overflow-x-auto">
+                        <p class="text-gray-500 mb-1"># Get dependencies</p>
+                        <p class="mb-4 sm:mb-5"><span class="text-blue-400">~/SmartGlycoAI</span> $ <span class="text-green-400">flutter pub get</span></p>
+                        <p class="text-gray-500 mb-1"># Run in development environment</p>
+                        <p class="mb-4 sm:mb-5"><span class="text-blue-400">~/SmartGlycoAI</span> $ <span class="text-green-400">flutter run</span></p>
+                        <p class="text-gray-500 mb-1"># Build production versions (Release)</p>
+                        <p><span class="text-blue-400">~/SmartGlycoAI</span> $ <span class="text-green-400">flutter build apk --release</span></p>
+                        <p><span class="text-blue-400">~/SmartGlycoAI</span> $ <span class="text-green-400">flutter build ipa --release</span></p>
                     </div>
                 </div>
             </section>
@@ -220,7 +365,7 @@
         <div class="bg-white dark:bg-gray-800 rounded-[2rem] max-w-4xl w-full p-6 md:p-8 shadow-2xl border border-gray-200 dark:border-gray-700 relative animate-in fade-in zoom-in duration-200 flex flex-col max-h-[85vh]">
             <div class="flex justify-between items-start mb-6 border-b border-gray-100 dark:border-gray-700 pb-4">
                 <div>
-                    <div class="flex items-center gap-3 mb-1"><h3 class="text-2xl font-bold text-gray-900 dark:text-white">Version 1.0</h3><span class="bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400 text-xs font-bold px-2.5 py-1 rounded-full border border-blue-200 dark:border-blue-800/50 flex items-center gap-1"><span>🤖🍏</span> Android & iOS</span></div>
+                    <div class="flex items-center gap-3 mb-1"><h3 class="text-2xl font-bold text-gray-900 dark:text-white">Version 1.0</h3><span class="bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400 text-xs font-bold px-2.5 py-1 rounded-full border border-blue-200 dark:border-blue-800/50 flex items-center gap-1"><span>🤖🍏</span> Android &amp; iOS</span></div>
                     <p class="text-sm text-gray-500 dark:text-gray-400">Release • Click on any screenshot to zoom in</p>
                 </div>
                 <button onclick="closeVersionModal('version-modal-v2')" class="text-gray-400 hover:text-gray-700 dark:hover:text-white text-2xl font-bold w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-700 transition">&times;</button>
