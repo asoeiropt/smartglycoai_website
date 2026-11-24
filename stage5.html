@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage 5: Heuristic Evaluation | SmartGlycoAI</title>
+    <link rel="icon" type="image/jpeg" href="img/logo.jpeg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>tailwind.config = { darkMode: 'class' }</script>
+    <style>
+        .glow-rose { background: radial-gradient(circle at 85% 15%, rgba(244, 63, 94, 0.20), transparent 60%), radial-gradient(circle at 15% 85%, rgba(225, 29, 72, 0.08), transparent 55%); }
+        .glow-blue { background: radial-gradient(circle at 85% 15%, rgba(59, 130, 246, 0.18), transparent 60%), radial-gradient(circle at 15% 85%, rgba(37, 99, 235, 0.08), transparent 55%); }
+        .glow-amber { background: radial-gradient(circle at 85% 15%, rgba(245, 158, 11, 0.18), transparent 60%), radial-gradient(circle at 15% 85%, rgba(217, 119, 6, 0.08), transparent 55%); }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans antialiased transition-colors duration-300">
+
+    <!-- HEADER FLUTUANTE (Igual aos outros Stages) -->
+    <header class="sticky top-3 sm:top-4 z-50 px-3 sm:px-4">
+        <div class="max-w-6xl mx-auto bg-white/90 dark:bg-gray-800/90 backdrop-blur-xl shadow-lg border border-gray-200/80 dark:border-gray-700/80 rounded-2xl sm:rounded-[2rem] px-4 sm:px-6 py-3 sm:py-4 transition-colors duration-300">
+            <div class="flex items-center justify-between gap-3">
+                <a href="index.html" class="text-sm sm:text-base text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 font-semibold flex items-center transition">
+                    <span class="mr-1.5 sm:mr-2">←</span> Back to Menu
+                </a>
+                
+                <div class="flex items-center gap-2.5 sm:gap-4">
+                    <span class="hidden md:inline-block bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300 text-sm font-bold px-3.5 py-1 rounded-full border border-blue-200 dark:border-blue-800/50 cursor-default">
+                        Group 6
+                    </span>
+                    <a href="developers.html" class="text-xs sm:text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">The Team</a>
+                    <button onclick="toggleDarkMode()" aria-label="Toggle Dark Mode" class="w-9 h-9 rounded-full bg-gray-100/80 dark:bg-gray-700/60 flex items-center justify-center text-gray-500 hover:text-yellow-500 dark:text-gray-400 dark:hover:text-yellow-400 transition text-lg">
+                        <span id="theme-icon-desktop">🌙</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto py-8 sm:py-10 px-4 space-y-10 sm:space-y-12">
+
+        <!-- HERO BANNER STAGE 5 -->
+        <section class="bg-gradient-to-br from-rose-600 via-pink-700 to-rose-900 dark:from-rose-800 dark:via-pink-900 dark:to-gray-900 text-white p-6 sm:p-8 md:p-12 rounded-3xl sm:rounded-[2.2rem] shadow-xl border border-rose-400/30 dark:border-rose-700/50" data-aos="fade-up">
+            <div class="flex flex-wrap items-center gap-2 mb-4">
+                <span class="inline-block py-1 px-3.5 rounded-full bg-white/20 text-rose-50 text-xs font-bold uppercase tracking-wider border border-white/20">
+                    Phase 2 • Stage 5
+                </span>
+                <span class="inline-block py-1 px-3 rounded-full bg-black/25 text-amber-200 text-xs font-semibold border border-white/10">
+                    ⏳ Awaiting Assigned Prototype
+                </span>
+            </div>
+
+            <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-3 tracking-tight">Heuristic Evaluation</h1>
+            <p class="text-rose-100 text-sm sm:text-base md:text-lg max-w-3xl">
+                <strong>Objective:</strong> Do the heuristic evaluation of an interactive system interface developed by another group of colleagues and produce the corresponding evaluation report.
+            </p>
+
+            <div class="mt-8 flex flex-wrap gap-3 text-xs font-medium text-rose-100/90">
+                <span class="bg-black/20 px-4 py-2 rounded-full border border-white/10 flex items-center gap-2">
+                    <span class="opacity-70">Lab Class:</span> P1
+                </span>
+                <span class="bg-black/20 px-4 py-2 rounded-full border border-white/10 flex items-center gap-2">
+                    <span class="opacity-70">Professor:</span> Teresa Romão
+                </span>
+                <span class="bg-black/20 px-4 py-2 rounded-full border border-white/10 flex items-center gap-2">
+                    <span class="opacity-70">Academic Year:</span> 2026/27
+                </span>
+            </div>
+        </section>
+
+        <!-- OVERVIEW, TIMELINE & DELIVERY METADATA -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6" data-aos="fade-up">
+            
+            <!-- Evaluated Project -->
+            <div class="bg-white dark:bg-gray-800/90 glow-rose rounded-3xl sm:rounded-[2rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-10 h-10 rounded-xl bg-rose-100 dark:bg-rose-900/40 text-rose-600 dark:text-rose-400 flex items-center justify-center text-lg border border-rose-200/70 dark:border-rose-800/50">🎯</span>
+                        <div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-gray-400 block">Assigned System</span>
+                            <h2 class="text-base font-bold text-gray-900 dark:text-white">Evaluated Project</h2>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                        <strong>Project Name:</strong> <span class="italic text-gray-400">Pending class assignment</span><br>
+                        <strong>Colleagues' Group:</strong> <span class="italic text-gray-400">TBD</span>
+                    </p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-gray-100 dark:border-gray-700/70 text-[11px] text-gray-500 dark:text-gray-400">
+                    Evaluated by <strong>Group 6 (SmartGlycoAI)</strong>
+                </div>
+            </div>
+
+            <!-- Evaluation Dates (Required by assignment) -->
+            <div class="bg-white dark:bg-gray-800/90 glow-blue rounded-3xl sm:rounded-[2rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center text-lg border border-blue-200/70 dark:border-blue-800/50">📅</span>
+                        <div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-gray-400 block">Tracking Dates</span>
+                            <h2 class="text-base font-bold text-gray-900 dark:text-white">Evaluation Timeline</h2>
+                        </div>
+                    </div>
+                    <div class="space-y-2.5 text-sm">
+                        <div class="flex items-center justify-between bg-gray-50 dark:bg-gray-900/50 px-3.5 py-2 rounded-xl border border-gray-200/70 dark:border-gray-700/70">
+                            <span class="text-xs font-semibold text-gray-500 dark:text-gray-400">Project Received:</span>
+                            <span class="text-xs font-bold text-gray-400 italic">Pending</span>
+                        </div>
+                        <div class="flex items-center justify-between bg-gray-50 dark:bg-gray-900/50 px-3.5 py-2 rounded-xl border border-gray-200/70 dark:border-gray-700/70">
+                            <span class="text-xs font-semibold text-gray-500 dark:text-gray-400">Report Delivered:</span>
+                            <span class="text-xs font-bold text-gray-400 italic">Pending</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Delivery Protocol -->
+            <div class="bg-white dark:bg-gray-800/90 glow-amber rounded-3xl sm:rounded-[2rem] p-6 shadow-sm border border-gray-200/80 dark:border-gray-700/80 flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-400 flex items-center justify-center text-lg border border-amber-200/70 dark:border-amber-800/50">✉️</span>
+                        <div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-gray-400 block">Submission Rule</span>
+                            <h2 class="text-base font-bold text-gray-900 dark:text-white">Report Delivery</h2>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Send the completed evaluation report by e-mail in reply to our colleagues' prototype message, with <strong>CC</strong> to:
+                    </p>
+                </div>
+                <div class="mt-4 flex items-center justify-between gap-2 bg-gray-50 dark:bg-gray-900/60 px-3.5 py-2 rounded-xl border border-gray-200/80 dark:border-gray-700">
+                    <a href="mailto:tir@fct.unl.pt" class="text-xs font-mono font-bold text-blue-600 dark:text-blue-400 hover:underline truncate">tir@fct.unl.pt</a>
+                    <button onclick="copyTerminalCommand(this, 'tir@fct.unl.pt')" class="text-[10px] font-bold px-2.5 py-1 rounded-lg bg-gray-200/80 dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-blue-600 hover:text-white transition flex-shrink-0">
+                        Copy
+                    </button>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- METHODOLOGY & SEVERITY RATING SCALE -->
+        <section class="bg-white dark:bg-gray-800/90 rounded-3xl sm:rounded-[2rem] p-6 sm:p-8 shadow-sm border border-gray-200/80 dark:border-gray-700/80" data-aos="fade-up">
+            <div class="flex items-center gap-3 border-b border-gray-200/80 dark:border-gray-700/80 pb-4 mb-6">
+                <span class="bg-rose-100 text-rose-700 dark:bg-rose-900/50 dark:text-rose-300 w-9 h-9 rounded-xl flex items-center justify-center text-lg border border-rose-200 dark:border-rose-700/50">📋</span>
+                <div>
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white tracking-tight">Evaluation Criteria &amp; Severity Scale</h2>
+                </div>
+            </div>
+
+            <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+                Each detected usability issue is documented with its <strong>problem title</strong>, <strong>violated heuristic(s)</strong> (Nielsen's 10 Usability Heuristics), a <strong>brief description</strong>, a <strong>severity rating</strong>, actionable <strong>suggestions for improvement</strong>, and annotated <strong>screenshots</strong> pinpointing the interface elements to modify.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 text-xs">
+                <div class="p-3.5 rounded-2xl bg-gray-50 dark:bg-gray-900/50 border border-gray-200/80 dark:border-gray-700">
+                    <span class="inline-block px-2 py-0.5 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 font-bold text-[10px] mb-1.5">0 • None</span>
+                    <p class="text-gray-600 dark:text-gray-400">Not considered a usability problem.</p>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-blue-50/60 dark:bg-blue-900/20 border border-blue-200/70 dark:border-blue-800/50">
+                    <span class="inline-block px-2 py-0.5 rounded-full bg-blue-100 dark:bg-blue-900/60 text-blue-700 dark:text-blue-300 font-bold text-[10px] mb-1.5">1 • Cosmetic</span>
+                    <p class="text-gray-600 dark:text-gray-400">Fix only if extra time is available.</p>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-amber-50/60 dark:bg-amber-900/20 border border-amber-200/70 dark:border-amber-800/50">
+                    <span class="inline-block px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-900/60 text-amber-700 dark:text-amber-300 font-bold text-[10px] mb-1.5">2 • Minor</span>
+                    <p class="text-gray-600 dark:text-gray-400">Low priority usability fix.</p>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-orange-50/60 dark:bg-orange-900/20 border border-orange-200/70 dark:border-orange-800/50">
+                    <span class="inline-block px-2 py-0.5 rounded-full bg-orange-100 dark:bg-orange-900/60 text-orange-700 dark:text-orange-300 font-bold text-[10px] mb-1.5">3 • Major</span>
+                    <p class="text-gray-600 dark:text-gray-400">Important to fix; high priority.</p>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-rose-50/60 dark:bg-rose-900/20 border border-rose-200/70 dark:border-rose-800/50">
+                    <span class="inline-block px-2 py-0.5 rounded-full bg-rose-100 dark:bg-rose-900/60 text-rose-700 dark:text-rose-300 font-bold text-[10px] mb-1.5">4 • Catastrophe</span>
+                    <p class="text-gray-600 dark:text-gray-400">Imperative to fix before release.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HEURISTIC EVALUATION REPORT TABLE -->
+        <section class="bg-white dark:bg-gray-800/90 rounded-3xl sm:rounded-[2rem] p-5 sm:p-8 shadow-sm border border-gray-200/80 dark:border-gray-700/80" data-aos="fade-up">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-gray-200/80 dark:border-gray-700/80 pb-4 mb-6">
+                <div class="flex items-center gap-3">
+                    <span class="bg-rose-100 text-rose-700 dark:bg-rose-900/50 dark:text-rose-300 w-9 h-9 rounded-xl flex items-center justify-center text-lg border border-rose-200 dark:border-rose-700/50">🔍</span>
+                    <div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white tracking-tight">Heuristic Evaluation Report</h2>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Structured log of detected usability issues and recommendations</p>
+                    </div>
+                </div>
+                <span class="self-start sm:self-auto px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700/80 text-gray-600 dark:text-gray-300 text-xs font-bold border border-gray-200/80 dark:border-gray-600">
+                    0 Problems Logged
+                </span>
+            </div>
+
+            <div class="overflow-x-auto rounded-2xl border border-gray-200/80 dark:border-gray-700/80">
+                <table class="w-full text-left border-collapse min-w-[820px]">
+                    <thead>
+                        <tr class="bg-gray-100/90 dark:bg-gray-900/80 text-[11px] font-extrabold uppercase tracking-wider text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+                            <th class="py-3.5 px-4 w-14 text-center">Nº</th>
+                            <th class="py-3.5 px-4 w-40">Problem</th>
+                            <th class="py-3.5 px-4 w-44">Heuristic</th>
+                            <th class="py-3.5 px-4">Description</th>
+                            <th class="py-3.5 px-4 w-28 text-center">Severity</th>
+                            <th class="py-3.5 px-4">Solution</th>
+                            <th class="py-3.5 px-4 w-32 text-center">Screenshot</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200/80 dark:divide-gray-700/80 text-xs sm:text-sm">
+                        
+                        <!-- EMPTY STATE (Substituir pelas linhas reais quando o protótipo for avaliado) -->
+                        <tr>
+                            <td colspan="7" class="py-12 px-6 text-center bg-gray-50/50 dark:bg-gray-900/30">
+                                <div class="max-w-md mx-auto">
+                                    <div class="w-12 h-12 mx-auto mb-3 rounded-2xl bg-rose-100/80 dark:bg-rose-900/40 text-rose-600 dark:text-rose-400 flex items-center justify-center text-2xl border border-rose-200/60 dark:border-rose-800/50">
+                                        🧪
+                                    </div>
+                                    <h3 class="text-base font-bold text-gray-900 dark:text-white mb-1">Evaluation Pending</h3>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                                        This table will be populated as soon as our group receives and inspects the colleagues' assigned prototype in class.
+                                    </p>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!--
+                        ========== TEMPLATE DE LINHA (Descomentar e duplicar por cada problema encontrado) ==========
+                        <tr class="hover:bg-gray-50/80 dark:hover:bg-gray-900/40 transition-colors align-top">
+                            <td class="py-4 px-4 text-center font-bold text-gray-900 dark:text-white">1</td>
+                            <td class="py-4 px-4 font-bold text-gray-900 dark:text-white">Problem Title</td>
+                            <td class="py-4 px-4">
+                                <span class="inline-block px-2.5 py-1 rounded-lg bg-purple-100/80 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 text-xs font-semibold">
+                                    H1: Visibility of System Status
+                                </span>
+                            </td>
+                            <td class="py-4 px-4 text-gray-600 dark:text-gray-300 leading-relaxed">
+                                Brief description of the detected usability problem and where it occurs.
+                            </td>
+                            <td class="py-4 px-4 text-center">
+                                <span class="inline-block px-2.5 py-1 rounded-full bg-orange-100 dark:bg-orange-900/50 text-orange-700 dark:text-orange-300 text-xs font-extrabold border border-orange-200/70 dark:border-orange-800/50">
+                                    3 • Major
+                                </span>
+                            </td>
+                            <td class="py-4 px-4 text-gray-600 dark:text-gray-300 leading-relaxed">
+                                Actionable suggestion to fix the issue.
+                            </td>
+                            <td class="py-4 px-4 text-center">
+                                <button onclick="openLightbox(event, 'img/stage5/issue1.png')" class="inline-flex flex-col items-center gap-1 group">
+                                    <img src="img/stage5/issue1.png" alt="Issue 1" class="w-20 h-14 object-cover rounded-lg border border-gray-200 dark:border-gray-700 group-hover:scale-105 transition shadow-sm">
+                                    <span class="text-[10px] font-semibold text-blue-600 dark:text-blue-400 group-hover:underline">Zoom</span>
+                                </button>
+                            </td>
+                        </tr>
+                        ==============================================================================================
+                        -->
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- LIGHTBOX MODAL (Para ampliar os screenshots dos problemas quando forem adicionados) -->
+    <div id="lightbox-modal" class="fixed inset-0 z-[60] bg-black/90 hidden flex items-center justify-center p-4" onclick="closeLightbox()">
+        <div class="relative max-w-5xl max-h-[90vh]">
+            <button class="absolute -top-12 right-0 text-white text-3xl font-bold hover:text-gray-300 transition">&times;</button>
+            <img id="lightbox-img" src="" class="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl" alt="Annotated issue screenshot">
+        </div>
+    </div>
+
+    <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 py-8 text-center text-sm mt-12 flex flex-col items-center transition-colors duration-300">
+        <div class="w-8 h-8 rounded-full overflow-hidden border border-gray-300 dark:border-gray-600 mb-3 opacity-60">
+            <img src="img/logo.jpeg" alt="Logo" class="w-full h-full object-cover">
+        </div>
+        <p>&copy; 2026 SmartGlycoAI. Academic Project.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
