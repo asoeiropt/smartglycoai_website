@@ -112,7 +112,6 @@ function setGoogTransCookie(lang) {
 function applyNativePTTranslations(lang) {
     if (lang !== 'pt') return;
 
-    // Dicionário exato para Português de Portugal (PT-PT) nos elementos principais da UI
     const ptMap = {
         'Human-Computer Interaction': 'Interação Pessoa-Máquina',
         'Group 6': 'Grupo 6',
@@ -121,6 +120,10 @@ function applyNativePTTranslations(lang) {
         'Back to Menu': 'Voltar ao Menu',
         'Project Portal': 'Portal do Projeto',
         'Tracking of development phases, design, and interface evaluation for the SmartGlycoAI project.': 'Acompanhamento das fases de desenvolvimento, design e avaliação da interface do projeto SmartGlycoAI.',
+        'Watch App Showreel': 'Ver Vídeo de Apresentação',
+        'Video': 'Vídeo',
+        'Quick walkthrough of SmartGlycoAI features': 'Demonstração rápida das funcionalidades do SmartGlycoAI',
+        'SmartGlycoAI — App Showreel': 'SmartGlycoAI — Vídeo de Apresentação',
         'Project Milestone Progress': 'Progresso dos Marcos do Projeto',
         'Stage 4 finished • Stage 5 (Heuristic Evaluation) currently active': 'Fase 4 concluída • Fase 5 (Avaliação Heurística) atualmente ativa',
         '80% Completed': '80% Concluído',
@@ -233,7 +236,6 @@ function initLanguageDropdown(themeWrapper) {
     langWrapper.appendChild(triggerBtn);
     langWrapper.appendChild(dropdown);
 
-    // Insere imediatamente ANTES do botão da lua (tema)
     themeWrapper.parentNode.insertBefore(langWrapper, themeWrapper);
 
     triggerBtn.addEventListener('click', (e) => {
@@ -371,7 +373,6 @@ function initThemeDropdown() {
     const currentMode = localStorage.getItem('theme') || 'system';
     applyThemePreference(currentMode);
 
-    // Adiciona o seletor de idioma imediatamente antes do botão de tema
     initLanguageDropdown(wrapper);
 }
 
@@ -382,7 +383,7 @@ function toggleDarkMode() {
 
 
 // =========================================================================
-// 2. CONTROLO DOS MODAIS E LIGHTBOX COM SETAS DE NAVEGAÇÃO
+// 2. CONTROLO DOS MODAIS, SHOWREEL VÍDEO E LIGHTBOX COM SETAS
 // =========================================================================
 
 let currentGallery = [];
@@ -523,10 +524,44 @@ function closeQRModal() {
     }
 }
 
+function openShowreelModal() {
+    const modal = document.getElementById('showreel-modal');
+    const content = document.getElementById('showreel-modal-content');
+    const video = document.getElementById('showreel-video');
+    if (!modal || !content) return;
+
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => {
+        modal.classList.remove('opacity-0');
+        content.classList.remove('scale-95');
+        if (video) {
+            video.currentTime = 0;
+            video.play().catch(() => {});
+        }
+    }, 10);
+}
+
+function closeShowreelModal() {
+    const modal = document.getElementById('showreel-modal');
+    const content = document.getElementById('showreel-modal-content');
+    const video = document.getElementById('showreel-video');
+    if (!modal || !content) return;
+
+    if (video) video.pause();
+    modal.classList.add('opacity-0');
+    content.classList.add('scale-95');
+    setTimeout(() => {
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+    }, 300);
+}
+
 window.addEventListener('click', (e) => {
     const versionModals = document.querySelectorAll('.version-modal');
     const lightboxModal = document.getElementById('lightbox-modal');
     const qrModal = document.getElementById('qr-modal');
+    const showreelModal = document.getElementById('showreel-modal');
     
     versionModals.forEach(modal => {
         if (e.target === modal) closeVersionModal(modal.id);
@@ -534,6 +569,7 @@ window.addEventListener('click', (e) => {
     
     if (e.target === lightboxModal) closeLightbox();
     if (e.target === qrModal) closeQRModal();
+    if (e.target === showreelModal) closeShowreelModal();
 });
 
 window.addEventListener('keydown', (e) => {
@@ -548,6 +584,7 @@ window.addEventListener('keydown', (e) => {
         const openVersionModals = document.querySelectorAll('.version-modal:not(.hidden)');
         openVersionModals.forEach(modal => closeVersionModal(modal.id));
         closeQRModal();
+        closeShowreelModal();
     } else if (isLightboxOpen && e.key === 'ArrowLeft') {
         prevLightboxImage();
     } else if (isLightboxOpen && e.key === 'ArrowRight') {
