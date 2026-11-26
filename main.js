@@ -1,5 +1,5 @@
 // =========================================================================
-// 0. ESTILOS DINÂMICOS (Preloader, Spotlight e 3D Tilt)
+// 0. ESTILOS DINÂMICOS (Preloader, Spotlight, 3D Tilt & Esconder Barra GT)
 // =========================================================================
 const customStyles = document.createElement('style');
 customStyles.innerHTML = `
@@ -56,13 +56,208 @@ customStyles.innerHTML = `
     .spotlight-card:hover::before {
         opacity: 1;
     }
+
+    /* Esconder completamente o banner/tooltips nativos do Google Translate */
+    .goog-te-banner-frame.skiptranslate,
+    .goog-te-gadget-icon,
+    #goog-gt-tt,
+    .goog-te-balloon-frame,
+    .VIpgJd-ZVi9od-ORHb-OEVmcd,
+    .VIpgJd-ZVi9od-aZ2wEe-wOHMyf {
+        display: none !important;
+        visibility: hidden !important;
+    }
+    body {
+        top: 0px !important;
+    }
+    .goog-text-highlight {
+        background-color: transparent !important;
+        box-shadow: none !important;
+    }
 `;
 document.head.appendChild(customStyles);
 
 
 // =========================================================================
-// 1. NAVEGAÇÃO E TEMA (Dark/Light Mode)
+// 1. NAVEGAÇÃO, IDIOMA (EN / PT-PT) E TEMA (System / Light / Dark)
 // =========================================================================
+
+const THEME_ICONS_SVG = {
+    system: `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>`,
+    light:  `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>`,
+    dark:   `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>`
+};
+
+const GLOBE_ICON_SVG = `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>`;
+
+function getCurrentLang() {
+    return localStorage.getItem('sg_lang') || 'en';
+}
+
+function setGoogTransCookie(lang) {
+    const domain = window.location.hostname;
+    if (lang === 'pt') {
+        document.cookie = `googtrans=/en/pt; path=/`;
+        if (domain && domain !== 'localhost') {
+            document.cookie = `googtrans=/en/pt; path=/; domain=.${domain}`;
+        }
+    } else {
+        document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+        if (domain && domain !== 'localhost') {
+            document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${domain}`;
+        }
+    }
+}
+
+function applyNativePTTranslations(lang) {
+    if (lang !== 'pt') return;
+
+    // Dicionário exato para Português de Portugal (PT-PT) nos elementos principais da UI
+    const ptMap = {
+        'Human-Computer Interaction': 'Interação Pessoa-Máquina',
+        'Group 6': 'Grupo 6',
+        'Glossary': 'Glossário',
+        'The Team': 'A Equipa',
+        'Back to Menu': 'Voltar ao Menu',
+        'Project Portal': 'Portal do Projeto',
+        'Tracking of development phases, design, and interface evaluation for the SmartGlycoAI project.': 'Acompanhamento das fases de desenvolvimento, design e avaliação da interface do projeto SmartGlycoAI.',
+        'Project Milestone Progress': 'Progresso dos Marcos do Projeto',
+        'Stage 4 finished • Stage 5 (Heuristic Evaluation) currently active': 'Fase 4 concluída • Fase 5 (Avaliação Heurística) atualmente ativa',
+        '80% Completed': '80% Concluído',
+        'Phase 1': 'Fase 1',
+        'Phase 2': 'Fase 2',
+        'Stage 1': 'Fase 1',
+        'Stage 2': 'Fase 2',
+        'Stage 3': 'Fase 3',
+        'Stage 4': 'Fase 4',
+        'Stage 5': 'Fase 5',
+        'Stage 6': 'Fase 6',
+        'Project Proposal': 'Proposta de Projeto',
+        'User and Task Analysis': 'Análise de Utilizadores e Tarefas',
+        '1st Prototype (Mock-up)': '1.º Protótipo (Mock-up)',
+        'Computational Prototype': 'Protótipo Computacional',
+        'Heuristic Evaluation': 'Avaliação Heurística',
+        'Evaluation Results': 'Resultados da Avaliação',
+        'View report': 'Ver relatório',
+        'Available soon': 'Disponível em breve',
+        'Mandatory: Presentation': 'Obrigatório: Apresentação',
+        'Deliverables': 'Entregáveis',
+        'Documentation': 'Documentação',
+        'Prototype': 'Protótipo',
+        'Try Live Demo': 'Testar Demo',
+        'System': 'Sistema',
+        'Light': 'Claro',
+        'Dark': 'Escuro'
+    };
+
+    document.querySelectorAll('a, button, span, h1, h2, h3, h4, p, div').forEach(el => {
+        if (el.children.length === 0) {
+            const raw = el.textContent.trim();
+            if (ptMap[raw]) {
+                el.textContent = ptMap[raw];
+            }
+        }
+    });
+}
+
+function loadGoogleTranslateEngine() {
+    if (getCurrentLang() !== 'pt') return;
+    if (document.getElementById('google_translate_element')) return;
+
+    const gtDiv = document.createElement('div');
+    gtDiv.id = 'google_translate_element';
+    gtDiv.className = 'hidden';
+    document.body.appendChild(gtDiv);
+
+    window.googleTranslateElementInit = function () {
+        if (window.google && window.google.translate) {
+            new window.google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'pt',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    };
+
+    const script = document.createElement('script');
+    script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    script.async = true;
+    document.head.appendChild(script);
+}
+
+function setLanguagePreference(lang) {
+    const prevLang = getCurrentLang();
+    localStorage.setItem('sg_lang', lang);
+    setGoogTransCookie(lang);
+
+    if (prevLang !== lang) {
+        window.location.reload();
+    }
+}
+
+function initLanguageDropdown(themeWrapper) {
+    if (!themeWrapper || document.getElementById('sg-lang-wrapper')) return;
+
+    const currentLang = getCurrentLang();
+    const langCodeLabel = currentLang === 'pt' ? 'PT' : 'EN';
+
+    const langWrapper = document.createElement('div');
+    langWrapper.id = 'sg-lang-wrapper';
+    langWrapper.className = 'relative inline-block';
+
+    const triggerBtn = document.createElement('button');
+    triggerBtn.type = 'button';
+    triggerBtn.setAttribute('aria-label', 'Select Language');
+    triggerBtn.className = 'h-9 px-3 rounded-full bg-gray-100/80 dark:bg-gray-700/70 hover:bg-gray-200/80 dark:hover:bg-gray-600/80 border border-gray-200/80 dark:border-gray-600/70 flex items-center gap-1.5 text-xs font-bold text-gray-700 dark:text-gray-200 transition focus:outline-none';
+    triggerBtn.innerHTML = `${GLOBE_ICON_SVG}<span>${langCodeLabel}</span>`;
+
+    const dropdown = document.createElement('div');
+    dropdown.id = 'sg-lang-dropdown';
+    dropdown.className = 'hidden absolute right-0 mt-2.5 w-52 rounded-2xl bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl shadow-2xl border border-gray-200/90 dark:border-gray-700/90 p-1.5 z-[60] transition-all';
+
+    const langs = [
+        { code: 'en', label: 'English' },
+        { code: 'pt', label: 'Português (Portugal)' }
+    ];
+
+    dropdown.innerHTML = langs.map(item => {
+        const isSelected = currentLang === item.code;
+        return `
+            <button type="button" data-lang-code="${item.code}" class="sg-lang-option w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition text-left">
+                <span class="${isSelected ? 'font-bold text-gray-900 dark:text-white' : ''}">${item.label}</span>
+                <span class="text-rose-500 font-extrabold text-sm ${isSelected ? '' : 'opacity-0'}">✓</span>
+            </button>
+        `;
+    }).join('');
+
+    langWrapper.appendChild(triggerBtn);
+    langWrapper.appendChild(dropdown);
+
+    // Insere imediatamente ANTES do botão da lua (tema)
+    themeWrapper.parentNode.insertBefore(langWrapper, themeWrapper);
+
+    triggerBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const themeDrop = document.getElementById('sg-theme-dropdown');
+        if (themeDrop) themeDrop.classList.add('hidden');
+        dropdown.classList.toggle('hidden');
+    });
+
+    dropdown.querySelectorAll('.sg-lang-option').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const selectedCode = btn.getAttribute('data-lang-code');
+            dropdown.classList.add('hidden');
+            setLanguagePreference(selectedCode);
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!langWrapper.contains(e.target)) {
+            dropdown.classList.add('hidden');
+        }
+    });
+}
 
 function toggleMobileMenu() {
     const menu = document.getElementById('mobile-menu');
@@ -71,25 +266,118 @@ function toggleMobileMenu() {
     }
 }
 
-function toggleDarkMode() {
+function applyThemePreference(mode) {
     const html = document.documentElement;
-    html.classList.toggle('dark');
-    
-    const isDark = html.classList.contains('dark');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    updateThemeIcons(isDark);
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const isDark = mode === 'dark' || (mode === 'system' && prefersDark);
+
+    html.classList.toggle('dark', isDark);
+
+    if (mode === 'system') {
+        localStorage.removeItem('theme');
+    } else {
+        localStorage.setItem('theme', mode);
+    }
+
+    updateThemeIcons(isDark, mode);
 }
 
-function updateThemeIcons(isDark) {
-    const iconContent = isDark ? '☀️' : '🌙';
-    
-    const iconDesktop = document.getElementById('theme-icon-desktop');
-    const iconMobile = document.getElementById('theme-icon-mobile');
-    const iconSingle = document.getElementById('theme-icon');
-    
-    if (iconDesktop) iconDesktop.innerText = iconContent;
-    if (iconMobile) iconMobile.innerText = iconContent;
-    if (iconSingle) iconSingle.innerText = iconContent;
+function updateThemeIcons(isDark, mode = localStorage.getItem('theme') || 'system') {
+    const triggerIcon = isDark ? THEME_ICONS_SVG.dark : THEME_ICONS_SVG.light;
+
+    ['theme-icon-desktop', 'theme-icon-mobile', 'theme-icon'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.innerHTML = triggerIcon;
+    });
+
+    document.querySelectorAll('.sg-theme-option').forEach(opt => {
+        const isSelected = opt.getAttribute('data-theme-mode') === mode;
+        const check = opt.querySelector('.sg-theme-check');
+        const label = opt.querySelector('.sg-theme-label');
+
+        if (check) check.classList.toggle('opacity-0', !isSelected);
+        if (label) {
+            label.classList.toggle('font-bold', isSelected);
+            label.classList.toggle('text-gray-900', isSelected);
+            label.classList.toggle('dark:text-white', isSelected);
+        }
+    });
+}
+
+function initThemeDropdown() {
+    const triggerBtn = document.querySelector('button[onclick*="toggleDarkMode"]');
+    if (!triggerBtn || document.getElementById('sg-theme-dropdown')) return;
+
+    const isPT = getCurrentLang() === 'pt';
+
+    triggerBtn.removeAttribute('onclick');
+    triggerBtn.className = 'w-9 h-9 rounded-full bg-gray-100/80 dark:bg-gray-700/70 hover:bg-gray-200/80 dark:hover:bg-gray-600/80 border border-gray-200/80 dark:border-gray-600/70 flex items-center justify-center text-gray-700 dark:text-gray-200 transition focus:outline-none';
+
+    const wrapper = document.createElement('div');
+    wrapper.className = 'relative inline-block';
+    triggerBtn.parentNode.insertBefore(wrapper, triggerBtn);
+    wrapper.appendChild(triggerBtn);
+
+    const dropdown = document.createElement('div');
+    dropdown.id = 'sg-theme-dropdown';
+    dropdown.className = 'hidden absolute right-0 mt-2.5 w-44 rounded-2xl bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl shadow-2xl border border-gray-200/90 dark:border-gray-700/90 p-1.5 z-[60] transition-all';
+
+    const options = [
+        { mode: 'system', label: isPT ? 'Sistema' : 'System', icon: THEME_ICONS_SVG.system },
+        { mode: 'light',  label: isPT ? 'Claro'   : 'Light',  icon: THEME_ICONS_SVG.light },
+        { mode: 'dark',   label: isPT ? 'Escuro'  : 'Dark',   icon: THEME_ICONS_SVG.dark }
+    ];
+
+    dropdown.innerHTML = options.map(opt => `
+        <button type="button" data-theme-mode="${opt.mode}" class="sg-theme-option w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition text-left">
+            <span class="flex items-center gap-2.5">
+                <span class="text-gray-500 dark:text-gray-400">${opt.icon}</span>
+                <span class="sg-theme-label">${opt.label}</span>
+            </span>
+            <span class="sg-theme-check text-rose-500 font-extrabold text-sm opacity-0">✓</span>
+        </button>
+    `).join('');
+
+    wrapper.appendChild(dropdown);
+
+    triggerBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const langDrop = document.getElementById('sg-lang-dropdown');
+        if (langDrop) langDrop.classList.add('hidden');
+        dropdown.classList.toggle('hidden');
+    });
+
+    dropdown.querySelectorAll('.sg-theme-option').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const mode = btn.getAttribute('data-theme-mode');
+            applyThemePreference(mode);
+            dropdown.classList.add('hidden');
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!wrapper.contains(e.target)) {
+            dropdown.classList.add('hidden');
+        }
+    });
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        if (!localStorage.getItem('theme')) {
+            applyThemePreference('system');
+        }
+    });
+
+    const currentMode = localStorage.getItem('theme') || 'system';
+    applyThemePreference(currentMode);
+
+    // Adiciona o seletor de idioma imediatamente antes do botão de tema
+    initLanguageDropdown(wrapper);
+}
+
+function toggleDarkMode() {
+    const isCurrentlyDark = document.documentElement.classList.contains('dark');
+    applyThemePreference(isCurrentlyDark ? 'light' : 'dark');
 }
 
 
@@ -273,7 +561,7 @@ window.addEventListener('keydown', (e) => {
 // =========================================================================
 
 function initSpotlightAndTilt() {
-    const cards = document.querySelectorAll('.glow-blue, .glow-green, .glow-purple, .glow-amber');
+    const cards = document.querySelectorAll('.glow-blue, .glow-green, .glow-purple, .glow-amber, .glow-rose');
 
     cards.forEach(card => {
         card.classList.add('spotlight-card');
@@ -310,12 +598,15 @@ function initSpotlightAndTilt() {
 function initStageNavigation() {
     if (document.getElementById('stage-nav-container')) return;
 
+    const isPT = getCurrentLang() === 'pt';
+
     const stages = [
-        { file: 'stage1.html', label: 'Stage 1', title: 'Problem & User Research' },
-        { file: 'stage2.html', label: 'Stage 2', title: 'Architecture & Low-Fi' },
-        { file: 'stage3.html', label: 'Stage 3', title: 'Interactive Prototype' },
-        { file: 'stage4.html', label: 'Stage 4', title: 'Functional Prototype' },
-        { file: 'app.html',    label: 'Architecture', title: 'App Architecture & Stack' }
+        { file: 'stage1.html', label: isPT ? 'Fase 1' : 'Stage 1', title: isPT ? 'Proposta de Projeto' : 'Problem & User Research' },
+        { file: 'stage2.html', label: isPT ? 'Fase 2' : 'Stage 2', title: isPT ? 'Análise de Utilizadores e Tarefas' : 'Architecture & Low-Fi' },
+        { file: 'stage3.html', label: isPT ? 'Fase 3' : 'Stage 3', title: isPT ? '1.º Protótipo Interativo' : 'Interactive Prototype' },
+        { file: 'stage4.html', label: isPT ? 'Fase 4' : 'Stage 4', title: isPT ? 'Protótipo Funcional' : 'Functional Prototype' },
+        { file: 'stage5.html', label: isPT ? 'Fase 5' : 'Stage 5', title: isPT ? 'Avaliação Heurística' : 'Heuristic Evaluation' },
+        { file: 'app.html',    label: isPT ? 'Arquitetura' : 'Architecture', title: isPT ? 'Arquitetura e Tech Stack' : 'App Architecture & Stack' }
     ];
 
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
@@ -340,7 +631,7 @@ function initStageNavigation() {
                     <div class="flex items-center gap-4">
                         <span class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 flex items-center justify-center font-bold group-hover:bg-blue-600 group-hover:text-white group-hover:-translate-x-1 transition-all">←</span>
                         <div>
-                            <div class="text-xs font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500">Previous (${prevStage.label})</div>
+                            <div class="text-xs font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500">${isPT ? 'Anterior' : 'Previous'} (${prevStage.label})</div>
                             <div class="text-base font-bold text-gray-900 dark:text-white">${prevStage.title}</div>
                         </div>
                     </div>
@@ -350,8 +641,8 @@ function initStageNavigation() {
                     <div class="flex items-center gap-4">
                         <span class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 flex items-center justify-center font-bold group-hover:bg-blue-600 group-hover:text-white group-hover:-translate-x-1 transition-all">🏠</span>
                         <div>
-                            <div class="text-xs font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500">Overview</div>
-                            <div class="text-base font-bold text-gray-900 dark:text-white">Back to Main Menu</div>
+                            <div class="text-xs font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500">${isPT ? 'Visão Geral' : 'Overview'}</div>
+                            <div class="text-base font-bold text-gray-900 dark:text-white">${isPT ? 'Voltar ao Menu Principal' : 'Back to Main Menu'}</div>
                         </div>
                     </div>
                 </a>
@@ -361,7 +652,7 @@ function initStageNavigation() {
                 <a href="${nextStage.file}" class="spotlight-card flex items-center justify-between p-6 rounded-[2rem] bg-white dark:bg-gray-800/90 border border-gray-200/80 dark:border-gray-700/80 hover:border-blue-500 dark:hover:border-blue-500 shadow-sm hover:shadow-xl transition-all text-right group">
                     <div class="w-full flex items-center justify-end gap-4">
                         <div>
-                            <div class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">Next (${nextStage.label})</div>
+                            <div class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">${isPT ? 'Seguinte' : 'Next'} (${nextStage.label})</div>
                             <div class="text-base font-bold text-gray-900 dark:text-white">${nextStage.title}</div>
                         </div>
                         <span class="w-10 h-10 rounded-full bg-blue-50 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold group-hover:bg-blue-600 group-hover:text-white group-hover:translate-x-1 transition-all">→</span>
@@ -371,8 +662,8 @@ function initStageNavigation() {
                 <a href="index.html" class="spotlight-card flex items-center justify-between p-6 rounded-[2rem] bg-white dark:bg-gray-800/90 border border-gray-200/80 dark:border-gray-700/80 hover:border-blue-500 dark:hover:border-blue-500 shadow-sm hover:shadow-xl transition-all text-right group">
                     <div class="w-full flex items-center justify-end gap-4">
                         <div>
-                            <div class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">Completed</div>
-                            <div class="text-base font-bold text-gray-900 dark:text-white">Return to Home</div>
+                            <div class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">${isPT ? 'Concluído' : 'Completed'}</div>
+                            <div class="text-base font-bold text-gray-900 dark:text-white">${isPT ? 'Voltar ao Início' : 'Return to Home'}</div>
                         </div>
                         <span class="w-10 h-10 rounded-full bg-blue-50 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold group-hover:bg-blue-600 group-hover:text-white group-hover:translate-x-1 transition-all">🏠</span>
                     </div>
@@ -386,7 +677,7 @@ function initStageNavigation() {
 
 
 // =========================================================================
-// 5. AI MEAL SIMULATOR LOGIC
+// 5. AI MEAL SIMULATOR & COPIAR COMANDO DO TERMINAL
 // =========================================================================
 
 const mealDatabase = {
@@ -439,6 +730,21 @@ function runSimulation(mealKey) {
             </div>
         `;
     }, 1800);
+}
+
+function copyTerminalCommand(btn, commandText) {
+    if (!navigator.clipboard) return;
+
+    navigator.clipboard.writeText(commandText).then(() => {
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = getCurrentLang() === 'pt' ? 'Copiado! ✓' : 'Copied! ✓';
+        btn.classList.add('!bg-emerald-600', '!text-white', '!border-emerald-500');
+
+        setTimeout(() => {
+            btn.innerHTML = originalHTML;
+            btn.classList.remove('!bg-emerald-600', '!text-white', '!border-emerald-500');
+        }, 1800);
+    });
 }
 
 
@@ -541,12 +847,79 @@ function resetGlossaryFilters() {
 
 
 // =========================================================================
-// 8. FOOTER PROFISSIONAL UNIFICADO (Bento Glassmorphism Card)
+// 8. BADGE DE ÚLTIMA ATUALIZAÇÃO (Apenas no Footer)
+// =========================================================================
+
+function formatRelativeTime(isoDateString) {
+    const isPT = getCurrentLang() === 'pt';
+    const updatedDate = new Date(isoDateString);
+    const now = new Date();
+    const diffSeconds = Math.floor((now - updatedDate) / 1000);
+
+    if (diffSeconds < 60) return isPT ? 'Atualizado agora mesmo' : 'Updated just now';
+    
+    const diffMinutes = Math.floor(diffSeconds / 60);
+    if (diffMinutes < 60) return isPT ? `Atualizado há ${diffMinutes} m` : `Updated ${diffMinutes} m ago`;
+
+    const diffHours = Math.floor(diffMinutes / 60);
+    if (diffHours < 24) return isPT ? `Atualizado há ${diffHours} h` : `Updated ${diffHours} h ago`;
+
+    const diffDays = Math.floor(diffHours / 24);
+    if (diffDays === 1) return isPT ? 'Atualizado há 1 dia' : 'Updated 1 day ago';
+    if (diffDays < 30) return isPT ? `Atualizado há ${diffDays} dias` : `Updated ${diffDays} days ago`;
+
+    const diffMonths = Math.floor(diffDays / 30);
+    if (isPT) {
+        return diffMonths === 1 ? 'Atualizado há 1 mês' : `Atualizado há ${diffMonths} meses`;
+    }
+    return diffMonths === 1 ? 'Updated 1 month ago' : `Updated ${diffMonths} months ago`;
+}
+
+async function initLastUpdatedBadges() {
+    const labels = document.querySelectorAll('.sg-last-updated-label');
+    if (labels.length === 0) return;
+
+    const repoOwner = 'asoeiropt';
+    const repoName = 'smartglycoai_website';
+    const cacheKey = 'sg_site_last_commit_date';
+    const cacheTimeKey = 'sg_site_last_commit_checked';
+
+    try {
+        const cachedDate = sessionStorage.getItem(cacheKey);
+        const lastChecked = Number(sessionStorage.getItem(cacheTimeKey) || 0);
+
+        if (cachedDate && (Date.now() - lastChecked) < 5 * 60 * 1000) {
+            const text = formatRelativeTime(cachedDate);
+            labels.forEach(el => { el.textContent = text; });
+            return;
+        }
+
+        const response = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/commits?per_page=1`);
+        if (!response.ok) return;
+
+        const data = await response.json();
+        const commitDate = data?.[0]?.commit?.committer?.date;
+        if (commitDate) {
+            sessionStorage.setItem(cacheKey, commitDate);
+            sessionStorage.setItem(cacheTimeKey, String(Date.now()));
+            const text = formatRelativeTime(commitDate);
+            labels.forEach(el => { el.textContent = text; });
+        }
+    } catch (err) {
+        // Fallback silencioso
+    }
+}
+
+
+// =========================================================================
+// 9. FOOTER PROFISSIONAL UNIFICADO (Bento Glassmorphism Card)
 // =========================================================================
 
 function initUnifiedFooter() {
     const footer = document.querySelector('footer');
     if (!footer || footer.dataset.unified === 'true') return;
+
+    const isPT = getCurrentLang() === 'pt';
 
     footer.dataset.unified = 'true';
     footer.className = 'px-3 sm:px-4 pt-12 pb-8 mt-12 transition-colors duration-300';
@@ -563,50 +936,53 @@ function initUnifiedFooter() {
                         </div>
                         <div>
                             <span class="text-lg font-extrabold text-blue-600 dark:text-blue-400 tracking-tight group-hover:opacity-80 transition block leading-tight">SmartGlycoAI</span>
-                            <span class="text-[9px] text-gray-500 dark:text-gray-400 uppercase tracking-widest font-bold block">Human-Computer Interaction</span>
+                            <span class="text-[9px] text-gray-500 dark:text-gray-400 uppercase tracking-widest font-bold block">${isPT ? 'Interação Pessoa-Máquina' : 'Human-Computer Interaction'}</span>
                         </div>
                     </a>
                     <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-4 max-w-sm">
-                        AI-assisted Type 1 Diabetes decision-support system integrating computer vision carbohydrate estimation, CGM telemetry, and personalized insulin dosing.
+                        ${isPT
+                            ? 'Sistema inteligente de apoio à decisão na Diabetes Tipo 1 que integra visão computacional para estimativa de hidratos de carbono, telemetria CGM e cálculo personalizado de insulina.'
+                            : 'AI-assisted Type 1 Diabetes decision-support system integrating computer vision carbohydrate estimation, CGM telemetry, and personalized insulin dosing.'}
                     </p>
                     <div class="flex flex-wrap gap-2 text-[11px] font-semibold">
                         <span class="px-3 py-1 rounded-full bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 border border-blue-200/60 dark:border-blue-800/50">NOVA FCT</span>
-                        <span class="px-3 py-1 rounded-full bg-gray-100 text-gray-700 dark:bg-gray-700/70 dark:text-gray-300 border border-gray-200/60 dark:border-gray-600/50">Group 6 • Lab P1</span>
+                        <span class="px-3 py-1 rounded-full bg-gray-100 text-gray-700 dark:bg-gray-700/70 dark:text-gray-300 border border-gray-200/60 dark:border-gray-600/50">${isPT ? 'Grupo 6 • Turno P1' : 'Group 6 • Lab P1'}</span>
                         <span class="px-3 py-1 rounded-full bg-gray-100 text-gray-700 dark:bg-gray-700/70 dark:text-gray-300 border border-gray-200/60 dark:border-gray-600/50">Prof. Teresa Romão</span>
                     </div>
                 </div>
 
                 <div class="lg:col-span-3">
-                    <h4 class="text-xs font-extrabold uppercase tracking-wider text-gray-900 dark:text-white mb-3.5">Deliverables</h4>
+                    <h4 class="text-xs font-extrabold uppercase tracking-wider text-gray-900 dark:text-white mb-3.5">${isPT ? 'Entregáveis' : 'Deliverables'}</h4>
                     <ul class="space-y-2.5 text-xs font-medium text-gray-600 dark:text-gray-400">
-                        <li><a href="stage1.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Stage 1 • Project Proposal</a></li>
-                        <li><a href="stage2.html" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Stage 2 • User &amp; Task Analysis</a></li>
-                        <li><a href="stage3.html" class="hover:text-amber-600 dark:hover:text-amber-400 transition flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>Stage 3 • 1st Prototype</a></li>
-                        <li><a href="stage4.html" class="hover:text-purple-600 dark:hover:text-purple-400 transition flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>Stage 4 • Functional Prototype</a></li>
-                        <li class="text-gray-400 dark:text-gray-500 flex items-center gap-2 cursor-default"><span class="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600"></span>Stages 5 &amp; 6 • Evaluation (Soon)</li>
+                        <li><a href="stage1.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>${isPT ? 'Fase 1 • Proposta de Projeto' : 'Stage 1 • Project Proposal'}</a></li>
+                        <li><a href="stage2.html" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>${isPT ? 'Fase 2 • Análise de Utilizadores' : 'Stage 2 • User & Task Analysis'}</a></li>
+                        <li><a href="stage3.html" class="hover:text-amber-600 dark:hover:text-amber-400 transition flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>${isPT ? 'Fase 3 • 1.º Protótipo' : 'Stage 3 • 1st Prototype'}</a></li>
+                        <li><a href="stage4.html" class="hover:text-purple-600 dark:hover:text-purple-400 transition flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>${isPT ? 'Fase 4 • Protótipo Funcional' : 'Stage 4 • Functional Prototype'}</a></li>
+                        <li><a href="stage5.html" class="hover:text-rose-600 dark:hover:text-rose-400 transition flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span>${isPT ? 'Fase 5 • Avaliação Heurística' : 'Stage 5 • Heuristic Evaluation'}</a></li>
+                        <li class="text-gray-400 dark:text-gray-500 flex items-center gap-2 cursor-default"><span class="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600"></span>${isPT ? 'Fase 6 • Resultados (Em breve)' : 'Stage 6 • Evaluation Results (Soon)'}</li>
                     </ul>
                 </div>
 
                 <div class="lg:col-span-2">
-                    <h4 class="text-xs font-extrabold uppercase tracking-wider text-gray-900 dark:text-white mb-3.5">Documentation</h4>
+                    <h4 class="text-xs font-extrabold uppercase tracking-wider text-gray-900 dark:text-white mb-3.5">${isPT ? 'Documentação' : 'Documentation'}</h4>
                     <ul class="space-y-2.5 text-xs font-medium text-gray-600 dark:text-gray-400">
                         <li><a href="ui-ux.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">UI / UX Design</a></li>
                         <li><a href="app.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Tech Stack</a></li>
-                        <li><a href="glossary.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Glossary</a></li>
-                        <li><a href="developers.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">The Team</a></li>
+                        <li><a href="glossary.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">${isPT ? 'Glossário' : 'Glossary'}</a></li>
+                        <li><a href="developers.html" class="hover:text-blue-600 dark:hover:text-blue-400 transition">${isPT ? 'A Equipa' : 'The Team'}</a></li>
                     </ul>
                 </div>
 
                 <div class="lg:col-span-2 flex flex-col justify-between">
                     <div>
-                        <h4 class="text-xs font-extrabold uppercase tracking-wider text-gray-900 dark:text-white mb-3.5">Prototype</h4>
+                        <h4 class="text-xs font-extrabold uppercase tracking-wider text-gray-900 dark:text-white mb-3.5">${isPT ? 'Protótipo' : 'Prototype'}</h4>
                         <div class="space-y-2.5">
                             <a href="stage4.html" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition shadow-sm">
-                                <span>📱</span> Try Live Demo
+                                <span>📱</span> ${isPT ? 'Testar Demo' : 'Try Live Demo'}
                             </a>
                             <a href="https://github.com/asoeiropt/IPM-6-APP" target="_blank" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gray-100 hover:bg-gray-200 dark:bg-gray-700/80 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 text-xs font-bold border border-gray-200/80 dark:border-gray-600 transition">
                                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
-                                GitHub Repo
+                                ${isPT ? 'Repositório GitHub' : 'GitHub Repo'}
                             </a>
                         </div>
                     </div>
@@ -616,9 +992,12 @@ function initUnifiedFooter() {
 
             <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-500 dark:text-gray-400">
                 <p>&copy; 2026 SmartGlycoAI • NOVA School of Science and Technology (NOVA FCT)</p>
-                <div class="flex items-center gap-2">
-                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                    <span class="font-semibold text-gray-600 dark:text-gray-300">Phase 2 • Stage 4 Active</span>
+                <div class="flex items-center gap-2 bg-gray-100/80 dark:bg-gray-900/60 px-3 py-1.5 rounded-full border border-gray-200/70 dark:border-gray-700/70">
+                    <span class="relative flex h-2.5 w-2.5">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                    </span>
+                    <span class="sg-last-updated-label font-semibold text-gray-600 dark:text-gray-300">${isPT ? 'Fase 2 • Fase 5 Ativa' : 'Phase 2 • Stage 5 Active'}</span>
                 </div>
             </div>
 
@@ -626,14 +1005,15 @@ function initUnifiedFooter() {
     `;
 }
 
+
 // =========================================================================
-// 9. INICIALIZAÇÃO ÚNICA (Splash Screen "Magic Move", Preloader & Barra)
+// 10. INICIALIZAÇÃO ÚNICA (Splash Screen "Magic Move", Preloader & Barra)
 // =========================================================================
 
 function animateMilestoneBar() {
     const bar = document.getElementById('milestone-progress-bar');
     if (bar) {
-        const target = bar.getAttribute('data-target') || '60%';
+        const target = bar.getAttribute('data-target') || '80%';
         requestAnimationFrame(() => {
             setTimeout(() => {
                 bar.style.width = target;
@@ -643,20 +1023,22 @@ function animateMilestoneBar() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-        document.documentElement.classList.add('dark');
-        updateThemeIcons(true);
-    } else {
-        document.documentElement.classList.remove('dark');
-        updateThemeIcons(false);
-    }
+    const currentLang = getCurrentLang();
+    setGoogTransCookie(currentLang);
+
+    initThemeDropdown();
+    const initialMode = localStorage.getItem('theme') || 'system';
+    applyThemePreference(initialMode);
 
     initStageNavigation();
     initSpotlightAndTilt();
     initUnifiedFooter();
+    initLastUpdatedBadges();
+
+    if (currentLang === 'pt') {
+        applyNativePTTranslations('pt');
+        loadGoogleTranslateEngine();
+    }
 
     const splashScreen = document.getElementById('splash-screen');
     const splashText = document.getElementById('splash-text');
@@ -740,22 +1122,3 @@ document.addEventListener("DOMContentLoaded", () => {
         runMiniPreloader();
     }
 });
-
-// =========================================================================
-// COPIAR COMANDO DO TERMINAL (app.html)
-// =========================================================================
-
-function copyTerminalCommand(btn, commandText) {
-    if (!navigator.clipboard) return;
-
-    navigator.clipboard.writeText(commandText).then(() => {
-        const originalHTML = btn.innerHTML;
-        btn.innerHTML = 'Copied! ✓';
-        btn.classList.add('!bg-emerald-600', '!text-white', '!border-emerald-500');
-
-        setTimeout(() => {
-            btn.innerHTML = originalHTML;
-            btn.classList.remove('!bg-emerald-600', '!text-white', '!border-emerald-500');
-        }, 1800);
-    });
-}
