@@ -383,11 +383,35 @@ function toggleDarkMode() {
 
 
 // =========================================================================
-// 2. CONTROLO DOS MODAIS, SHOWREEL VÍDEO E LIGHTBOX COM SETAS
+// 2. CONTROLO DOS MODAIS, SHOWREEL VÍDEO (EN/PT) E LIGHTBOX COM SETAS
 // =========================================================================
 
 let currentGallery = [];
 let currentImageIndex = 0;
+
+const SHOWREEL_VIDEOS = {
+    en: 'https://github.com/asoeiropt/smartglycoai_website/releases/download/v1.0-media-eng/smartglycoai_showreel_EN.mp4',
+    pt: 'https://github.com/asoeiropt/smartglycoai_website/releases/download/v1.0-media/smartglycoai_showreel.mp4'
+};
+
+function syncShowreelVideoSource() {
+    const video = document.getElementById('showreel-video');
+    if (!video) return;
+
+    const lang = getCurrentLang();
+    const targetSrc = SHOWREEL_VIDEOS[lang] || SHOWREEL_VIDEOS.en;
+    const sourceEl = video.querySelector('source');
+
+    if (sourceEl) {
+        if (sourceEl.getAttribute('src') !== targetSrc) {
+            sourceEl.setAttribute('src', targetSrc);
+            video.load();
+        }
+    } else if (video.getAttribute('src') !== targetSrc) {
+        video.setAttribute('src', targetSrc);
+        video.load();
+    }
+}
 
 function openVersionModal(modalId) {
     const modal = document.getElementById(modalId);
@@ -529,6 +553,8 @@ function openShowreelModal() {
     const content = document.getElementById('showreel-modal-content');
     const video = document.getElementById('showreel-video');
     if (!modal || !content) return;
+
+    syncShowreelVideoSource();
 
     modal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
@@ -1071,6 +1097,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initSpotlightAndTilt();
     initUnifiedFooter();
     initLastUpdatedBadges();
+    syncShowreelVideoSource();
 
     if (currentLang === 'pt') {
         applyNativePTTranslations('pt');
